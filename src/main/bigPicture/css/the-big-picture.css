@@ -1,0 +1,45 @@
+/*!
+ * Start Bootstrap - The Big Picture (https://startbootstrap.com/template-overviews/the-big-picture)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-the-big-picture/blob/master/LICENSE)
+ */
+
+ 
+
+ #main-bg
+ {
+   margin-left: 500px;
+   width: 900px;
+  height: 880px;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  -webkit-background-size:cover;
+  background-size: cover;
+ }
+
+@keyframes big {
+  from
+  {
+    opacity: 0;
+  }
+  
+  to {
+    opacity: 1;
+    
+  }
+}
+#main-bg {
+  animation-name: big;
+  animation-duration: 3500ms;
+  animation-timing-function: ease;
+  animation-direction: normal;
+  
+}
+.main-txt
+{
+  padding-left: 500px;
+}
+
+
+
+
