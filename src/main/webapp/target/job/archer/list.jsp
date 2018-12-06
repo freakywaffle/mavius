@@ -10,9 +10,11 @@
 	<header></header>
 	<main>
 	<section>
-	
 		<h1>전사</h1>
 		<section>
+			<img alt="전사게시판" src="../../../images/pinkbean.jpg">
+		</section>
+		<section>		
 			<h1>목록</h1>
 			<div>
 				<a>전사 스킬트리 공략</a>
