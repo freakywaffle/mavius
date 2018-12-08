@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+
+    <script>
+        //자바 스크립트의 함수 호출 방법
+        //1. add();
+        //2. new add();
+       
+       //초기화 작업
+//////////////////////////////////////////
+        function add(obj) {
+            obj.id = 1;
+            obj.title = "hello";
+            return obj;
+        }
+    
+        var obj = {};
+        var notice1 = add(obj);
+        obj = {};
+        var notice2 = add(obj);
+//////////////////////////////////////////
+        //속성 삭제
+        delete notice1.title;
+//////////////////////////////////////////
+        function Notice() {
+            //new를 통해서 생성되는 것들만 this를 사용할 수 있다.
+            this.id = 1;
+            this.title = "hello";
+        }
+
+        var n1 = new Notice();
+        var n2 = new Notice();
+//////////////////////////////////////////
+
+        
+    var msg = '<h2>브라우저</h2><p>너비:' + window.innerWidth + '<p>';
+    msg = '<p> 높이 :' + window.innerHeight + '<p>';
+    </script>
+</head>
+
+
+
+
+<body>
+    //1. 스크립트 : 데이터, 변수, 연산자, 제어구조, 배열, 객체, json, 함수
+    //1.1 DOM : DOM 조작하기
+
+    //2. 자바 스크립트에는 객체 지향스러운 스타일이지만
+
+    <div id="info">
+
+       
+    </div>
+    <script>
+            var msg = '<h2>브라우저</h2><p>너비:' + window.innerWidth + '</p>';
+                msg += '<p> 높이 :' + window.innerHeight + '/<p>';
+                msg += '<h2>히스토리</h2><p>아이템 :' + window.history.length + '/<p>';
+                msg += '<h2>화면</h2><p>너비 :' + window.screen.width + '</p>';
+                msg += '<p> 높이 :' + window.screen.height + '</p>';
+                
+                msg += '<p><b>페이지 제목 :</b>' + document.title + '<br/>';
+                msg += '<b>페이지 주소 :</b>' + document.URL + '<br/>' ;
+                msg += '<b>최종 수정일 :</b>' + document.lastModified + '<br/>';
+
+                    var el = document.getElementById("info");
+                    el.innerHTML = msg;
+                    alert("현재페이지 : " + window.location);
+        </script>
+    
+</body>
+</html>
