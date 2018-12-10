@@ -1,18 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Insert title here</title>
+
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link href="../../css/aside-right.css" rel="stylesheet" id="bootstrap-css">
+</head>
+<body>
+
+
 <!------ Include the above in your HEAD tag ---------->
 
         
         
-        <nav class="navbar navbar-expand navbar-dark bg-primary" style="padding: 0px; background: #000000!important;"> <a href="#menu-toggle" id="menu-toggle" class="navbar-brand"  style="margin-right: 0px!important"><span class="navbar-toggler-icon"></span></a> <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
-            <div class="collapse navbar-collapse" id="navbarsExample02">
-               
-                <form class="form-inline my-2 my-md-0"> </form>
-            </div>
-        </nav>
-        <div id="wrapper" class="toggled">
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation"></button>
+        
+        <div id="wrapper" class="toggled"  style="padding-left : 300px">
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <ul class="sidebar-nav">
@@ -27,13 +36,7 @@
                 </ul>
             </div> <!-- /#sidebar-wrapper -->
             <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <h1>Simple Sidebar</h1>
-                    <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                    <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                </div>
-            </div> <!-- /#page-content-wrapper -->
+            
         </div> <!-- /#wrapper -->
         <!-- Bootstrap core JavaScript -->\
         <script>
@@ -54,4 +57,6 @@
            
         </script>
    
-  </html>
+  
+</body>
+</html>
