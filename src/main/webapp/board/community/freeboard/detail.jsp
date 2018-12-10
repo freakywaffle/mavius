@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,98 +14,183 @@
 		<h1>헤더</h1>
 	</header>
 	<main>
-		<h1>메인영역</h1>
+	<h1>자유게시판</h1>
+	<section>
+		<h1>검색폼</h1>
+		<form>
+			<fieldset>
+				<legend class="hidden">게시글검색폼</legend>
+
+				<!-- 디폴트 값으로 현재 게시판 명 -->
+				<select>
+					<option>전체기간</option>
+						<option>최근 1주</option>
+						<option>최근 한달</option>
+						<option>직접 입력</option>
+					</select> 
+					<select>
+						<option>제목</option>
+						<option>제목+내용</option>
+						<option>작성자</option>
+						
+					</select> 
+					<input type="text" name="txt-sch" />
+					<input type="submit" name="btn-sch" value="검색"/>
+			</fieldset>
+		</form>
+	</section>
+	
+	
+	<section>
+		<h1>게시글</h1>
 		<section>
-			<h1>게시글</h1>
-			
-			
+			<h1>게시글 보는 영역</h1>
 			<div>
-				<span>제목</span>
 				<ul>
-					<li>작성자</li>
-					<li>조회수</li>
-					<li>추천수</li>
+					<li>게시글 번호</li>
+					<li>제목</li>
 					<li>등록일</li>
-				</ul>			
+					<li><a href="">작성자</a></li>
+					<!-- 작성자 누르면 작성자가 쓴 게시글 볼 수 있게 -->
+
+					<li>추천수</li>
+					<li>조회수</li>
+					<li>스크랩수</li>
+				</ul>
+				<p>게시글 내용</p>
 			</div>
-			
 			<div>
-				<p>내용</p>
+				<input type="button" name="btn-reg" value="글쓰기" />
+				<input type="button" name="btn-edit" value="수정하기" />
+				<input	type="button" name="btn-del" value="삭제하기" />
+				<!-- 이건 작성자일 때만 보이게  -->
+				<input type="button" name="btn-report" value="신고하기" /> 
+				<input type="button" name="btn-rec" value="추천하기" /> 
+				<input type="button" name="btn-scr" value="스크랩하기" />
 			</div>
-			
-			<span>추천</span>
-			<span>스크랩</span>
-			<a href="">글쓰기</a>
-			<a href="">수정</a>
-			<a href="">삭제</a>			
 		</section>
 		<section>
-			<h1>댓글</h1>
-			<form>
-				<fieldset>
-					<input type="text" name="regReply"/>
-					<input type="button" name = "regBtn" value = "댓글 등록"/>
-				</fieldset>
-			</form>
+			<h1>게시글 댓글보고 다는 영역</h1>
+			<fieldset>
+				<legend>
+					<label>댓글(+댓글 갯수)</label>
+				</legend>
+				<div>
+					<ul>
+						<li><input type="checkbox"/><a href="">댓글 작성자</a></li>
+						<!-- 작성자니까 이 작성자가 쓴 게시글 볼 수 있게 또는 정보를 열람하거나 쪽지 보낼 수 있게 -->
+						<li>등록일자</li>
+						<li>추천수</li>
+					</ul>
+					<p>와 너무 재밌어요!!!</p>
+					<input type="button" name="btn-report" value="신고하기" /> 
+				</div>
+				<form>
+					<label>댓글 달기</label> 
+					<input type="text" name="reg-Reply" />
+					<input type="button" name="btn-Reply" value="댓글 등록" />
+					<input type="button" name="btn-Attach" value="사진첨부" />
+				</form>
+			</fieldset>
 		</section>
-		
+		<section>
+			<h1> 관리구역</h1>
+			<input type="button" name="btn-manage-reply"value="댓글 삭제하기"/>
+			<input type="button" name="btn-manage-detail"value="게시글 삭제하기"/>
+		</section>
 		
 		<section>
-			<h1>게시글에서 볼 수 있는 페이저</h1>
-			<table border="1px">
-			<thead>
-				<tr>
-					<td>게시물 번호</td>
-					<td>말머리</td>
-					<td>제목(댓글수)</td>
-					<td>작성자</td>
-					<td>등록 일자</td>
-					<td>조회수</td>
-					<td>추천수</td>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>4</td>
-					<td>잡담</td>
-					<td>승라일라이</td>
-					<td>승래</td>
-					<td>2018-12-05 16:40</td>
-					<td>200</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>잡담</td>
-					<td>미하일 개구림</td>
-					<td>형호</td>
-					<td>2018-12-02 1:00</td>
-					<td>150</td>
-					<td>10</td>
-				</tr>
-				
-				<tr>
-					<td>2</td>
-					<td>자랑</td>
-					<td>메이플GG</td>
-					<td>종호</td>
-					<td>2018-12-02 19:40</td>
-					<td>100</td>
-					<td>10</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>자랑</td>
-					<td>다크어벤져 짱짱</td>
-					<td>형호</td>
-					<td>2018-12-01 10:00</td>
-					<td>130</td>
-					<td>10</td>
-				</tr>
-			</tbody>
-		</table>
+			<h1>페이저 리스트</h1>
+
+			<div>
+			<ul>
+				<!-- div로 인라인블록하고 ul에다가 플렉스 주면  -->
+				<li>1</li>
+				<li>[잡담]</li>
+				<li>승라일라이(댓글+4)</li><!-- 제목(댓글수) -->
+				<li><a href="">승래</a></li>
+				<!-- 작성자 -->
+				<li>2018-12-05 16:40</li>
+				<!-- 등록 일자 -->
+				<li>200</li>
+				<!-- 조회수 -->
+				<li>10</li>
+				<!-- 추천수 -->
+			</ul>
+			<p>게시물 내용(간략히)</p>
+		</div>
+		<br />
+		<div>
+			<ul>
+				<li>2</li>
+				<li>[자랑]</li>
+				<li>데벤 조아(댓글+5)</li>
+				<!-- 제목(댓글수) -->
+				<li><a href="">형호</a></li>
+				<!-- 작성자 -->
+				<li>2018-12-05 17:45</li>
+				<!-- 등록 일자 -->
+				<li>250</li>
+				<!-- 조회수 -->
+				<li>20</li>
+				<!-- 추천수 -->
+			</ul>
+			<p>게시물 내용(간략히)</p>
+		</div>
+		<br />
+		<div>
+			<ul>
+				<li>3</li>
+				<li>[자랑]</li>
+				<li> 카데나조아(댓글+10)</li>
+				<li><a href="">원석</a></li>
+				<!-- 작성자 -->
+				<li>2018-12-06 11:23</li>
+				<!-- 등록 일자 -->
+				<li>220</li>
+				<!-- 조회수 -->
+				<li>20</li>
+				<!-- 추천수 -->
+			</ul>
+			<p>게시물 내용(간략히)</p>
+		</div>
+		<br />
+		<div>
+			<ul>
+				<li>4 </li>
+				<li> [잡담]</li>
+				<li>전자담배(댓글+8)</li>
+				<li><a href="">문경</a></li>
+				<!-- 작성자 -->
+				<li>2018-12-07 20:40</li>
+				<!-- 등록 일자 -->
+				<li>300</li>
+				<!-- 조회수 -->
+				<li>17</li>
+				<!-- 추천수 -->
+			</ul>
+			<p>게시물 내용(간략히)</p>
+
+		</div>
+		<br />
+		<div>
+			<ul>
+				<li>5 </li>
+				<li>[잡담]</li>
+				<li>썬콜조아(댓글+8)</li>
+				<li><a href="">세연</a></li>
+				<!-- 작성자 -->
+				<li>2018-12-05 16:40</li>
+				<!-- 등록 일자 -->
+				<li>230</li>
+				<!-- 조회수 -->
+				<li>15</li>
+				<!-- 추천수 -->
+			</ul>
+			<p>게시물 내용(간략히)</p>
+		</div>
 		</section>
-		
+	</section>
 	</main>
 	<aside>
 		<h1>어사이드</h1>
