@@ -4,17 +4,16 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-the-big-picture/blob/master/LICENSE)
  */
 
- 
-
  #main-bg
  {
-   margin-left: 500px;
-   width: 900px;
-  height: 880px;
+   /* margin-left: 500px; */
+   width: 900px; 
+  height: 880px; 
+  background:  url("../img/rudy_watch.jpg") no-repeat center center;
   background-repeat: no-repeat;
-  background-position: 50% 0;
+   background-position: 50% 0;
   -webkit-background-size:cover;
-  background-size: cover;
+  background-size: cover; 
  }
 
 @keyframes big {
@@ -28,7 +27,7 @@
     
   }
 }
-#main-bg {
+#shabang {
   animation-name: big;
   animation-duration: 3500ms;
   animation-timing-function: ease;
@@ -37,7 +36,7 @@
 }
 .main-txt
 {
-  padding-left: 500px;
+   left: 500px; 
 }
 
 
