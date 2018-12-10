@@ -1,0 +1,197 @@
+@import url("/css/targetboardlist.css");
+
+#board-detail-main{
+	margin-top: auto;
+	width: 1200px;
+}
+
+#board-detail-main .vertical-line{
+	top:0px;
+	height: 100%;
+	margin-bottom: 100px;
+}
+
+
+.detail-simbol img{
+	height: 800px;
+	width: 200px;
+}
+
+.detail-header{
+	position:relative;
+	display: flex;
+	height: 100px;
+	margin-left: 60px;
+	border-bottom: 2px dashed #eaeaea;
+	border-right: 2px dashed #eaeaea;
+}
+
+
+.detail-header div{
+	margin-left: 30px;
+	margin-top: 0px;
+	width: 540px;
+	height: 60px;
+}
+
+.detail-header .body{
+	height:inherit;
+	margin-left: 0px;
+}
+
+.detail-title{
+	margin:0px!important;
+	
+}
+.detail-title a{
+	position: relative;
+	left: 0px;
+	top: 20px;
+	color: #747474;
+}
+
+.detail-header .inline-list{
+	width: inherit;
+	
+}
+
+.detail-header .inline-list li{
+	display: inline-block;
+	text-align: left;
+	padding: 0px;
+	padding-top: 10px;
+	height: 25px;
+	width: 70px;
+}
+
+.detail-header .inline-list li:first-child {
+	width: 200px;
+}
+.detail-header .inline-list li:first-child+li {
+	width: 110px;
+}
+
+.detail-header .inline-list li a{
+	color: #000;
+}
+
+
+.detail-content{
+	margin-left: 60px;
+	border-bottom: 2px dashed #eaeaea;
+	padding-bottom: 100px;
+}
+
+.detail-navi{
+	margin-top: 15px!important;
+	margin-left: 60px;
+	width: 740px;
+}
+
+
+.detail-navi .inline-list{
+	width: inherit;
+	height: 60px;
+}
+
+.detail-navi .inline-list li{
+	width: 370px;
+	padding: 0px;
+	padding-top: 22px;
+	text-align: right;
+}
+
+.detail-navi .inline-list li:first-child{
+	border-right: 2px dashed #eaeaea;
+	text-align: left;
+}
+
+.detail-navi .inline-list a{
+	color: #000;
+}
+
+
+.target-replys{
+	margin-bottom: 20px;
+	margin-left: 60px;
+	margin-top: 15px;
+	border-top: 2px dashed #eaeaea;
+}
+
+.target-replys h1{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.detail-reply{
+	border: 2px solid #eee;
+	border-radius: 5px;
+	padding: 30px;
+	height: 100px;
+	position: relative;
+}
+
+.detail-reply div{
+	position: absolute;
+}
+
+.detail-reply .reply-writer{
+	left: 30px;
+}
+.detail-reply .reply-text{
+	left: 50px;
+	top: 60px;
+}
+.detail-reply .write-time{
+	right: 30px;
+}
+.detail-reply .report{
+	right: 30px;
+	bottom: 30px;
+}
+
+.detail-reply-pager{
+	margin-left: 60px;
+	padding-left: 325px;
+	width: 400px;
+	height: 50px;
+}
+
+.detail-reply-pager li{
+	width: 15px;
+    height: 15px;
+
+    text-align: center;
+}
+.detail-reply-pager li a{
+	color: #747474;
+}
+
+.detail-reply-pager .inline-list{
+	padding: 0px;
+}
+
+.reply-reg-form{
+	position: relative;
+	margin-left: 60px;
+	margin-bottom: 100px;
+}
+
+.reply-reg-form textarea {
+	width: 600px;
+	height: 100px;
+	vertical-align: middle;
+	padding:0px;
+	border-radius: 5px;
+}
+
+.reply-reg-form input{
+	vertical-align: middle;
+	width: 134px;
+	height: 100px;
+	
+}
+
+.reply-reg-form .btn-write{
+	top:0px;
+}
