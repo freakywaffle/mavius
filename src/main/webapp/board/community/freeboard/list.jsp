@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>커뮤니티-자유게시판</title>
+<link href="../../../css/freeboardlist.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
-	<header>
+	<!-- <header>
 		<h1>헤더</h1>
-<!-- 
+
 		<section>
 			<h1>커뮤니티</h1>
 			<nav>
@@ -25,16 +26,17 @@
 				</ul>
 			</nav>
 		</section>
- -->
-	</header>
-	<main>
+
+	</header> -->
+	<main id="main">
 	<h1>자유게시판</h1>
 	
-	<section>
-		<h1>검색폼</h1>
-		<form>
-			<fieldset>
-				<legend class="hidden">게시글검색폼</legend>
+	<section >
+		<h1 class="hidden">검색폼</h1>
+		<div>
+		<form id="search-form">
+			<!-- <fieldset class="hidden">
+				<legend class="hidden">게시글검색폼</legend> -->
 
 				<!-- 디폴트 값으로 현재 게시판 명 -->
 				<select>
@@ -49,15 +51,16 @@
 						<option>작성자</option>
 						
 					</select> 
-					<input type="text" name="txt-sch" />
-					<input type="submit" name="btn-sch" value="검색"/>
-			</fieldset>
+					<input type="text" name="txt-sch" class="input" />
+					<input type="submit" name="btn-sch" value="검색" class="input"/>
+			<!-- </fieldset> -->
 		</form>
+	</div>
 	</section>
-	<section>
+	<section id="list-table">
 		<h1>리스트 테이블</h1>
 
-		<div>
+		<div class="inline-block">
 			<ul>
 				<!-- div로 인라인블록하고 ul에다가 플렉스 주면  -->
 				<li>1</li>
@@ -75,7 +78,7 @@
 			<p>게시물 내용(간략히)</p>
 		</div>
 		
-		<div>
+		<div class="inline-block">
 			<ul>
 				<li>2</li>
 				<li>[자랑]</li>
@@ -93,7 +96,7 @@
 			<p>게시물 내용(간략히)</p>
 		</div>
 	
-		<div>
+		<div class="inline-block">
 			<ul>
 				<li>3</li>
 				<li>[자랑]</li>
@@ -108,9 +111,9 @@
 				<!-- 추천수 -->
 			</ul>
 			<p>게시물 내용(간략히)</p>
-		</div>
+		</div >
 	
-		<div>
+		<div class="inline-block">
 			<ul>
 				<li>4 </li>
 				<li> [잡담]</li>
@@ -128,7 +131,7 @@
 
 		</div>
 	
-		<div>
+		<div class="inline-block">
 			<ul>
 				<li>5 </li>
 				<li>[잡담]</li>
@@ -164,8 +167,8 @@
 		<div>다음페이지</div>
 	</section>
 	</main>
-	<aside>
+	<!-- <aside>
 		<h1>어사이드</h1>
-	</aside>
+	</aside> -->
 </body>
 </html>
