@@ -9,13 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/target/archer/list")
-public class ArcherListController extends HttpServlet {
+@WebServlet("/test/test/test/test")
+public class TestController extends HttpServlet{
+	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/target/job/archer/list.jsp");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
-		System.out.println("list");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/detail.jsp");
 		dispatcher.forward(request, response);
 	}
 }
