@@ -64,20 +64,11 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td class="align-middle text-center"><input type="checkbox"
-									class="align-top" /></td>
+								<td class="align-middle text-center">
+									<input type="checkbox" class="align-top" />
+								</td>
 								<td class="align-middle text-center">네모장군(dfke153)</td>
-								<td class="align-middle text-center inline"><select
-									class="form-control text-center"
-									style="height: 35px; width: 90px;">
-										<optgroup label="Admin">
-											<option>관리자</option>
-										</optgroup>
-										<optgroup label="Member">
-											<option>회원</option>
-										</optgroup>
-								</select></td>
-								
+								<td class="align-middle text-center inline">관리자</td>
 								<th class="align-middle text-center">3</th>
 								<th class="align-middle text-center">1</th>
 								<td class="align-middle text-center">18-12-07</td>
@@ -89,14 +80,11 @@
 
 							</tr>
 							<tr>
-								<td class="align-middle text-center"><input type="checkbox"
-									class="align-top" /></td>
+								<td class="align-middle text-center">
+									<input type="checkbox" class="align-top" />
+								</td>
 								<td class="align-middle text-center">닉닉(seyeon1491)</td>
-								<td class="align-middle text-center inline"><select
-									class="form-control" style="height: 35px; width: 90px;">
-										<option>관리자</option>
-										<option>회원</option>
-								</select></td>
+								<td class="align-middle text-center">회원	</td>
 								<th class="align-middle text-center">3</th>
 								<th class="align-middle text-center">1</th>
 								<td class="align-middle text-center">18-12-07</td>
@@ -112,11 +100,7 @@
 								<td class="align-middle text-center"><input type="checkbox"
 									class="align-top" /></td>
 								<td class="align-middle text-center">배열지존(dewf3)</td>
-								<td class="align-middle text-center  inline"><select
-									class="form-control" style="height: 35px; width: 90px;">
-										<option>관리자</option>
-										<option>회원</option>
-								</select></td>
+								<td class="align-middle text-center">회원</td>
 								<th class="align-middle text-center">3</th>
 								<th class="align-middle text-center">1</th>
 								<td class="align-middle text-center">18-12-07</td>

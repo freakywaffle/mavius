@@ -9,6 +9,7 @@
   max-width: 300px;
   height: 100%;
   color: #000000;
+  z-index: 1;
 }
 .nav-side-menu .brand {
   background-color: #000000;

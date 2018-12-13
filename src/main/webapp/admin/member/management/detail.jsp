@@ -68,24 +68,81 @@
 	
 										<form id="contact" method="post" class="form" role="form">
 											<div class="row">
-												<div class="col-xs-6 col-md-6 form-group b">
-													<span>아이디</span>
+												<section class = "group-box">
+													<div class="form-group align-middle text-center b">
+														<span class="status-title">아이디</span>
+														<input class="form-control text-center" id="name" name="name"
+															placeholder="Name" type="text" required autofocus disabled/> 
+														
+													</div>
+													<hr />
 													
-														<input class="form-control" id="name" name="name"
-															placeholder="Name" type="text" required autofocus /> 
+													<div class="form-group b">
+														<span class="status-title">닉네임</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
 													
-												</div>
-												<hr />
-												<div class="form-group">
-													<span>제목</span> <input class="form-control" id="title"
-														name="title" placeholder="Title" type="text" required />
-												</div>
-												<hr />
+													<div class="form-group align-middle text-center b">
+														<span class="status-title">이름</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">이메일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">등급</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">방문 횟수</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">게시글</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">댓글</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">가입일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">최근 방문일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													
+												</section>	
 											</div>
-											
-											<br />
-										
-	
 										</form>
 										
 										
@@ -113,49 +170,82 @@
 					
 												<form id="contact" method="post" class="form" role="form">
 											<div class="row">
-												<div class="col-xs-6 col-md-6 form-group">
-													<span>받는이</span>
-													<div class="b">
-														<input class="form-control" id="name" name="name"
-															placeholder="Name" type="text" required autofocus /> <select
-															class="form-control c" required autofocus>
-															<option>전체</option>
-															<option>관리자</option>
-															<option>전체 회원</option>
-														</select>
+												<section class = "group-box">
+													<div class="form-group align-middle text-center b">
+														<span class="status-title">아이디</span>
+														<input class="form-control text-center" id="name" name="name"
+															placeholder="Name" type="text" required autofocus disabled/> 
+														
 													</div>
-												</div>
-												<hr />
-												<div class="form-group">
-													<span>제목</span> <input class="form-control" id="title"
-														name="title" placeholder="Title" type="text" required />
-												</div>
-												<hr />
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">닉네임</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group align-middle text-center b">
+														<span class="status-title">이름</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">이메일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">등급</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">방문 횟수</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">게시글</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">댓글</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">가입일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													<div class="form-group b">
+														<span class="status-title">최근 방문일</span> 
+														<input class="form-control text-center" id="title" name="title" 
+															placeholder="Title" type="text" required disabled/>
+													</div>
+													<hr />
+													
+													
+												</section>	
 											</div>
-											<span>내용</span>
-											<textarea class="form-control" id="message" name="message"
-												placeholder="Message" rows="9"></textarea>
-											<br />
-											<div class="row">
-												<div class="col-xs-12 col-md-12 form-group">
-													<button class="btn btn-primary pull-right btn-margin-left"
-														type="submit">Cancel</button>
-													<button class="btn btn-primary pull-right" type="submit">Submit</button>
-												</div>
-											</div>
-	
-										</form>
-										
-										
-										
-										
-										
-										
-										
-										
-										
-										
-																			<div class="container">
+												<div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
             <div class="panel panel-default">
@@ -210,7 +300,19 @@
             </div>            
         </div>
     </div>
-</div>
+</div>	
+										</form>
+										
+										
+										
+										
+										
+										
+										
+										
+										
+										
+																
 					
 					
 					
