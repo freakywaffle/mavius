@@ -87,14 +87,14 @@ html
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
+  /* text-indent: 20px; */
   line-height: 40px;
 }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: white;
 }
 
 .sidebar-nav li a:hover {
@@ -114,7 +114,7 @@ html
 }
 
 .sidebar-nav>.sidebar-brand a {
-  color: #999999;
+  color: white;
 }
 
 .sidebar-nav>.sidebar-brand a:hover {
@@ -283,8 +283,6 @@ html
   visibility: hidden;
   display: none;
   height: 0px;
-  
-
 } 
 .pa:hover .submenu
 {
@@ -326,14 +324,19 @@ html
 
 #form-login
 {
-
   display: block;
   text-align: center;
   background: #999999;
   height: 100%;
 }
-
-.header-box
+#sidebar-wrapper ul
 {
-  margin-top: 200px;
+  text-align: center;
+  
 }
+.submenu li
+{
+  text-align: left!important;
+  font-size: 13px;
+  list-style: none;
+} 

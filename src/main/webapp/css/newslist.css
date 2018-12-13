@@ -24,9 +24,11 @@ main>div>h3{
         padding-top: 30px; 
 }
 .event-calendar{
-    background: burlywood;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 30px; 
-    padding-top: 30px;
+    /* background: url(../images/arkana.jpeg) no-repeat; */
+    /* background-image: url(../images/arkana.jpeg); */
+    background-size: 100%;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px; 
+    padding-top: 50px;
 }
