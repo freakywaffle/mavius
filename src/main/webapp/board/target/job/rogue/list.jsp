@@ -61,10 +61,10 @@
             <!-- /#sidebar-wrapper -->
 		</div>
     </header>
-    <div class="blank"></div>
 	<div class="wrapper">
+	<div class="head-boarder-line"></div>
 		<section id="main" class="margin-top">
-			<h1 class="board-title text-center font-medium">궁수게시판</h1>
+			<h1 class="board-title text-center font-medium">ROGUE</h1>
 			<div class="menu-bar margin-top text-right">
 				<input class="btn-write" type="button" value="글쓰기"/>
 			</div>
@@ -192,23 +192,20 @@
 						</div>
 					</section>	
 					<section class="target-pager margin-top">
-					<h1 class="hidden">페이저</h1>
-					<p class="inline"><i class="fas fa-caret-left"></i></p>
-					<ul class="inline-list">
-						<li class="font-bold underline"><a href="#">1</a></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-					</ul>
-					<p class="inline"><i class="fas fa-caret-right"></i></p>
-				</section>
+						<h1 class="hidden">페이저</h1>
+						<p class="inline"><i class="fas fa-caret-left"></i></p>
+						<ul class="inline-list">
+							<li class="font-bold underline"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+						</ul>
+						<p class="inline"><i class="fas fa-caret-right"></i></p>
+					</section>
 				</div>
-				
 			</div>
 		</section>	
 	</div>
-	
-	<aside>aside 부분</aside>
 </body>
 </html>

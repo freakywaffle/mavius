@@ -1,0 +1,121 @@
+@import url("/css/targetboarddetail.css");
+
+.modal-lg{
+	max-width: 1200px!important;
+}
+
+.border-color-gray{
+	border: 1px solid #8C8C8C;
+}
+
+.set-form-div{
+	margin-left: 50px;
+	margin-right: 50px;
+	width: 700px;
+}
+
+.main-page{
+	max-width: 1400px;
+}
+
+.input-form{
+	border: 2px solid #000;
+	width: 800px;
+}
+
+.job-category,
+.option-category{
+	width: 80%;
+	height: 50px;
+	margin-top: 50px; 
+}
+
+.job-category{
+	width:50%;
+}
+
+.input-form .title{
+	width: 100%;
+	height: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.input-form .content{
+	width: 100%;
+	height: 650px;
+	margin-top: 50px; 
+}
+
+.input-sup-form{
+	position:relative;
+	border: 2px solid #000;
+	width: 425px;
+	margin-left: 50px;
+}
+
+
+.input-sup-form .option-category{
+	height: 50px;
+	vertical-align: middle;
+}
+
+.input-sup-form .set-form-div{
+	width: 325px;	
+}
+
+.input-sup-form .btn{
+	
+	
+	height: 45px;
+	width: 100px;
+}
+
+.input-sup-form .reg-btns button{
+	position: absolute;
+	bottom: 50px;
+	right: 180px;
+	height: 50px;
+	width: 100px;
+	
+}
+.input-sup-form .reg-btns button:last-child{
+	right: 50px;
+}
+
+
+
+.modal-body .content{
+	width: 50%;
+	height: 650px;
+	margin-left: 80px;
+	margin-bottom: 50px;
+}
+.modal-body .content div{
+	height: 100%;
+}
+
+.modal-body .icon-list{
+	width: 30%;
+	margin-left: 80px;
+	height: 650px;
+	margin-bottom: 50px;
+}
+.modal-body .icon-list div{
+	height: 100%;
+}
+
+
+.modal-body .icon-list li{
+	margin: 5px;
+}
+
+.modal-body .icon-list img{
+	width: 50px;
+	height: 50px;
+}
+
+
+
+
+
