@@ -50,8 +50,8 @@
                             <a href="#">공략</a>
                             <div class="submenu">
                                 <ul>
-                                    <li><a href="#1">직업별팁&공략</a></li>
-                                    <li><a href="#2">보스공략</a></li>
+                                    <li><a href="/board/target/archer/list">직업별팁&공략</a></li>
+                                    <li><a href="#">보스공략</a></li>
                                 </ul>
                             </div>
                         </div>
