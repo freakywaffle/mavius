@@ -1,11 +1,10 @@
-<link href="../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!--"vendor/bootstrap/css/bootstrap.min.css"-->
-    <!-- Custom styles for this template -->
-<link href="../sidebar/css/simple-sidebar.css" rel="stylesheet">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <header>
         <div id="wrapper">
 
+            
             <!-- Header -->
             <div id="sidebar-wrapper">
                 <img class="header-bg" src="../images/park-header.jpg" />
