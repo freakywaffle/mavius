@@ -125,6 +125,7 @@
 				<h1 class="border-title text-center font-medium">ARCHER</h1>
 				<h3 class="text-center">공략게시판</h3>
 				<div class="menu-bar text-right">
+					<a class="btn btn-outline-secondary" href="list">목록으로</a>
 				</div>
 				</section>
 			<section class="main">

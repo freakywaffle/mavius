@@ -6,118 +6,97 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../../../css/targetboardlist.css" rel="stylesheet">
-<link href="../../../sidebar/css/simple-sidebar.css" rel="stylesheet">
-<link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
 	<div id="hiririk">
-        <header>
-            <div id="wrapper">
+        <!-- <header>
+        <div id="wrapper">
 
-                <!-- Header -->
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav header-box">
-                        <li class="sidebar-brand">
-                            <a href="#">
-                                MAVIUS
-                            </a>
-                        </li>
-                        <li>
-                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-	                            <a  href="#One">내가 쓴글</a>
-	                            <div class="submenu">
-	                                <ul>
-	                                    <li><a href="#">게시글</a></li>
-	                                    <li><a href="#">댓글</a></li>
-	                                </ul>
-	                            </div>
+            Header
+            <div id="sidebar-wrapper">
+                <img class="header-bg" src="../images/park-header.jpg" />
+                <ul class="sidebar-nav header-box">
+                    <div class="main-img">
+                        <img  src="../images/login-logo-135.png" />
+                    </div>
+                    <li class="sidebar-brand">
+                        <a href="#">
+                            MAVIUS
+                        </a>
+                    </li>
+                    <li>
+                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                            <a href="#One">소식</a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#">공지사항</a></li>
+                                    <li><a href="#">이벤트</a></li>
+                                    <li><a href="#">업데이트</a></li>
+                                </ul>
                             </div>
-                                
-                            
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
-	                            <a href="#Two">쪽지</a>
-	                            <div class="submenu">
-	                                <ul>
-	                                    <li><a href="#1">보내기</a></li>
-	                                    <li><a href="#2">받은쪽지함</a></li>
-	                                   
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                            <a href="#Two">커뮤니티</a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#1">자유게시판</a></li>
+                                    <li><a href="#2">코디게시판</a></li>
+                                    <li><a href="#2">서버게시판</a></li>
 
-                            	<a href="#">QnA</a>
-                            	<div class="submenu">
-	                            	<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-                            	<a href="#">Reply</a>
-                            	<div class="submenu">
-	                            	<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
-                            	<a href="#">Scrap</a>
-                            	<div class="submenu">
-                           			<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-                                	</ul>
-                           		</div>
-                        	</div>
-                        </li>
-                    </ul>
-                </div>
+                            <a href="#">공략</a>
+                            <div class="submenu">
+                                <ul>
+                                    <li><a href="#1">직업별 팁&공략</a></li>
+                                    <li><a href="#2">보스공략</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-        </header>
+
+        </div>
+    </header>
         
         <div id="sidebar">
-            <div class="side-btn" onclick="toggleSidebarout()">
-                <input type="submit" />
-            </div>
-            <ul class="sidebar-nav2">
-                <li>
-                    <a href="#">home</a>
-                </li>
-                <li>
-                    <a href="#">about</a>
-                </li>
-                <li>
-                    <a href="#">contact</a>
-                </li>
-
-            </ul>
+        <div class="side-btn" onclick="toggleSidebarout()">
+            <input type="submit" />
         </div>
+        <ul class="sidebar-nav2">
+            <li>
+                <a href="#">home</a>
+            </li>
+            <li>
+                <a href="#">about</a>
+            </li>
+            <li>
+                <a href="#">contact</a>
+            </li>
 
-       <script>
+        </ul>
+    </div>
 
-           function toggleSidebarout() 
-           {
-              document.getElementById("sidebar").classList.toggle('active');
-           }
+    <script>
+        function toggleSidebarout() 
+        {
+            document.getElementById("sidebar").classList.toggle('active');
+        }
 
-       </script>
+    </script> -->
+       <jsp:include page="/sidebar/header.jsp" />
+       <jsp:include page="/sidebar/sidebar.jsp" />
+       
       	<div class="blank"></div>
        <div class="head-border-line"></div>
 		<div class="wrapper">

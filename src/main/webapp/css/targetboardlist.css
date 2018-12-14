@@ -326,7 +326,7 @@ h1,ul,p,li,section{
 .category{
 	position: absolute;
 	box-sizing: border-box;
-	padding-top:20px!important;
+	padding-top:25px!important;
 	margin-left: 0px!important;
     border: 3px solid #CCC;
     background-color: #FFF;
@@ -334,10 +334,11 @@ h1,ul,p,li,section{
     top: 0px;
     left: -140px;
     right: auto;
-    width: 80px!important;
-    height: 80px!important;
+    width: 85px!important;
+    height: 85px!important;
     border-radius: 50%;
     font-weight: bold;
+    font-family: "Gamja Flower"!important;
     color: #AAA;
     text-align: center;
     line-height: 1;

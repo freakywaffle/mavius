@@ -13,8 +13,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
 <script src="../../../js/targetboardreg.js"></script>
+<script src="../../../ckeditor/ckeditor.js"></script>
 </head>
 <body>
 	<div id="hiririk">
@@ -132,7 +132,7 @@
 			<section class="main margin-bottom reset-padding">
 				<h3 class="text-center margin-top">글쓰기</h3>
 				<div class="main-page block-flex margin-top">
-					<div class="input-form">
+					<form class="input-form" id="reg-form" action="detail" method="post">
 						<div class="set-form-div">
 							<select class="job-category border-color-gray">
 								<option>직업 카테고리</option>
@@ -147,7 +147,7 @@
 							<br/>
 							<div class="content border-color-gray" id="editor1" contenteditable="true"></div>
 						</div>
-					</div>
+					</form>
 					<div class="input-sup-form ">
 						<div class="set-form-div">
 							<div class="margin-top">
@@ -217,7 +217,7 @@
 										<option>아크</option>
 									</select>
 								</div>
-								<button type="button" id="modalBtn" class="modalBtn btn btn-secondary hidden">
+								<button type="button" id="modalBtn" class="modalBtn btn btn-secondary hidden margin-top">
 									열기
 								</button>
 							</div>
@@ -232,22 +232,23 @@
 									<option>앱솔랩스 세트</option>
 									<option>아케인 세트</option>
 								</select>
-								<select class="item-option2-job option-category border-color-gray hidden">
-									<option>직업군</option>
-									<option>전사</option>
-									<option>궁수</option>
-									<option>마법사</option>
-									<option>도적</option>
-									<option>해적</option>
-								</select>
-								
-								<button type="button" id="modalBtn2" class="modalBtn btn btn-secondary">
+								<div>
+									<select class="item-option2 option-category border-color-gray hidden">
+										<option>직업군</option>
+										<option>전사</option>
+										<option>궁수</option>
+										<option>마법사</option>
+										<option>도적</option>
+										<option>해적</option>
+									</select>
+								</div>
+								<button type="button" id="modalBtn2" class="modalBtn btn btn-secondary hidden margin-top">
 									열기
 								</button>
 							</div>
 							<div class="margin-top reg-btns">
-								<button class="btn btn-secondary">취소</button>
-								<button class="btn btn-primary">등록</button>
+								<button class="btn btn-secondary" onclick="location.href='list'">취소</button>
+								<button type="submit" class="btn btn-primary" form="reg-form">등록</button>
 							</div>
 						</div>
 					</div>

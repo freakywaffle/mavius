@@ -12,6 +12,7 @@ window.addEventListener("load", function(){
     
     CKEDITOR.replace('editor1', {height: '600'});
     CKEDITOR.replace('editor2', {height: '550'});
+
     
 	var modalBtns = document.querySelectorAll(".modalBtn");
 	
@@ -40,15 +41,44 @@ window.addEventListener("load", function(){
 	
 	
 	var skillOption1 = document.querySelector(".skill-option1");
+	var itemOption1 = document.querySelector(".item-option1");
 	var skillOption2List = document.querySelectorAll(".skill-option2");
+	var itemOption2 = document.querySelector(".item-option2");
 
+	var skillIdx = null;
 	skillOption1.onchange = function(){
-		var idx = skillOption1.selectedIndex;
-		if(idx == 0)
+		
+		if(skillIdx != null){
+			skillOption2List[skillIdx-1].classList.add("hidden");
+		
+			modalBtns[0].classList.add("hidden");
+		}
+		skillIdx = skillOption1.selectedIndex;
+		if(skillIdx == 0){
+			skillIdx = null;
 			return;
+		}
+			console.log(skillOption2List[skillIdx-1]);
+		skillOption2List[skillIdx-1].classList.remove("hidden");
+
+	};
+
+	var itemIdx = null;
+
+	itemOption1.onchange = function(){
 		
+		if(itemIdx != null){
+			itemOption2.classList.add("hidden");
+			modalBtns[1].classList.add("hidden");
+
+		}
+		itemIdx = itemOption1.selectedIndex;
+		if(itemIdx == 0){
+			itemIdx = null;
+			return;
+		}
 		
-		skillOption2List[idx-1].classList.remove("hidden");
+		itemOption2.classList.remove("hidden");
 
 	};
 
@@ -57,15 +87,22 @@ window.addEventListener("load", function(){
 	for (var i = 0; i < skillOption2List.length; i++) {
 		
 		var option2 = skillOption2List[i];
-		option2.onchange = function(){
-			var selected = option2.options[option2.selectedIndex];
-			
-			if(selected.text == "세부직업"){
+		option2.onchange = function(e){
+
+			if(e.target.options[e.target.selectedIndex].text != "세부직업")
 				modalBtns[0].classList.remove("hidden");
-				
-			}
+			else	
+				modalBtns[0].classList.add("hidden");
+			
 		}
 	}
 	
-	
+	itemOption2.onchange = function(e){
+			
+		if(e.target.options[e.target.selectedIndex].text != "직업군")
+			modalBtns[1].classList.remove("hidden");
+		else	
+			modalBtns[1].classList.add("hidden");
+		
+	}
 });
