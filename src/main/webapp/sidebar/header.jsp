@@ -36,9 +36,9 @@
                             <a href="#Two">커뮤니티</a>
                             <div class="submenu">
                                 <ul>
-                                    <li><a href="#1">자유게시판</a></li>
-                                    <li><a href="#2">코디게시판</a></li>
-                                    <li><a href="#2">서버게시판</a></li>
+                                    <li><a href="/board/community/freeboard/list">자유게시판</a></li>
+                                    <li><a href="/board/community/coordi/list">코디게시판</a></li>
+                                    <li><a href="/board/community/server/list">서버게시판</a></li>
 
                                 </ul>
                             </div>
