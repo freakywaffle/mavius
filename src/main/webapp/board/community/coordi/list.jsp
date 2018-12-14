@@ -15,10 +15,10 @@
 <!--게시글 보기, 수정, 삭제, 댓글, 기본적인 보드 컬럼명 가져오고 타이틀이랑 컨텐트  ,이미지 공간? -->
 <div id="hiririk">
 	<header>
-	<jsp:include page="/sidebar/header.jsp" />
+		<jsp:include page="/sidebar/header.jsp" />
 	</header>
 	<aside>
-    <jsp:include page="/sidebar/sidebar.jsp" />
+    	<jsp:include page="/sidebar/sidebar.jsp" />
     </aside>
 	<!-- <div class="aside">
 	</div> -->
