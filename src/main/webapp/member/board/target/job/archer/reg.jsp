@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../../../css/targetboardreg.css" rel="stylesheet">
-<link href="../../../sidebar/css/simple-sidebar.css" rel="stylesheet">
-<link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -18,110 +16,8 @@
 </head>
 <body>
 	<div id="hiririk">
-        <header>
-            <div id="wrapper">
-
-                <!-- Header -->
-                <div id="sidebar-wrapper">
-                    <ul class="sidebar-nav header-box">
-                        <li class="sidebar-brand">
-                            <a href="#">
-                                MAVIUS
-                            </a>
-                        </li>
-                        <li>
-                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-	                            <a  href="#One">내가 쓴글</a>
-	                            <div class="submenu">
-	                                <ul>
-	                                    <li><a href="#">게시글</a></li>
-	                                    <li><a href="#">댓글</a></li>
-	                                </ul>
-	                            </div>
-                            </div>
-                                
-                            
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-	                            <a href="#Two">쪽지</a>
-	                            <div class="submenu">
-	                                <ul>
-	                                    <li><a href="#1">보내기</a></li>
-	                                    <li><a href="#2">받은쪽지함</a></li>
-	                                   
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-                            	<a href="#">QnA</a>
-                            	<div class="submenu">
-	                            	<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-                            	<a href="#">Reply</a>
-                            	<div class="submenu">
-	                            	<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-	                                </ul>
-                                </div>
-                        	</div>
-                        </li>
-                        <li>
-                        	<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-                            	<a href="#">Scrap</a>
-                            	<div class="submenu">
-                           			<ul>
-	                                    <li><a href="#1">1</a></li>
-	                                    <li><a href="#2">2</a></li>
-	                                    <li><a href="#3">3</a></li>
-                                	</ul>
-                           		</div>
-                        	</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-        
-        <div id="sidebar">
-            <div class="side-btn" onclick="toggleSidebarout()">
-                <input type="submit" />
-            </div>
-            <ul class="sidebar-nav2">
-                <li>
-                    <a href="#">home</a>
-                </li>
-                <li>
-                    <a href="#">about</a>
-                </li>
-                <li>
-                    <a href="#">contact</a>
-                </li>
-
-            </ul>
-        </div>
-
-       <script>
-           function toggleSidebarout() 
-           {
-              document.getElementById("sidebar").classList.toggle('active');
-           }
-       </script>
+		<jsp:include page="/sidebar/header.jsp" />
+		<jsp:include page="/sidebar/sidebar.jsp" />
 	    <div class="blank"></div>
 		<div class="head-border-line"></div>
 		<div class="wrapper">
