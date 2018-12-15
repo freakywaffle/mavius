@@ -412,7 +412,8 @@ border-collapse: collapse; 	border-spacing: 0;
 #body{
 	min-height :2300px;
 	min-width:1300px;
-	margin-left:230px;
+    margin-left:230px;
+   
 }
 
 /* ---header------------------------------------------------- */
@@ -427,82 +428,55 @@ border-collapse: collapse; 	border-spacing: 0;
 
 
 
-/* ---search-form---------------------------------------- */
-#search-form{
-	
-	text-align: center;
-	height:50px;
-	padding:0px;
-	margin-top:50px;
-	
 
-}
-    #search-form form,
-    select,input{
-        display:inline-block;
-        height:26px;
-        line-height:26px;
-        vertical-align:middle;
-        margin:0px;
-        padding:0px;
-    } 
-    #search-form select{
-      
-    }
-    #search-form input{
-      
-		}
+
 
 		
 /* ---main--------------------------------------------------		 */
-.list-main{
+.reg-main{
 	width: 1200px;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left:230px;
 	height:100%;
 
 
 }
-/* ---coordi-list-area-------------------------------------------------- */
-
-#coordi-list{
-	margin-top:30px;
-	display:inline-flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width:100%;
-	
+/* ---reg-area---------------------------------------- */
+#reg-area{
+    width:1200px;
+    height:1000px;
+    margin-top:100px;
 
 }
-	.coordi-list-img{
-		width:350px;
-		height:400px;
+    .reg-form{
+        display:inline-flex;
+        flex-direction: row;
+        flex-wrap:wrap;
+        width:700px;
+    }
 
+    .reg-form span{
+        width:100px;
+        height:30px;
+        vertical-align: middle;
+        line-height: 30px;
+        margin-top:20px;
+        margin-left:18px;
+    }
 
-	}
-	#coordi-list>div{
-		display:inline-block;
-		width:350px;
-		margin-right:40px;
-		/* margin-left:auto; */
-		margin-bottom:20px;
-	} 
-	.coorid-list-p{
-		height:500px;
-		margin-bottom:10px;
-	}
-
-
-	#coordi-list li{
-		display:inline-block;
-		padding-left:10px;
-		margin-bottom: 15px;
-	}
-	#coordi-list .li-title{
-		width:280px;
-	}
-
-
+    .reg-form input{
+        width:500px;
+        height:30px;
+        margin-top:20px;
+        margin-left:18px;
+        vertical-align: middle;
+        line-height: 30px;
+    }
+    .content{
+        width: 100%;
+        height: 650px;
+        margin-top:10px;
+        border : 1px solid #999999;
+    }
 /* ---pager----------------------------------------------------------- */
 /* .pager{
 	text-align:center;

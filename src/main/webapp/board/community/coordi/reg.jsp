@@ -1,64 +1,49 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="EUC-KR">
-<title>Ä¿¹Â´ÏÆ¼-ÄÚµðÆäÀÌÁö-µî·Ï</title>
+    <meta charset="UTF-8">
+    <title>ì»¤ë®¤ë‹ˆí‹°-ì½”ë””ê²Œì‹œíŒ</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+        <script src="../../../js/communityreg.js"></script>
+    <link href="../../../css/coordiBoardReg.css" type="text/css" rel="stylesheet" />
+    <script src="../../../ckeditor/ckeditor.js"></script>
 </head>
-<body>
-	<header>
-		<h1>Çì´õ</h1>
-	</header>
-	<main>
-		<h1>ÄÚµð°Ô½ÃÆÇ</h1>
-		<section>
-		<h1>°Ô½Ã±Û ÀÔ·Â Æû</h1>
-			<form>
-				<fieldset>
-					<legend>
-						<label>°Ô½Ã±Û µî·Ï</label>
-					</legend>
-					<select>
-						<option>°Ô½ÃÆÇ¼±ÅÃ</option>
-						<option>°øÁö»çÇ×</option>
-						<option>ÀÌº¥Æ®</option>
-						<option>ÀÚÀ¯°Ô½ÃÆÇ</option>
-						<option>ÄÚµðÆò°¡°Ô½ÃÆÇ</option>
-						<option>Å×½ºÆ®¼­¹ö</option>
-						<option>¼­¹ö°Ô½ÃÆÇ</option>
-						<option>Á÷¾÷º° ÆÁ&°ø·«</option>
-						<option>À°¼ºÆÁ</option>
-					</select>
-					<select>
-						<option>¸»¸Ó¸®¼±ÅÃ</option>
-						<option>ÀÚ¶û</option>
-						<option>Á¤º¸</option>
-						<option>Àâ´ã</option>
-					</select>
-					<div>
-						<label>Á¦¸ñ:</label>
-						<input type="text" name="reg-title"/>
-						<!-- ÀÛ¼ºÀº api·Î -->
-						
-					</div>
-					<div>
-						<label>³»¿ë:</label>
-						<input type="text" name="reg-context"/>
-						<input type="file" name="btn-file" value="ÆÄÀÏÃ·ºÎ"/>
-					</div>
-					<div>
-						<input type="submit" name="btn-submit" value="µî·Ï"/>
-						<input type="submit" name="btn-exit" value="³ª°¡±â"/>
-					</div>
-				</fieldset>
-			</form>
-		</section>
-		
-	</main>	
-	<aside>
-		<h1>¾î»çÀÌµå</h1>
-	</aside>
-	
-</body>
+
+<!--ê²Œì‹œê¸€ ë³´ê¸°, ìˆ˜ì •, ì‚­ì œ, ëŒ“ê¸€, ê¸°ë³¸ì ì¸ ë³´ë“œ ì»¬ëŸ¼ëª… ê°€ì ¸ì˜¤ê³  íƒ€ì´í‹€ì´ëž‘ ì»¨í…íŠ¸  ,ì´ë¯¸ì§€ ê³µê°„? -->
+<div id="hiririk">
+    <header>
+        <jsp:include page="/sidebar/header.jsp" />
+    </header>
+    <aside>
+        <jsp:include page="/sidebar/sidebar.jsp" />
+    </aside>
+
+    <body id="body">
+     
+        <section id="header">
+            <h1>ì½”ë””ê²Œì‹œíŒ</h1>
+        </section>
+        <main class="reg-main">
+            <section id="reg-area">
+                <h1 class="hidden">ê¸€ì“°ê¸° ì˜ì—­</h1>
+                <form class="reg-form">
+                    <!--selectëŠ” ì„œë²„ê²Œì‹œíŒì—ë§Œ í•„ìš”-->
+                    <span>ì œëª©</span>
+                    <input type="" name="title"/>
+                    <div class="content border-color-gray" 
+                            id="editor1" contenteditable="true"></div>
+                </form>
+            </section>
+
+        </main>
+    </body>
+</div>
+
+</html>
+
 </html>

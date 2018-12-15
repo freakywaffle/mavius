@@ -20,8 +20,7 @@
 	<aside>
     <jsp:include page="/sidebar/sidebar.jsp" />
     </aside>
-	<!-- <div class="aside">
-	</div> -->
+	
 	<body id="body">
 	<section id="header">
 		<h1>코디게시판</h1>
@@ -239,4 +238,5 @@
 			<h1>어사이드</h1>
 		</aside>
 </body>
+</div>
 </html>
