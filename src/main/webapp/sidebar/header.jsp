@@ -50,7 +50,11 @@
                             <a href="#">공략</a>
                             <div class="submenu">
                                 <ul>
-                                    <li><a href="/board/target/archer/list">직업별팁&공략</a></li>
+                                    <li><a href="/board/target/warrior/list">전사게시판</a></li>
+                                    <li><a href="/board/target/archer/list">궁수게시판</a></li>
+                                    <li><a href="/board/target/magician/list">법사게시판</a></li>
+                                    <li><a href="/board/target/rogue/list">도적게시판</a></li>
+                                    <li><a href="/board/target/pirates/list">해적게시판</a></li>
                                     <li><a href="#">보스공략</a></li>
                                 </ul>
                             </div>
