@@ -9,15 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/community/server/list")
-public class ServerBoardListController extends HttpServlet{
+@WebServlet("/board/community/coordi/reg")
+public class CoordiBoardRegContoller extends HttpServlet{
 
-	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("reg.jsp");
 		
 		dispatcher.forward(request, response);
 	}
-	
 }

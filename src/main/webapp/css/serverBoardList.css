@@ -488,8 +488,11 @@ border-collapse: collapse; 	border-spacing: 0;
 		margin-bottom:20px;
 	} 
 	.coorid-list-p{
-		height:500px;
+		height:300px;
 		margin-bottom:10px;
+		text-overflow: ellipsis;
+  		white-space: nowrap;
+	    overflow: hidden;
 	}
 
 
@@ -497,6 +500,9 @@ border-collapse: collapse; 	border-spacing: 0;
 		display:inline-block;
 		padding-left:10px;
 		margin-bottom: 15px;
+		text-overflow: ellipsis;
+  		white-space: nowrap;
+	    overflow: hidden;
 	}
 	#coordi-list .li-title{
 		width:280px;

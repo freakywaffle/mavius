@@ -1,11 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="EUC-KR">
 <title>커뮤니티-서버게시판-수정</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="../../../css/serverBoardEdit.css" type="text/css" rel="stylesheet" />
 </head>
+<div id="hiririk">
+   <header>
+   <jsp:include page="/sidebar/header.jsp" />
+   </header>
+   <aside>
+    <jsp:include page="/sidebar/sidebar.jsp" />
+    </aside>
 <body>
 	<header>
 		<h1>헤더</h1>
@@ -60,4 +70,5 @@
 		<h1>어사이드</h1>
 	</aside>
 </body>
+</div>
 </html>
