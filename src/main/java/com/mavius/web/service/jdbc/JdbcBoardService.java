@@ -45,7 +45,7 @@ public class JdbcBoardService implements BoardService{
 
 	@Override
 	public List<Board> getBoardList(String name, int start, int cnt) {
-		//name °Ô½ÃÆÇ ÀÌ¸§ start ÆäÀÌÁö ³Ñ¹ö cnt °¹¼ö
+		//name ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ start ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¹ï¿½ cnt ï¿½ï¿½ï¿½ï¿½
 
 		String driver = "oracle.jdbc.driver.OracleDriver";
 

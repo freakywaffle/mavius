@@ -29,7 +29,7 @@ public class FreeBoardListController extends HttpServlet{
 
 
 		BoardService service = new JdbcBoardService();
-		List<Board> list = service.getBoardList("freeboard",1,1);//¸®ÅÏ°ªÀ¸·Î list°¡ ´ã°ÜÀÖ´Â »óÅÂ
+		List<Board> list = service.getBoardList("freeboard",1,1);//ï¿½ï¿½ï¿½Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ listï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½
 		
 		System.out.println(list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
