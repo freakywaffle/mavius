@@ -21,7 +21,7 @@
                     <li>
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
                             <a href="#One">소식</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-sm">
                                 <ul>
                                     <li><a href="#">공지사항</a></li>
                                     <li><a href="#">이벤트</a></li>
@@ -34,7 +34,7 @@
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
                             <a href="#Two">커뮤니티</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-sm">
                                 <ul>
                                     <li><a href="/board/community/freeboard/list">자유게시판</a></li>
                                     <li><a href="/board/community/coordi/list">코디게시판</a></li>
@@ -48,7 +48,7 @@
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
                             <a href="#">공략</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-lg">
                                 <ul>
                                     <li><a href="/board/target/warrior/list">전사게시판</a></li>
                                     <li><a href="/board/target/archer/list">궁수게시판</a></li>
