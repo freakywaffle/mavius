@@ -71,71 +71,58 @@
 												<section class = "group-box">
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">아이디</span>
-														<input class="form-control text-center" id="name" name="name"
+														<input class="form-control text-center form-ctr" id="name" name="name"
 															placeholder="Name" type="text" required autofocus disabled/> 
 														
-													</div>
-													<hr />
+												
 													
-													<div class="form-group b">
+														
 														<span class="status-title">닉네임</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">이름</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">이메일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">등급</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">방문 횟수</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">게시글</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">댓글</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">가입일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">최근 방문일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
@@ -167,129 +154,122 @@
 					
 					
 					
-					
-												<form id="contact" method="post" class="form" role="form">
+					<form id="contact" method="post" class="form" role="form">
 											<div class="row">
 												<section class = "group-box">
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">아이디</span>
-														<input class="form-control text-center" id="name" name="name"
+														<input class="form-control text-center form-ctr" id="name" name="name"
 															placeholder="Name" type="text" required autofocus disabled/> 
 														
-													</div>
-													<hr />
+												
 													
-													<div class="form-group b">
+														
 														<span class="status-title">닉네임</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">이름</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">이메일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">등급</span> 
-														<input class="form-control text-center" id="title" name="title" 
-															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
+														<select class="form-control text-center form-ctr c" required autofocus>
+															<option class=" text-center ">관리자</option>
+															<option class=" text-center ">회원</option>
+														</select>
 													
-													<div class="form-group b">
 														<span class="status-title">방문 횟수</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">게시글</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">댓글</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													<div class="form-group b">
 														<span class="status-title">가입일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
-													</div>
-													<hr />
 													
-													<div class="form-group b">
 														<span class="status-title">최근 방문일</span> 
-														<input class="form-control text-center" id="title" name="title" 
+														<input class="form-control text-center form-ctr" id="title" name="title" 
 															placeholder="Title" type="text" required disabled/>
 													</div>
 													<hr />
 													
 													
 												</section>	
-											</div>
-												<div class="container">
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
-            <div class="panel panel-default">
+											
+										
+												
+    
+        <div class="group-box">
+            <div class="panel panel-default ">
                 <!-- Default panel contents -->
-                <div class="panel-heading">Material Design Switch Demos</div>
+                
+                <div class="panel-heading heig">Material Design Switch Demos</div>
             
                 <!-- List group -->
                 <ul class="list-group">
-                    <li class="list-group-item">
+                    
+                    <li class="list-group-item out-line">
                      	게시글 작성
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionDefault" class="label-default"></label>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    
+                    
+                    <li class="list-group-item out-line">
                         	댓글 작성
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionPrimary" class="label-primary"></label>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item out-line">
                         권한 부여?
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionSuccess" class="label-success"></label>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item out-line">
                         권한 제한?
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionInfo" class="label-info"></label>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item out-line">
                         활동 정지???!!!
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
                             <label for="someSwitchOptionWarning" class="label-warning"></label>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item out-line">
                         Bootstrap Switch Danger
                         <div class="material-switch pull-right">
                             <input id="someSwitchOptionDanger" name="someSwitchOption001" type="checkbox"/>
@@ -297,10 +277,27 @@
                         </div>
                     </li>
                 </ul>
-            </div>            
+                </div>
+                     
         </div>
+        
+        
+        <div class="text-right padding-right" style="margin-right: 14px">
+					<a href="#" class="btn btn-danger btn-xs"> <span
+						class="glyphicon glyphicon-remove"></span> 강제 탈퇴
+					</a>
+					<a class='btn btn-info btn-xs' href="#"> <span
+						class="glyphicon glyphicon-edit"></span> 수정 완료
+					</a> 
+					<a href="#" class="btn btn-danger btn-xs"> <span
+						class="glyphicon glyphicon-remove"></span> 취소
+					</a>
+				</div>
+        
+        
+        
     </div>
-</div>	
+
 										</form>
 										
 										

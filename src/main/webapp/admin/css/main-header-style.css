@@ -3,9 +3,13 @@ html,body,main{
 	height: 100%;
 	display: block;
 }
-body,section,h1,div{
+body,section,ul,h1,div{
 	margin: 0px!important;
 	padding: 0px!important;
+	
+}
+.out-line {
+	border:none!important;
 }
 
 main{
@@ -64,6 +68,9 @@ main{
 .margin-top {
 	margin-top: 25px!important;
 }
+.panel-body {
+    margin-bottom: 30px!important;
+}
 
 
 
@@ -76,7 +83,7 @@ main{
 
 
 
-/*È¸¿ø°ü¸® ÂÊÁö ¹ß¼Û*/
+/*È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½*/
 .row{
 	display: block!important;
 	height: 100%;
@@ -88,23 +95,50 @@ main{
 }
 .message-tab{
 	box-sizing: border-box;
-	min-height:500px; min-width: 1100px;
-	  
+	/*min-height:500px;*/
+	min-width: 1100px;	  
 }	
 .message-tab-heading {
     height: 50px;
     border: none!important;
 }
+.nav-tabs {
+    border-bottom: none!important;
+    height: 100%;
+}
 .nav-tabs li {
     margin-top: 10px;
+    margin-bottom:0px!important;
 }
 .nav-tabs li:first-child {
     margin-left: 10px;
 }
-.panel-body {
-	margin: 30px!important;  
+.nav-tabs li a {
+	height: 100%;	
+	border: none!important;
+	color: #000000!important;
 }
-/*ÂÊÁö ¹ß¼Û ÀÔ·Â Æû*/
+.nav-tabs li a:focus {
+	font-weight: bold;
+}
+.table>thead>tr>th, .table>tbody>tr>th, 
+.table>tfoot>tr>th, .table>thead>tr>td, 
+.table>tbody>tr>td, .table>tfoot>tr>td {
+    border-top: none!important;
+    border-bottom: 1px solid #ddd!important;
+}
+
+/*.panel-body {
+	margin: 30px!important;  
+}*/
+
+#tab1default, #tab3default {
+	margin: 30px!important;
+}
+#tab2default {
+	margin-bottom: 30px!important;
+}
+/*ï¿½ï¿½ï¿½ï¿½ ï¿½ß¼ï¿½ ï¿½Ô·ï¿½ ï¿½ï¿½*/
 .col-md-6 {
 	float: none!important;
 }
@@ -126,7 +160,7 @@ main{
 }
 
 
-/*È¸¿ø Á¤º¸ ¼öÁ¤-±ÇÇÑ====================================================================================*/
+/*È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½====================================================================================*/
 .material-switch > input[type="checkbox"] {
     display: none;   
 }
@@ -174,14 +208,14 @@ main{
 /*================================================================================================*/
 
 
-/*È¸¿ø Á¤º¸ ¼öÁ¤=============================================================*/
+/*È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½=============================================================*/
 
 .status-title {
 	width: 100px;
 	text-align: center;
 	line-height: 34px;
 }
-.form-control {
+.form-ctr {
 	width: 40%!important;
 }
 .group-box {
@@ -190,7 +224,19 @@ main{
 	line-height: 80%;
 }
 
-/*È¸¿ø Á¤º¸ ¼öÁ¤=============================================================*/
+/*È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½=============================================================*/
+
+.heig { 
+	height: 34px;
+	padding: 10px 15px!important;
+}
+.padding-right {
+	padding-top : 10px!important;
+	padding-bottom : 10px!important;
+	padding-right: 100px!important;
+}
+
+
 
 
 

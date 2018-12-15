@@ -206,7 +206,7 @@
 											<div>
 												<span>내용</span> <select class="form-control c" required
 													autofocus>
-													<optgroup label="제재사유를 선택해 주세요.">
+														<optgroup label="제재사유를 선택해 주세요.">
 														<option>광고가 포함된 글입니다.</option>
 														<option>욕설이 포함된 글입니다.</option>
 														<option>스팸글입니다.</option>
@@ -235,7 +235,7 @@
 				</section>
 
 
-			<br />
+			
 
 	</section>
 
@@ -259,5 +259,18 @@
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

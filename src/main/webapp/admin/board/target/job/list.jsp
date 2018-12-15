@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../../css/serverboard-list.css" rel="stylesheet" id="bootstrap-css">
+<link href="../../../css/jobtarget-list.css" rel="stylesheet" id="bootstrap-css">
 <link href="../../../css/style.css" rel="stylesheet" id="bootstrap-css">
 <link href="../../../css/aside-left.css" rel="stylesheet"
 	id="bootstrap-css">
@@ -30,7 +30,7 @@
 				<section class="main-header">
 					<h1 class="main-list align">게시판 관리</h1>
 					<section>
-						<h1 class="sub-list align">서버게시판</h1>
+						<h1 class="sub-list align">공략게시판</h1>
 					</section>
 				</section>
 			</section>
@@ -38,18 +38,20 @@
 			<section class="aa">
 				<h1 class="hidden">바디 메인</h1>
 				<section class="a">
-					<h1>서버게시판</h1>
+					<h1>
+						공략게시판 <span>(총 회원수 : ?명, 오늘 접속한 회원수 : ?명, 어제 접속한 회원수:?명)</span>
+					</h1>
 					<section class="row margin-top">
 						<div>
 							<div class="panel with-nav-tabs panel-default message-tab">
 								<div class="panel-heading message-tab-heading">
 									<ul class="nav nav-tabs">
 										<li class="active"><a href="#tab1default" data-toggle="tab">전체</a></li>
-										<li><a href="#tab2default" data-toggle="tab">이노시스</a></li>
-										<li><a href="#tab3default" data-toggle="tab">스카니아</a></li>
-										<li><a href="#tab4default" data-toggle="tab">제니스</a></li>
-										<li><a href="#tab5default" data-toggle="tab">베라</a></li>
-										<li><a href="#tab6default" data-toggle="tab">리부트</a></li>
+										<li><a href="#tab2default" data-toggle="tab">전사</a></li>
+										<li><a href="#tab3default" data-toggle="tab">궁수</a></li>
+										<li><a href="#tab4default" data-toggle="tab">마법사</a></li>
+										<li><a href="#tab5default" data-toggle="tab">도적</a></li>
+										<li><a href="#tab6default" data-toggle="tab">해적</a></li>
 									</ul>
 								</div>
 								<div class="panel-body">
@@ -61,11 +63,11 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
 															<th class="align-middle text-center col-w-ctg">카테고리</th>
-															
 															<th class="align-middle text-center">제목</th>
 															<th class="align-middle text-center col-w-writerId">작성자</th>
 															<th class="align-middle text-center col-w-date">등록 일자</th>
@@ -80,9 +82,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[이노시스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[아크메이지(썬콜)]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -97,9 +99,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[제니스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[아란]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -114,9 +116,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[리부트]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[팬텀]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -126,6 +128,58 @@
 																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
 								
 														</tr>
+														<tr>
+															<td class="align-middle text-center">
+																<input type="checkbox" class="align-top" />
+															</td>
+															<td class="align-middle text-center">3</td>
+															<td class="align-middle text-center">[메르세데스]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
+															<td class="align-middle text-center">2018-12-13</td>
+															<td class="align-middle text-center">200</td>
+															<td class="align-middle text-center">10</td>
+															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
+																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
+																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
+																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
+							
+														</tr>
+														<tr>
+															<td class="align-middle text-center">
+																<input type="checkbox" class="align-top" />
+															</td>
+															<td class="align-middle text-center">3</td>
+															<td class="align-middle text-center">[에반]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
+															<td class="align-middle text-center">2018-12-13</td>
+															<td class="align-middle text-center">200</td>
+															<td class="align-middle text-center">10</td>
+															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
+																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
+																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
+																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
+							
+														</tr>
+														<tr>
+															<td class="align-middle text-center">
+																<input type="checkbox" class="align-top" />
+															</td>
+															<td class="align-middle text-center">3</td>
+															<td class="align-middle text-center">[메카닉]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
+															<td class="align-middle text-center">2018-12-13</td>
+															<td class="align-middle text-center">200</td>
+															<td class="align-middle text-center">10</td>
+															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
+																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
+																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
+																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
+							
+														</tr>
+														
 													</tbody>
 												</table>
 											</section>
@@ -167,11 +221,11 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
 															<th class="align-middle text-center col-w-ctg">카테고리</th>
-															
 															<th class="align-middle text-center">제목</th>
 															<th class="align-middle text-center col-w-writerId">작성자</th>
 															<th class="align-middle text-center col-w-date">등록 일자</th>
@@ -186,9 +240,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[이노시스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[팔라딘]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -203,9 +257,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[이노시스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[다크나이트]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -220,9 +274,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[이노시스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[블래스터]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -273,11 +327,11 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
 															<th class="align-middle text-center col-w-ctg">카테고리</th>
-															
 															<th class="align-middle text-center">제목</th>
 															<th class="align-middle text-center col-w-writerId">작성자</th>
 															<th class="align-middle text-center col-w-date">등록 일자</th>
@@ -292,9 +346,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[스카니아]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[신궁]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -309,9 +363,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[스카니아]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[보우마스터]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -326,9 +380,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[스카니아]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[메르세데스]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -379,11 +433,11 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
 															<th class="align-middle text-center col-w-ctg">카테고리</th>
-															
 															<th class="align-middle text-center">제목</th>
 															<th class="align-middle text-center col-w-writerId">작성자</th>
 															<th class="align-middle text-center col-w-date">등록 일자</th>
@@ -398,9 +452,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[제니스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[아크메이지(썬콜)]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -415,9 +469,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[제니스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[에반]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -432,9 +486,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[제니스]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[루미너스]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -485,8 +539,9 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
 															<th class="align-middle text-center col-w-ctg">카테고리</th>
 															<th class="align-middle text-center">제목</th>
@@ -503,9 +558,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[베라]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[나이트로드]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -520,9 +575,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[베라]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[시프]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -537,9 +592,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[베라]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[도적]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -590,10 +645,11 @@
 												<table class="table table-striped">
 													<thead class="thead-dark">
 														<tr>
-															<th class="align-middle text-center col-w-chk"><input type="checkbox"
-																class="align-top" /></th>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox" class="align-top" />
+															</th>
 															<th class="align-middle text-center col-w-num">번호</th>
-															<th class="align-middle text-center col-w-ctg">카테고리</th>				
+															<th class="align-middle text-center col-w-ctg">카테고리</th>
 															<th class="align-middle text-center">제목</th>
 															<th class="align-middle text-center col-w-writerId">작성자</th>
 															<th class="align-middle text-center col-w-date">등록 일자</th>
@@ -608,9 +664,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[리부트]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[스트라이커]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -625,9 +681,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[리부트]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[바이퍼]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
@@ -642,9 +698,9 @@
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[리부트]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">[카이조쿠]</td>
+															<td class="align-middle text-center">css 개씨발 줮같네?! [4]</td>
+															<td class="align-middle text-center">승라일라이</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
