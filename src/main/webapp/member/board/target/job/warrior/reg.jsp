@@ -22,7 +22,7 @@
 		<div class="head-border-line"></div>
 		<div class="wrapper">
 			<section class="board-header">
-				<h1 class="border-title text-center font-medium">ARCHER</h1>
+				<h1 class="border-title text-center font-medium">WARRIOR</h1>
 				<h3 class="text-center">공략게시판</h3>
 			</section>
 			<section class="main margin-bottom reset-padding">

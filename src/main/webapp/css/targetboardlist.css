@@ -79,6 +79,9 @@ h1,ul,p,li,section{
 .margin-left{
 	margin-left: 50px;
 }
+.margin-left-10{
+	margin-left: 10px!important;
+}
 
 .margin-bottom{
 	margin-bottom: 200px;
@@ -126,6 +129,28 @@ h1,ul,p,li,section{
 .wrapper a{
 	color: #000;
 	text-decoration: none!important;
+}
+
+.target-search-form{
+	margin-top: 30px;
+	margin-left: 250px;
+}
+
+.target-search-form .option:nth-child(2){
+	width: 150px!important;
+	
+}
+.target-search-form .option:nth-child(3){
+	width: 100px!important;
+	
+}
+.target-search-form .search{
+	width: 300px!important;
+	
+}
+
+.form-control{
+	flex: initial!important;
 }
 
 .main{
