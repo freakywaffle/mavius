@@ -20,12 +20,12 @@
                     </li>
                     <li>
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-                            <a href="#One">소식</a>
+                            <a href="#news">소식</a>
                             <div class="submenu">
                                 <ul>
-                                    <li><a href="#">공지사항</a></li>
-                                    <li><a href="#">이벤트</a></li>
-                                    <li><a href="#">업데이트</a></li>
+                                    <li><a href="/news/notice/list">공지사항</a></li>
+                                    <li><a href="/news/event/list">이벤트</a></li>
+                                    <li><a href="/news/update/list">업데이트</a></li>
                                 </ul>
                             </div>
                         </div>
