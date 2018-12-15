@@ -29,11 +29,36 @@ blockquote:before, blockquote:after, q:before, q:after
 { 	content: ''; 	content: none; } 
 table { 	border-collapse: collapse; 	border-spacing: 0; }
  */
-h1,body{
-	margin:0px;
-	padding-left:0px;
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe, 
+h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, big, 
+cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, 
+strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, 
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, 
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary, time, mark, audio, video, input,select{ 	
+margin: 0; 	padding: 0; 	border: 0; 	font-size: 100%; 	font: inherit; 	
+vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ 
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, 
+nav, section { 	
+display: block; 
+} 
+body { 	
+line-height: 1; 
+} 
+ol, ul { 	
+list-style: none; 
+} blockquote, q { 	
+quotes: none; 
+} 
+blockquote:before, blockquote:after, q:before, q:after {
+content: ''; 	content: none; 
+} table { 	
+border-collapse: collapse; 	border-spacing: 0; 
 }
- @keyframes hiririk {
+/* ----header---------------------------------------------- */
+@keyframes hiririk {
 	from
 	{
 	  opacity: 0;
@@ -368,221 +393,174 @@ h1,body{
   {
 	margin-top: 200px;
   }
+/* ----basic option---------------------------------------------- */
+.hidden{
+    display:none;
 
-
-
-
-/* ------------------------------------------------------------ */
-ul{
-	margin:0px;
-	padding:0px;
+}
+.inline{
+	display:inline!important;
 }
 
-.lee-board{
-	border-bottom:dotted;
-	vertical-align:top;
+.inline-flex{
+	display:inline-flex!important;	
+}
+
+.txt-align-left{
+    text-align: left!important;
+}
+.txt-align-center{
+    text-align: center!important;
+}
+.txt-align-right{
+    text-align: right!important;
+}
+
+
+.vertical-align-top{
+    vertical-align: top!important;
+}
+.vertical-align-middle{
+    vertical-align: middle!important;
+}
+.vertical-align-bottom{
+    vertical-align: bottom!important;
+}
+
+.margin-top{
+	margin-top:20px!important;
+}
+
+.margin-left{
+	margin-left:10px!important;
+}
+
+.margin-bottom{
+	margin-bottom:40px!important;
+}
+/* ----body---------------------------------------------- */
+
+#body{
+	min-height :2300px;
+	min-width:1300px;
+	margin-left:230px;
+}
+
+/* ---header------------------------------------------------- */
+#header{
+
 	height:185px;
-	text-aling:center;
-}
-.lee-board>h1{
 	text-align:center;
 	font-size:50px;
-}
-
-#main{
-	margin-left:250px;
-	padding:0px;
-	text-align:center;
-	background: url("../images/img-freeboard-background-rough.jpg") no-repeat center; 
-	background-size:1800px 1200px;
-	
-
-
-}
-
-.txt-align-left-padding {
-	text-align: left;
-  padding-left: 100px;
-}
-
-#main>h1{
-	
-	height:185px;
-	vertical-align:middle;
-	line-height:185px;
-	margin:0px;
-	
-	
+	font-weight: bold;
+	border-bottom: dotted;
 }
 
 
+
+/* ---search-form---------------------------------------- */
 #search-form{
-	display:inline-block;
 	
-	
-	
-	text-align:center;
+	text-align: center;
 	height:50px;
 	padding:0px;
 	margin-top:50px;
 	
 
 }
+    #search-form form,
+    select,input{
+        display:inline-block;
+        height:26px;
+        line-height:26px;
+        vertical-align:middle;
+        margin:0px;
+        padding:0px;
+    } 
+    #search-form select{
+      
+    }
+    #search-form input{
+      
+		}
 
-#search-form select{
-	margin:0px;
-	padding:0px;
-	vertical-align:middle;
-	height:26px;
-	line-height:26px;
-	
-}
-#search-form .input{
-	border:0px;
-	height:26px;
-	vertical-align:middle;
-	line-height:22px;
-}
-.hidden{
-	
-	display:none;
-}
+		
+/* ---main--------------------------------------------------		 */
+.list-main{
+	width: 1200px;
+	margin-left:230px;
 
-#list-table{
-	
-	top:350px;
-	text-align:center;
-	display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: baseline;
-    /* column-count: 2; */
-	flex-flow: wrap;
-	
-	
-}
-#list-table li{
-	text-align:left;
-}
-#list-table ul{
-  margin-left: auto;
-   margin-right: auto;
-}
+	height:100%;
 
-.inline-block{
-	margin-right:50px;
+
+}
+/* ---coordi-list-area-------------------------------------------------- */
+
+#coordi-list{
 	margin-top:30px;
-	display:inline-block;
-	min-width:70px;
-	min-height:150px;
-}
-
-.inline-block ul{
-	margin-left:10px;
 	display:inline-flex;
-}
-
-.inline-block li{
-	list-style:none;
-	padding-right:20px;
-}
-.shadow{
-border-style: none solid solid none;
-    border-width: 0px 1px 1px 0px;
-    border-bottom-right-radius: 15%;
-    box-shadow: 5px 8px 3px grey;
-}
-.txt-align-left{
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:100%;
 	
-	text-align:left;
+
 }
+	.coordi-list-img{
+		width:350px;
+		height:400px;
 
 
-.txt-align center{
+	}
+	#coordi-list>div{
+		display:inline-block;
+		width:350px;
+		margin-right:40px;
+		/* margin-left:auto; */
+		margin-bottom:20px;
+	} 
+	.coorid-list-p{
+		height:300px;
+		margin-bottom:10px;
+	}
+
+
+	#coordi-list li{
+		display:inline-block;
+		padding-left:10px;
+		margin-bottom: 15px;
+	}
+	#coordi-list .li-title{
+		width:280px;
+	}
+
+
+/* ---pager----------------------------------------------------------- */
+/* .pager{
 	text-align:center;
-	
-}
-.list-style{
-	list-style:none;
-}
-
-
-.pager{
-	vertical-align:middle;
-	line-height:136px;
-}
-.span{
-	
-	width:25px;
-	margin-left:auto;
-	margin-right:auto;
+	height:150px;
 	vertical-align: middle;
-	line-height: 136px;
-	
-	
-}
-.border-none{
-	border:none!important;
-}
-.pager li:first-child{
-	margin:0px;
-}
-.pager li{
-	margin-left:5px;
-}
-
-.txt-size-nm{
-	font-size:15px;
-}
-
-.div-txt-align-left{
-    display: inline-block;
-    box-sizing: content-box;
-    width: 87%;
-    margin-left: auto;
-
-}
-
-
-.txt-size-sm{
-	font-size:10px;
-}
-.inline-flex{
+	line-height: 150px;
 	display:inline-flex;
-}
-
-.color-freeboard{
-	background-color: #ffffe0;
-}
-
-.freeboard-p-height{
-	min-height: 110px;
-}
-
-
-.writer-area{
-	margin-top:50px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width:100%;
+} */
+.pager{
+	margin-bottom:50px;
 
 }
-
-.pager ul {
-	list-style:none;
+	.pager ul{
+		display:inline-flex;
 	
-}
+	}
+	.pager a{
+		margin-left:5px;
+		margin-right:5px;
+	}
+	.pager li{
+		margin-left:5px;
+		margin-right:5px;
+	}
 
-.pager a {
-	
-	padding:4px;
-	margin-right:3px;
-	width:15px;
-	color:#000;
-	font:bold 12px tahoma;
-	border:1px solid #eee;
-	text-align:center;
-	text-decoration:none;
-}
-.pager li a:hover, ul li a:focus {
-	color:#fff;
-	border:1px solid #f40;
-	background-color:#f40;
-}
+
+ 

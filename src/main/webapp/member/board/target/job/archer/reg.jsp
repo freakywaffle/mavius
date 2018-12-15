@@ -28,7 +28,7 @@
 			<section class="main margin-bottom reset-padding">
 				<h3 class="text-center margin-top">글쓰기</h3>
 				<div class="main-page block-flex margin-top">
-					<form class="input-form" id="reg-form" action="detail" method="post">
+					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();" enctype="multipart/form-data">
 						<div class="set-form-div">
 							<select class="job-category border-color-gray">
 								<option>직업 카테고리</option>
@@ -41,7 +41,13 @@
 							<br/>
 							<input autocomplete="off" placeholder="  글제목" type="text" name="title" class="title border-color-gray"/>
 							<br/>
+							<div class="file-area">
+								<input type="file" class="hidden" name="file" multiple/>
+								<button type="button" class="btn btn-info">파일첨부</button>
+								<input type="text" disabled class="file-names"/>
+							</div>
 							<div class="content border-color-gray" id="editor1" contenteditable="true"></div>
+							<input type="hidden" name="content" />
 						</div>
 					</form>
 					<div class="input-sup-form ">
@@ -117,7 +123,7 @@
 									열기
 								</button>
 							</div>
-							<div class="margin-top" >
+							<div class="margin-top-20">
 								<label>아이템 아이콘</label><br/>
 								<select class="item-option1 option-category border-color-gray reset-margin-top">
 									<option>세트장비</option>
@@ -143,8 +149,8 @@
 								</button>
 							</div>
 							<div class="margin-top reg-btns">
-								<button class="btn btn-secondary" onclick="location.href='list'">취소</button>
-								<button type="submit" class="btn btn-primary" form="reg-form">등록</button>
+								<button type="button" class="btn btn-secondary" onclick="location.href='list'">취소</button>
+								<button type="submit" class="btn btn-primary" id="btn-submit" form="reg-form">등록</button>
 							</div>
 						</div>
 					</div>
