@@ -1,9 +1,16 @@
+.main-body-header{
+	margin-left: 230px; 
+    padding-left: 150px; 
+    padding-right: 150px; 
+    padding-bottom: 50px; 
+    padding-top: 50px; 
+}
 main>div{
-    margin-left: 250px; 
-    padding-left: 30px; 
-    padding-right: 30px; 
-    padding-bottom: 30px; 
-    padding-top: 30px; 
+    margin-left: 230px; 
+    padding-left: 150px; 
+    padding-right: 150px; 
+    padding-bottom: 50px; 
+    padding-top: 50px; 
 }
 main>div>h1{
     margin-bottom: 0px;
@@ -17,16 +24,25 @@ main>div>h3{
     display: none!important;
 }
 .main-header-div{
-        margin-left: 250px; 
-        padding-left: 30px; 
-        padding-right: 30px; 
-        padding-bottom: 30px; 
-        padding-top: 30px; 
+        margin-left: 230px; 
+        padding-left: 150px; 
+	    padding-right: 150px; 
+	    padding-bottom: 50px; 
+	    padding-top: 50px; 
 }
 .event-calendar{
-    background: burlywood;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 30px; 
-    padding-top: 30px;
+    /* background: url(../images/arkana.jpeg) no-repeat; */
+    /* background-image: url(../images/arkana.jpeg); */
+    /* background-size: 100%; */
+    font-size: 14px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px; 
+    padding-top: 50px;
+}
+.search-form,
+.board-list,
+.pager{
+	padding-bottom: 10px; 
+    padding-top: 10px;
 }

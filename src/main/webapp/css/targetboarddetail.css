@@ -1,16 +1,11 @@
 @import url("/css/targetboardlist.css");
 
-#board-detail-main{
-	margin-top: auto;
-	width: 1200px;
-}
 
-#board-detail-main .vertical-line{
+.main .vertical-line{
 	top:0px;
 	height: 100%;
 	margin-bottom: 100px;
 }
-
 
 .detail-simbol img{
 	height: 800px;
@@ -44,6 +39,13 @@
 	
 }
 .detail-title a{
+	position: relative;
+	left: 0px;
+	top: 20px;
+	color: #747474;
+}
+
+.detail-title p{
 	position: relative;
 	left: 0px;
 	top: 20px;
@@ -121,46 +123,47 @@
 .target-replys h1{
 	margin-top: 30px;
 	margin-bottom: 30px;
+	font-size: 30px;
 }
 
 .detail-reply{
 	border: 2px solid #eee;
 	border-radius: 5px;
 	padding: 30px;
-	height: 100px;
+	min-height: 100px;
 	position: relative;
 }
 
-.detail-reply div{
+.detail-reply .write-time{
 	position: absolute;
+	right: 30px;
+	top: 30px;
 }
 
-.detail-reply .reply-writer{
-	left: 30px;
-}
 .detail-reply .reply-text{
-	left: 50px;
-	top: 60px;
+	margin-top: 10px;
 }
-.detail-reply .write-time{
-	right: 30px;
-}
+
 .detail-reply .report{
-	right: 30px;
-	bottom: 30px;
+	position: absolute;
+	bottom: 10px;
+	right: 	30px;
 }
 
 .detail-reply-pager{
+	display:flex;
 	margin-left: 60px;
+	margin-bottom: 30px;
 	padding-left: 325px;
 	width: 400px;
-	height: 50px;
+	height: 15px;
+	
 }
 
 .detail-reply-pager li{
 	width: 15px;
     height: 15px;
-
+	
     text-align: center;
 }
 .detail-reply-pager li a{
@@ -168,6 +171,7 @@
 }
 
 .detail-reply-pager .inline-list{
+	line-height: 15px;
 	padding: 0px;
 }
 

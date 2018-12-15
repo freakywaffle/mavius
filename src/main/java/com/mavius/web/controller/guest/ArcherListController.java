@@ -15,7 +15,7 @@ public class ArcherListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/target/job/archer/list.jsp");
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
-		System.out.println("list");
+
 		dispatcher.forward(request, response);
 	}
 }

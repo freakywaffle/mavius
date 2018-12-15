@@ -7,111 +7,122 @@
 
     <title>MAVIUS - 이벤트</title>
     
-   
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-
     <!-- Bootstrap core CSS -->
     <link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-   
-    <!-- Custom styles for this template -->
+
+    <!-- 왼쪽 메인 사이드바 -->
     <link href="../../sidebar/css/simple-sidebar.css" rel="stylesheet">
     <link rel="stylesheet" href="../../css/newslist.css">
     <!--달력-->
-    <link rel="stylesheet" href="../../css/fullcalendar.min.css" />
-    <!-- <link rel="stylesheet" href="../../css/fullcalendar.print.css" /> -->
+    <link rel="stylesheet" href="../../css/fullcalendar.min.css">
     <script src="../../js/moment.min.js"></script>
     <script src="../../js/jquery.min.js"></script>
     <script src="../../js/fullcalendar.min.js"></script>
     
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var today = new Date();
-            var dd = today.getDate();
-            var mm = today.getMonth()+1; //January is 0!
-            var yyyy = today.getFullYear();
-            
-            if(dd<10) {
-                dd='0'+dd
-            }
-            
-            if(mm<10) {
-                mm='0'+mm
-            }
-            var todayis = yyyy+'-'+mm+'-'+dd;
-            $('#calendar').fullCalendar({
-                header: {
-                    left: 'prev,next today',
-                    right: 'title'
-                    //right: //'month,agendaWeek,agendaDay,listMonth'
-                },
-                // titleFormat: {
-                // month: "yyyy년 MMMM",
-                // week: "[yyyy] MMM dd일{ [yyyy] MMM dd일}",
-                // day: "yyyy년 MMM d일 dddd"
-                // },
-                defaultDate: todayis,
-                defaultView: "month",
-                //monthNames: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
-                //monthNamesShort: ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
-                //dayNames: ["일요일","월요일","화요일","수요일","목요일","금요일","토요일"],
-                //dayNamesShort: ["일","월","화","수","목","금","토"],
-                timeFormat : "HH:mm",
-                //navLinks: true, // can click day/week names to navigate views
-                businessHours: true, // display business hours
-                editable: false,
-                events: [
-{
-title: '썬데이 메이플',
-start: '2018-11-25',
-url: "https://maplestory.nexon.com/News/Event/23"
-},
-    {
-title: '썬데이 메이플',
-start: '2018-12-02',
-url: "https://maplestory.nexon.com/News/Event/23"
-},
-{
-title: '썬데이 메이플',
-start: '2018-12-09',
-url: "https://maplestory.nexon.com/News/Event/23"
-},
-                    {
-                    title: '택티컬 릴레이 이벤트',
-                    start: '2018-11-29',
-                    end: '2018-12-12T23:59:59',
-                    //constraint: 'availableForMeeting', // defined below
-                    url: "https://maplestory.nexon.com/News/Event/25",
-                    color: 'pink'
-                    },
-                    {
-                    title: '프로젝트 발표 예정일',
-                    start: '2018-12-17T14:00:00'
-                    },
-                    {
-                    title: '테 라 버 닝 ! ! !',
-                    start: '2018-12-27',
-                    end: '2019-01-30T23:59:59',
-                    url: "",
-                    color: 'red'
-                    },
-                ]
-                });
+<script>
 
-            });
-    </script>
+    $(document).ready(function() {
+        var today = new Date();
+                    var dd = today.getDate();
+                    var mm = today.getMonth()+1; //January is 0!
+                    var yyyy = today.getFullYear();
+                    
+                    if(dd<10) {
+                        dd='0'+dd
+                    }
+                    
+                    if(mm<10) {
+                        mm='0'+mm
+                    }
+                    var todayis = yyyy+'-'+mm+'-'+dd;
+    $('#calendar').fullCalendar({
+    defaultDate: todayis,
+    dayclick:function(date, jsEvent, view, resourceObj){
+        alert('Date: ' + today.timeFormat );
+        alert('Resource ID: ' + resourceObj.getElementById);
+    },
+    // editable: true,
+    timeFormat: "HH:mm",
+    // eventLimit: true, // allow "more" link when too many events
+    events: [
+        {
+        title: '썬데이 메이플',
+        start: '2018-11-25',
+        url: "https://maplestory.nexon.com/News/Event/23"
+        },
+            {
+        title: '썬데이 메이플',
+        start: '2018-12-02',
+        url: "https://maplestory.nexon.com/News/Event/23"
+        },
+        {
+        title: '썬데이 메이플',
+        start: '2018-12-09',
+        url: "https://maplestory.nexon.com/News/Event/23"
+        },
+        {
+        title: '택티컬 릴레이 이벤트',
+        start: '2018-11-29',
+        end: '2018-12-12T23:59:59',
+        //constraint: 'availableForMeeting', // defined below
+        url: "https://maplestory.nexon.com/News/Event/25",
+        color: 'pink'
+        },
+        {
+            title: '카밀라의 크리스마스 베이커리',
+            start: '2018-12-13',
+            end: '2018-12-26T23:59:59',
+            url: "",
+            color: 'green'
+        },
+        {
+        title: '프로젝트 발표 예정일',
+        start: '2018-12-17T14:00:00'
+        },
+        {
+            title: '어드벤처 사전예약',
+            start: '2018-12-27',
+            end: '2019-01-09T23:59:59'
+        },
+        {
+            title: '어드벤처 박스',
+            start: '2018-12-27',
+            end: '2019-01-09T23:59:59'
+        },
+        {
+            title: '어드벤처 슈가타임!',
+            start: '2018-12-29T12:00:00',
+            end: '2018-12-29T23:59:59',
+            color:'#e9e9e9'
+        },
+        {
+        title: '<테라 버닝> 프로젝트!',
+        start: '2018-12-27',
+        end: '2019-01-30T23:59:59',
+        url: "",
+        color: 'beige'
+        }
+    ]
+    });
+
+});
+
+</script>
     <!--달력end-->
 
 <body>
     <div id="hiririk">
         <header>
-            <div id="wrapper" class="side-nav">
+            <div id="wrapper">
                 <!-- SideBar Header -->
                 <div id="sidebar-wrapper">
+                    <img src="../../images/header-leftside-img.jpg" style="display: block; margin-left:auto; margin-right:auto; width: 250px; height: 100%">
+                    
                     <ul class="sidebar-nav header-box">
-                        <li class="sidebar-brand">
-                            <a href="#">
-                                MAVIUS
-                            </a>
+                            <a href="../../index.html"><img src="../../images/login-logo-135.png"></a>
+                        <li class="sidebar-brand ">
+                            <a href="#">MAVIUS</a>
                         </li>
                         <li>
                             <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
@@ -149,6 +160,18 @@ url: "https://maplestory.nexon.com/News/Event/23"
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                                <a style="color: white">HHH</a>
+                                <div id="global-subnav" class="submenu">
+                                    <!-- <ul>
+                                        <li><a href="#">직업별 팁 & 공략</a></li>
+                                        <li><a href="#">육성 팁</a></li>
+                                        <li><a href="#">보스 공략</a></li>
+                                    </ul> -->
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -157,22 +180,21 @@ url: "https://maplestory.nexon.com/News/Event/23"
     
             <!-- 오른쪽 로그인 메뉴용 사이드바 -->
             <div id="sidebar">
-                    <div class="side-btn" onclick="toggleSidebarout()">
-                        <input type="submit" />
-                    </div>
-                    <ul class="sidebar-nav2">
-                        <li>
-                            <a href="#">home</a>
-                        </li>
-                        <li>
-                            <a href="#">about</a>
-                        </li>
-                        <li>
-                            <a href="#">contact</a>
-                        </li>
-        
-                    </ul>
+                <div class="side-btn" onclick="toggleSidebarout()">
+                    <input type="submit" />
                 </div>
+                <ul class="sidebar-nav2">
+                    <li>
+                        <a href="#">home</a>
+                    </li>
+                    <li>
+                        <a href="#">about</a>
+                    </li>
+                    <li>
+                        <a href="#">contact</a>
+                    </li>
+                </ul>
+            </div>
             
                 <script>
                     function toggleSidebarout() 
@@ -198,10 +220,13 @@ url: "https://maplestory.nexon.com/News/Event/23"
             <h1 class="text-center">E v e n t</h1>
             <h3 class="text-center">이 벤 트</h3>
         </div>
+
         <!--달력-->
         <div class="event-calendar">
-            <div id='calendar'></div>
+            <div id='calendar' style="font-size: 10px;"></div>
         </div>
+        <!-- </div> -->
+
         <!-- 바디 content ------------------------------>
 
         <!-- 게시판 검색 폼-->
@@ -210,20 +235,21 @@ url: "https://maplestory.nexon.com/News/Event/23"
                 <h1 class="hidden">히든.. 검색폼</h1>
                 <div class="input-group">
                     <label class="hidden">검색</label>
-                        <select name="f" id="">
-                            <option value="title">제목</option>
-                            <option value="content">내용</option>
-                        </select>
-                    <label for=""></label>
-                    <input type="text" name="" placeholder="검색어를 입력하쎄용"/>
+                    <select style="width: 90px;" class="form-control" name="f" id="">
+                        <option value="title">제목</option>
+                        <option value="content">내용</option>
+                    </select>
+                    <input style="width: 250px;" class="form-control" type="text" name="" placeholder="검색어를 입력하쎄용"/>
                     <span class="input-group-btn">
                         <button class="btn btn-secondary" type="button">
-                                <i class="fas fa-search"></i>
+                            <i class="fas fa-search"></i>
                         </button>
                     </span>
                 </div>
             </form>
         </div>
+        
+
         <!-- 게시판 검색 폼 end-->
 
         <div>

@@ -12,16 +12,37 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!--"vendor/bootstrap/css/bootstrap.min.css"-->
+    <!--"vendor/bootstrap/css/bootstrap.min.css"-->
     <!-- Custom styles for this template -->
-    <link href="../../sidebar/css/simple-sidebar.css" rel="stylesheet">
+    <link href="../mypage/css/mypageindex.css" rel="stylesheet">
 
 </head>
 
 
 <body>
     <div id="hiririk">
-        <header>
+            <div id="dam">
+
+                </div>
+            <div id="sidebar" style="position: absolute; z-index: 2;">
+                    <div class="side-btn" onclick="toggleSidebarout()" style="position: relative; z-index: 2;">
+                        <input type="submit" style="position: relative; z-index: 2;"/>
+                    </div>
+                    <ul class="sidebar-nav2">
+                        <li>
+                            <a href="#">home</a>
+                        </li>
+                        <li>
+                            <a href="#">about</a>
+                        </li>
+                        <li>
+                            <a href="#">contact</a>
+                        </li>
+        
+                    </ul>
+            </div>
+        
+        <header id="header">
             <div id="wrapper">
 
                 <!-- Header -->
@@ -34,68 +55,68 @@
                         </li>
                         <li>
                             <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-                            <a  href="#One">내가 쓴글</a>
-                            <div class="submenu">
-                                <ul>
-                                    <li><a href="#">게시글</a></li>
-                                    <li><a href="#">댓글</a></li>
-                                </ul>
+                                <a href="#One">내가 쓴글</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#">게시글</a></li>
+                                        <li><a href="#">댓글</a></li>
+                                    </ul>
+                                </div>
                             </div>
+
+
+                        </li>
+                        <li>
+                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+
+                                <a href="#Two">쪽지</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#1">보내기</a></li>
+                                        <li><a href="#2">받은쪽지함</a></li>
+
+                                    </ul>
+                                </div>
                             </div>
-                                
-                            
                         </li>
                         <li>
-                                <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
-                            <a href="#Two">쪽지</a>
-                            <div class="submenu">
-                                <ul>
-                                    <li><a href="#1">보내기</a></li>
-                                    <li><a href="#2">받은쪽지함</a></li>
-                                   
-                                </ul>
+                                <a href="#">QnA</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#1">1</a></li>
+                                        <li><a href="#2">2</a></li>
+                                        <li><a href="#3">3</a></li>
+                                    </ul>
                                 </div>
-                                </div>
-                        </li>
-                        <li>
-                                <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-                            <a href="#">QnA</a>
-                            <div class="submenu">
-                            <ul>
-                                    <li><a href="#1">1</a></li>
-                                    <li><a href="#2">2</a></li>
-                                    <li><a href="#3">3</a></li>
-                                </ul>
-                                </div>
-                                </div>
-                        </li>
-                        <li>
-                                <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-                            <a href="#">Reply</a>
-                            <div class="submenu">
-                            <ul>
-                                    <li><a href="#1">1</a></li>
-                                    <li><a href="#2">2</a></li>
-                                    <li><a href="#3">3</a></li>
-                                </ul>
-                                </div>
-                                </div>
-                        </li>
-                        <li>
-                                <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-                            <a href="#">Scrap</a>
-                            <div class="submenu">
-                            <ul>
-                                    <li><a href="#1">1</a></li>
-                                    <li><a href="#2">2</a></li>
-                                    <li><a href="#3">3</a></li>
-                                </ul>
                             </div>
+                        </li>
+                        <li>
+                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+
+                                <a href="#">Reply</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#1">1</a></li>
+                                        <li><a href="#2">2</a></li>
+                                        <li><a href="#3">3</a></li>
+                                    </ul>
                                 </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+
+                                <a href="#">Scrap</a>
+                                <div class="submenu">
+                                    <ul>
+                                        <li><a href="#1">1</a></li>
+                                        <li><a href="#2">2</a></li>
+                                        <li><a href="#3">3</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </li>
 
                     </ul>
@@ -113,80 +134,49 @@
                 <span></span>
                 <span></span>
         </div> -->
-        
-        <div id="sidebar">
-            <div class="side-btn" onclick="toggleSidebarout()">
-                <input type="submit" />
-            </div>
-            <ul class="sidebar-nav2">
-                <li>
-                    <a href="#">home</a>
-                </li>
-                <li>
-                    <a href="#">about</a>
-                </li>
-                <li>
-                    <a href="#">contact</a>
-                </li>
 
-            </ul>
-        </div>
+
 
         <script>
 
-            function toggleSidebarout() 
-            {
-               document.getElementById("sidebar").classList.toggle('active');
+            function toggleSidebarout() {
+                document.getElementById("sidebar").classList.toggle('active');
             }
 
-            // function sosikdown()
-            // {
-            //     var dd ;
-            //     dd= document.getElementById("sosik-subnav");
-            //     dd.style.height="200px"
-            //     dd.style.display='inline-block';
-            
-                
-            // }
-
-            
-
-            // function sosikup()
-            // {
-
-            //     var dd ;
-            //     dd= document.getElementById("sosik-subnav");
-            //     dd.style.height="0px"
-            //     dd.style.display='none';
-                
-            // }
+           
 
         </script>
-    
 
 
-        <main id="main">
 
-            
 
+        <main>
+                
             <!--마이페이지 로그인 시-->
             
-            <div class="box board-title">
-                <h1>MYPAGE</h1>
-                <h3>마이페이지</h3>
-                
-            </div>
-
-
-            <div id="form-login" class="box">
-                <div>
-                    <a>비밀번호</a>
-                    <input type="text" name="password" placeholder="비밀번호" class="form-control-sm" />
+                <div class="box board-title">
+                    <h1>MYPAGE</h1>
+                    <h3>마이페이지</h3>
                 </div>
-            </div>
-        </div>
+
+
+                <section id="form-login" class="box">
+                    
+                    <div class="pwd-box">
+                            <h3>본인 확인</h3>
+                        <div class="pwd-img">
+                            <a>비밀번호</a>
+                            <input type="text" name="password" placeholder="비밀번호" class="form-control-sm" />
+                            <input type="submit" name="pwd-btn" />
+                        </div>
+                    </div>
+                </section>
+            
+            
         </main>
-    
+
+    </div>
+
 </body>
 
 </html>
