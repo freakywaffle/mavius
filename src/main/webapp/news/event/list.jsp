@@ -35,10 +35,10 @@
                     var todayis = yyyy+'-'+mm+'-'+dd;
     $('#calendar').fullCalendar({
     defaultDate: todayis,
-    dayclick:function(date, jsEvent, view, resourceObj){
+   /*  dayclick:function(date, jsEvent, view, resourceObj){
         alert('Date: ' + today.timeFormat );
         alert('Resource ID: ' + resourceObj.getElementById);
-    },
+    }, */
     // editable: true,
     timeFormat: "HH:mm",
     eventLimit: 4, // allow "more" link when too many events

@@ -14,7 +14,7 @@
                         <img  src="/images/login-logo-135.png" />
                     </div>
                     <li class="sidebar-brand">
-                        <a href="#">
+                        <a href="/index">
                             MAVIUS
                         </a>
                     </li>
