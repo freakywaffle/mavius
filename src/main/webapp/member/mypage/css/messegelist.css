@@ -95,6 +95,7 @@
      height: 100%;
      width: 100%;
      margin:0px;
+     min-width: 1200px;
    }
    
    
@@ -371,10 +372,11 @@
     width: inherit;
    }
    
-   /* .header-box
+   .header-box
    {
-     margin-top: 200px;
-   } */
+     background: url("../../../images/park-main.jpg");
+     height: inherit;
+   } 
    
    .pwd-box
    {
@@ -410,10 +412,7 @@
      padding-bottom: 70px;
    }
  
-   .form-edit
-   {
- 
-   }
+  
  
    .submenu2
    {
@@ -530,6 +529,7 @@
      position: relative;
      justify-content: center;
      width: inherit;
+     min-width: 1200px;
      
    }
    
@@ -537,9 +537,11 @@
    {
        position: absolute;
        top: 40px;
-       right: 95px;
+       right: 130px;
        margin-top: 50px;
        margin-bottom: 50px;
        height: 30px;
 
    }
+
+   
