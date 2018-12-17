@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mavius.web.entity.Board;
+import com.mavius.web.entity.BoardView;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
@@ -29,7 +30,7 @@ public class FreeBoardListController extends HttpServlet{
 
 
 		BoardService service = new JdbcBoardService();
-		List<Board> list = service.getBoardList("freeboard",1,1);//���ϰ����� list�� ����ִ� ����
+		List<BoardView> list = service.getBoardList("freeboard",1,1);
 		
 		System.out.println(list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
