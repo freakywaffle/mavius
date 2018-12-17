@@ -38,9 +38,7 @@
 			<section class="aa">
 				<h1 class="hidden">바디 메인</h1>
 				<section class="a">
-					<h1>
-						자유게시판 <span>(총 회원수 : ?명, 오늘 접속한 회원수 : ?명, 어제 접속한 회원수:?명)</span>
-					</h1>
+					<h1>자유게시판</h1>
 					<section class="row margin-top">
 						<div>
 							<div class="panel with-nav-tabs panel-default message-tab">
@@ -83,16 +81,18 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[잡담]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -100,16 +100,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우히힣]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -117,16 +120,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
@@ -189,16 +195,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -206,16 +215,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -223,16 +235,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
@@ -295,16 +310,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[잡담]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -312,16 +330,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[잡담]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -329,16 +350,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[잡담]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
@@ -401,16 +425,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우힣]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -418,16 +445,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우힣]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -435,16 +465,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우힣]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
@@ -507,16 +540,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우하하하]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -524,16 +560,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우하하하]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -541,16 +580,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[우하하하]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>
@@ -613,16 +655,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[요호호호]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -630,16 +675,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[요호호호]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-							
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 														<tr>
 															<td class="align-middle text-center">
@@ -647,16 +695,19 @@
 															</td>
 															<td class="align-middle text-center">3</td>
 															<td class="align-middle text-center">[요호호호]</td>
-															<td class="align-middle text-left">css 개씨발 줮같네?!</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
 															<td class="align-middle text-center">200</td>
 															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-																href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-																	숨김</a> <a href="#" class="btn btn-danger btn-xs"><span
-																	class="glyphicon glyphicon-remove"></span>삭제</a></td>
-								
+															<td class="align-middle text-center">
+																<div>
+																	<a class='btn btn-info btn-xs' href="#">
+																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
 														</tr>
 													</tbody>
 												</table>

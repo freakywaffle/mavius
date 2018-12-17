@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../css/event-detail.css" rel="stylesheet"id="bootstrap-css">
-<link href="../../css/aside-left.css" rel="stylesheet" 	id="bootstrap-css">
-<title>News - Event</title>
+<link href="../../../css/freeboard-detail.css" rel="stylesheet"id="bootstrap-css">
+<link href="../../../css/aside-left.css" rel="stylesheet" 	id="bootstrap-css">
+<title>board - Freeboard</title>
 </head>
 
 
 <body>
 	<header>
-		<jsp:include page="../../inc/header.jsp"></jsp:include>
+		<jsp:include page="../../../inc/header.jsp"></jsp:include>
 	</header>
 
 	<main>
@@ -25,9 +25,9 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
-				<h1 class="main-list align">News</h1>
+				<h1 class="main-list align">게시판관리</h1>
 				<section>
-					<h1 class="sub-list align">Event</h1>
+					<h1 class="sub-list align">자유게시판</h1>
 				</section>
 			</section>
 
@@ -38,7 +38,7 @@
 			<h1 class="hidden">바디 메인</h1>
 
 			<section class="a page-header">
-				<h1>이벤트</h1>
+				<h1>자유게시판</h1>
 					
 				<section class="row margin-top">
 					<div>
@@ -58,7 +58,7 @@
 												<div class="form-group">
 													<div class="b">
 														<span>제목</span>
-														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[이벤트]</span>
+														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[우힣]</span>
 														<input class="col-md-6 form-control" id="title" name="title"
 															placeholder="title" type="text" required autofocus disabled/>
 														<span>조회수   213</span>
@@ -88,6 +88,15 @@
 											<div class="row">
 												<div class="form-group">
 													<div class="b">
+														<span>첨부파일</span>
+														<a href="">aaa.jpg</a>
+													</div>								
+												</div>
+											</div>
+											<hr/>
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
 															<span>이미지</span>
 															<a href="">aaa.jpg</a>
 													</div>					
@@ -99,7 +108,7 @@
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
 													<button class="btn btn-primary pull-left btn-margin-left"
-														type="submit">목록</button>
+														type="submit"><a href="list.jsp">목록</a></button>
 												</div>
 											</div>
 	
@@ -115,7 +124,7 @@
 												<div class="form-group">
 													<div class="b">
 														<span>제목</span>
-														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[이벤트]</span>
+														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[공지사항]</span>
 														<input class="col-md-6 form-control" id="title" name="title"
 															placeholder="title" type="text" required autofocus/>
 														<span>조회수   213</span>
@@ -142,13 +151,23 @@
 											</div>
 											
 											<hr/>
-										
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+														<span>첨부파일</span>
+														<input class="col-xs-2 col-md-2 form-control" id="file" name="file"
+															value="파일선택" type="button" required autofocus />
+														<a href="">aaa.jpg</a>
+													</div>								
+												</div>
+											</div>
+											<hr/>
 											<div class="row">
 												<div class="form-group">
 													<div class="b">
 															<span>이미지</span>
 															<input class="col-xs-2 col-md-2 form-control" id="img" name="img"
-															value="파일 선택" type="button" required autofocus /> 
+															placeholder="파일 선택" type="button" required autofocus /> 
 															<a href="">aaa.jpg</a>
 													</div>					
 												</div>

@@ -45,8 +45,7 @@
 						<div class="panel with-nav-tabs panel-default message-tab">
 							<div class="panel-heading message-tab-heading">
 								<ul class="nav nav-tabs">
-									<li class="active"><a href="#tab1default" data-toggle="tab">내용</a></li>
-									<li><a href="#tab2default" data-toggle="tab">수정</a></li> 
+									<li class="active"><a href="#tab1default" data-toggle="tab">글쓰기</a></li>
 								</ul>
 							</div>
 							<div class="panel-body">
@@ -55,28 +54,53 @@
 	
 										<form id="contact" method="post" class="form" role="form">
 											<div class="row">
-												<div class="col-xs-6 col-md-6 form-group">
-													<span>받는이</span>
+												<div class="form-group">
 													<div class="b">
-														<input class="form-control" id="name" name="name"
-															placeholder="Name" type="text" required autofocus /> <select
-															class="form-control c" required autofocus>
-															<option>전체</option>
-															<option>관리자</option>
-															<option>전체 회원</option>
-														</select>
+														<span>제목</span>
+														<input class="col-md-10 form-control" id="title" name="title"
+															placeholder="title" type="text" required autofocus /> 
 													</div>
 												</div>
-												<hr />
-												<div class="form-group">
-													<span>제목</span> <input class="form-control" id="title"
-														name="title" placeholder="Title" type="text" required />
-												</div>
-												<hr />
 											</div>
-											<span>내용</span>
-											<textarea class="form-control" id="message" name="message"
-												placeholder="Message" rows="9"></textarea>
+											<hr/>
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+														<span>작성자</span>
+														<input class="col-xs-2 col-md-2 form-control" id="nickName" name="nickName"
+															placeholder="nickName" type="text" required autofocus disabled/> 
+													</div>
+												</div>
+											</div>
+											<hr/>
+											<div class="b">
+												<span class="bb">내용</span>
+												<textarea class="col-md-10 form-control" id="message" name="message"
+													placeholder="Message" rows="13"></textarea>											
+											</div>
+											
+											<hr/>
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+														<span>첨부파일</span>
+														<input class="col-xs-2 col-md-2 form-control" id="file" name="file"
+															value="파일선택" type="button" required autofocus /> 
+													</div>								
+												</div>
+											</div>
+											<hr/>
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+															<span>이미지</span>
+															<input class="col-xs-2 col-md-2 form-control" id="img" name="img"
+															placeholder="파일 선택" type="button" required autofocus /> 
+													</div>					
+												</div>
+											</div>
+											<hr/>
+											
 											<br />
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
@@ -90,16 +114,6 @@
 									</div>
 	
 <!--111111111111111111111111111111111111111111111111111111111111111111111-->
-<!--222222222222222222222222222222222222222222222222222222222222222222222-->
-									<div class="tab-pane fade" id="tab2default">
-									00000
-									</div>
-<!--222222222222222222222222222222222222222222222222222222222222222222222-->
-<!--333333333333333333333333333333333333333333333333333333333333333333333-->
-									<div class="tab-pane fade" id="tab3default">
-									000000000
-									</div>
-<!--333333333333333333333333333333333333333333333333333333333333333333333-->
 								</div>
 							</div>
 						</div>
@@ -146,3 +160,4 @@
 
 
 
+	
