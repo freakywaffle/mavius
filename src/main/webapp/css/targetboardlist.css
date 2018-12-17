@@ -76,8 +76,15 @@ h1,ul,p,li,section{
 	margin-top: 50px;
 }
 
+.margin-top-20{
+	margin-top: 20px!important;
+}
+
 .margin-left{
 	margin-left: 50px;
+}
+.margin-left-10{
+	margin-left: 10px!important;
 }
 
 .margin-bottom{
@@ -126,6 +133,28 @@ h1,ul,p,li,section{
 .wrapper a{
 	color: #000;
 	text-decoration: none!important;
+}
+
+.target-search-form{
+	margin-top: 30px;
+	margin-left: 250px;
+}
+
+.target-search-form .option:nth-child(2){
+	width: 150px!important;
+	
+}
+.target-search-form .option:nth-child(3){
+	width: 100px!important;
+	
+}
+.target-search-form .search{
+	width: 300px!important;
+	
+}
+
+.form-control{
+	flex: initial!important;
 }
 
 .main{
@@ -185,7 +214,7 @@ h1,ul,p,li,section{
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
-  transition: all 0.3s ease-in-out;   /* ºÎµå·¯¿î ¸ð¼ÇÀ» À§ÇØÃß°¡*/
+  transition: all 0.3s ease-in-out;   /* ï¿½Îµå·¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß°ï¿½*/
 	
 }
 
@@ -344,6 +373,7 @@ h1,ul,p,li,section{
     line-height: 1;
     transition: all .3s ease-in-out;
 }
+
 
 .category:hover{
 	border-color: #FF7E7E;

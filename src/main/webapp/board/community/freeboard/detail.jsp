@@ -8,124 +8,18 @@
 <title>커뮤니티-자유게시판</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link href="../../../css/freeBoardDetail.css" type="text/css" rel="stylesheet" />
- <link href="../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<!--"vendor/bootstrap/css/bootstrap.min.css"-->
-    <!-- Custom styles for this template -->
-    <link href="../sidebar/css/simple-sidebar.css" rel="stylesheet">
-
 </head>
 
 <!--게시글 보기, 수정, 삭제, 댓글, 기본적인 보드 컬럼명 가져오고 타이틀이랑 컨텐트  ,이미지 공간? -->
 <div id="hiririk">
 	<header>
-		<div id="wrapper">
-
-			<!-- Header -->
-			<div id="sidebar-wrapper">
-				<ul class="sidebar-nav header-box">
-					<li class="sidebar-brand"><a href="#"> MAVIUS </a></li>
-					<li>
-						<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-							<a href="#One">자유게시판</a>
-
-						</div>
-
-
-					</li>
-					<li>
-						<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-							<a href="#Two">코디 평가 게시판</a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#1">베스트 코디</a></li>
-									<li><a href="#2">일반 코디</a></li>
-
-								</ul>
-							</div>
-						</div>
-					</li>
-					<li>
-						<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-							<a href="#">테스트 서버</a>
-
-						</div>
-					</li>
-					<li>
-						<div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
-
-							<a href="#">서버게시판</a>
-							<div class="submenu">
-								<ul>
-									<li><a href="#1">길드홍보</a></li>
-									<li><a href="#2">비매너주의</a></li>
-									<li><a href="#3">팔아요</a></li>
-									<li><a href="#4">사요</a></li>
-
-								</ul>
-							</div>
-						</div>
-					</li>
-
-
-				</ul>
-			</div>
-
-		</div>
+	<jsp:include page="/sidebar/header.jsp" />
 	</header>
-	<aside id="sidebar" >
-            <div class="side-btn" onclick="toggleSidebarout()">
-                <input type="submit" />
-            </div>
-            <ul class="sidebar-nav2">
-                <li>
-                    <a href="#">home</a>
-                </li>
-                <li>
-                    <a href="#">about</a>
-                </li>
-                <li>
-                    <a href="#">contact</a>
-                </li>
+	<aside>
+    <jsp:include page="/sidebar/sidebar.jsp" />
+    </aside>
+	
 
-            </ul>
-       
-
-        <script>
-
-            function toggleSidebarout() 
-            {
-               document.getElementById("sidebar").classList.toggle('active');
-            }
-
-        </script>
-    
-
-
-        <main id="main">
-
-            
-
-            <!--마이페이지 로그인 시-->
-            
-            <div class="box board-title">
-                <h1>MYPAGE</h1>
-                <h3>마이페이지</h3>
-                
-            </div>
-
-
-            <div id="form-login" class="box">
-                <div>
-                    <a>비밀번호</a>
-                    <input type="text" name="password" placeholder="비밀번호" class="form-control-sm" />
-                </div>
-            </div>
-        </aside >
-        </main>
-	<!-- <div class="aside">
-	</div> -->
 	<body id="body">
 	<section id="header">
 		<h1>자유게시판</h1>
@@ -235,97 +129,6 @@
 			</div>
 			
 			
-			<!-- <section>
-				<h1>페이저 리스트</h1>
-
-				<div>
-				<ul>
-					div로 인라인블록하고 ul에다가 플렉스 주면 
-					<li>1</li>
-					<li>[잡담]</li>
-					<li>승라일라이(댓글+4)</li>제목(댓글수)
-					<li><a href="">승래</a></li>
-					작성자
-					<li>2018-12-05 16:40</li>
-					등록 일자
-					<li>200</li>
-					조회수
-					<li>10</li>
-					추천수
-				</ul>
-				<p>게시물 내용(간략히)</p>
-			</div>
-			<br />
-			<div>
-				<ul>
-					<li>2</li>
-					<li>[자랑]</li>
-					<li>데벤 조아(댓글+5)</li>
-					제목(댓글수)
-					<li><a href="">형호</a></li>
-					작성자
-					<li>2018-12-05 17:45</li>
-					등록 일자
-					<li>250</li>
-					조회수
-					<li>20</li>
-					추천수
-				</ul>
-				<p>게시물 내용(간략히)</p>
-			</div>
-			<br />
-			<div>
-				<ul>
-					<li>3</li>
-					<li>[자랑]</li>
-					<li> 카데나조아(댓글+10)</li>
-					<li><a href="">원석</a></li>
-					작성자
-					<li>2018-12-06 11:23</li>
-					등록 일자
-					<li>220</li>
-					조회수
-					<li>20</li>
-					추천수
-				</ul>
-				<p>게시물 내용(간략히)</p>
-			</div>
-			<br />
-			<div>
-				<ul>
-					<li>4 </li>
-					<li> [잡담]</li>
-					<li>전자담배(댓글+8)</li>
-					<li><a href="">문경</a></li>
-					작성자
-					<li>2018-12-07 20:40</li>
-					등록 일자
-					<li>300</li>
-					조회수
-					<li>17</li>
-					추천수
-				</ul>
-				<p>게시물 내용(간략히)</p>
-
-			</div>
-			<br />
-			<div>
-				<ul>
-					<li>5 </li>
-					<li>[잡담]</li>
-					<li>썬콜조아(댓글+8)</li>
-					<li><a href="">세연</a></li>
-					작성자
-					<li>2018-12-05 16:40</li>
-					등록 일자
-					<li>230</li>
-					조회수
-					<li>15</li>
-					추천수
-				</ul>
-				<p>게시물 내용(간략히)</p>
-			</div>
-			</section> -->
 		</section>
 	</main>
 	<aside>

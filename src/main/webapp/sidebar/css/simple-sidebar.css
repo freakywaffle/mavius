@@ -196,7 +196,7 @@ html
 {
   right: 0px;
   transition: all 500ms linear;
-
+	z-index: 2;
 }
 
 .side-btnin
@@ -265,7 +265,21 @@ html
   }
 }
 
-/* @keyframes subup {
+@keyframes subdown-lg {
+  from
+  {
+    height: 0px;
+    opacity: 0;
+  }
+  
+  to {
+    height: 240px;
+    opacity: 1;
+    
+  }
+}
+
+ /* @keyframes subup {
   from
   {
     height: 120px;
@@ -275,27 +289,40 @@ html
     height: 0px;
     
   }
-} */
+}  */
 
-.submenu
+.submenu-sm
 {
-  animation-name: subup;
-  animation-duration: 1000ms;
+  transition: all 2s linear;
   visibility: hidden;
   display: none;
   height: 0px;
   
-
-
-  
 } 
-.pa:hover .submenu
+.pa:hover .submenu-sm
 {
   animation-name: subdown;
   animation-duration: 1000ms;
   visibility: visible;
   display: block;
   height: 120px;
+  transition: all 2s linear;
+} 
+
+.submenu-lg
+{
+  visibility: hidden;
+  display: none;
+  height: 0px;
+  
+} 
+.pa:hover .submenu-lg
+{
+  animation-name: subdown-lg;
+  animation-duration: 1000ms;
+  visibility: visible;
+  display: block;
+  height: 240px;
   transition: all 2s linear;
 } 
 

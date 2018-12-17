@@ -1,0 +1,15 @@
+.aa section,div {
+	margin: 0px!important;
+	padding: 0px!important;
+}
+.panel{
+	box-sizing: border-box;
+	style : min-height:500px; min-width: 1100px;
+	  
+}
+.a {
+	border: none!important;
+}
+.row {
+	display: block!important;
+}

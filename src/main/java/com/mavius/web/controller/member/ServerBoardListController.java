@@ -19,4 +19,7 @@ public class ServerBoardListController extends HttpServlet{
 		
 		dispatcher.forward(request, response);
 	}
+
+	
+
 }

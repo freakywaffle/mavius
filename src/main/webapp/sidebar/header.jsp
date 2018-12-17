@@ -14,18 +14,18 @@
                         <img  src="/images/login-logo-135.png" />
                     </div>
                     <li class="sidebar-brand">
-                        <a href="#">
+                        <a href="/index">
                             MAVIUS
                         </a>
                     </li>
                     <li>
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
                             <a href="#One">소식</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-sm">
                                 <ul>
-                                    <li><a href="#">공지사항</a></li>
-                                    <li><a href="#">이벤트</a></li>
-                                    <li><a href="#">업데이트</a></li>
+                                    <li><a href="/news/notice/list">공지사항</a></li>
+                                    <li><a href="/news/event/list">이벤트</a></li>
+                                    <li><a href="/news/update/list">업데이트</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -34,7 +34,7 @@
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
                             <a href="#Two">커뮤니티</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-sm">
                                 <ul>
                                     <li><a href="/board/community/freeboard/list">자유게시판</a></li>
                                     <li><a href="/board/community/coordi/list">코디게시판</a></li>
@@ -48,9 +48,13 @@
                         <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
 
                             <a href="#">공략</a>
-                            <div class="submenu">
+                            <div class="submenu submenu-lg">
                                 <ul>
-                                    <li><a href="/board/target/archer/list">직업별팁&공략</a></li>
+                                    <li><a href="/board/target/warrior/list">전사게시판</a></li>
+                                    <li><a href="/board/target/archer/list">궁수게시판</a></li>
+                                    <li><a href="/board/target/magician/list">법사게시판</a></li>
+                                    <li><a href="/board/target/rogue/list">도적게시판</a></li>
+                                    <li><a href="/board/target/pirate/list">해적게시판</a></li>
                                     <li><a href="#">보스공략</a></li>
                                 </ul>
                             </div>
