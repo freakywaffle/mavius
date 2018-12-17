@@ -237,7 +237,16 @@ main{
 }
 
 
-
+/*page 전환 버튼*/
+.page-tab {
+	text-align: center;
+}
+.pagination>li>a {
+	color: #000000!important;
+}
+.focus:focus {
+	font-weight: bold;
+}
 
 
 
