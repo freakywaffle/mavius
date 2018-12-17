@@ -25,7 +25,7 @@
 
 <body id="body">
     <div id="hiririk">
-        <div id="dam">
+        <!-- <div id="dam">
 
         </div>
         <div class="boxbox">
@@ -33,7 +33,6 @@
             <header id="header">
                 <div>
 
-                    <!-- Header -->
                     <div id="header-wrapper">
                         <ul class="header-nav header-box">
                             <li class="header-brand">
@@ -44,12 +43,7 @@
                             <li>
                                 <div class="pa">
                                     <a href="#One">정보수정</a>
-                                    <!-- <div class="submenu">
-										<ul>
-											<li><a href="#">게시글</a></li>
-											<li><a href="#">댓글</a></li>
-										</ul>
-									</div> -->
+                                   
                                 </div>
 
 
@@ -121,7 +115,9 @@
                     </div>
 
                 </div>
-            </header>
+            </header> -->
+
+            <jsp:include page="/member/mypage/mypageheader.jsp"></jsp:include>
 
 
             <jsp:include page="/sidebar/sidebar.jsp"></jsp:include>
@@ -159,14 +155,12 @@
                                 <option value="게시판">전사게시판</option>
                                 <option value="게시판">전사게시판</option>
                             </select>
-                            <select class="soflow">
-                                    <!-- This method is nice because it doesn't require extra div tags, but it also doesn't retain the style across all browsers. -->
-                                    <option>Select an Option</option>
-                                    <option>Option 1</option>
-                                    <option>Option 2</option>
-                                  </select>
-                            <input type="" name="searchtxt" />
-                            <input type="submit" name="btn-edit" />
+<div class="d6">
+                                <form>
+                                  <input type="text" placeholder="검색어 입력">
+                                  <button type="submit"></button>
+                                </form>
+                            </div>
                         </div>
                         <div class="submenu2">
                             <div class="category-div-cr cat-div">
