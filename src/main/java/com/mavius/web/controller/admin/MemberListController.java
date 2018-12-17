@@ -34,8 +34,8 @@ public class MemberListController extends HttpServlet{
 			page = Integer.parseInt(page_);
 
 		List<MemberView> list = service.getViewList();
-
 		
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/member/management/list.jsp");
 		request.setAttribute("list", list);
 		dispatcher.forward(request, response);
