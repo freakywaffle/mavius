@@ -1,5 +1,7 @@
 window.addEventListener("load", function(){
-		
+	
+//	-----ckeditor 적용 작업-----------
+	
 	var editor = CKEDITOR.instances.editor1;
 	var editor2 = CKEDITOR.instances.editor2;
     if (editor) {
@@ -13,7 +15,7 @@ window.addEventListener("load", function(){
     CKEDITOR.replace('editor1', {height: '600'});
     CKEDITOR.replace('editor2', {height: '550'});
 
-    
+//    ------modal 띄우기 ----------------
 	var modalBtns = document.querySelectorAll(".modalBtn");
 	
 	var modalSave = document.querySelector("#modalSave");	
@@ -39,6 +41,8 @@ window.addEventListener("load", function(){
 		CKEDITOR.instances.editor1.setData(CKEDITOR.instances.editor2.getData());
 	};
 	
+	
+//	-------아이콘 옵션 선택작업------------
 	
 	var skillOption1 = document.querySelector(".skill-option1");
 	var itemOption1 = document.querySelector(".item-option1");
@@ -105,4 +109,54 @@ window.addEventListener("load", function(){
 			modalBtns[1].classList.add("hidden");
 		
 	}
+	
+	
+	
+	// ------파일 업로드 트리거-----------
+	
+	var inputFile = document.querySelector('input[type="file"]');
+	var btnFile = document.querySelector(".set-form-div .btn-info");
+	var fileText = document.querySelector('.set-form-div .file-names');
+	btnFile.onclick = function(){
+		var evt = new MouseEvent("click",{
+			"view":window,
+			"bubbles":true,
+			"cancelable":true
+		});
+		inputFile.dispatchEvent(evt);
+	};
+
+	inputFile.onchange = function(){
+		var fileList = inputFile.files;
+
+		for(var i=0; i< fileList.length;i++ ){
+			fileText.value += fileList[i].name;
+			if(i < fileList.length-1)
+				fileText.value += ",";
+		}
+	}
+	
 });
+//	-----글 등록작업--------------------------------------------------------
+
+function dataSubmit(){
+	var regContent = document.querySelector(".set-form-div input[type='hidden']");
+	regContent.value = CKEDITOR.instances.editor1.getData();
+	return true;
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

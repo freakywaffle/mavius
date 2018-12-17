@@ -1,63 +1,75 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<<<<<<< HEAD
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+=======
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+<meta charset="UTF-8">
+<title>è€Œã…»ï¿½ã…»ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½è¸°ï¿½å¯ƒï¿½ï¿½ï¿½ï¿½ï¿½</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="../../../css/serverBoardReg.css" type="text/css" rel="stylesheet" />
+=======
 <meta charset="EUC-KR">
-<title>Ä¿¹Â´ÏÆ¼-¼­¹ö°Ô½ÃÆÇ-µî·Ï</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link href="../../../css/serverBoardReg.css" type="text/css" rel="stylesheet" />
+<title>ì»¤ë®¤ë‹ˆí‹°-ì„œë²„ê²Œì‹œíŒ-ë“±ë¡</title>
+>>>>>>> refs/remotes/origin/master
 </head>
+<<<<<<< HEAD
+
+<div id="hiririk">
+=======
+<div id="hiririk">
+   <header>
+   <jsp:include page="/sidebar/header.jsp" />
+   </header>
+   <aside>
+    <jsp:include page="/sidebar/sidebar.jsp" />
+    </aside>
 <body>
+>>>>>>> refs/remotes/origin/master
 <header>
-		<h1>Çì´õ</h1>
-	</header>
-	<main>
-		<h1>¼­¹ö°Ô½ÃÆÇ</h1>
-		<section>
-		<h1>°Ô½Ã±Û ÀÔ·Â Æû</h1>
-			<form>
-				<fieldset>
-					<legend>
-						<label>°Ô½Ã±Û µî·Ï</label>
-					</legend>
-					<select>
-						<option>°Ô½ÃÆÇ¼±ÅÃ</option>
-						<option>°øÁö»çÇ×</option>
-						<option>ÀÌº¥Æ®</option>
-						<option>ÀÚÀ¯°Ô½ÃÆÇ</option>
-						<option>ÄÚµðÆò°¡°Ô½ÃÆÇ</option>
-						<option>Å×½ºÆ®¼­¹ö</option>
-						<option>¼­¹ö°Ô½ÃÆÇ</option>
-						<option>Á÷¾÷º° ÆÁ&°ø·«</option>
-						<option>À°¼ºÆÁ</option>
-					</select>
-					<select>
-						<option>¸»¸Ó¸®¼±ÅÃ</option>
-						<option>ÀÚ¶û</option>
-						<option>Á¤º¸</option>
-						<option>Àâ´ã</option>
-					</select>
-					<div>
-						<label>Á¦¸ñ:</label>
-						<input type="text" name="reg-title"/>
-						<!-- ÀÛ¼ºÀº api·Î -->
-						
-					</div>
-					<div>
-						<label>³»¿ë:</label>
-						<input type="text" name="reg-context"/>
-						<input type="file" name="btn-file" value="ÆÄÀÏÃ·ºÎ"/>
-					</div>
-					<div>
-						<input type="submit" name="btn-submit" value="µî·Ï"/>
-						<input type="submit" name="btn-exit" value="³ª°¡±â"/>
-					</div>
-				</fieldset>
-			</form>
+	<jsp:include page="/sidebar/header.jsp" />
+</header>
+<aside>
+   	<jsp:include page="/sidebar/sidebar.jsp" />
+</aside>
+	<body id="body">
+		<section id="header">
+			<h1>ï¿½ï¿½è¸°ï¿½å¯ƒï¿½ï¿½ï¿½ï¿½ï¿½</h1>
 		</section>
+		<section id="reg-form">
+			<form>
+				<div id="title-form">
+					<select id="select-form">
+						<option>éºï¿½ç‘œï¿½ç‘œï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ëª„ï¿½ï¿½</option>
+						<option>æ¹²ëªƒï¿½ï¿½ ï¿½ï¿½è¹‚ï¿½</option>
+						<option>é®ï¿½ï§ã…»ï¿½ï¿½ äºŒì‡±ï¿½ï¿½</option>
+						<option>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</option>
+						<option>ï¿½ÑŠï¿½ï¿½</option>
+					</select>
+				
+					<input type="" name="reg-name" placeholder="ï¿½ï¿½ï§â‘¹ï¿½ï¿½ ï¿½ï¿½ï¿½Î½ï¿½ëŒï¼œï¿½ëª„ï¿½ï¿½."/>
+				</div>
+			</form>
+			<div class="content border-color-gray" id="editor1" contenteditable="true">
+			</div>
 		
+<<<<<<< HEAD
+		</section>
+	</body>
+</div>
+=======
 	</main>	
 	<aside>
-		<h1>¾î»çÀÌµå</h1>
+		<h1>ì–´ì‚¬ì´ë“œ</h1>
 	</aside>
 </body>
+</div>
+
+>>>>>>> refs/remotes/origin/master
 </html>

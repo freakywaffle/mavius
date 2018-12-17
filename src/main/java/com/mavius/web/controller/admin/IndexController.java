@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/admin/member/management/list")
+@WebServlet("/admin/member/management")
 public class IndexController extends HttpServlet{
 	
 	@Override

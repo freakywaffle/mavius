@@ -1,0 +1,45 @@
+.main-body-header{
+	margin-left: 230px; 
+    padding-left: 150px; 
+    padding-right: 150px; 
+    padding-bottom: 50px; 
+    padding-top: 50px; 
+}
+main>div{
+    margin-left: 230px; 
+    padding-left: 150px; 
+    padding-right: 150px; 
+    padding-bottom: 50px; 
+    padding-top: 50px; 
+}
+main>div>h1{
+    margin-bottom: 0px;
+    font-size: 50px;
+}
+main>div>h3{
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+.hidden{
+    display: none!important;
+}
+.main-header-div{
+        margin-left: 230px; 
+        padding-left: 150px; 
+	    padding-right: 150px; 
+	    padding-bottom: 50px; 
+	    padding-top: 50px; 
+}
+.event-calendar{
+    font-size: 14px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-bottom: 50px; 
+    padding-top: 50px;
+}
+.search-form,
+.board-list,
+.pager{
+	padding-bottom: 10px; 
+    padding-top: 10px;
+}

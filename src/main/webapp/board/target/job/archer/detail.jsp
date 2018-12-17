@@ -37,80 +37,21 @@
 							<h1 class="hidden">게시물내용</h1>
 							<div class="first-div detail-header">
 								<div class="horizontal-line"></div>
-								<div class="category">보우마스터</div>
+								<div class="category">${board.category }</div>
 								<div class="body">
-									<div class="detail-title font-bold"><a>보마 스킬트리 공략</a> &nbsp;&nbsp;&nbsp;<a href="#"><i class="far fa-star"></i></a></div>
+									<div class="detail-title font-bold"><a>${board.title }</a> &nbsp;&nbsp;&nbsp;<a href="#"><i class="far fa-star"></i></a></div>
 									<ul class="inline-list font-light">
-										<li><i class="fas fa-chalkboard-teacher"></i>&nbsp;형호</li>
-										<li><i class="far fa-clock"></i>&nbsp;12-06</li>
+										<li><i class="fas fa-chalkboard-teacher"></i>&nbsp;${board.writerId }</li>
+										<li><i class="far fa-clock"></i>&nbsp;${board.regDate }</li>
 										<li><i class="far fa-comment"></i>&nbsp;6</li>
-										<li><i class="fas fa-book-reader"></i>&nbsp;10</li>
-										<li><a href="#"><i class="far fa-thumbs-up"></i>&nbsp;5</a></li>
+										<li><i class="fas fa-book-reader"></i>&nbsp;${board.hit }</li>
+										<li><a href="#"><i class="far fa-thumbs-up"></i>&nbsp;${board.recommend }</a></li>
 										<li><a href="#">신고</a></li>
 									</ul>
 								</div>
 							</div>
 							<div class="detail-content">
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
-								1차 스킬트리<br/>
-								2차 스킬트리<br/>
-								3차 스킬트리<br/>
-								4차 스킬트리<br/>
+								${board.content }
 							</div>
 							<div class="detail-navi">
 								<ul class="inline-list">
