@@ -69,6 +69,7 @@
 .detail-header .inline-list li:first-child {
 	width: 200px;
 }
+
 .detail-header .inline-list li:first-child+li {
 	width: 110px;
 }
@@ -82,6 +83,7 @@
 	margin-left: 60px;
 	border-bottom: 2px dashed #eaeaea;
 	padding-bottom: 100px;
+	min-height: 580px;
 }
 
 .detail-navi{

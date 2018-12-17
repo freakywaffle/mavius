@@ -30,7 +30,7 @@
 				<div class="main-page block-flex margin-top">
 					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();" enctype="multipart/form-data">
 						<div class="set-form-div">
-							<select class="job-category border-color-gray">
+							<select class="job-category border-color-gray" name="category">
 								<option>직업 카테고리</option>
 								<option>보우마스터</option>
 								<option>신궁</option>
@@ -42,7 +42,7 @@
 							<input autocomplete="off" placeholder="  글제목" type="text" name="title" class="title border-color-gray"/>
 							<br/>
 							<div class="file-area">
-								<input type="file" class="hidden" name="file" multiple/>
+								<input type="file" class="hidden" name="file"/>
 								<button type="button" class="btn btn-info">파일첨부</button>
 								<input type="text" disabled class="file-names"/>
 							</div>

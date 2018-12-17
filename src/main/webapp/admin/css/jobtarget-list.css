@@ -118,7 +118,9 @@ main{
     border-top: none!important;
     border-bottom: 1px solid #ddd!important;
 }
-
+.table>tbody>tr>td>a {
+	color: #000000;
+}
 .table .col-w-chk {
     width: 80px;
 }  

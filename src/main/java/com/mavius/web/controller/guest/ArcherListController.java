@@ -13,7 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 public class ArcherListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/target/job/archer/list.jsp");
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
 
 		dispatcher.forward(request, response);
