@@ -9,19 +9,28 @@ public class Board {
 	private Date regDate;
 	private String writerId;
 	private String catalog;
+	private String category;
 	private int hit;
 	private int recommend;
-	public Board(int no, String title, String content, Date regDate, String writerId, String catalog, int hit,
+	
+	public Board(int no, String title, String content, Date regDate, String writerId, String catalog, String category, int hit,
 			int recommend) {
-		super();
 		this.no = no;
 		this.title = title;
 		this.content = content;
 		this.regDate = regDate;
 		this.writerId = writerId;
 		this.catalog = catalog;
+		this.category = category;
 		this.hit = hit;
 		this.recommend = recommend;
+	}
+	public Board(String title, String content, String writerId, String catalog, String category) {
+		this.title = title;
+		this.content = content;
+		this.writerId = writerId;
+		this.catalog = catalog;
+		this.category = category;
 	}
 	
 	public Board() {
@@ -77,6 +86,12 @@ public class Board {
 	}
 	public void setRecommend(int recommend) {
 		this.recommend = recommend;
+	}
+	public String getCategory() {
+		return category;
+	}
+	public void setCategory(String category) {
+		this.category = category;
 	}
 	
 	

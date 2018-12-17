@@ -5,6 +5,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Calendar;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -15,6 +21,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+
+import com.mavius.web.entity.Board;
+import com.mavius.web.service.BoardService;
+import com.mavius.web.service.jdbc.JdbcBoardService;
 
 @WebServlet("/board/target/archer/reg")
 @MultipartConfig(
@@ -35,33 +45,22 @@ public class ArcherRegController extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		
 		
-		String sql = "INSERT INTO BOARD(ID, TITLE, CONTENT, WRITER_ID, CATALOG) "
-	            + "VALUES(BOARD_SEQ.NEXTVAL, ?, ?, ?, ?)";
-	      
-	    String sql1 = "SELECT ID FROM(SELECT * FROM BOARD ORDER BY REGDATE DESC) "
-	            +"WHERE ROWNUM =1";
+		BoardService service = new JdbcBoardService(); 
 		
-		
-		
-//	 	String path = request.getServletContext().getRealPath("/target/upload");
-//	 	
-//	 	File file = new File(path);
-//		if(!file.exists())
-//			file.mkdirs();
-		
+		String path = request.getServletContext().getRealPath("/target/archer/upload");
+		String id = "khh1111";
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
-		List<Part> parts = (List<Part>) request.getParts();
-		System.out.println(title);
-		System.out.println(content);
-		System.out.println(parts);
-//		String fileName = part.getSubmittedFileName();
-//		String filePath = path + File.separator + fileName;
-//		InputStream fis = part.getInputStream();
-//		OutputStream fos = new FileOutputStream(filePath);
+		String category = request.getParameter("category");
+		Board board = new Board(title, content, id, "archer", category);
+		Part part = request.getPart("file");
+		
+		int boardNo = service.reg(board, part, path); //게시물 번호 리턴
 	 	
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../../../member/board/target/job/archer/reg.jsp");
-
-		dispatcher.forward(request, response);
+//		RequestDispatcher dispatcher = request.getRequestDispatcher("../../../member/board/target/job/archer/reg.jsp");
+//
+//		dispatcher.forward(request, response);
+		
+		response.sendRedirect("detail?no="+boardNo);
 	}
 }
