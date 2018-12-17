@@ -10,7 +10,7 @@
     <link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../../sidebar/css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/newslist.css">
+    <link rel="stylesheet" href="../../css/news/newslist.css">
     
 </head>
 <body>
@@ -48,10 +48,9 @@
                 </div>
             </form>
         </div>
-
         <!-- 게시판 검색 폼 end-->
 
-        <div>
+        <div class="board-list">
             <div>
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
@@ -92,7 +91,7 @@
             </div>
         </div>
             <!-- 페이저 -->
-            <div>
+            <div class="pager">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center" style="margin-bottom: 0px;">
                         <li class="page-item"><a class="page-link" href="#"> < </a></li>
