@@ -1,176 +1,190 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>서비스 - 공지사항</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../../css/update-list.css" rel="stylesheet" id="bootstrap-css">
+
+<link href="../../css/aside-left.css" rel="stylesheet" id="bootstrap-css">
+<title>News - Update</title>
 </head>
 
 
 <body>
-    <section>
-        <div style="display: inline-block;">
-            <header style="float: left; position: fixed;">
-                <h1><a href="/admin/management.html">헤더</a></h1>
-            
-                <nav>
-                    <ul>
-                        <h1>회원 관리</h1>
-                        
-                        <li><a href="../../member/management/list.html">회원 목록</a></li>
-                        <li><a href="../../member/sendmessage/list.html">회원 쪽지 발송</a></li>
-                    </ul>
+	<header>
+		<jsp:include page="../../inc/header.jsp"></jsp:include>
+	</header>
 
-                    <ul>
-                        <h1>게시판 관리</h1>
-                        
-                        <li><a href="">자유 게시판</a></li>
-                        <li><a href="">공략 게시판</a></li>
-                        <li><a href="">코디 평가 게시판</a></li>
-                        <li><a href="">서버 게시판</a></li>
-                    </ul>
+	<main class="aaa">
+	<h1 class="hidden">메인</h1>
 
-                    <ul>
-                        <h1>서비스</h1>
-                        
-                        <li><a href="../notice/list.html">공지사항</a></li>
-                        <li><a href="list.html">업데이트</a></li>
-                        <li><a href="../event/list.html">이벤트</a></li>
-                        <li><a href="">1:1 문의</a></li>
-                        <li><a href="">게시글/댓글 신고</a></li>
-                    </ul>
+	<div class="aaaa">
+		<section>
+			<h1 class="hidden">바디 헤더</h1>
 
-                    <ul>
-                        <h1>통계</h1>
-                        
-                        <li><a href="">접속자 통계</a></li>
-                        <li><a href="">현재 접속자</a></li>
-                        <li><a href="">인기 게시판</a></li>
-                        <li><a href="">인기 게시글</a></li>
-                    </ul>
-                </nav>
-            </header>
-            
-           
-            
+			<section class="main-header">
+				<h1 class="main-list align">News</h1>
+				<section>
+					<h1 class="sub-list align">Update</h1>
+				</section>
+			</section>
+
+		</section>
 
 
+		<section class="aa">
+			<h1 class="hidden">바디 메인</h1>
+
+			<section class="a">
+				<h1>업데이트</h1>
+
+				<section class="margin-top">
+					<table class="table table-striped">
+						<thead class="thead-dark">
+							<tr>
+								<th class="align-middle text-center col-w-chk">
+									<input type="checkbox"class="align-top" />
+								</th>
+								<th class="align-middle text-center col-w-num">번호</th>
+								<th class="align-middle text-center col-w-ctg">카테고리</th>
+								<th class="align-middle text-center">제목</th>
+								<th class="align-middle text-center col-w-writerId">작성자</th>
+								<th class="align-middle text-center col-w-date">등록 일자</th>
+								<th class="align-middle text-center col-w-hit">조회수</th>
+								<th class="align-middle text-center col-w-hit">추천수</th>
+								<th class="align-middle text-center col-w-manage">관리</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="align-middle text-center">
+									<input type="checkbox" class="align-top" />
+								</td>
+								<td class="align-middle text-center">3</td>
+								<td class="align-middle text-center">[업데이트]</td>
+								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
+								<td class="align-middle text-center">네모장군</td>
+								<td class="align-middle text-center">2018-12-13</td>
+								<td class="align-middle text-center">200</td>
+								<td class="align-middle text-center">10</td>
+								<td class="align-middle text-left">
+									<div>
+										<a class='btn btn-info btn-xs' href="detail.jsp">
+											<span class="glyphicon glyphicon-edit"></span>수정
+										</a> 
+										<a href="#" class="btn btn-danger btn-xs">
+											<span class="glyphicon glyphicon-remove"></span>삭제
+										</a>
+										<a href="#" class="btn btn-success btn-xs">
+											<span class="glyphicon glyphicon-eye-open"></span>숨김해제
+										</a>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td class="align-middle text-center">
+									<input type="checkbox" class="align-top" />
+								</td>
+								<td class="align-middle text-center">3</td>
+								<td class="align-middle text-center">[업데이트]</td>
+								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
+								<td class="align-middle text-center">네모장군</td>
+								<td class="align-middle text-center">2018-12-13</td>
+								<td class="align-middle text-center">200</td>
+								<td class="align-middle text-center">10</td>
+								<td class="align-middle text-left">
+									<div>
+										<a class='btn btn-info btn-xs' href="detail.jsp">
+											<span class="glyphicon glyphicon-edit"></span>수정
+										</a> 
+										<a href="#" class="btn btn-danger btn-xs">
+											<span class="glyphicon glyphicon-remove"></span>삭제
+										</a>
+										<a href="#" class="btn btn-success btn-xs">
+											<span class="glyphicon glyphicon-eye-close"></span>숨김
+										</a>
+									</div>
+								</td>
+
+							</tr>
+							<tr>
+								<td class="align-middle text-center">
+									<input type="checkbox" class="align-top" />
+								</td>
+								<td class="align-middle text-center">3</td>
+								<td class="align-middle text-center">[업데이트]</td>
+								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
+								<td class="align-middle text-center">네모장군</td>
+								<td class="align-middle text-center">2018-12-13</td>
+								<td class="align-middle text-center">200</td>
+								<td class="align-middle text-center">10</td>
+								<td class="align-middle text-left">
+									<div>
+										<a class='btn btn-info btn-xs' href="detail.jsp">
+											<span class="glyphicon glyphicon-edit"></span>수정
+										</a> 
+										<a href="#" class="btn btn-danger btn-xs">
+											<span class="glyphicon glyphicon-remove"></span>삭제
+										</a>
+										<a href="#" class="btn btn-success btn-xs">
+											<span class="glyphicon glyphicon-eye-close"></span>숨김
+										</a>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+				
+				<nav class="page-tab" aria-label="Page navigation example">
+				  	<ul class="pagination">
+					    <li class="page-item">
+					      <a class="font-color" href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					        <span class="sr-only">Previous</span>
+					      </a>
+					    </li>
+					    <li class="page-item"><a class="font-color focus" href="#">1</a></li>
+					    <li class="page-item"><a class="font-color focus" href="#">2</a></li>
+					    <li class="page-item"><a class="font-color focus" href="#">3</a></li>
+					    <li class="page-item">
+					      <a class="font-color" href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					        <span class="sr-only">Next</span>
+					      </a>
+					    </li>
+					</ul>
+				</nav>
+
+				<div class="text-right" style="margin-right: 14px">
+					<a class='btn btn-info btn-xs' href="reg.jsp"><span
+						class="glyphicon glyphicon-edit"></span>글쓰기
+					</a>
+					 <a href="#" class="btn btn-danger btn-xs"><span
+						class="glyphicon glyphicon-remove"></span>선택삭제
+					</a>
+				</div>
+			</section>
+		</section>
+	</div>
+	</main>
+
+
+	<!--footer>
+					<h1>푸터</h1>
+					<h4>제작자 황세연^^</h4>
+
+			<button class="btn btn-default">
+				<i class="glyphicon glyphicon-cog gly-spin"></i>
+			</button>
+				</footer-->
 
 
 
-
-            <div style="float: right; margin-left: 200px">
-                <main>
-                    <h1>메인</h1>
-                    
-                    <div>
-                        <section>
-                            <h1>바디 헤더</h1>
-                            
-                            <section>
-                                <h1>서비스</h1>
-                                <section>
-                                    <h1>업데이트</h1>
-                                </section>
-                            </section>
-
-                        </section>
-                    
-                    
-                        <section style="margin-top: 50px">
-                            <h1>바디 메인</h1>
-                            
-                            <section>
-                                <h1>업데이트</h1>
-                                <div>
-                                    <table border="1">
-                                        <thead>
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" />
-                                                </td>
-                                                <td>글번호</td>
-                                                <td>제목</td>
-                                                <td>닉네임</td>
-                                                <td>게시일</td>
-                                                <td>조회수</td>
-                                                <td>관리</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" />
-                                                </td>
-                                                <td>3</td>
-                                                <td>업데이트~~~~~~~~~~~`` [10]</td>
-                                                <td>네모장군</td>
-                                                <td>18-12-07</td>
-                                                <td>123</td>
-                                                <td>
-                                                    <input type="submit" value="숨김" />
-                                                    <input type="submit" value="수정" />
-                                                    <input type="submit" value="삭제" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" />
-                                                </td>
-                                                <td>2</td>
-                                                <td>엡~~~~~~~~~~데 [7]</td>
-                                                <td>네모장군</td>
-                                                <td>18-12-07</td>
-                                                <td>1234</td>
-                                                <td>
-                                                    <input type="submit" value="숨김" />
-                                                    <input type="submit" value="수정" />
-                                                    <input type="submit" value="삭제" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input type="checkbox" />
-                                                </td>
-                                                <td>1</td>
-                                                <td>너무 귀차나~~~~~~~~~~ㅗㅗㅗㅗ [3]</td>
-                                                <td>네모장군</td>
-                                                <td>18-12-07</td>
-                                                <td>324</td>
-                                                <td>
-                                                    <input type="submit" value="숨김" />
-                                                    <input type="submit" value="수정" />
-                                                    <input type="submit" value="삭제" />
-                                                </td>
-                                            </tr>
-                                        </tbody>            
-                                    </table>
-                                </div>
-
-                                <div style="padding-top: 30px">
-                                    <input type="submit" value="글쓰기" />
-                                    <input type="submit" value="선택삭제" />
-                                </div>
-
-                                        
-                            </section>
-
-                        </section>
-                    </div>
-                </main>
-                
-        
-
-
-                <footer>
-                    <h1>푸터</h1>
-                    <h4>제작자 황세연^^</h4>
-            
-                </footer>
-            </div>
-        </div>
-    </section>
-  
-
-    
 </body>
 
 </html>

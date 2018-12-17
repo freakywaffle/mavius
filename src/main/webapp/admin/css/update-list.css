@@ -65,67 +65,53 @@ main{
 .margin-top {
 	margin-top: 25px!important;
 }
-
-/*panel-head*/
-.row{
-	display: block!important;
-	height: 100%;
-	width: 100%;
-}
-.row div {
-	
-	
-}
-.message-tab{
-	box-sizing: border-box;
-	/*min-height:500px;*/
-	min-width: 1100px;	  
-}	
-.message-tab-heading {
-    height: 50px;
-    border: none!important;
-}
-.nav-tabs {
-    border-bottom: none!important;
-    height: 100%;
-}
-.nav-tabs li {
-    margin-top: 10px;
-    margin-bottom:0px!important;
-}
-.nav-tabs li:first-child {
-    margin-left: 10px;
-}
+/*tab¾È¿¡ ÄÁÅÙÃ÷*/
 .nav-tabs li a {
-	height: 100%;	
 	border: none!important;
+}
+.nav-tabs>li.active>a {
+	background-color: #000000!important;
+	color: #ffffff!important;
+}
+.table>thead>tr>th, .table>tbody>tr>th, 
+.table>tfoot>tr>th, .table>thead>tr>td, 
+.table>tbody>tr>td, .table>tfoot>tr>td {
+    border-top: none!important;
+    border-bottom: 1px solid #ddd!important;
+}
+.table>tbody>tr>td>a {
+	color: #000000;
+}
+
+.table .col-w-chk {
+    width: 80px;
+}  
+.table .col-w-num {
+    width: 50px;
+}
+.table .col-w-ctg {
+    width: 100px;
+}  
+.table .col-w-writerId {
+    width: 130px;
+}
+.table .col-w-date {
+    width: 100px;
+}  
+.table .col-w-hit {
+    width: 60px;
+}
+.table .col-w-manage {
+    width: 210px;
+}
+
+/*page ÀüÈ¯ ¹öÆ°*/
+.page-tab {
+	text-align: center;
+}
+.pagination>li>a {
 	color: #000000!important;
 }
-.nav-tabs li a:focus {
+.focus:focus {
 	font-weight: bold;
-}
-#tab1default, #tab2default {
-	margin: 30px!important;
-}
-
-
-/*ÄÁÅÙÃ÷ ¶óÀÎ Á¤¸®*/
-.b {
-	display: flex;
-}
-.b>span {
-    width: 100px;
-    line-height: 34px;
-    text-align: center;
-}
-.b>span:last-child {
-    width: 130px;
-    font-size: 10px;
-}
-.b .bb{
-    line-height: 274px;
-}
-.b a{
-    line-height: 34px;
-	
 }
