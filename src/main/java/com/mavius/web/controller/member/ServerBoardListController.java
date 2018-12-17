@@ -12,12 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/board/community/server/list")
 public class ServerBoardListController extends HttpServlet{
 
-	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
 		
 		dispatcher.forward(request, response);
 	}
+
 	
+
 }

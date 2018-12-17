@@ -58,14 +58,14 @@
 			
 			<section id="coordi-list">
 				<h1 class="hidden">게시글 리스트</h1>
+					<c:forEach var="b" items="${list}">
 				<div class="margin-bottom">
 					
 					<ul>
-						
-					<c:forEach var="b" items="${list}">
+						<li>[잡담]</li>
 						<li class="fas fa-list-ol">${b.no}</li>
 						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
-					</c:forEach>
+					
 					</ul>
 					<p class="coorid-list-p">${b.content}</p>
 					<ul >
@@ -81,78 +81,8 @@
 						<span class="fas fa-bookmark">스크랩하기</span>
 					</div>
 				</div>
-				<div class="margin-bottom">
-					<ul>
-						<li class="fas fa-list-ol">1</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;ㄴㅇ-ㅇㄱ&nbsp;<span class="fas fa-quote-right"></span></li>
-					</ul>
-					<p class="coorid-list-p">오늘은 날씨가 좋은데요요오오오오오오오오오오오오오오오</p>
-					<ul >
-						<li><a href="" class="fas fa-user-circle">작성자</a></li>
-						<li class="far fa-calendar-alt">&nbsp;2018-12-05 17:45</li>
-						<li class="fas fa-eye">250</li>
-						<li class="fas fa-heart">20</li>
-						
-					</ul>
-					<div class="txt-align-right">
-						<span class="fas fa-thumbs-up">추천하기</span>
-						<span class="fas fa-bookmark">스크랩하기</span>
-					</div>
-				</div>
-				<div class="margin-bottom">
-					<ul>
-						<li class="fas fa-list-ol">1</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;ㄴㅇ-ㅇㄱ&nbsp;<span class="fas fa-quote-right"></span></li>
-					</ul>
-					<p class="coorid-list-p">오늘은 날씨가 좋은데요요오오오오오오오오오오오오오오오</p>
-					<ul >
-						<li><a href="" class="fas fa-user-circle">작성자</a></li>
-						<li class="far fa-calendar-alt">&nbsp;2018-12-05 17:45</li>
-						<li class="fas fa-eye">250</li>
-						<li class="fas fa-heart">20</li>
-						
-					</ul>
-					<div class="txt-align-right">
-						<span class="fas fa-thumbs-up">추천하기</span>
-						<span class="fas fa-bookmark">스크랩하기</span>
-					</div>
-				</div>
-				<div class="margin-bottom">
-					<ul>
-						<li class="fas fa-list-ol">1</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;ㄴㅇ-ㅇㄱ&nbsp;<span class="fas fa-quote-right"></span></li>
-					</ul>
-					<p class="coorid-list-p">오늘은 날씨가 좋은데요요오오오오오오오오오오오오오오오</p>
-					<ul >
-						<li><a href="" class="fas fa-user-circle">작성자</a></li>
-						<li class="far fa-calendar-alt">&nbsp;2018-12-05 17:45</li>
-						<li class="fas fa-eye">250</li>
-						<li class="fas fa-heart">20</li>
-						
-					</ul>
-					<div class="txt-align-right">
-						<span class="fas fa-thumbs-up">추천하기</span>
-						<span class="fas fa-bookmark">스크랩하기</span>
-					</div>
-				</div>
-				<div class="margin-bottom">
-					<ul>
-						<li class="fas fa-list-ol">1</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;ㄴㅇ-ㅇㄱ&nbsp;<span class="fas fa-quote-right"></span></li>
-					</ul>
-					<p class="coorid-list-p">오늘은 날씨가 좋은데요요오오오오오오오오오오오오오오오</p>
-					<ul >
-						<li><a href="" class="fas fa-user-circle">작성자</a></li>
-						<li class="far fa-calendar-alt">&nbsp;2018-12-05 17:45</li>
-						<li class="fas fa-eye">250</li>
-						<li class="fas fa-heart">20</li>
-						
-					</ul>
-					<div class="txt-align-right">
-						<span class="fas fa-thumbs-up">추천하기</span>
-						<span class="fas fa-bookmark">스크랩하기</span>
-					</div>
-				</div>
+				</c:forEach>
+				
 				
 
 				
@@ -162,7 +92,7 @@
 			<section>
 				<h1 class="hidden">등록 영역</h1>
 				<div class="margin-left">
-					<a href=""><span class="fas fa-edit">글쓰기</span></a>
+					<a href="../freeboard/reg.jsp"><span class="fas fa-edit">글쓰기</span></a>
 				</div>
 				
 				<!-- <input type="button" name="btn-del" value="삭제" /> 관리자가 삭제 -->
