@@ -5,11 +5,12 @@ window.addEventListener("load", function(){
 	var submitBtn = document.querySelector("form button");
 	var form = document.querySelector("form");
 	
-	
 	for(var i=0; i< pager.length;i++){
 		 pager[i].onclick = function(e){
 		 	 hiddenPager.value = e.target.innerText;
 		 	 form.submit();
 		 };
 	}
+	
+	
 });

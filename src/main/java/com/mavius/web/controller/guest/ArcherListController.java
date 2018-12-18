@@ -48,9 +48,10 @@ public class ArcherListController extends HttpServlet {
 			
 		}
 		
-		
+		System.out.println(list.size());
+		System.out.println(Math.ceil(list.size()/8));
 		request.setAttribute("list", list);
-		
+		request.setAttribute("endpage", Math.ceil(list.size()/8));
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
 
 		dispatcher.forward(request, response);
