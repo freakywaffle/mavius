@@ -17,8 +17,10 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.Part;
+import javax.sql.rowset.serial.SerialArray;
 
 import com.mavius.web.entity.Board;
+import com.mavius.web.entity.BoardFile;
 import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
@@ -27,14 +29,14 @@ import com.mavius.web.service.BoardService;
 public class JdbcBoardService implements BoardService{
 
 	@Override
-	public Board getBoard(int no) {
-		String sql = "select * from board where no = ?";
+	public BoardView getBoard(int no) {
+		String sql = "select * from board_view where no = ?";
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
 		
-		Board board = null; 
+		BoardView board = null; 
 		try {
 			Class.forName(driver);
 			
@@ -48,7 +50,7 @@ public class JdbcBoardService implements BoardService{
 			
 			
 			if(rs.next()) {
-				board = new Board(
+				board = new BoardView(
 						rs.getInt("no"), 
 						rs.getString("title"), 
 						rs.getString("content"),
@@ -57,7 +59,8 @@ public class JdbcBoardService implements BoardService{
 						rs.getString("catalog"),
 						rs.getString("category"),
 						rs.getInt("hit"),
-						rs.getInt("recommend")
+						rs.getInt("recommend"),
+						rs.getInt("reply_cnt")
 					);
 			}
 		} catch (ClassNotFoundException e) {
@@ -76,7 +79,7 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public List<BoardView> getBoardList(int page) {
 		// TODO Auto-generated method stub
-		return getBoardList(page, 10);
+		return getBoardList(page, 8);
 	}
 
 	@Override
@@ -84,7 +87,7 @@ public class JdbcBoardService implements BoardService{
 		int start = 1+(page-1)*cnt;
 		int end = page*cnt;   
 		
-		String sql = "select * from (select rownum num, b.* from board_list_view b) " 
+		String sql = "select * from (select rownum num, b.* from board_view b) " 
 					+ "where num between ? and ?";
 
 		String driver = "oracle.jdbc.driver.OracleDriver";
@@ -142,72 +145,179 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public List<BoardView> getBoardList(String name, int page) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, page, 10, "제목", "");
+		return getBoardList(name, page, 8, "title", "");
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, int page, int cnt) {
-		return getBoardList(name, page, cnt, "제목", "");
+		return getBoardList(name, page, cnt, "title", "");
 	}
 	
 	@Override
 	public List<BoardView> getBoardList(String name, int page, String keyword) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, page, 10, "제목", keyword);
+		return getBoardList(name, page, 8, "title", keyword);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, int page, int cnt, String keyword) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, page, cnt, "제목", keyword);
+		return getBoardList(name, page, cnt, "title", keyword);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, int page, String option, String keyword) {
 		// TODO Auto-generated method stub
 		
-		return getBoardList(name, page, 10, option, keyword);
+		return getBoardList(name, page, 8, option, keyword);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, int page, int cnt, String option, String keyword) {
 		
-		List<String> list = getBoardCategoryList(name);
+		int start = 1+(page-1)*cnt;
+		int end = page*cnt;   
 		
-		String category = "";
-		for(int i=0;i<list.size();i++) {
-			category += list.get(i);
+		String sql = null;
+
+		String driver = "oracle.jdbc.driver.OracleDriver";
+
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+		
+		
+		List<BoardView> list = new ArrayList<>();
+		try{
+
+			Class.forName(driver);
 			
-			if(i<list.size()-1)
-				category+=",";
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+
+			
+			PreparedStatement st = null;
+			ResultSet rs = null;
+			
+			if(!option.equals("")) {
+				switch(option) {
+				case "title":
+					sql = "select * from "
+							+ "(" 
+							+ "select rownum num, b.* "
+							+ "from board_view b "
+							+ "where catalog = ? and title like ?"
+							+ ") "
+						+ "where num between ? and ?";
+					st = con.prepareStatement(sql);
+					st.setString(1, name);
+					st.setString(2, "%"+keyword+"%");
+					st.setInt(3, start);
+					st.setInt(4, end);
+					break;
+					
+				case "content":
+					sql = "select * from "
+							+ "(" 
+							+ "select rownum num, b.* "
+							+ "from board_view b "
+							+ "where catalog = ? and content like ?"
+							+ ") "
+						+ "where num between ? and ?";
+					st = con.prepareStatement(sql);
+					st.setString(1, name);
+					st.setString(2, "%"+keyword+"%");
+					st.setInt(3, start);
+					st.setInt(4, end);
+					break;
+				case "작성자":
+					sql = "select * from "
+							+ "(" 
+							+ "select rownum num, b.* "
+							+ "from board_view b "
+							+ "where catalog = ? and writer_id = ?"
+							+ ") "
+							+ "where num between ? and ?";
+					st = con.prepareStatement(sql);
+					st.setString(1, name);
+					st.setString(2, "%"+keyword+"%");
+					st.setInt(3, start);
+					st.setInt(4, end);
+					break;
+				case "title+content":
+					sql = "select * from "
+							+ "(" 
+							+ "select rownum num, b.* "
+							+ "from board_view b "
+							+ "where catalog = ? and title like ? or content like ?"
+							+ ") "
+							+ "where num between ? and ?";
+					st = con.prepareStatement(sql);
+					st.setString(1, name);
+					st.setString(2, "%"+keyword+"%");
+					st.setString(3, "%"+keyword+"%");
+					st.setInt(4, start);
+					st.setInt(5, end);
+					break;
+				}
+			}
+			
+			rs =st.executeQuery();
+			
+			while(rs.next()) {
+				BoardView board = new BoardView(
+						rs.getInt("no"),
+						rs.getString("title"),
+						rs.getString("content"),
+						rs.getDate("regdate"),
+						rs.getString("writer_id"),
+						rs.getString("catalog"),
+						rs.getString("category"),
+						rs.getInt("hit"),
+						rs.getInt("recommend"),
+						rs.getInt("reply_cnt")
+				
+				);
+				list.add(board);
+				
+				
+			};
+			
+			rs.close();
+			st.close();
+			con.close();
+		}catch(SQLException e){
+			e.printStackTrace();
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		return getBoardList(name, category, option, keyword, page, cnt);
+
+
+		return list;
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, String category, int page) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, category, "제목", "", page, 10);
+		return getBoardList(name, category, "title", "", page, 8);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, String category, int page, int cnt) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, category, "제목", "", page, cnt);
+		return getBoardList(name, category, "title", "", page, cnt);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, String category, String keyword, int page) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, category, "제목", keyword, page, 10);
+		return getBoardList(name, category, "title", keyword, page, 8);
 	}
 
 	@Override
 	public List<BoardView> getBoardList(String name, String category, String keyword, int page, int cnt) {
 	
 		
-		return getBoardList(name, category, "제목", keyword, page, cnt);
+		return getBoardList(name, category, "title", keyword, page, cnt);
 		
 	}
 	
@@ -217,7 +327,7 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public List<BoardView> getBoardList(String name, String category, String option, String keyword, int page) {
 		// TODO Auto-generated method stub
-		return getBoardList(name, category, option, keyword, page, 10);
+		return getBoardList(name, category, option, keyword, page, 8);
 	}
 
 	@Override
@@ -232,7 +342,8 @@ public class JdbcBoardService implements BoardService{
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
-
+		
+		
 		List<BoardView> list = new ArrayList<>();
 		try{
 
@@ -243,68 +354,69 @@ public class JdbcBoardService implements BoardService{
 			
 			PreparedStatement st = null;
 			ResultSet rs = null;
-			
+			System.out.println(option);
 			if(!option.equals("")) {
 				switch(option) {
-				case "제목":
+				case "title":
 					sql = "select * from "
 							+ "(" 
 							+ "select rownum num, b.* "
-							+ "from board_list_view b "
-							+ "where catalog in (?) and category in (?) and title like '%?%'"
+							+ "from board_view b "
+							+ "where catalog = ? and category = ? and title like ?"
 							+ ") "
 						+ "where num between ? and ?";
+					System.out.println(end);
+					st = con.prepareStatement(sql);
+					st.setString(1, name);
+					st.setString(2, category);
+					st.setString(3, "%"+keyword+"%");
+					st.setInt(4, start);
+					st.setInt(5, end);
+					break;
 					
-					st = con.prepareStatement(sql);
-					st.setString(1, name);
-					st.setString(2, category);
-					st.setString(3, keyword);
-					st.setInt(4, start);
-					st.setInt(5, end);
-					break;
-				case "내용":
+				case "content":
 					sql = "select * from "
 							+ "(" 
 							+ "select rownum num, b.* "
-							+ "from board_list_view b "
-							+ "where catalog in (?) and category in (?) and content like '%?%'"
+							+ "from board_view b "
+							+ "where catalog = ? and category = ? and content like ?"
 							+ ") "
 						+ "where num between ? and ?";
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
-					st.setString(3, keyword);
+					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
 					break;
-				case "작성자":
+				case "writer":
 					sql = "select * from "
 							+ "(" 
 							+ "select rownum num, b.* "
-							+ "from board_list_view b "
-							+ "where catalog in (?) and category in (?) and writer_id = ?"
+							+ "from board_view b "
+							+ "where catalog = ? and category = ? and writer_id = ?"
 							+ ") "
 							+ "where num between ? and ?";
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
-					st.setString(3, keyword);
+					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
 					break;
-				case "제목+내용":
+				case "title+content":
 					sql = "select * from "
 							+ "(" 
 							+ "select rownum num, b.* "
-							+ "from board_list_view b "
-							+ "where catalog in (?) and category in (?) and title like '%?%' or content like '%?%'"
+							+ "from board_view b "
+							+ "where catalog = ? and category = ? and title like ? or content like ?"
 							+ ") "
 							+ "where num between ? and ?";
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
-					st.setString(3, keyword);
-					st.setString(4, keyword);
+					st.setString(3, "%"+keyword+"%");
+					st.setString(4, "%"+keyword+"%");
 					st.setInt(5, start);
 					st.setInt(6, end);
 					break;
@@ -549,6 +661,13 @@ public class JdbcBoardService implements BoardService{
 	public List<Reply> getReplyListByBoardNo(int boardNo) {
 		
 		
+		return null;
+	}
+
+	@Override
+	public List<BoardFile> getBoardFileListByBoardNo(int boardNo) {
+
+			
 		return null;
 	}
 

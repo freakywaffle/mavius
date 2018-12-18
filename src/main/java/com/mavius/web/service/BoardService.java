@@ -5,12 +5,13 @@ import java.util.List;
 import javax.servlet.http.Part;
 
 import com.mavius.web.entity.Board;
+import com.mavius.web.entity.BoardFile;
 import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
 
 public interface BoardService {
-	Board getBoard(int no);
+	BoardView getBoard(int no);
 	List<BoardView> getBoardList(int page);
 	List<BoardView> getBoardList(int page, int cnt);
 	List<BoardView> getBoardList(String name, int page);
@@ -38,6 +39,7 @@ public interface BoardService {
 	int reg(Reply reply);
 	int delReply(int replyNo);
 	List<Reply> getReplyListByBoardNo(int boardNo);
+	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
 	
 	
 	
