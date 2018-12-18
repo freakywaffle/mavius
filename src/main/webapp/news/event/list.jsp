@@ -10,7 +10,7 @@
     <link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <link href="../../sidebar/css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/newslist.css">
+    <link rel="stylesheet" href="../../css/news/newslist.css">
     <!--달력-->
     <link rel="stylesheet" href="../../css/fullcalendar.min.css">
     <script src="../../js/moment.min.js"></script>

@@ -1,3 +1,4 @@
+<%@page import="com.mavius.web.entity.MemberView"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -43,7 +44,7 @@
 
 			<section class="a">
 				<h1>
-					MemberList <span>(총 회원수 : ?명, 오늘 접속한 회원수 : ?명, 어제 접속한 회원수
+					MemberList <span>(총 회원수 : 명, 오늘 접속한 회원수 : ?명, 어제 접속한 회원수
 						:?명)</span>
 				</h1>
 
@@ -63,6 +64,24 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:forEach var="member" items="${list}">
+								<tr>
+									<td class="align-middle text-center">
+										<input type="checkbox" class="align-top" />
+									</td>
+									<td class="align-middle text-center">${member.nickName}(dfke153)</td>
+									<td class="align-middle text-center inline">관리자</td>
+									<th class="align-middle text-center">3</th>
+									<th class="align-middle text-center">1</th>
+									<td class="align-middle text-center">18-12-07</td>
+									<td class="align-middle text-center">18-12-07</td>
+									<td class="align-middle text-center"><a class='btn btn-info btn-xs'
+										href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
+											Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
+											class="glyphicon glyphicon-remove"></span> Del</a></td>
+	
+								</tr>
+							</c:forEach>
 							<tr>
 								<td class="align-middle text-center">
 									<input type="checkbox" class="align-top" />
@@ -118,6 +137,27 @@
 						</tbody>
 					</table>
 				</section>
+				
+				<nav class="page-tab" aria-label="Page navigation example">
+				  	<ul class="pagination">
+					    <li class="page-item">
+					      <a class="font-color" href="#" aria-label="Previous">
+					        <span aria-hidden="true">&laquo;</span>
+					        <span class="sr-only">Previous</span>
+					      </a>
+					    </li>
+					    	<c:forEach var="i" begin="1" end="5" >
+							    <li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+					    	</c:forEach>
+					    
+					    <li class="page-item">
+					      <a class="font-color" href="#" aria-label="Next">
+					        <span aria-hidden="true">&raquo;</span>
+					        <span class="sr-only">Next</span>
+					      </a>
+					    </li>
+					</ul>
+				</nav>
 
 				<div class="text-right" style="margin-right: 14px">
 					<a class='btn btn-info btn-xs' href="#"> <span

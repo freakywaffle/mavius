@@ -20,146 +20,22 @@
 		<!-- Custom styles for this template -->
 		<link href="../../mypage/css/boardlist.css" rel="stylesheet">
 	
+		<!-- Custom styles for this template -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+			crossorigin="anonymous"></script>
+		<script src="../../../bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+			crossorigin="anonymous"></script>
 	</head>
 	
 	
 	<body id="body">
 		<div id="hiririk">
-			<div id="dam">
+			
+	<jsp:include page="/member/mypage/mypageheader.jsp"></jsp:include>
 	
-			</div>
-			<div class="boxbox">
 				
-				<header id="header">
-					<div>
-	
-						<!-- Header -->
-						<div id="header-wrapper">
-							<ul class="header-nav header-box">
-								<li class="header-brand">
-									<a href="#">
-										MAVIUS
-									</a>
-								</li>
-								<li>
-									<div class="pa" >
-										<a href="#One">정보수정</a>
-										<!-- <div class="submenu">
-										<ul>
-											<li><a href="#">게시글</a></li>
-											<li><a href="#">댓글</a></li>
-										</ul>
-									</div> -->
-									</div>
-	
-	
-								</li>
-								<li>
-									<div class="pa" >
-										<a href="#One">내가 쓴글</a>
-										<div class="submenu">
-											<ul>
-												<li><a href="#">게시글</a></li>
-												<li><a href="#">댓글</a></li>
-											</ul>
-										</div>
-									</div>
-	
-	
-								</li>
-								<li>
-									<div class="pa" >
-	
-										<a href="#Two">쪽지</a>
-										<div class="submenu">
-											<ul>
-												<li><a href="#1">보내기</a></li>
-												<li><a href="#2">받은쪽지함</a></li>
-	
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="pa" >
-	
-										<a href="#">QnA</a>
-										<div class="submenu">
-											<ul>
-												<li><a href="#1">1</a></li>
-												<li><a href="#2">2</a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="pa" >
-	
-										<a href="#">Reply</a>
-										<div class="submenu">
-											<ul>
-												<li><a href="#1">1</a></li>
-												<li><a href="#2">2</a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								<li>
-									<div class="pa" >
-	
-										<a href="#">Scrap</a>
-										<div class="submenu">
-											<ul>
-												<li><a href="#1">1</a></li>
-												<li><a href="#2">2</a></li>
-											</ul>
-										</div>
-									</div>
-								</li>
-	
-							</ul>
-						</div>
-	
-					</div>
-				</header>
-	
-	
-				<!-- Header -->
-	
-				<!-- <div class="side-btn" onclick="toggleSidebar()">
-				
-					<span></span>
-					<span></span>
-					<span></span>
-			</div> -->
-	
-			<!-- <div id="sidebar">
-					<div class="side-btn" onclick="toggleSidebarout()">
-					</div>
-					<ul class="sidebar-nav">
-						<li>
-							<a href="#">home</a>
-						</li>
-						<li>
-							<a href="#">about</a>
-						</li>
-						<li>
-							<a href="#">contact</a>
-						</li>
-	
-					</ul>
-				</div>
-	
-				<script>
-	
-					function toggleSidebarout() {
-	
-						document.getElementById("sidebar").classList.toggle('active');
-	
-						var dd = getElementById("hiririk");
-					}
-	
-				</script> -->
 		<jsp:include page="/sidebar/sidebar.jsp"></jsp:include>
 	
 	
@@ -280,7 +156,24 @@
 	
 	
 							</div>
-							
+							<div class="pagerbox">
+                                <nav>
+                                    <ul class="pager-list">
+                                        <li class="pager-item"><a class="pager-link" href="#">
+                                                < </a> </li> <li class="pager-item"><a class="pager-link" href="#"> 1 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 2 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 3 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 4 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 5 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 6 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 7 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 8 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 9 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> 10 </a></li>
+                                        <li class="pager-item"><a class="pager-link" href="#"> > </a></li>
+                                    </ul>
+                                </nav>
+                            </div>
 						</div>
 						
 					</section>
