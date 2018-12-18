@@ -2,6 +2,7 @@ package com.mavius.web.entity;
 
 import java.util.Date;
 
+
 public class News {
 	private int no;
 	private String title;
@@ -14,7 +15,7 @@ public class News {
 	public News() {
 		super();
 	}
-
+	
 	public News(int no, String title, String content, Date regDate, String writerId, String catalog, int hit) {
 		this.no = no;
 		this.title = title;
@@ -89,6 +90,12 @@ public class News {
 
 	public void setHit(int hit) {
 		this.hit = hit;
+	}
+
+	@Override
+	public String toString() {
+		return "News [no=" + no + ", title=" + title + ", content=" + content + ", regDate=" + regDate + ", writerId="
+				+ writerId + ", catalog=" + catalog + ", hit=" + hit + "]";
 	}
 	
 	

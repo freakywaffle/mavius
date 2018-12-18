@@ -44,96 +44,50 @@
 
 			<section class="a">
 				<h1>
-					MemberList <span>(총 회원수 : 명, 오늘 접속한 회원수 : ?명, 어제 접속한 회원수
-						:?명)</span>
+					MemberList <span>(총 회원수 : ${ms}명)</span>
 				</h1>
 
 				<section class="margin-top">
 					<table class="table table-striped">
 						<thead class="thead-dark">
 							<tr>
-								<th class="align-middle text-center"><input type="checkbox"
+								<th class="align-middle text-center col-w-chk"><input type="checkbox"
 									class="align-top" /></th>
-								<th class="align-middle text-center">닉네임(아이디)</th>
-								<th class="align-middle text-center">등급</th>
-								<th class="align-middle text-center">게시글수</th>
-								<th class="align-middle text-center">댓글수</th>
-								<th class="align-middle text-center">가입일</th>
-								<th class="align-middle text-center">최근 접속일</th>
-								<th class="align-middle text-center">관리</th>
+								<th class="align-middle text-center col-w-num">회원번호</th>
+								<th class="align-middle text-center col-w-nick">닉네임(아이디)</th>
+								<th class="align-middle text-center col-w-gra">등급</th>
+								<th class="align-middle text-center col-w-pc">게시글수</th>
+								<th class="align-middle text-center col-w-cc">댓글수</th>
+								<th class="align-middle text-center col-w-jd">가입일</th>
+								<th class="align-middle text-center col-w-manage">관리</th>
 							</tr>
 						</thead>
 						<tbody>
+						
 							<c:forEach var="member" items="${list}">
 								<tr>
 									<td class="align-middle text-center">
 										<input type="checkbox" class="align-top" />
 									</td>
-									<td class="align-middle text-center">${member.nickName}(dfke153)</td>
-									<td class="align-middle text-center inline">관리자</td>
-									<th class="align-middle text-center">3</th>
-									<th class="align-middle text-center">1</th>
-									<td class="align-middle text-center">18-12-07</td>
-									<td class="align-middle text-center">18-12-07</td>
-									<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-										href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-											Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-											class="glyphicon glyphicon-remove"></span> Del</a></td>
-	
+									<td class="align-middle text-center">${member.num}</td>
+									<td class="align-middle text-left member-detail"><a href="detail?id=${member.id}">${member.nickName}&nbsp;&nbsp;(${member.id})</a></td>
+									<td class="align-middle text-center">${member.grade}</td>
+									<th class="align-middle text-center">${member.postsCount}</th>
+									<th class="align-middle text-center">${member.commentCount}</th>
+									<td class="align-middle text-center">${member.joinDate}</td>
+									<td class="align-middle text-center ">
+										<div>
+											<a class='btn btn-info btn-xs' href="detail.jsp">
+												<span class="glyphicon glyphicon-edit"></span>수정
+											</a> 
+											<a href="#" class="btn btn-danger btn-xs">
+												<span class="glyphicon glyphicon-remove"></span>탈퇴	
+											</a>
+										</div>
+									</td>
 								</tr>
 							</c:forEach>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">네모장군(dfke153)</td>
-								<td class="align-middle text-center inline">관리자</td>
-								<th class="align-middle text-center">3</th>
-								<th class="align-middle text-center">1</th>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-									href="detail.jsp"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-
-							</tr>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">닉닉(seyeon1491)</td>
-								<td class="align-middle text-center">회원	</td>
-								<th class="align-middle text-center">3</th>
-								<th class="align-middle text-center">1</th>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-									href="#"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-
-
-							</tr>
-							<tr>
-								<td class="align-middle text-center"><input type="checkbox"
-									class="align-top" /></td>
-								<td class="align-middle text-center">배열지존(dewf3)</td>
-								<td class="align-middle text-center">회원</td>
-								<th class="align-middle text-center">3</th>
-								<th class="align-middle text-center">1</th>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center">18-12-07</td>
-								<td class="align-middle text-center"><a class='btn btn-info btn-xs'
-									href="#"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
-								<!--td class ="text-center">
-													<button type="button" class="btn btn-success">수정</button>
-													<button type="button" class="btn btn-warning">관리</button>
-													<button type="button" class="btn btn-danger">탈퇴</button>
-												</td-->
-							</tr>
+							
 						</tbody>
 					</table>
 				</section>
@@ -160,9 +114,7 @@
 				</nav>
 
 				<div class="text-right" style="margin-right: 14px">
-					<a class='btn btn-info btn-xs' href="#"> <span
-						class="glyphicon glyphicon-edit"></span> SelectEdit
-					</a> <a href="#" class="btn btn-danger btn-xs"> <span
+					<a href="#" class="btn btn-danger btn-xs"> <span
 						class="glyphicon glyphicon-remove"></span> SelectDel
 					</a>
 				</div>

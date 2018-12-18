@@ -127,6 +127,34 @@ main{
     border-top: none!important;
     border-bottom: 1px solid #ddd!important;
 }
+.col-w-chk {
+    width: 80px;
+}  
+.col-w-num {
+    width: 100px;
+}
+.col-w-nick {
+    min-width: 250px;
+}
+.col-w-gra {
+    width: 120px;
+}  
+.col-w-pc {
+    width: 80px;
+}
+.col-w-cc {
+    width: 80px;
+}  
+.col-w-jd {
+    width: 120px;
+}
+.col-w-manage {
+    width: 180px;
+}
+.member-detail a{
+	color: #000000;
+	padding-left: 15px;
+}
 
 /*.panel-body {
 	margin: 30px!important;  

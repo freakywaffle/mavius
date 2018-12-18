@@ -7,10 +7,10 @@ public class Member {
 	private String id;
 	private String pwd;
 	private String nickName;
-	private String eMail;
+	private String email;
 	private String grade;
 	private int exp;
-	private Date regDate;
+	private Date joinDate;
 	private int report;
 	private int authority;
 	
@@ -20,22 +20,34 @@ public class Member {
 		super();
 	}
 	
-	public Member(String nickName, String id, String grade, Date regDate) {
+	public Member(String nickName, String id, String grade, Date joinDate) {
 		super();
 		this.nickName = nickName;
 		this.id = id;
 		this.grade = grade;
-		this.regDate = regDate;
+		this.joinDate = joinDate;
+	}
+	
+	public Member(String nickName, String id, String grade, String email, Date joinDate, int exp, int report) {
+		super();
+		this.nickName = nickName;
+		this.id = id;
+		this.grade = grade;
+		this.email = email;
+		this.joinDate = joinDate;
+		this.exp = exp;
+		this.report = report;
+		
 	}
 
-	public Member(String id, String nickName, String eMail, String grade, int exp, Date regDate, int report) {
+	public Member(String id, String nickName, String email, String grade, int exp, Date joinDate, int report) {
 		super();
 		this.id = id;
 		this.nickName = nickName;
-		this.eMail = eMail;
+		this.email = email;
 		this.grade = grade;
 		this.exp = exp;
-		this.regDate = regDate;
+		this.joinDate = joinDate;
 		this.report = report;
 	}
 
@@ -58,11 +70,11 @@ public class Member {
 	public void setNickName(String nickName) {
 		this.nickName = nickName;
 	}
-	public String geteMail() {
-		return eMail;
+	public String getemail() {
+		return email;
 	}
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setemail(String email) {
+		this.email = email;
 	}
 	public String getGrade() {
 		return grade;
@@ -76,11 +88,11 @@ public class Member {
 	public void setExp(int exp) {
 		this.exp = exp;
 	}
-	public Date getRegDate() {
-		return regDate;
+	public Date getJoinDate() {
+		return joinDate;
 	}
-	public void setRegDate(Date regDate) {
-		this.regDate = regDate;
+	public void setJoinDate(Date joinDate) {
+		this.joinDate = joinDate;
 	}
 	public int getReport() {
 		return report;
@@ -97,8 +109,8 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [id=" + id + ", pwd=" + pwd + ", nickName=" + nickName + ", eMail=" + eMail + ", grade=" + grade
-				+ ", exp=" + exp + ", regDate=" + regDate + ", report=" + report + ", authority=" + authority + "]";
+		return "Member [id=" + id + ", pwd=" + pwd + ", nickName=" + nickName + ", email=" + email + ", grade=" + grade
+				+ ", exp=" + exp + ", regDate=" + joinDate + ", report=" + report + ", authority=" + authority + "]";
 	}
 	
 	

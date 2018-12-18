@@ -13,8 +13,8 @@ import com.mavius.web.entity.MemberView;
 import com.mavius.web.service.MemberService;
 import com.mavius.web.service.jdbc.JdbcMemberService;
 
-@WebServlet("/admin/board/community/freeboard/list")
-public class FreeBoardListController extends HttpServlet{
+@WebServlet("/admin/news/update/list")
+public class UpdateListController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -24,7 +24,7 @@ public class FreeBoardListController extends HttpServlet{
 				
 		
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/board/community/freeboard/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/news/update/list.jsp");
 		
 		dispatcher.forward(request, response);
 	}
