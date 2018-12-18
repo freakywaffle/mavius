@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,9 +127,11 @@
 
     <!-- 메인 바디 헤더 -->
     <main>
-        <div class="main-body-header">
-            <h1 class="text-center">E v e n t</h1>
-            <h3 class="text-center">이 벤 트</h3>
+        <div class="main-body-div">
+	        <div class="main-body-header">
+	            <h1 class="text-center">E v e n t</h1>
+	            <h3 class="text-center">이 벤 트</h3>
+	        </div>
         </div>
 
         <!--달력-->
@@ -173,30 +176,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="n" items="${list }">
                     <tr> 
-                        <td class="text-center">3</td>
-                        <td>table-bordered는 표처럼 보이게 만들어줌 셀마다 테두리</td>
-                        <td class="text-center">2016-12-27</td>
-                        <td class="text-center">3234</td>
+                        <td class="text-center">${n.no }</td>
+                        <td>table-striped는 홀수마다 색을 주네</td>
+                        <%-- <td><a href="detail?no=${n.no }">${n.title }</a></td> --%>
+                        <td class="text-center">${n.regDate }</td>
+                        <td class="text-center">${n.hit }</td>
                     </tr>
-                    <tr> 
+                    </c:forEach>
+                   <!--  <tr> 
                         <td class="text-center">3</td>
                         <td>table-striped는 홀수마다 색을 주네</td>
                         <td class="text-center">2015-01-03</td>
                         <td class="text-center">6323</td>
-                    </tr>
-                    <tr> 
-                        <td class="text-center">2</td>
-                        <td>전역일 군번 12-73077374</td>
-                        <td class="text-center">2014-08-26</td>
-                        <td class="text-center">442</td>
-                    </tr>
-                    <tr> 
-                        <td class="text-center">1</td>
-                        <td>입대일 군번 12-73077374</td>
-                        <td class="text-center">2012-11-27</td>
-                        <td class="text-center">323</td>
-                    </tr>
+                    </tr> -->
                     </tbody>
                 </table>
             </div>

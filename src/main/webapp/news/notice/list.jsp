@@ -22,9 +22,11 @@
 
     <!-- 메인 바디 헤더 -->
     <main>
-        <div class="">
-            <h1 class="text-center">N o t i c e</h1>
-            <h3 class="text-center">공 지 사 항</h3>
+	    <div class="main-body-div">
+	        <div class="main-body-header">
+	            <h1 class="text-center">N o t i c e</h1>
+	            <h3 class="text-center">공 지 사 항</h3>
+	        </div>
         </div>
 
         <!-- 바디 content ------------------------------>
