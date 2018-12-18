@@ -19,7 +19,7 @@
                         </a>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
                             <a href="#One">소식</a>
                             <div class="submenu submenu-sm">
                                 <ul>
@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
 
                             <a href="#Two">커뮤니티</a>
                             <div class="submenu submenu-sm">
@@ -45,7 +45,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
 
                             <a href="#">공략</a>
                             <div class="submenu submenu-lg">

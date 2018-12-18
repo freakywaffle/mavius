@@ -4,13 +4,16 @@ import java.util.List;
 
 import com.mavius.web.entity.Board;
 
-public interface BoardService {
-	List<Board> getBoardList(String uid, int start);
-	List<Board> getBoardList(String uid, int start, int cnt);
-	List<Board> getBoardList(String uid, String keyword, int start);
-	List<Board> getBoardList(String uid, String keyword, int start, int cnt);
-	List<Board> getBoardList(String uid, String option, String keyword, int start);
-	List<Board> getBoardList(String uid, String option, String keyword, int start, int cnt);
+public interface BoardService
+{
 	
-	int delBoard(int no);
+	List<Board> getBoardListById(String uid, int page);
+	List<Board> getBoardListById(String uid, int page, int cnt);
+	List<Board> getBoardListById(String uid, String keyword, int page);
+	List<Board> getBoardListById(String uid, String keyword, int page, int cnt); //cnt 컬럼수
+	List<Board> getBoardListById(String uid, String option, String keyword, int page);
+	List<Board> getBoardListById(String uid, String option, String keyword, int page, int cnt);
+	
+//	int delBoard(int no);
+	
 }

@@ -9,8 +9,20 @@ import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
 
-public interface BoardService {
+public interface BoardService 
+{
+	
+	Board getBoardListById(String uid, int page);
+	Board getBoardListById(String uid, int page, int cnt);
+	Board getBoardListById(String uid,  int page, String keyword);
+	Board getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
+	Board getBoardListById(String uid, int page, String keyword, String catalog);
+	Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
+	
+	
 	Board getBoard(int no);
+	
+	
 	List<BoardView> getBoardList(int page);
 	List<BoardView> getBoardList(int page, int cnt);
 	List<BoardView> getBoardList(String name, int page);

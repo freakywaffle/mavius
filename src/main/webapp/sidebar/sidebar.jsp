@@ -7,7 +7,7 @@
         </div>
         <ul class="sidebar-nav2">
             <li>
-                <a href="#">home</a>
+                <a href="#">mypage</a>
             </li>
             <li>
                 <a href="#">about</a>

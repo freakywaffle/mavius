@@ -552,9 +552,106 @@ public class JdbcBoardService implements BoardService{
 		return null;
 	}
 
+	@Override
+	public Board getBoardListById(String uid, int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Board getBoardListById(String uid, int page, String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt, String keyword) 
+	{
+		// TODO Auto-generated method stub
+		
+		Board b = null;
+		
+		String sql ="SELECT * FROM "+
+				"BOARD WHERE WRITER_ID=? "+
+				"ORDER BY REGDATE DESC";
+		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+        try 
+        {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##MAVIUS","maplegg");
+	        PreparedStatement st = con.prepareStatement(sql);
+	        st.setString(1, uid);
+	        
+	        ResultSet rs = st.executeQuery();
+	        
+	        rs.next();
+	        
+	        b = new Board
+	        		(
+		        		rs.getInt("no"),
+		        		rs.getString("title"),
+		        		rs.getString("content"),
+		        		rs.getDate("regdate"),
+		        		rs.getString("writerId"),
+		        		rs.getString("catalog"),
+		        		rs.getString("category"),
+		        		rs.getInt("hit"),
+		        		rs.getInt("recommend")
+	        		
+	        		);
+	        
+	        	
+	        	
+	        	rs.close();
+	        	st.close();
+	        	con.close();
+	        	
+	        
+		} catch (ClassNotFoundException e) 
+        {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+		
+		
+		
+		
+		return b;
+		
+		return null;
+	}
+
+	@Override
+	public Board getBoardListById(String uid, int page, String keyword, String catalog) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	// mypage 전용 메소드
+	
+	
+	
 	
 
+	
 	
 
 }

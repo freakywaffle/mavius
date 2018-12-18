@@ -3,7 +3,7 @@ pageEncoding="UTF-8"%>
 <link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!--"vendor/bootstrap/css/bootstrap.min.css"-->
 <!-- Custom styles for this template -->
-<link href="../mypage/css/mypageheader.css" rel="stylesheet">
+<link href="/member/mypage/css/mypageheader.css" rel="stylesheet">
 <script src="../mypage/css/jquery-3.3.1.slim.min.js"></script>
 <script src="../mypage/css/popper.min.js"></script>
 <script src="../../bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js"></script>
@@ -31,33 +31,33 @@ pageEncoding="UTF-8"%>
                 </li>
                 <li>
                     <div class="pa">
-                        <a href="#One">정보수정</a>
+                        <a onclick="location.href='/mypage/confirm'" href="#One">정보수정</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa">
 
-                        <a href="#Two">쪽지</a>
+                        <a onclick="location.href='/mypage/messagelist'" href="#Two">쪽지</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a href="#">내가쓴글</a>
+                        <a onclick="location.href='/mypage/boardlist'" href="#">내가쓴글</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a href="#">QnA</a>
+                        <a onclick="location.href='/mypage/qnalist'" href="#">QnA</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a href="#">Reply</a>
+                        <a onclick="location.href='/mypage/replylist'" href="#">Reply</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a href="#">Scrap</a>
+                        <a onclick="location.href='/mypage/scraplist'" href="#">Scrap</a>
                     </div>
                 </li>
             </ul>
