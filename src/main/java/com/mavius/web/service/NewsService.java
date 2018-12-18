@@ -1,4 +1,4 @@
-package com.mavius.web.service;
+	package com.mavius.web.service;
 
 import java.util.List;
 
@@ -6,7 +6,8 @@ import com.mavius.web.entity.News;
 
 public interface NewsService {
 	News getNews(int no);
-	List<News> getNewsList(int start);//전체검색
+	List<News> getNewsList();//전체검색
+	List<News> getNewsList(int page);//전체검색
 	List<News> getNewsList(int start, int cnt);//전체검색
 	List<News> getNewsList(String name, int start);//특정게시판 가져오기
 	List<News> getNewsList(String name, int start, int cnt);//특정게시판 가져오기
