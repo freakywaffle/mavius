@@ -1,5 +1,7 @@
 window.addEventListener("load", function(){
 	
+	var pager = document.querySelector(".target-pager");
+
 	var pager = document.querySelectorAll(".target-pager li");
 	var hiddenPager = document.querySelector('input[name="page"]');
 	var submitBtn = document.querySelector("form button");
@@ -11,6 +13,9 @@ window.addEventListener("load", function(){
 		 	 form.submit();
 		 };
 	}
+	
+	
+	var nextBtn = document.query
 	
 	
 });

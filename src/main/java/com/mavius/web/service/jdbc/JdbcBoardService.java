@@ -14,7 +14,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Part;
 import javax.sql.rowset.serial.SerialArray;
@@ -27,55 +29,7 @@ import com.mavius.web.entity.Report;
 import com.mavius.web.service.BoardService;
 
 public class JdbcBoardService implements BoardService{
-	
 
-	@Override
-	public int getBoardListCountAll() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public int getBoardListCountByName(String name) {
-		String sql = "select * from "
-				+ "("
-				+ "select rownum num, catalog from board  where catalog = ? order by num desc"
-				+ ") "
-				+ "where rownum =1";
-		
-		String driver = "oracle.jdbc.driver.OracleDriver";
-
-		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
-		
-		int all=0; 
-		try {
-			Class.forName(driver);
-			
-			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
-
-			
-			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1, name);
-			ResultSet rs = st.executeQuery();
-			
-			
-			
-			if(rs.next()) {
-				all = rs.getInt("num");
-			}
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-		return all;
-	}
 
 	@Override
 	public BoardView getBoard(int no) {
@@ -126,23 +80,27 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public List<BoardView> getBoardList(int page) {
+	public Map<String, Object> getBoardList(int page) {
 		// TODO Auto-generated method stub
 		return getBoardList(page, 8);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(int page, int cnt) {
+	public Map<String, Object> getBoardList(int page, int cnt) {
 		int start = 1+(page-1)*cnt;
 		int end = page*cnt;   
 		
 		String sql = "select * from (select rownum num, b.* from board_view b) " 
 					+ "where num between ? and ?";
+		
+		String sql2 = "select count(*) cnt from board_view";
 
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
 
+		Map<String, Object> map = new HashMap<>();
+		
 		List<BoardView> list = new ArrayList<>();
 		try{
 
@@ -173,12 +131,24 @@ public class JdbcBoardService implements BoardService{
 				);
 				list.add(board);
 				
-				
 			};
-			
 			rs.close();
 			st.close();
+			
+			Statement st2 = con.createStatement();
+			ResultSet rs2 = st2.executeQuery(sql2);
+			
+			rs2.next();
+			
+			int rowCnt = rs2.getInt("cnt");
+			
+			map.put("rowCnt", rowCnt);
+			map.put("list", list);
+			
+			rs2.close();
+			st2.close();			
 			con.close();
+			
 		}catch(SQLException e){
 			e.printStackTrace();
 
@@ -188,52 +158,53 @@ public class JdbcBoardService implements BoardService{
 		}
 
 
-		return list;
+		return map;
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, int page) {
+	public Map<String, Object> getBoardList(String name, int page) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, page, 8, "title", "");
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, int page, int cnt) {
+	public Map<String, Object> getBoardList(String name, int page, int cnt) {
 		return getBoardList(name, page, cnt, "title", "");
 	}
 	
 	@Override
-	public List<BoardView> getBoardList(String name, int page, String keyword) {
+	public Map<String, Object> getBoardList(String name, int page, String keyword) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, page, 8, "title", keyword);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, int page, int cnt, String keyword) {
+	public Map<String, Object> getBoardList(String name, int page, int cnt, String keyword) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, page, cnt, "title", keyword);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, int page, String option, String keyword) {
+	public Map<String, Object> getBoardList(String name, int page, String option, String keyword) {
 		// TODO Auto-generated method stub
 		
 		return getBoardList(name, page, 8, option, keyword);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, int page, int cnt, String option, String keyword) {
+	public Map<String, Object> getBoardList(String name, int page, int cnt, String option, String keyword) {
 		
 		int start = 1+(page-1)*cnt;
 		int end = page*cnt;   
 		
 		String sql = null;
-
+		String sql2 = null;
+		
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
 		
-		
+		Map<String, Object> map = new HashMap<>();
 		List<BoardView> list = new ArrayList<>();
 		try{
 
@@ -243,7 +214,9 @@ public class JdbcBoardService implements BoardService{
 
 			
 			PreparedStatement st = null;
+			PreparedStatement st2 = null;
 			ResultSet rs = null;
+			ResultSet rs2 = null;
 			
 			if(!option.equals("")) {
 				switch(option) {
@@ -255,11 +228,23 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and title like ?"
 							+ ") "
 						+ "where num between ? and ?";
+					
+					sql2 =  "select count(*) cnt "
+							+ "from board_view "
+							+ "where catalog = ? and title like ?";
+						
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, "%"+keyword+"%");
 					st.setInt(3, start);
 					st.setInt(4, end);
+					
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, "%"+keyword+"%");
+					
 					break;
 					
 				case "content":
@@ -270,13 +255,23 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and content like ?"
 							+ ") "
 						+ "where num between ? and ?";
+					
+					sql2 =  "select count(*) cnt "
+							+ "from board_view "
+							+ "where catalog = ? and content like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, "%"+keyword+"%");
 					st.setInt(3, start);
 					st.setInt(4, end);
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, "%"+keyword+"%");
+
 					break;
-				case "작성자":
+				case "writer":
 					sql = "select * from "
 							+ "(" 
 							+ "select rownum num, b.* "
@@ -284,11 +279,22 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and writer_id = ?"
 							+ ") "
 							+ "where num between ? and ?";
+					
+					sql2 = "select count(*) cnt "
+							+ "from board_view "
+							+ "where catalog = ? and writer_id = ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, "%"+keyword+"%");
 					st.setInt(3, start);
 					st.setInt(4, end);
+					
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, "%"+keyword+"%");
+					
 					break;
 				case "title+content":
 					sql = "select * from "
@@ -298,12 +304,23 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and title like ? or content like ?"
 							+ ") "
 							+ "where num between ? and ?";
+					
+					sql2 = "select count(*) cnt "
+							+ "from board_view "
+							+ "where catalog = ? and title like ? or content like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, "%"+keyword+"%");
 					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, "%"+keyword+"%");
+					st2.setString(3, "%"+keyword+"%");
+					
 					break;
 				}
 			}
@@ -324,13 +341,24 @@ public class JdbcBoardService implements BoardService{
 						rs.getInt("reply_cnt")
 				
 				);
-				list.add(board);
-				
-				
+				list.add(board);		
 			};
 			
 			rs.close();
 			st.close();
+			
+			
+			rs2 = st2.executeQuery();
+			rs2.next();
+			
+			int rowCnt = rs2.getInt("cnt");
+			
+			map.put("rowCnt", rowCnt);
+			map.put("list", list);
+			
+			rs2.close();
+			st2.close();
+			
 			con.close();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -341,57 +369,56 @@ public class JdbcBoardService implements BoardService{
 		}
 
 
-		return list;
+		return map;
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, int page) {
+	public Map<String, Object> getBoardList(String name, String category, int page) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, category, "title", "", page, 8);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, int page, int cnt) {
+	public Map<String, Object> getBoardList(String name, String category, int page, int cnt) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, category, "title", "", page, cnt);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, String keyword, int page) {
+	public Map<String, Object> getBoardList(String name, String category, String keyword, int page) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, category, "title", keyword, page, 8);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, String keyword, int page, int cnt) {
+	public Map<String, Object> getBoardList(String name, String category, String keyword, int page, int cnt) {
 	
 		
 		return getBoardList(name, category, "title", keyword, page, cnt);
 		
 	}
-	
-	
-	
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, String option, String keyword, int page) {
+	public Map<String, Object> getBoardList(String name, String category, String option, String keyword, int page) {
 		// TODO Auto-generated method stub
 		return getBoardList(name, category, option, keyword, page, 8);
 	}
 
 	@Override
-	public List<BoardView> getBoardList(String name, String category, String option, String keyword, int page,
+	public Map<String, Object> getBoardList(String name, String category, String option, String keyword, int page,
 			int cnt) {
 		
 		int start = 1+(page-1)*cnt;
 		int end = page*cnt;   
 		
 		String sql = null;
-
+		String sql2 = null;
+		
 		String driver = "oracle.jdbc.driver.OracleDriver";
 
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
 		
+		Map<String, Object> map = new HashMap<>();
 		
 		List<BoardView> list = new ArrayList<>();
 		try{
@@ -402,8 +429,12 @@ public class JdbcBoardService implements BoardService{
 
 			
 			PreparedStatement st = null;
+			PreparedStatement st2 = null;
+			
 			ResultSet rs = null;
-			System.out.println(option);
+			ResultSet rs2 = null;
+			
+			
 			if(!option.equals("")) {
 				switch(option) {
 				case "title":
@@ -414,13 +445,22 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and category = ? and title like ?"
 							+ ") "
 						+ "where num between ? and ?";
-					System.out.println(end);
+					
+					sql2 = "select count(*) cnt from board_view "
+							+ "where catalog = ? and category = ? and title like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
 					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, category);
+					st2.setString(3, "%"+keyword+"%");
+						
 					break;
 					
 				case "content":
@@ -431,12 +471,23 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and category = ? and content like ?"
 							+ ") "
 						+ "where num between ? and ?";
+					
+					sql2 = "select count(*) cnt from board_view "
+							+ "where catalog = ? and category = ? and content like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
 					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, category);
+					st2.setString(3, "%"+keyword+"%");
+					
+					
 					break;
 				case "writer":
 					sql = "select * from "
@@ -446,12 +497,23 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and category = ? and writer_id = ?"
 							+ ") "
 							+ "where num between ? and ?";
+					
+					sql2 = "select count(*) cnt from board_view "
+							+ "where catalog = ? and category = ? and writer_id like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
 					st.setString(3, "%"+keyword+"%");
 					st.setInt(4, start);
 					st.setInt(5, end);
+					
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, category);
+					st2.setString(3, "%"+keyword+"%");
+					
 					break;
 				case "title+content":
 					sql = "select * from "
@@ -461,6 +523,10 @@ public class JdbcBoardService implements BoardService{
 							+ "where catalog = ? and category = ? and title like ? or content like ?"
 							+ ") "
 							+ "where num between ? and ?";
+					
+					sql2 = "select count(*) cnt from board_view "
+							+ "where catalog = ? and category = ? and title like ?";
+					
 					st = con.prepareStatement(sql);
 					st.setString(1, name);
 					st.setString(2, category);
@@ -468,6 +534,14 @@ public class JdbcBoardService implements BoardService{
 					st.setString(4, "%"+keyword+"%");
 					st.setInt(5, start);
 					st.setInt(6, end);
+					
+					
+					st2 = con.prepareStatement(sql2);
+					st2.setString(1, name);
+					st2.setString(2, category);
+					st2.setString(3, "%"+keyword+"%");
+					st2.setString(4, "%"+keyword+"%");
+					
 					break;
 				}
 			}
@@ -495,6 +569,17 @@ public class JdbcBoardService implements BoardService{
 			
 			rs.close();
 			st.close();
+			
+			
+			rs2 = st2.executeQuery();
+			
+			rs.next();
+			int rowCnt = rs.getInt("cnt");
+			
+			map.put("rowCnt", rowCnt);
+			map.put("list", list);
+			
+			
 			con.close();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -505,7 +590,7 @@ public class JdbcBoardService implements BoardService{
 		}
 
 
-		return list;
+		return map;
 	}
 	
 	@Override
@@ -530,6 +615,11 @@ public class JdbcBoardService implements BoardService{
 			while(rs.next()) {
 				list.add(rs.getString("name"));
 			}
+			
+			rs.close();
+			st.close();
+			con.close();
+			
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -717,6 +807,48 @@ public class JdbcBoardService implements BoardService{
 	public List<BoardFile> getBoardFileListByBoardNo(int boardNo) {
 
 			
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page, String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt, String keyword) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page, String keyword, String catalog) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

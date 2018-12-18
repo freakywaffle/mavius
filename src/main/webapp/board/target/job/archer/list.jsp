@@ -87,7 +87,7 @@
 						</section>
 						<section class="target-pager margin-top">
 							<h1 class="hidden">페이저</h1>
-							<p class="inline">
+							<p class="inline prev">
 								<i class="fas fa-caret-left"></i>
 							</p>
 							<ul class="inline-list">
@@ -97,7 +97,7 @@
 									<c:set var="page" value="${param.page}" />
 								</c:if>
 								
-								<c:forEach var="i" begin="1" end="${endpage }">
+								<c:forEach var="i" begin="${startPage }" end="${endPage }">
 									
 									<c:set var="cls" value="${i==page?'font-bold underline':''}" />
 									
@@ -109,7 +109,7 @@
 								<li><a class="page">4</a></li>
 								<li><a class="page">5</a></li> -->
 							</ul>
-							<p class="inline">
+							<p class="inline next">
 								<i class="fas fa-caret-right"></i>
 							</p>
 						</section>
