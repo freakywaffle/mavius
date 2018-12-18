@@ -2,6 +2,7 @@ package com.mavius.web.controller.member;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,11 +31,11 @@ public class FreeBoardListController extends HttpServlet{
 
 
 		BoardService service = new JdbcBoardService();
-		List<BoardView> list = service.getBoardList("freeboard",1,1);
+		Map<String,Object> map = service.getBoardList("freeboard",1);
 		
-		System.out.println(list);
+		//System.out.println(list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
-		request.setAttribute("list", list);
+		request.setAttribute("list", map.get("list"));
 		dispatcher.forward(request, response);
 
 	}
