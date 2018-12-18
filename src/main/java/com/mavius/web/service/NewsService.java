@@ -22,6 +22,7 @@ public interface NewsService {
 	int delNews(int no);
 	List<NewsView> getViewList();
 	List<NewsView> getViewList(int page);
-	List<NewsView> getViewList(int page, String query);
-	List<NewsView> getViewList(int page, String query, String title);
+	List<NewsView> getViewList(int page, String option);
+	List<NewsView> getViewList(int page, String option, String keyword);
+	List<NewsView> getViewList(int page, String option, String keyword, String name); //page(몇페이지 보여줄지), option(검색옵션, 제목이나 내용 제목+내용), name게시판이름
 }

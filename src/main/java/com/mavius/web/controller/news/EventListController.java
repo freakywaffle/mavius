@@ -20,17 +20,17 @@ public class EventListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		NewsService service = new JdbcNewsService();
-		
+		System.out.println("착하지");
 		String page_ = request.getParameter("p");
 		int page = 1;
 		
 		if(page_ != null && !page_.equals(""))
 			page = Integer.parseInt(page_);
 		
-		List<NewsView> list = service.getViewList();
-		
+		List<NewsView> list = service.getViewList(page, "event");
+		System.out.println(list.size());
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/news/event/list.jsp");
 		request.setAttribute("list", list);
 		
