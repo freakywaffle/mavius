@@ -11,6 +11,8 @@ import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
 
 public interface BoardService {
+	int getBoardListCountAll();
+	int getBoardListCountByName(String name);
 	BoardView getBoard(int no);
 	List<BoardView> getBoardList(int page);
 	List<BoardView> getBoardList(int page, int cnt);

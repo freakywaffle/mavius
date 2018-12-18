@@ -19,9 +19,14 @@ public class ArcherListController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		BoardService service = new JdbcBoardService();
+
+		int pageCnt = 8;
+		int pagerCnt = 5;		
+		int boardCnt = service.getBoardListCountByName("archer");	
+		
 		List<BoardView> list = null;
+		
 		String category = request.getParameter("category");
 		String keyword = request.getParameter("keyword");
 		String option = request.getParameter("option");
@@ -30,6 +35,23 @@ public class ArcherListController extends HttpServlet {
 		int page = 1;
 		if(page_ != null && !page_.equals(""))
 			page = Integer.parseInt(request.getParameter("page"));
+		
+		int startPage = 0;
+		int endPage = 0;
+
+		
+		if(boardCnt/pageCnt < pagerCnt) {
+			pagerCnt = boardCnt/pageCnt;
+			startPage = 1;
+			endPage = pagerCnt;
+		}else {
+			int margin = pagerCnt/2;
+			if(page>Math.ceil(pagerCnt/2)){
+				startPage = page - margin;
+				endPage = page + margin;
+			}
+		}	
+		
 		
 		if(option != null && !option.equals("")) {
 			if(category != null && !category.equals("")) {	
@@ -47,11 +69,10 @@ public class ArcherListController extends HttpServlet {
 			}
 			
 		}
-		
-		System.out.println(list.size());
-		System.out.println(Math.ceil(list.size()/8));
+
 		request.setAttribute("list", list);
-		request.setAttribute("endpage", Math.ceil(list.size()/8));
+		request.setAttribute("startPage", startPage);
+		request.setAttribute("endPage", endPage);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
 
 		dispatcher.forward(request, response);

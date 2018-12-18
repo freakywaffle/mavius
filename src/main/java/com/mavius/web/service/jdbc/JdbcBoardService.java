@@ -27,6 +27,55 @@ import com.mavius.web.entity.Report;
 import com.mavius.web.service.BoardService;
 
 public class JdbcBoardService implements BoardService{
+	
+
+	@Override
+	public int getBoardListCountAll() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public int getBoardListCountByName(String name) {
+		String sql = "select * from "
+				+ "("
+				+ "select rownum num, catalog from board  where catalog = ? order by num desc"
+				+ ") "
+				+ "where rownum =1";
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+		
+		int all=0; 
+		try {
+			Class.forName(driver);
+			
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, name);
+			ResultSet rs = st.executeQuery();
+			
+			
+			
+			if(rs.next()) {
+				all = rs.getInt("num");
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return all;
+	}
 
 	@Override
 	public BoardView getBoard(int no) {
@@ -670,6 +719,7 @@ public class JdbcBoardService implements BoardService{
 			
 		return null;
 	}
+
 
 
 	
