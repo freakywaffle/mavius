@@ -81,7 +81,7 @@
 											<div class="b">
 												<span class="bb">내용</span>
 												<textarea class="col-md-10 form-control" id="message" name="message"
-													placeholder="Message" rows="13"  disabled></textarea>											
+													placeholder="Message" rows="13" disabled></textarea>											
 											</div>
 											
 											<hr/>

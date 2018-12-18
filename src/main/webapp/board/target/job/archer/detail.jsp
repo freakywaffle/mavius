@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,12 +44,20 @@
 									<ul class="inline-list font-light">
 										<li><i class="fas fa-chalkboard-teacher"></i>&nbsp;${board.writerId }</li>
 										<li><i class="far fa-clock"></i>&nbsp;${board.regDate }</li>
-										<li><i class="far fa-comment"></i>&nbsp;6</li>
+										<li><i class="far fa-comment"></i>&nbsp;${board.replyCnt }</li>
 										<li><i class="fas fa-book-reader"></i>&nbsp;${board.hit }</li>
 										<li><a href="#"><i class="far fa-thumbs-up"></i>&nbsp;${board.recommend }</a></li>
 										<li><a href="#">신고</a></li>
 									</ul>
 								</div>
+							</div>
+							<div class="downFiles">
+								첨부파일
+								<ul>
+									<c:forEach var="file" items="${fileList}">
+										<li><a href="../../../target/archer/${file.saveName }" download>${file.name}</a></li>
+									</c:forEach>
+								</ul>
 							</div>
 							<div class="detail-content">
 								${board.content }
@@ -61,37 +70,15 @@
 							</div>
 						</section>
 						<section class="target-replys">
-							<h1>COMMENTS&nbsp;<span>5</span></h1>
-							<div class="detail-reply">
-								<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;형호</div>
-								<div class="write-time"><i class="far fa-clock"></i>&nbsp;10:21</div>
-								<div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-								<div class="report"><a href="#">신고</a></div>
-							</div>
-							<div class="detail-reply">
-								<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;형호</div>
-								<div class="write-time"><i class="far fa-clock"></i>&nbsp;10:21</div>
-								<div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-								<div class="report"><a href="#">신고</a></div>
-							</div>
-							<div class="detail-reply">
-								<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;형호</div>
-								<div class="write-time"><i class="far fa-clock"></i>&nbsp;10:21</div>
-								<div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-								<div class="report"><a href="#">신고</a></div>
-							</div>
-							<div class="detail-reply">
-								<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;형호</div>
-								<div class="write-time"><i class="far fa-clock"></i>&nbsp;10:21</div>
-								<div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-								<div class="report"><a href="#">신고</a></div>
-							</div>
-							<div class="detail-reply">
-								<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;형호</div>
-								<div class="write-time"><i class="far fa-clock"></i>&nbsp;10:21</div>
-								<div class="reply-text">ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ</div>
-								<div class="report"><a href="#">신고</a></div>
-							</div>
+							<h1>COMMENTS&nbsp;<span>${board.replyCnt }</span></h1>
+							<c:forEach var="reply" items="${replyList}">
+								<div class="detail-reply">
+									<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;${reply.writerId }</div>
+									<div class="write-time"><i class="far fa-clock"></i>&nbsp;${reply.regDate }</div>
+									<div class="reply-text">${reply.content }</div>
+									<div class="report"><a href="#">신고</a></div>
+								</div>
+							</c:forEach>
 						</section>
 						<section class="detail-reply-pager">
 							<h1 class="hidden">페이저</h1>
