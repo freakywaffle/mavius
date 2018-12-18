@@ -60,31 +60,34 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">3</td>
-								<td class="align-middle text-center">[이벤트]</td>
-								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-								<td class="align-middle text-center">네모장군</td>
-								<td class="align-middle text-center">2018-12-13</td>
-								<td class="align-middle text-center">200</td>
-								<td class="align-middle text-center">10</td>
-								<td class="align-middle text-left">
-									<div>
-										<a class='btn btn-info btn-xs' href="detail.jsp">
-											<span class="glyphicon glyphicon-edit"></span>수정
-										</a> 
-										<a href="#" class="btn btn-danger btn-xs">
-											<span class="glyphicon glyphicon-remove"></span>삭제
-										</a>
-										<a href="#" class="btn btn-success btn-xs">
-											<span class="glyphicon glyphicon-eye-open"></span>숨김해제
-										</a>
-									</div>
-								</td>
-							</tr>
+							
+							<c:forEach var="notice" items="${list}">
+								<tr>
+									<td class="align-middle text-center">
+										<input type="checkbox" class="align-top" />
+									</td>
+									<td class="align-middle text-center">${notice.num}</td>
+									<td class="align-middle text-center">[${notice.category}]</td>
+									<td class="align-middle text-left"> <a href="detail.jsp">${notice.title} [4]</a></td>
+									<td class="align-middle text-center">${notice.writerId}</td>
+									<td class="align-middle text-center">2018-12-13</td>
+									<td class="align-middle text-center">200</td>
+									<td class="align-middle text-center">10</td>
+									<td class="align-middle text-left">
+										<div>
+											<a class='btn btn-info btn-xs' href="detail.jsp">
+												<span class="glyphicon glyphicon-edit"></span>수정
+											</a> 
+											<a href="#" class="btn btn-danger btn-xs">
+												<span class="glyphicon glyphicon-remove"></span>삭제
+											</a>
+											<a href="#" class="btn btn-success btn-xs">
+												<span class="glyphicon glyphicon-eye-open"></span>숨김해제
+											</a>
+										</div>
+									</td>
+								</tr>
+							</c:forEach>
 							<tr>
 								<td class="align-middle text-center">
 									<input type="checkbox" class="align-top" />

@@ -502,6 +502,7 @@ border-collapse: collapse; 	border-spacing: 0;
 	flex-direction: row;
 	flex-wrap: wrap;
 	width:100%;
+	min-height: 1000px;
 	
 
 }
@@ -518,6 +519,11 @@ border-collapse: collapse; 	border-spacing: 0;
 		/* margin-left:auto; */
 		margin-bottom:20px;
 	} 
+	.li-category{
+		min-width:55px;
+	}
+
+
 	.coorid-list-p{
 		height:300px;
 		margin-bottom:10px;
@@ -526,11 +532,11 @@ border-collapse: collapse; 	border-spacing: 0;
 
 	#coordi-list li{
 		display:inline-block;
-		padding-left:10px;
+		padding-left:6px;
 		margin-bottom: 15px;
 	}
 	#coordi-list .li-title{
-		width:280px;
+		max-width:250px;
 	}
 
 

@@ -1,4 +1,4 @@
-package com.mavius.web.service;
+	package com.mavius.web.service;
 
 import java.util.List;
 
@@ -7,6 +7,8 @@ import com.mavius.web.entity.NewsView;
 
 public interface NewsService {
 	News getNews(int no);
+
+	List<News> getNewsList();//��ü�˻�
 	List<News> getNewsList(int page);//��ü�˻�
 	List<News> getNewsList(int page, int cnt);//��ü�˻�
 	List<News> getNewsList(String name, int page);//Ư���Խ��� ��������
