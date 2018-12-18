@@ -200,9 +200,9 @@ html
 
 #sidebar.active
 {
-  right: 0px !important !important;
+  right: 0px !important;
   transition: all 500ms linear !important;
-	z-index: 2 !important !important;
+	z-index: 2 !important;
 }
 
 .side-btnin
@@ -222,8 +222,8 @@ html
 }
 
 .sidebar-nav2 li {
-  text-indent: 20px !important;;
-  line-height: 40px !important;;
+  text-indent: 20px !important;
+  line-height: 40px !important;
 }
 
 .sidebar-nav2 li a {

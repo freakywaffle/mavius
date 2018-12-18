@@ -1,6 +1,7 @@
 package com.mavius.web.service.jdbc;
 
 import java.io.File;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,7 +15,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Part;
 import javax.sql.rowset.serial.SerialArray;
@@ -669,6 +672,375 @@ public class JdbcBoardService implements BoardService{
 
 			
 		return null;
+	}
+
+	
+	// 아랫쪽은 MyPage 메소드
+	
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page) {
+		// TODO Auto-generated method stub
+		return getBoardListById(uid, page, 10,"");
+	}
+
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page, int cnt) {
+		// TODO Auto-generated method stub
+		return getBoardListById(uid, page, 10,"");
+	}
+
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page, String keyword) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		return getBoardListById(uid, page, 10,"");
+	}
+
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		Map<String,Object> bm = null;
+		List<BoardView> list = null;
+		
+		String sql = "select * from (select rownum num, b.* from board_view b where writer_id=? and title like ?) "+
+		"where num BETWEEN ? and ?";
+		String sql2= "select count(*) cnt from board_view b where writer_id=? and title like ?";
+		
+		int start = 1+(page-1)*10; 
+        int end = page*10; 
+		
+        String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+        try 
+        {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"c##MAVIUS","maplegg");
+			con.setAutoCommit(false);
+	        PreparedStatement st = con.prepareStatement(sql);
+	        PreparedStatement st2 = con.prepareStatement(sql2);
+	        
+	        st.setString(1, uid);
+	        st.setString(2, "%"+keyword+"%");
+	        st.setInt(3, start);
+	        st.setInt(4, end);
+	        
+	        
+	        
+	        st2.setString(1, uid);
+	        st2.setString(2, "%"+keyword+"%");
+	        
+	        
+	        ResultSet rs =st.executeQuery();
+	        
+			while(rs.next())
+			{
+			
+				BoardView bv= new BoardView
+						(
+								rs.getInt("no"),
+								rs.getString("title"),
+								rs.getString("content"),
+								rs.getDate("regdate"),
+								rs.getString("writerId"),
+								rs.getString("catalog"),
+								rs.getString("category"),
+								rs.getInt("hit"),
+								rs.getInt("recommend"),
+								rs.getInt("replyCnt")
+						);
+				
+				
+				list.add(bv);
+			
+			}
+			
+			bm.put("list", list);
+			
+			rs.close();
+			st.close();
+			
+			ResultSet rs2 =st.executeQuery();
+			rs2.next();
+			int rowCnt = rs2.getInt("cnt");
+			
+			bm.put("rowCnt", rowCnt);
+			
+			rs.close();
+			st2.close();
+			
+			
+			con.close();
+			
+			
+		} 
+        catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return bm;
+	}
+
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page, String keyword, String catalog)
+	{
+		// TODO Auto-generated method stub
+		return getBoardListById(uid, page, 10,"","전체");
+	}
+
+	@Override
+	public Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword, String catalog) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		
+		String sql = null;
+		String sql2=null;
+		
+		int start = 1+(page-1)*10; 
+        int end = page*10; 
+        Map<String,Object> bm = new HashMap<>();
+		List<BoardView> list = new ArrayList<>();
+        
+        try 
+        {
+        	String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"c##MAVIUS","maplegg");
+			con.setAutoCommit(false);
+	        //PreparedStatement st = con.prepareStatement(sql);
+			PreparedStatement st = null;
+			PreparedStatement st2 = null;
+			ResultSet rs = null;
+			ResultSet rs2 = null;
+			
+			
+			
+			switch(catalog) 
+			{
+			
+			case "archer":
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='archer' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='archer' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				break;
+				
+			case "warrior":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='warrior' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='warrior' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				break;
+				
+			case "magician":
+							
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='magician' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='magician' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				
+				break;
+				
+			case "rogue":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='rogue' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='rogue' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				
+				break;
+				
+			case "pirate":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='pirate' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='pirate' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				
+				break;
+				
+			case "freeboard":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='freeboard' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='freeboard' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				
+				break;
+				
+			case "coordiboard":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='coordiboard' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='coordiboard' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				
+				
+				break;
+				
+			case "serverboard":
+				
+				
+				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='serverboard' and title like ?) "
+						+"where num BETWEEN ? and ?";
+				sql2 = "select count(*) cnt from board_view b where writer_id=? and category='serverboard' and title like ?";
+				
+				st = con.prepareStatement(sql);
+				st.setString(1, uid);
+				st.setString(2, "%"+keyword+"%");
+				st.setInt(3, start);
+				st.setInt(4, end);
+				
+				st2=con.prepareStatement(sql2);
+				st2.setString(1, uid);
+				st2.setString(2, "%"+keyword+"%");
+				
+				break;
+			
+			}
+			
+			rs=st.executeQuery();
+			while(rs.next()) {
+				
+				BoardView bv = new BoardView
+					(
+							rs.getInt("no"),
+							rs.getString("title"),
+							rs.getString("content"),
+							rs.getDate("regdate"),
+							rs.getString("writerId"),
+							rs.getString("catalog"),
+							rs.getString("category"),
+							rs.getInt("hit"),
+							rs.getInt("recommend"),
+							rs.getInt("replyCnt")
+					);
+			
+				list.add(bv);
+			}
+				
+			bm.put("list", list);
+			
+			rs.close();
+			st.close();
+			
+			rs2=st2.executeQuery();
+			rs2.next();
+			
+			int rowCnt=rs2.getInt("cnt");
+			
+			bm.put("rowCnt", rowCnt);
+			
+			rs2.close();
+			st2.close();
+
+			con.close();
+			
+			
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return bm;
 	}
 
 

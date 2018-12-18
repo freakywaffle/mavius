@@ -1,10 +1,12 @@
 package com.mavius.web.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.Part;
 
 import com.mavius.web.entity.Board;
+import com.mavius.web.entity.BoardFile;
 import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
@@ -12,12 +14,12 @@ import com.mavius.web.entity.Report;
 public interface BoardService 
 {
 	
-	Board getBoardListById(String uid, int page);
-	Board getBoardListById(String uid, int page, int cnt);
-	Board getBoardListById(String uid,  int page, String keyword);
-	Board getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
-	Board getBoardListById(String uid, int page, String keyword, String catalog);
-	Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
+	Map<String,Object> getBoardListById(String uid, int page);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt);
+	Map<String,Object> getBoardListById(String uid,  int page, String keyword);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
+	Map<String,Object> getBoardListById(String uid, int page, String keyword, String catalog);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
 	
 	
 	BoardView getBoard(int no);
