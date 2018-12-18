@@ -11,6 +11,14 @@ import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.Report;
 
 public interface BoardService {
+
+	Board getBoardListById(String uid, int page);
+	Board getBoardListById(String uid, int page, int cnt);
+	Board getBoardListById(String uid,  int page, String keyword);
+	Board getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
+	Board getBoardListById(String uid, int page, String keyword, String catalog);
+	Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
+
 	int getBoardListCountAll();
 	int getBoardListCountByName(String name);
 	BoardView getBoard(int no);

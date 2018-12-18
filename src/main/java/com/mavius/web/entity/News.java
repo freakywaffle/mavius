@@ -25,8 +25,9 @@ public class News {
 		this.hit = hit;
 	}
 
-	public News(String title, String content, Date regDate, String writerId, int hit) {
+	public News(int no, String title, String content, Date regDate, String writerId, int hit) {
 		super();
+		this.no = no;
 		this.title = title;
 		this.content = content;
 		this.regDate = regDate;

@@ -54,10 +54,11 @@ public class JdbcNewsService implements NewsService{
 
 			while(rs.next()) {
 				NewsView n = new NewsView(
+						rs.getInt("NUM"),
 						rs.getString("title"),
 						rs.getString("content"),
 						rs.getDate("regDate"),
-						rs.getString("writerId"),
+						rs.getString("WRITER_ID"),
 						rs.getInt("hit")
 						);
 				//n.setId(rs.getString("id"));
@@ -109,6 +110,7 @@ public List<NewsView> getViewList(int page, String option, String keyword, Strin
 
 		while(rs.next()) {
 			NewsView n = new NewsView(
+					rs.getInt("NUM"),
 					rs.getString("title"),
 					rs.getString("content"),
 					rs.getDate("regDate"),
