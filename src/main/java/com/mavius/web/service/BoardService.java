@@ -6,8 +6,9 @@ import javax.servlet.http.Part;
 
 import com.mavius.web.entity.Board;
 import com.mavius.web.entity.BoardView;
+import com.mavius.web.entity.Member;
 import com.mavius.web.entity.Reply;
-import com.mavius.web.entity.Report;
+import com.mavius.web.entity.ReportReason;
 
 public interface BoardService {
 	Board getBoard(int no);
@@ -30,7 +31,7 @@ public interface BoardService {
 	int reg(Board board, Part part, String path); //게시물 번호 리턴, 파일업로드 이렇게 하는게 맞는지 애매함
 	int edit(Board board);
 	int delete(int boardNo);
-	int claim(Report report);
+	int claim(ReportReason report);
 	int recommend(String uid, int boardNo);
 	int cancelRecommend(String uid, int boardNo);
 	int regScrap(String uid, int boardNo);
@@ -38,6 +39,9 @@ public interface BoardService {
 	int reg(Reply reply);
 	int delReply(int replyNo);
 	List<Reply> getReplyListByBoardNo(int boardNo);
+	List<ReportReason> getReportReason();
+	int regReport(int reportedNo, String contentEtc,String reason, String reporterId, String type);
+	
 	
 	
 	

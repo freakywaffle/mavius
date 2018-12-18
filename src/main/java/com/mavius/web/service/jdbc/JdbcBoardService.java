@@ -20,8 +20,9 @@ import javax.servlet.http.Part;
 
 import com.mavius.web.entity.Board;
 import com.mavius.web.entity.BoardView;
+import com.mavius.web.entity.Member;
 import com.mavius.web.entity.Reply;
-import com.mavius.web.entity.Report;
+import com.mavius.web.entity.ReportReason;
 import com.mavius.web.service.BoardService;
 
 public class JdbcBoardService implements BoardService{
@@ -504,9 +505,12 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public int claim(Report report) {
-		// TODO Auto-generated method stub
+	public int claim(ReportReason report) {
+		
+	
 		return 0;
+	
+	
 	}
 
 	@Override
@@ -550,6 +554,125 @@ public class JdbcBoardService implements BoardService{
 		
 		
 		return null;
+	}
+
+	@Override
+	public List<ReportReason> getReportReason() {
+		
+		List<ReportReason> list = new ArrayList();
+		
+		String sql = "select * from report_reason";
+		
+		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+		    PreparedStatement st = con.prepareStatement(sql);    
+            ResultSet rs = st.executeQuery();
+        
+           
+        
+			while(rs.next()) {
+				 
+		
+				ReportReason re = new ReportReason(
+						rs.getInt("no"),
+						rs.getString("content"));
+				
+			
+				list.add(re);
+			}
+			
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		return  list;
+	}
+
+
+	
+
+	
+	
+	@Override
+	public int regReport(int reportedNo, String contentEtc, String reason, String reporterId, String type) {
+		
+	    int CurrentNo = 0;
+	    
+	    
+	    String sql = "insert into report(no,reported_no, content_etc,reason,reporter_id, type) "
+	    			+ "values (REPORT_SEQ.NEXTVAL, ?, ?, ? ,?, ?)";
+		//String sqlNo = "select no from (SELECT * FROM report ORDER BY REGDATE DESC) WHERE ROWNUM =1";
+			          
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		System.out.println(13145);
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			System.out.println("1111");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			System.out.println("2222");
+			//con.setAutoCommit(false);
+		    PreparedStatement st = con.prepareStatement(sql);    
+		    st.setInt(1, reportedNo);
+			System.out.println("reportedNo");
+		    st.setString(2, contentEtc);
+			System.out.println("contentEtc");
+		    st.setString(3, reason);
+			System.out.println("reason");
+		    st.setString(4, reporterId);
+			System.out.println("reporterId");
+		    st.setString(5, type);
+			System.out.println("type");
+		    int affected = st.executeUpdate();
+		   
+		   // PreparedStatement stNo = con.prepareStatement(sqlNo);    
+		   // ResultSet rsNo = stNo.executeQuery();
+		   // rsNo.next();
+		  //  CurrentNo= rsNo.getInt("no");
+		    CurrentNo=1;
+//        
+//			while(rs.next()) {
+//				 
+//		
+//				ReportReason re = new ReportReason(
+//						rs.getInt("no"),
+//						rs.getString("content"));
+//				
+//			
+//				list.add(re);
+//			}
+//			
+//			
+//			rs.close();
+		    //con.commit();
+		   // rsNo.close();
+		  //  stNo.close();
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+	    
+	    
+		return CurrentNo;
 	}
 
 

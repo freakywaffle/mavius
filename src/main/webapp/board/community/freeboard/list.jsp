@@ -25,11 +25,11 @@
 	
 	<body id="body">
 	<section id="header">
-		<h1>코디게시판</h1>
+		<h1>자유게시판</h1>
 	</section>
 
 		<main class="list-main">
-			<h1 class="hidden">코디게시판</h1>
+			<h1 class="hidden">자유게시판</h1>
 			
 			<section id="search-form">
 				<h1  class="hidden">검색폼</h1>
@@ -58,11 +58,11 @@
 			
 			<section id="coordi-list">
 				<h1 class="hidden">게시글 리스트</h1>
-					<c:forEach var="b" items="${list}">
+				<c:forEach var="b" items="${list}">
 				<div class="margin-bottom">
 					
 					<ul>
-						<li>[잡담]</li>
+						<li class="li-category">[잡담]</li>
 						<li class="fas fa-list-ol">${b.no}</li>
 						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
 					
