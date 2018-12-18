@@ -2,81 +2,103 @@ package com.mavius.web.entity;
 
 import java.util.Date;
 
+
 public class News {
-	
-	private int num;
+	private int no;
 	private String title;
 	private String content;
-	private Date registrationDate;
+	private Date regDate;
 	private String writerId;
-	private String category;
+	private String catalog;
 	private int hit;
 	
 	public News() {
 		super();
 	}
 	
-	public News(int num, String title, String content, Date registrationDate, String writerId, String category, int hit) {
-		super();
-		this.num = num;
+	public News(int no, String title, String content, Date regDate, String writerId, String catalog, int hit) {
+		this.no = no;
 		this.title = title;
 		this.content = content;
-		this.registrationDate = registrationDate;
+		this.regDate = regDate;
 		this.writerId = writerId;
-		this.category = category;
+		this.catalog = catalog;
 		this.hit = hit;
 	}
-	public int getNum() {
-		return num;
+
+	public News(int no, String title, String content, Date regDate, String writerId, int hit) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.regDate = regDate;
+		this.writerId = writerId;
+		this.hit = hit;
 	}
-	public void setNum(int num) {
-		this.num = num;
+
+	public int getNo() {
+		return no;
 	}
+
+	public void setNo(int no) {
+		this.no = no;
+	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getContent() {
 		return content;
 	}
+
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public Date getRegistrationDate() {
-		return registrationDate;
+
+	public Date getRegDate() {
+		return regDate;
 	}
-	public void setRegistrationDate(Date registrationDate) {
-		this.registrationDate = registrationDate;
+
+	public void setRegDate(Date regDate) {
+		this.regDate = regDate;
 	}
+
 	public String getWriterId() {
 		return writerId;
 	}
+
 	public void setWriterId(String writerId) {
 		this.writerId = writerId;
 	}
-	public String getCategory() {
-		return category;
+
+	public String getCatalog() {
+		return catalog;
 	}
-	public void setCategory(String category) {
-		this.category = category;
+
+	public void setCatalog(String catalog) {
+		this.catalog = catalog;
 	}
+
 	public int getHit() {
 		return hit;
 	}
+
 	public void setHit(int hit) {
 		this.hit = hit;
 	}
 
 	@Override
 	public String toString() {
-		return "News [num=" + num + ", title=" + title + ", content=" + content + ", registrationDate="
-				+ registrationDate + ", writerId=" + writerId + ", category=" + category + ", hit=" + hit + "]";
+		return "News [no=" + no + ", title=" + title + ", content=" + content + ", regDate=" + regDate + ", writerId="
+				+ writerId + ", catalog=" + catalog + ", hit=" + hit + "]";
 	}
 	
-
 	
 	
-
+	
 }

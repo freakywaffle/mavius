@@ -3,20 +3,28 @@
 import java.util.List;
 
 import com.mavius.web.entity.News;
+import com.mavius.web.entity.NewsView;
 
 public interface NewsService {
 	News getNews(int no);
-	List<News> getNewsList();//ÀüÃ¼°Ë»ö
-	List<News> getNewsList(int page);//ÀüÃ¼°Ë»ö
-	List<News> getNewsList(int start, int cnt);//ÀüÃ¼°Ë»ö
-	List<News> getNewsList(String name, int start);//Æ¯Á¤°Ô½ÃÆÇ °¡Á®¿À±â
-	List<News> getNewsList(String name, int start, int cnt);//Æ¯Á¤°Ô½ÃÆÇ °¡Á®¿À±â
-	List<News> getNewsList(String name, String keyword, int start);//Æ¯Á¤°Ô½ÃÆÇ ÇÊÅÍ¸µ ¾øÀÌ °Ë»ö
-	List<News> getNewsList(String name, String keyword, int start, int cnt);//Æ¯Á¤°Ô½ÃÆÇ ÇÊÅÍ¸µ ¾øÀÌ °Ë»ö
-	List<News> getNewsList(String name, String option, String keyword, int start);//Æ¯Á¤°Ô½ÃÆÇ¿¡¼­ ÇÊÅÍ¸µÈÄ °Ë»ö
-	List<News> getNewsList(String name, String option, String keyword, int start, int cnt);//Æ¯Á¤°Ô½ÃÆÇ¿¡¼­ ÇÊÅÍ¸µÈÄ °Ë»ö
+
+	List<News> getNewsList();//ï¿½ï¿½Ã¼ï¿½Ë»ï¿½
+	List<News> getNewsList(int page);//ï¿½ï¿½Ã¼ï¿½Ë»ï¿½
+	List<News> getNewsList(int page, int cnt);//ï¿½ï¿½Ã¼ï¿½Ë»ï¿½
+	List<News> getNewsList(String name, int page);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	List<News> getNewsList(String name, int page, int cnt);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	List<News> getNewsList(String name, String keyword, int page);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
+	List<News> getNewsList(String name, String keyword, int page, int cnt);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
+	List<News> getNewsList(String name, String option, String keyword, int page);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
+	List<News> getNewsList(String name, String option, String keyword, int page, int cnt);//Æ¯ï¿½ï¿½ï¿½Ô½ï¿½ï¿½Ç¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½
 	
+	NewsView getNewsView(int no);
 	int reg(News News);
 	int edit(News News);
 	int delNews(int no);
+	List<NewsView> getViewList();
+	List<NewsView> getViewList(int page);
+	List<NewsView> getViewList(int page, String option);
+	List<NewsView> getViewList(int page, String option, String keyword);
+	List<NewsView> getViewList(int page, String option, String keyword, String name); //page(ëª‡í˜ì´ì§€ ë³´ì—¬ì¤„ì§€), option(ê²€ìƒ‰ì˜µì…˜, ì œëª©ì´ë‚˜ ë‚´ìš© ì œëª©+ë‚´ìš©), nameê²Œì‹œíŒì´ë¦„
 }

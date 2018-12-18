@@ -7,19 +7,19 @@
 
             
             <!-- Header -->
-            <div id="sidebar-wrapper">
+            <div id="header-wrapper">
                 <img class="header-bg" src="/images/park-header.jpg" />
-                <ul class="sidebar-nav header-box">
+                <ul class="header-nav header-box">
                     <div class="main-img">
                         <img  src="/images/login-logo-135.png" />
                     </div>
-                    <li class="sidebar-brand">
+                    <li class="header-brand">
                         <a href="/index">
                             MAVIUS
                         </a>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
                             <a href="#One">소식</a>
                             <div class="submenu submenu-sm">
                                 <ul>
@@ -31,7 +31,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
 
                             <a href="#Two">커뮤니티</a>
                             <div class="submenu submenu-sm">
@@ -45,7 +45,7 @@
                         </div>
                     </li>
                     <li>
-                        <div class="pa" onmouseover="sosikdown()" onmouseout="sosikup()">
+                        <div class="pa" >
 
                             <a href="#">공략</a>
                             <div class="submenu submenu-lg">

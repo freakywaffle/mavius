@@ -118,7 +118,7 @@ html, body, main
 .header-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: #fff;
 }
 
 .header-nav li a:hover {
@@ -138,7 +138,7 @@ html, body, main
 }
 
 .header-nav>.header-brand a {
-  color: #999999;
+  color: #fff;
 }
 
 .header-nav>.header-brand a:hover {
@@ -437,7 +437,7 @@ background: #fff;
 
 .cat-div h5
 {
-background-color: rgb(250, 230, 51);
+background-color: rgb(180, 176, 133);
 
 border-bottom: #999999 solid 1px;
 padding-top: 20px;

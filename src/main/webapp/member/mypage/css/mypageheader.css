@@ -96,12 +96,12 @@ html
 .header-nav li a {
   display: block;
   text-decoration: none;
-  color: #fff7f7;
+  color: #fff;
 }
 
 .header-nav li a:hover {
   text-decoration: none;
-  color: #999999;
+  color: #fff;
   background: rgba(255, 255, 255, 0.2);
 }
 
@@ -116,11 +116,11 @@ html
 }
 
 .header-nav>.header-brand a {
-  color: #fff7f7;
+  color: #fff;
 }
 
 .header-nav>.header-brand a:hover {
-  color: #fff7f7;
+  color: #999999;
   background: none;
 }
 
@@ -128,7 +128,7 @@ html
 
 
 
-#sidebar
+/* #sidebar
 {
   margin: 0px;
   padding: 0px;
@@ -278,7 +278,7 @@ html
     opacity: 1;
     
   }
-}
+} */
 
  /* @keyframes subup {
   from
@@ -292,14 +292,14 @@ html
   }
 }  */
 
-.submenu-sm
+/* .submenu-sm
 {
   transition: all 2s linear;
   visibility: hidden;
   display: none;
   height: 0px;
   
-} 
+}  */
 .pa:hover .submenu-sm
 {
   animation-name: subdown;
@@ -310,13 +310,13 @@ html
   transition: all 2s linear;
 } 
 
-.submenu-lg
+/* .submenu-lg
 {
   visibility: hidden;
   display: none;
   height: 0px;
   
-} 
+}  */
 .pa:hover .submenu-lg
 {
   animation-name: subdown-lg;
@@ -327,7 +327,7 @@ html
   transition: all 2s linear;
 } 
 
-#main
+/* #main
 {
   height: inherit;
 }
@@ -350,7 +350,7 @@ html
 .sidebar-wrapper
 {
   overflow: hidden;
-}
+} */
 .header-box
 {
   overflow: hidden;
