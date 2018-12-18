@@ -28,6 +28,7 @@ a{
 	text-decoration: none;
 }
 
+
 h1,ul,p,li,section{
 	margin: 0px;
 	padding: 0px;
@@ -133,6 +134,11 @@ h1,ul,p,li,section{
 .wrapper a{
 	color: #000;
 	text-decoration: none!important;
+}
+
+.wrapper a:hover{
+	color: #000;
+	text-decoration: none;
 }
 
 .target-search-form{
@@ -283,14 +289,13 @@ h1,ul,p,li,section{
 }
 
 .target-board div{
-	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .target-board li{
 	padding: 10px;
     text-align: center;
     line-height: 15px;
-
 }
 
 .target-pager{
@@ -303,16 +308,24 @@ h1,ul,p,li,section{
 .target-pager li{
 	width: 15px;
     height: 15px;
-
+	
     text-align: center;
+    vertical-align: middle;
+    line-height: 15px;
 }
 .target-pager li a{
 	color: #747474;
 }
 
+.target-pager li:hover{
+	cursor: pointer;
+}
+
 .target-pager .inline-list{
 	padding: 0px;
 }
+
+
 
 .board-content{
 	position:relative;

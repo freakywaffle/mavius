@@ -20,7 +20,14 @@ public class Member {
 		super();
 	}
 	
-	
+	public Member(String nickName, String id, String grade, Date regDate) {
+		super();
+		this.nickName = nickName;
+		this.id = id;
+		this.grade = grade;
+		this.regDate = regDate;
+	}
+
 	public Member(String id, String nickName, String eMail, String grade, int exp, Date regDate, int report) {
 		super();
 		this.id = id;
@@ -86,6 +93,12 @@ public class Member {
 	}
 	public void setAuthority(int authority) {
 		this.authority = authority;
+	}
+
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", pwd=" + pwd + ", nickName=" + nickName + ", eMail=" + eMail + ", grade=" + grade
+				+ ", exp=" + exp + ", regDate=" + regDate + ", report=" + report + ", authority=" + authority + "]";
 	}
 	
 	

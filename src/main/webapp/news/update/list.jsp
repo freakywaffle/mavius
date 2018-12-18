@@ -22,9 +22,11 @@
 
     <!-- 메인 바디 헤더 -->
     <main>
-        <div class="">
-            <h1 class="text-center">U p d a t e</h1>
-            <h3 class="text-center">업 데 이 트</h3>
+	    <div class="main-body-div">
+	        <div class="main-body-header">
+	            <h1 class="text-center">U p d a t e</h1>
+	            <h3 class="text-center">업 데 이 트</h3>
+	        </div>
         </div>
 
         <!-- 바디 content ------------------------------>

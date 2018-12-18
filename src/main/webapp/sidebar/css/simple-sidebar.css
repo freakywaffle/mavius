@@ -49,7 +49,7 @@ body {
   padding-left: 250px;
 }
 
-#sidebar-wrapper {
+#header-wrapper {
   z-index: 1000;
   position: fixed;
   left: 0px;
@@ -60,7 +60,7 @@ body {
   
 }
 
-#sidebar-wrapper {
+#header-wrapper {
   width: 230px;
 }
 
@@ -78,7 +78,7 @@ html
 
 /* Sidebar Styles */
 
-.sidebar-nav {
+.header-nav {
   position: absolute;
   top: 0;
   width: 230px;
@@ -92,23 +92,23 @@ html
   line-height: 40px;
 }
 
-.sidebar-nav li a {
+.header-nav li a {
   display: block;
   text-decoration: none;
   color: #fff7f7;
 }
 
-.sidebar-nav li a:hover {
+.header-nav li a:hover {
   text-decoration: none;
   color: #999999;
   background: rgba(255, 255, 255, 0.2);
 }
 
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
+.header-nav li a:active, .header-nav li a:focus {
   text-decoration: none;
 }
 
-.sidebar-nav>.sidebar-brand {
+.header-nav>.header-brand {
   height: 65px;
   font-size: 18px;
   line-height: 60px;
@@ -118,7 +118,7 @@ html
   color: #fff7f7;
 }
 
-.sidebar-nav>.sidebar-brand a:hover {
+.header-nav>.header-brand a:hover {
   color: #fff7f7;
   background: none;
 }

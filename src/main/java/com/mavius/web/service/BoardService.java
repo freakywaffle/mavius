@@ -20,7 +20,7 @@ public interface BoardService
 	Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
 	
 	
-	Board getBoard(int no);
+	BoardView getBoard(int no);
 	
 	
 	List<BoardView> getBoardList(int page);
@@ -50,7 +50,7 @@ public interface BoardService
 	int reg(Reply reply);
 	int delReply(int replyNo);
 	List<Reply> getReplyListByBoardNo(int boardNo);
-	
+	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
 	
 	
 }
