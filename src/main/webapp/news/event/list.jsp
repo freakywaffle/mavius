@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -126,9 +127,11 @@
 
     <!-- 메인 바디 헤더 -->
     <main>
-        <div class="main-body-header">
-            <h1 class="text-center">E v e n t</h1>
-            <h3 class="text-center">이 벤 트</h3>
+        <div class="main-body-div">
+	        <div class="main-body-header">
+	            <h1 class="text-center">E v e n t</h1>
+	            <h3 class="text-center">이 벤 트</h3>
+	        </div>
         </div>
 
         <!--달력-->
@@ -173,30 +176,21 @@
                         </tr>
                     </thead>
                     <tbody>
+                    <c:forEach var="n" items="${list }">
                     <tr> 
-                        <td class="text-center">3</td>
-                        <td>table-bordered는 표처럼 보이게 만들어줌 셀마다 테두리</td>
-                        <td class="text-center">2016-12-27</td>
-                        <td class="text-center">3234</td>
+                        <td class="text-center">${n.no }</td>
+                        <td>table-striped는 홀수마다 색을 주네</td>
+                        <%-- <td><a href="detail?no=${n.no }">${n.title }</a></td> --%>
+                        <td class="text-center">${n.regDate }</td>
+                        <td class="text-center">${n.hit }</td>
                     </tr>
-                    <tr> 
+                    </c:forEach>
+                   <!--  <tr> 
                         <td class="text-center">3</td>
                         <td>table-striped는 홀수마다 색을 주네</td>
                         <td class="text-center">2015-01-03</td>
                         <td class="text-center">6323</td>
-                    </tr>
-                    <tr> 
-                        <td class="text-center">2</td>
-                        <td>전역일 군번 12-73077374</td>
-                        <td class="text-center">2014-08-26</td>
-                        <td class="text-center">442</td>
-                    </tr>
-                    <tr> 
-                        <td class="text-center">1</td>
-                        <td>입대일 군번 12-73077374</td>
-                        <td class="text-center">2012-11-27</td>
-                        <td class="text-center">323</td>
-                    </tr>
+                    </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -204,23 +198,26 @@
         <!-- 게시판 목록 table end-->
         
             <!-- 페이저 -->
+            <c:set var="page" value="1"/>
+            <c:if test="${!empty param.p }">
+            	<c:set var="page" value="${param.p }"/>
+            </c:if>
+            
+            <%-- <c:set var="cls" value="${i==page?':''}"/> --%>
             <div class="pager">
                 <nav aria-label="Page navigation example">
                     <ul class="pagination justify-content-center" style="margin-bottom: 0px;">
                         <li class="page-item"><a class="page-link" href="#"> < </a></li>
-                        <li class="page-item"><a class="page-link" href="#"> 1 </a></li>
-                        <li class="page-item"><a class="page-link" href="#"> 2 </a></li>
-                        <li class="page-item"><a class="page-link" href="#"> 3 </a></li>
-                        <li class="page-item"><a class="page-link" href="#"> 4 </a></li>
-                        <li class="page-item"><a class="page-link" href="#"> 5 </a></li>
+            <c:forEach var="i" begin="1" end="3">
+                        <li class="page-item"><a class="page-link" href="?p=${i }">${i }</a></li>
+            </c:forEach>
                         <li class="page-item"><a class="page-link" href="#"> > </a></li>
                     </ul>
                 </nav>
             </div>
             <!-- 페이저 end-->
-            
-        </div>
     </main>
+</div>
 <!-- 바디 content END ------------------------------>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>

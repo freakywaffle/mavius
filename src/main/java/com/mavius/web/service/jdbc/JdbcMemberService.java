@@ -44,7 +44,7 @@ public class JdbcMemberService implements MemberService{
 	           
 	           while(rs.next()) {
 	              MemberView m = new MemberView(
-	        		  rs.getInt("NUM"),
+	        		  rs.getInt("JOIN_DATE"),
 	        		  rs.getString("NICKNAME"),
 	                  rs.getString("ID"),
 	                  rs.getString("GRADE"),

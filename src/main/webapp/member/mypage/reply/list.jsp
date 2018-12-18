@@ -15,10 +15,10 @@
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--"vendor/bootstrap/css/bootstrap.min.css"-->
     <!-- Custom styles for this template -->
-    <link href="../../mypage/css/replylist.css" rel="stylesheet">
+    <link href="/member/mypage/css/replylist.css" rel="stylesheet">
 
 </head>
 

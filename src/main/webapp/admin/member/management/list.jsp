@@ -1,4 +1,4 @@
-
+<%@page import="com.mavius.web.entity.MemberView"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -69,7 +69,7 @@
 									<td class="align-middle text-center">
 										<input type="checkbox" class="align-top" />
 									</td>
-									<td class="align-middle text-center">${member.id}(dfke153)</td>
+									<td class="align-middle text-center">${member.nickName}(dfke153)</td>
 									<td class="align-middle text-center inline">관리자</td>
 									<th class="align-middle text-center">3</th>
 									<th class="align-middle text-center">1</th>

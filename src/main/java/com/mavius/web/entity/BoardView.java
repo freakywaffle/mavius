@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class BoardView extends Board {
 	
+	
 	private int replyCnt;
 	
 	

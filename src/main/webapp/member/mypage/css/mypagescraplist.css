@@ -118,7 +118,7 @@ html, body, main
 .header-nav li a {
   display: block;
   text-decoration: none;
-  color: #999999;
+  color: #fff;
 }
 
 .header-nav li a:hover {
@@ -132,13 +132,13 @@ html, body, main
 }
 
 .header-nav>.header-brand {
-  height: 65px;
+  height: 65px; 
   font-size: 18px;
   line-height: 60px;
 }
 
 .header-nav>.header-brand a {
-  color: #999999;
+  color: #fff;
 }
 
 .header-nav>.header-brand a:hover {
@@ -611,13 +611,13 @@ color: black;
 }
 .all-box
 {
-    position: relative;
+    position: absolute;
     width: 50px;
     height: 50px;
 }
 .select-all
 {
     position: absolute;
-    left: 200px;
+    left: 350px;
     bottom: -30px;
 }

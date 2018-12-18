@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mavius.web.entity.Board;
+import com.mavius.web.entity.BoardFile;
+import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
@@ -24,10 +26,16 @@ public class ArcherDetailController extends HttpServlet{
 		int no = Integer.parseInt(request.getParameter("no"));
 		
 		BoardService service = new JdbcBoardService();
-		Board board = service.getBoard(no);
+		
+		
+		BoardView board = service.getBoard(no);
 		List<Reply> replyList = service.getReplyListByBoardNo(no);
+		List<BoardFile> fileList = service.getBoardFileListByBoardNo(no);
+		
+		
 		request.setAttribute("board", board);
 		request.setAttribute("replyList", replyList);
+		request.setAttribute("fileList", fileList);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/detail.jsp");
 		

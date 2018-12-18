@@ -15,6 +15,13 @@ public class MemberView extends Member{
 		super(nickName, id, grade, regDate);
 
 	}
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
 	public int getPostsCount() {
 		return postsCount;
 	}
