@@ -19,8 +19,8 @@ public class NewsView extends News {
 		// TODO Auto-generated constructor stub
 	}
 
-	public NewsView(String title, String content, Date regDate, String writerId, int hit) {
-		super(title, content, regDate, writerId, hit);
+	public NewsView(int no, String title, String content, Date regDate, String writerId, int hit) {
+		super(no, title, content, regDate, writerId, hit);
 		// TODO Auto-generated constructor stub
 	}
 
