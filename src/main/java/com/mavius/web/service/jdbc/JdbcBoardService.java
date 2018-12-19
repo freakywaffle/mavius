@@ -229,8 +229,7 @@ public class JdbcBoardService implements BoardService{
 							+ ") "
 						+ "where num between ? and ?";
 					
-					sql2 =  "select count(*) cnt "
-							+ "from board_view "
+					sql2 =  "select count(*) cnt from board_view "
 							+ "where catalog = ? and title like ?";
 						
 					
@@ -669,14 +668,14 @@ public class JdbcBoardService implements BoardService{
 			String title = board.getTitle();
 			String content = board.getContent();
 			String category = board.getCategory();
-			
+			String catalog = board.getCatalog();
 			
 			
 			PreparedStatement st = con.prepareStatement(sql);
 			st.setString(1, title);
 			st.setString(2, content);
 			st.setString(3, id);
-			st.setString(4, "archer");
+			st.setString(4, catalog);
 			st.setString(5, category);
 			
 			int affectedBoard = st.executeUpdate();

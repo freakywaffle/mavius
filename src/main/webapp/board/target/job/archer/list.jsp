@@ -97,7 +97,7 @@
 									<c:set var="page" value="${param.page}" />
 								</c:if>
 								
-								<c:forEach var="i" begin="${startPage }" end="${endPage }">
+								<c:forEach var="i" begin="${pager.startPage }" end="${pager.endPage }">
 									
 									<c:set var="cls" value="${i==page?'font-bold underline':''}" />
 									
