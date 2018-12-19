@@ -15,17 +15,17 @@
 		<title>Simple Sidebar - Start Bootstrap Template</title>
 	
 		<!-- Bootstrap core CSS -->
-		<link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 		<!--"vendor/bootstrap/css/bootstrap.min.css"-->
 		<!-- Custom styles for this template -->
-		<link href="../../mypage/css/boardlist.css" rel="stylesheet">
+		<link href="/member/mypage/css/boardlist.css" rel="stylesheet">
 	
 		<!-- Custom styles for this template -->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 			crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 			crossorigin="anonymous"></script>
-		<script src="../../../bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		<script src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
 			crossorigin="anonymous"></script>
 	</head>
 	
@@ -59,11 +59,6 @@
 							</div>
 							<div class="searchtxt">
 								<select>
-									<option value="">전체기간</option>
-									<option value="최근 1주">최근 1주</option>
-									<option value="최근 1달">최근 1달</option>
-								</select>
-								<select>
 									<option value="">게시판 분류</option>
 									<option value="게시판">전사게시판</option>
 									<option value="게시판">전사게시판</option>
@@ -71,8 +66,12 @@
 									<option value="게시판">전사게시판</option>
 									<option value="게시판">전사게시판</option>
 								</select>
-									<input  type="" name="searchtxt" />
-									<input type="submit" name="btn-edit" />
+									<div class="d6">
+                                <form>
+                                  <input type="text" placeholder="검색어 입력">
+                                  <button type="submit"></button>
+                                </form>
+                            </div>
 								</div>
 							<div class="submenu2">
 								<div class="category-div-cr cat-div">

@@ -15,10 +15,10 @@
             <title>Simple Sidebar - Start Bootstrap Template</title>
     
             <!-- Bootstrap core CSS -->
-            <link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
             <!--"vendor/bootstrap/css/bootstrap.min.css"-->
             <!-- Custom styles for this template -->
-            <link href="../mypage/css/edit.css" rel="stylesheet">
+            <link href="/member/mypage/css/edit.css" rel="stylesheet">
             <!-- <script type="text/javascript" src="myscripts.js"></script> -->
             <script type="text/javascript" src="../css/jquery-3.3.1.slim.min.js" ></script>
         <script type="text/javascript" src="../../mypage/css/popper.min.js" ></script>
@@ -70,130 +70,7 @@
             })
         </script>
             <div id="hiririk">
-                <!-- <div id="dam">
-    
-                </div>
-                <div class="boxbox">
-                    <div id="sidebar">
-                        <div class="side-btn" onclick="toggleSidebarout()">
-                        </div>
-                        <ul class="sidebar-nav">
-                            <li>
-                                <a href="#">home</a>
-                            </li>
-                            <li>
-                                <a href="#">about</a>
-                            </li>
-                            <li>
-                                <a href="#">contact</a>
-                            </li>
-    
-                        </ul>
-                    </div>
-                    <header id="header">
-                        <div>
-    
-                            <div id="header-wrapper">
-                                <ul class="header-nav header-box">
-                                    <li class="header-brand">
-                                        <a href="#">
-                                            MAVIUS
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="pa" " >
-                                            <a href="#One">정보수정</a>
-                                            
-                                        </div>
-    
-    
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-                                            <a href="#One">내가 쓴글</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#">게시글</a></li>
-                                                    <li><a href="#">댓글</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-    
-    
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#Two">쪽지</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">보내기</a></li>
-                                                    <li><a href="#2">받은쪽지함</a></li>
-    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">QnA</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">Reply</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">Scrap</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-    
-                                </ul>
-                            </div>
-    
-                        </div>
-                    </header>
-    
-    
-    
-    
-    
-                    <script>
-    
-                        function toggleSidebarout() {
-    
-                            document.getElementById("sidebar").classList.toggle('active');
-    
-                            var dd = getElementById("hiririk");
-                        }
-    
-                    </script> -->
+                
                     <jsp:include page="/member/mypage/mypageheader.jsp"></jsp:include>
 
     
@@ -215,108 +92,75 @@
                         <section id="form-login" class="box">
                             <div class="pwd-box">
                                 <div class="subtitle">
-                                    <h3>QnA</h3>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                                        data-whatever="관리자님">문의하기</button>
+                                    <h3>정보 수정</h3>
                                 </div>
     
                                 <div class="submenu2">
-                                    <div class="category-div-sm cat-div">
-                                        <h5>번호</h5>
-                                        <ul>
-                                            <li> <a>1</a></li>
-                                            <li> <a>2</a></li>
-                                            <li> <a>3</a></li>
-                                            <li> <a>4</a></li>
-                                            <li> <a>5</a></li>
-                                            <li> <a>6</a></li>
-                                            <li> <a>7</a></li>
-                                            <li> <a>8</a></li>
-                                            <li> <a>9</a></li>
-                                            <li> <a>10</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>작성 날짜</h5>
-                                        <ul>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>작성자</h5>
-                                        <ul>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                        </ul>
-                                    </div>
-    
-                                    <div class="category-div-lg cat-div">
-    
-                                        <h5>문의 제목</h5>
-                                        <ul>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                        </ul>
-    
-                                    </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>문의 상태</h5>
-                                        <ul>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                        </ul>
-                                    </div>
-    
-                                    <div class="category-div-md cat-div">
-                                        <h5>처리완료 날짜</h5>
-                                        <ul>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                        </ul>
-                                    </div>
-    
-    
+                                        <section class="container" id="shabang" >
+                                                <article class="half">
+                                                        <h1><a href="../index">MAVIUS</a></h1>
+                                                        <div class="tabs">
+                                                                <span class="tab signin active"><a href="#signin">Edit</a></span>
+                                                                <!-- <span class="tab signup"><a href="#signup">sign up</a></span> -->
+                                                        </div>
+                                                        <div class="content">
+                                                            <div class="signin-cont cont">
+                                                                <form action="#" method="post" enctype="multipart/form-data">
+                                                                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
+                                                                    <label for="name">Your name</label>
+                                                                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your ID">
+                                                                    <label for="email">Your password</label>
+                                                                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                                                                    <label for="password">Your password chk</label>
+                                                                    <div class="submit-wrap">
+                                                                        <input type="submit" value="Eidt" class="submit">
+                                                                        <a href="#" class="more">Terms and conditions</a>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                            <!-- <div class="signup-cont cont">
+                                                                <form action="#" method="post" enctype="multipart/form-data">
+                                                                    <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
+                                                                    <label for="name">Your name</label>
+                                                                    <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your ID">
+                                                                    <label for="email">Your email</label>
+                                                                    <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
+                                                                    <label for="password">Your password</label>
+                                                                    <div class="submit-wrap">
+                                                                        <input type="submit" value="Sign up" class="submit">
+                                                                        <a href="#" class="more">Terms and conditions</a>
+                                                                    </div>
+                                                                </form>
+                                                            </div> -->
+                                                        </div>
+                                                </article>
+                                                <div class="half bg"></div>
+                                            </section>
+                                            
+                                            
+                                            
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+                                            <script type="text/javascript">
+                                            $('.tabs .tab').click(function(){
+                                                if ($(this).hasClass('signin')) {
+                                                    $('.tabs .tab').removeClass('active');
+                                                    $(this).addClass('active');
+                                                    $('.cont').hide();
+                                                    $('.signin-cont').show();
+                                                } 
+                                                if ($(this).hasClass('signup')) {
+                                                    $('.tabs .tab').removeClass('active');
+                                                    $(this).addClass('active');
+                                                    $('.cont').hide();
+                                                    $('.signup-cont').show();
+                                                }
+                                            });
+                                            $('.container .bg').mousemove(function(e){
+                                                var amountMovedX = (e.pageX * -1 / 30);
+                                                var amountMovedY = (e.pageY * -1 / 9);
+                                                $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
+                                            });
+                                            </script>
                                 </div>
     
                             </div>

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,8 +27,8 @@ public class JdbcMemberService implements MemberService{
 		List<MemberView> list = new ArrayList<>();
 			
 			//회원가입 순으로 회원번호 -> 그 역순으로 page
-	    	String sql = "SELECT * FROM(SELECT ROWNUM JOIN_DATE ,P.* FROM (SELECT * FROM POSTSCOMMENT ORDER BY REGDATE)P) WHERE ROWNUM BETWEEN ? AND ? ORDER BY JOIN_DATE DESC";
-	        
+	    	String sql = "SELECT * FROM(SELECT ROWNUM NUM ,P.* FROM (SELECT * FROM POSTSCOMMENT ORDER BY REGDATE)P) WHERE ROWNUM BETWEEN ? AND ? ORDER BY NUM DESC";
+
 	        try {
 	                    
 	           int start = 1+(page-1)*10;
@@ -38,13 +39,13 @@ public class JdbcMemberService implements MemberService{
 	           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
 	           PreparedStatement st = con.prepareStatement(sql);
 	           st.setInt(1, start);
-	           st.setInt(2, end);
+	           st.setInt(2, end); 
 	           
 	           ResultSet rs =st.executeQuery();
 	           
 	           while(rs.next()) {
 	              MemberView m = new MemberView(
-	        		  rs.getInt("JOIN_DATE"),
+	        		  rs.getInt("NUM"),
 	        		  rs.getString("NICKNAME"),
 	                  rs.getString("ID"),
 	                  rs.getString("GRADE"),
@@ -54,22 +55,64 @@ public class JdbcMemberService implements MemberService{
 	                    );
 	              
 	              list.add(m);
-	           }            
-	           
+	           }    
 	           rs.close();
 	           st.close();
 	           con.close();
 	           
-	        } catch (ClassNotFoundException e) {
-	           // TODO Auto-generated catch block
-	           e.printStackTrace();
-	        } catch (SQLException e) {
+	        }  catch (Exception e) {
 	           // TODO Auto-generated catch block
 	           e.printStackTrace();
 	        }
 	        
 		
 		return list;
+	}
+	
+	@Override
+	public MemberView getViewList(String id) {
+		// TODO Auto-generated method stub
+		MemberView detail = null;
+		//회원별 정보조회
+		String sql = "SELECT * FROM MEMVERVIEW where id = ?";
+        
+		try {
+                    
+           String id_= id;  
+           
+           String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+           Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+           PreparedStatement st = con.prepareStatement(sql);
+           st.setString(1, id_); 
+           
+           ResultSet rs =st.executeQuery();
+           rs.next();
+           
+           detail = new MemberView(
+    		  rs.getString("NICKNAME"),
+    		  rs.getString("ID"),
+              rs.getString("GRADE"),
+              rs.getString("EMAIL"),
+              rs.getDate("REGDATE"),
+              rs.getInt("EXP"),
+              rs.getInt("REPORT"),
+              rs.getInt("POSTS_COUNT"),
+              rs.getInt("COMMENT_COUNT")
+              
+                );
+             
+           rs.close();
+           st.close();
+           con.close();
+           
+        }  catch (Exception e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+        }
+        
+	
+	return detail;
 	}
 
 	@Override
@@ -89,6 +132,8 @@ public class JdbcMemberService implements MemberService{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 
 }

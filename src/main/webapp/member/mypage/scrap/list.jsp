@@ -15,10 +15,10 @@
     <title>Simple Sidebar - Start Bootstrap Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!--"vendor/bootstrap/css/bootstrap.min.css"-->
     <!-- Custom styles for this template -->
-    <link href="../../mypage/css/mypagescraplist.css" rel="stylesheet">
+    <link href="/member/mypage/css/mypagescraplist.css" rel="stylesheet">
 
 </head>
 
@@ -30,85 +30,7 @@
         </div>
         <div class="boxbox">
 
-            <!-- <header id="header">
-                <div>
-
-                    <div id="header-wrapper">
-                        <ul class="header-nav header-box">
-                            <li class="header-brand">
-                                <a href="#">
-                                    MAVIUS
-                                </a>
-                            </li>
-                            <li>
-                                <div class="pa">
-                                    <a href="#One">정보수정</a>
-                                    
-                                </div>
-
-
-                            </li>
-                            <li>
-                                <div class="pa">
-                                    <a href="#One">내가 쓴글</a>
-                                    <div class="submenu">
-                                        <ul>
-                                            <li><a href="#">게시글</a></li>
-                                            <li><a href="#">댓글</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-                            </li>
-                            <li>
-                                <div class="pa">
-
-                                    <a href="#Two">쪽지</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pa">
-
-                                    <a href="#">QnA</a>
-                                    <div class="submenu">
-                                        <ul>
-                                            <li><a href="#1">1</a></li>
-                                            <li><a href="#2">2</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pa">
-
-                                    <a href="#">Reply</a>
-                                    <div class="submenu">
-                                        <ul>
-                                            <li><a href="#1">1</a></li>
-                                            <li><a href="#2">2</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="pa">
-
-                                    <a href="#">Scrap</a>
-                                    <div class="submenu">
-                                        <ul>
-                                            <li><a href="#1">1</a></li>
-                                            <li><a href="#2">2</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </div>
-
-                </div>
-            </header> -->
+           
             <jsp:include page="/member/mypage/mypageheader.jsp"></jsp:include>
 
             <jsp:include page="/sidebar/sidebar.jsp"></jsp:include>
@@ -136,11 +58,7 @@
                             <!-- <div class="all-box"> -->
                                 <button class="select-all"><a>전체선택</a></button>
                             <!-- </div> -->
-                                <select>
-                                <option value="">전체기간</option>
-                                <option value="최근 1주">최근 1주</option>
-                                <option value="최근 1달">최근 1달</option>
-                            </select>
+                               
                             <select>
                                 <option value="">게시판 분류</option>
                                 <option value="게시판">전사게시판</option>
