@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 	<head>
@@ -18,27 +19,30 @@
             </div>
             <div class="content">
                 <div class="signin-cont cont">
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your ID">
-                        <label for="email">Your email</label>
-                        <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                        <label for="password">Your password</label>
+                    <form action="login" method="post" >
+                        <label for="uid">Your ID</label>
+                        <input name="uid" class="inpt" required="required" placeholder="Your ID">
+                        <label for="pwd">Your password</label>
+                        <input type="password" name="pwd" class="inpt" required="required" placeholder="Your password">
+	                        <c:if test="${param.er==1 }">
+	                        	<label for="remember">회원정보가 올바르지 않습니다.</label>
+	                       	</c:if>
                         <input type="checkbox" id="remember" class="checkbox" checked>
-                        <label for="remember">Remember me</label>
                         <div class="submit-wrap">
+                       		<input type="hidden" name="return-url" value="${param['return-url']}" />
                             <input type="submit" value="Sign in" class="submit">
                             <a href="#" class="more">Forgot your password?</a>
                         </div>
                     </form>
                 </div>
                 <div class="signup-cont cont">
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        <input type="email" name="email" id="name" class="inpt" required="required" placeholder="Your name">
-                        <label for="name">Your name</label>
-                        <input type="email" name="email" id="email" class="inpt" required="required" placeholder="Your ID">
+                    <form action="join" method="post" >
+                        <label for="uid">Use ID</label>
+                        <input name="uid" class="inpt" required="required" placeholder="Use ID">
+                        <label for="pwd">Use password</label>
+                        <input type="password" name="pwd" class="inpt" required="required" placeholder="Use password">
                         <label for="email">Your email</label>
-                        <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
-                        <label for="password">Your password</label>
+                        <input type="email" name="email" class="inpt" required="required" placeholder="Your email">
                         <div class="submit-wrap">
                             <input type="submit" value="Sign up" class="submit">
                             <a href="#" class="more">Terms and conditions</a>
