@@ -60,13 +60,13 @@ public class FreeBoardRegController extends HttpServlet{
 		
 		String path = request.getServletContext().getRealPath("/community/freeboard/upload");
 		String id = "LEE";
-		String title = request.getParameter("title1");
-		System.out.println(title);
-		String content = request.getParameter("content1");
-		System.out.println(content);
-		String category = request.getParameter("category1");
-		System.out.println(category);
-		Board board = new Board(title, content, id, "archer", category);
+		String title = request.getParameter("title");
+		//System.out.println(title);
+		String content = request.getParameter("content");
+		//System.out.println(content);
+		String category = request.getParameter("category");
+		//System.out.println(category);
+		Board board = new Board(title, content, id, "free", category);
 		Part part = request.getPart("file");
 		
 		int boardNo = service.reg(board, part, path); //게시물 번호 리턴

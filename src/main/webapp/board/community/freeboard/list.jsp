@@ -62,17 +62,17 @@
 				<div class="margin-bottom view-list">
 					
 					<ul>
-						<li class="li-category">${b.category}</li>
-						<li class="fas fa-list-ol id">${b.no}</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
+						<li class="li-category category">${b.category}</li>
+						<li class="fas fa-list-ol no">${b.no}</li>
+						<li class="li-title title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
 					
 					</ul>
-					<p class="coorid-list-p">${b.content}</p>
+					<p class="coorid-list-p content"><a href="detail?no=${b.no}">${b.content}</a></p>
 					<ul >
-						<li><a href="" class="fas fa-user-circle">${b.writerId}</a></li>
-						<li class="far fa-calendar-alt">&nbsp;${b.regDate}</li>
-						<li class="fas fa-eye">${b.hit}</li>
-						<li class="fas fa-heart">${b.recommend}</li>
+						<li><a href="" class="fas fa-user-circle writerId">${b.writerId}</a></li>
+						<li class="far fa-calendar-alt regDate">&nbsp;${b.regDate}</li>
+						<li class="fas fa-eye hit">${b.hit}</li>
+						<li class="fas fa-heart recommend">${b.recommend}</li>
 						
 					</ul>
 					
