@@ -28,15 +28,25 @@ public class FreeBoardListController extends HttpServlet{
 //		if(page_ != null && !page_.equals(""))
 //			page = Integer.parseInt(page_);
 
-
+		
+		String title;
+		int no ;
+		String category;
+		String content;
+		String writerId;
+		
+		
+		
 
 		BoardService service = new JdbcBoardService();
-		Map<String,Object> map = service.getBoardList("freeboard",1);
+		Map<String,Object> map = service.getBoardList("free",1);
 		
 		//System.out.println(list);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
 		request.setAttribute("list", map.get("list"));
 		dispatcher.forward(request, response);
+		
+		
 
 	}
 }

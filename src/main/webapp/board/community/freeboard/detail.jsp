@@ -61,20 +61,20 @@
 				<h1 class="hidden">게시글 보는 영역</h1>
 				<div>
 					<ul>
-						<li class="fas fa-list-ol">&nbsp; 1</li>
+						<li class="fas fa-list-ol">&nbsp;${detail.no}</li>
 						<!--DB에서 게시글 넘버 받아오면 리포트 넘버도 이걸로 받아오기   저장할 그릇 만들고 담아두기 아니면 값이 달라질 수도 있으니까.\-->
-						<li class="li-category">[웃긴자료]</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;제목&nbsp;<span
+						<li class="li-category">${detail.category}</li>
+						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${detail.title}&nbsp;<span
 							class="fas fa-quote-right"></span></li>
-						<li class="far fa-calendar-alt">등록일</li>
-						<li><a href="" class="fas fa-user-circle">작성자</a></li>
+						<li class="far fa-calendar-alt regDate">${detail.regDate}</li>
+						<li><a href="" class="fas fa-user-circle writerId">${detail.writerId}</a></li>
 						<!-- 작성자 누르면 작성자가 쓴 게시글 볼 수 있게 -->
 
-						<li class="fas fa-heart">추천수</li>
-						<li class="fas fa-eye">조회수</li>
-						<li class="fas fa-book">스크랩수</li>
+						<li class="fas fa-heart recommend">${detail.recommend}</li>
+						<li class="fas fa-eye hit">${detail.hit}</li>
+						
 					</ul>
-					<p class="detail-post">게시글 내용</p>
+					<p class="detail-post content">${detail.content}</p>
 				</div>
 				<div class="txt-align-right board-view-etc">
 					<a href="../freeboard/reg.jsp" class="fas fa-edit">글쓰기</a>

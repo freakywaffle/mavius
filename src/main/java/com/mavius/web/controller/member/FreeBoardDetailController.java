@@ -24,13 +24,23 @@ public class FreeBoardDetailController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		
+		
+		int no = Integer.parseInt(request.getParameter("no"));
+		System.out.println(no);
+		
 		BoardService service = new JdbcBoardService();
 		List<ReportReason> reason = new ArrayList();
-	
+		
+		
+		Board boardDetail = service.getBoard(no);
+		System.out.println(boardDetail);
+		
 		reason = service.getReportReason();
 		System.out.println(reason);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("detail.jsp");
 		request.setAttribute("reason", reason);
+		request.setAttribute("detail", boardDetail);
 		dispatcher.forward(request, response);
 		
 	}

@@ -28,15 +28,15 @@
 			<section class="main margin-bottom reset-padding">
 				<h3 class="text-center margin-top">글쓰기</h3>
 				<div class="main-page block-flex margin-top">
-					<form class="input-form" id="reg-form" action="reg" method="post"  enctype="multipart/form-data">
+					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();"  enctype="multipart/form-data">
 						<div class="set-form-div">
-							<select class="job-category border-color-gray" name="category1">
+							<select class="job-category border-color-gray" name="category">
 								<option>잡담</option>
 								<option>웃긴자료</option>
 								<option>기타</option>
 							</select>
 							<br/>
-							<input autocomplete="off" placeholder="  글제목" type="text" name="title1" class="title border-color-gray"/>
+							<input autocomplete="off" placeholder="  글제목" type="text" name="title" class="title border-color-gray"/>
 							<br/>
 							<div class="file-area">
 								<input type="file" class="hidden" name="file" multiple/>
@@ -44,7 +44,7 @@
 								<input type="text" disabled class="file-names"/>
 							</div>
 							<div class="content border-color-gray" id="editor1" contenteditable="true"></div>
-							<input type="hidden" name="content1" />
+							<input type="hidden" name="content" />
 						</div>
 						<button type="button" class="btn btn-secondary" onclick="location.href='list'">취소</button>
 						<button type="submit" class="btn btn-primary" id="btn-submit">등록</button>

@@ -1,6 +1,4 @@
 window.addEventListener("load", function(){
-	
-	var pager = document.querySelector(".target-pager");
 
 	var pager = document.querySelectorAll(".target-pager li");
 	var hiddenPager = document.querySelector('input[name="page"]');
@@ -15,7 +13,26 @@ window.addEventListener("load", function(){
 	}
 	
 	
-	var nextBtn = document.query
-	
+	var nextBtn = document.querySelector(".next");
+	var prevBtn = document.querySelector(".prev");
+
+	var prevPage = document.querySelector("input[name='prev']");
+	var nextPage = document.querySelector("input[name='next']");
+
+	nextBtn.onclick = function(){
+		
+		hiddenPager.value = nextPage.value;
+		form.submit();
+		
+	}
+
+	prevBtn.onclick = function(){
+		
+		hiddenPager.value = prevPage.value;
+		form.submit();
+		
+	}
+
+
 	
 });

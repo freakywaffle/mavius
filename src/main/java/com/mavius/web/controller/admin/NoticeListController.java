@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mavius.web.entity.News;
+import com.mavius.web.entity.NoticeView;
 import com.mavius.web.service.NewsService;
 import com.mavius.web.service.jdbc.JdbcNewsService;
 
@@ -33,7 +34,7 @@ public class NoticeListController extends HttpServlet{
 			
 		}
 		System.out.println(page);
-		List<News> list = service.getNewsList(page);
+		List<NoticeView> list = service.getNoticeViewList(page);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/news/notice/list.jsp");
 		request.setAttribute("list", list);
