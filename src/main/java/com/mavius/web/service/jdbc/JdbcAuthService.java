@@ -40,7 +40,7 @@ public class JdbcAuthService implements AuthService {
 						rs.getString("id"),
 						rs.getString("pwd"),
 						rs.getString("nickName"),
-						rs.getString("eMail"),
+						rs.getString("email"),
 						rs.getString("grade"),
 						rs.getInt("exp"),
 						rs.getDate("regDate"),
