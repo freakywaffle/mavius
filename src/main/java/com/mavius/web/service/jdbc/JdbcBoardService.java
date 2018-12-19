@@ -1206,7 +1206,7 @@ public class JdbcBoardService implements BoardService{
 			switch(catalog) 
 			{
 			
-			case "archer":
+			case "/board/target/archer":
 				
 				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='archer' and title like ?) "
 						+"where num BETWEEN ? and ?";

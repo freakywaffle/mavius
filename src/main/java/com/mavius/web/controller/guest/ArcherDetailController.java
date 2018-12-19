@@ -17,7 +17,7 @@ import com.mavius.web.entity.Reply;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
-@WebServlet("/board/target/archer/detail")
+@WebServlet("/board/archer/detail")
 public class ArcherDetailController extends HttpServlet{
 	
 	@Override
@@ -37,14 +37,14 @@ public class ArcherDetailController extends HttpServlet{
 		request.setAttribute("replyList", replyList);
 		request.setAttribute("fileList", fileList);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/detail.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/archer/detail.jsp");
 		
 		dispatcher.forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/detail.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/archer/detail.jsp");
 		
 		dispatcher.forward(request, response);
 	}

@@ -32,7 +32,7 @@
 .target-pager li{
 	width: 15px;
     height: 15px;
-	
+	list-style:none;
     text-align: center;
     vertical-align: middle;
     line-height: 15px;

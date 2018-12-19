@@ -9,12 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/target/pirate/list")
+@WebServlet("/board/pirate/list")
 public class PirateListController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/target/job/archer/list.jsp");
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/pirate/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/pirate/list.jsp");
 		
 		dispatcher.forward(request, response);
 	}
