@@ -239,94 +239,60 @@ background: #fff;
   display: inline-flex;
   width: 950px;
   height: 650px;
+  position: relative;
   text-align: center;
-  justify-content: center;
+  flex-direction: column;
+  /* justify-content: center; */
   border-top: #000 solid 1px;
 }
 
-.cat-div ul
+.submenu-cat
 {
-  text-align: center;
-  vertical-align: middle;
-  justify-content: center;
-  height: 90%;
-  padding: 0px;
+  display: inline-flex;
+ 
+  width: inherit;
+}
+.submenu2 ul
+{
+  display: inline-flex;
   margin: 0px;
+  margin-bottom: 10px;
+  padding: 0px;
+  width: inherit;
 }
-
-.cat-div h5
+.submenu2 li 
 {
-background-color: rgb(180, 176, 133);
-
-border-bottom: #999999 solid 1px;
-padding-top: 20px;
-padding-bottom: 20px;
-margin: 0px;
-
-  
-}
-
-.cat-div li
-{
-  padding-top: 15px;
-/*  padding-bottom: 15px; */
-
-  text-align: center;
-  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10px;
   list-style: none;
+  border-bottom: rgba(54, 53, 53, 0.363) 0.5px solid;
+}
+.submenu-cat li a
+{
+  display: block !important;
+  text-decoration: none !important;
+  color: black !important;
+}
+.submenu-cat li a:hover
+{
+  text-decoration: none !important;
+  color: black !important;
+}
+.subcat-sm
+{
+  width: 15%;
 }
 
-.cat-div li
+.subcat-md
 {
-border-bottom: #999999 solid 1px;
-width: inherit;
-height: 10%;
-}
-.cat-div li:last-child
-{
-border-bottom:none;
-width: inherit;
-padding-bottom: 0px;
-}
-.category-div-sm
-{
-
-border-bottom: #999999 solid 1px;
-width: 70px;
-height: inherit;
-padding: 0px;
-}
-.category-div-cr
-{
-
-border-bottom: #999999 solid 1px;
-width: 200px;
-height: inherit;
-padding: 0px;
+  width: 35%;
 }
 
-.category-div-md
+.subcat-lg
 {
+  width: 50%;
+}
 
-border-bottom: #999999 solid 1px;
-width: 135px;
-height: inherit;
-padding: 0px;
-}
-.category-div-lg
-{
-
-border-bottom: #999999 solid 1px;
-height: inherit;
-width: 505px;
-padding: 0px;
-}
-.category-div-lg a
-{
-text-decoration: none;
-height: inherit;
-color: black;
-}
 .searchtxt
 {
   width: inherit;
@@ -388,7 +354,7 @@ color: black;
   position: relative;
   width: 300px;
 }
-.d6 form {
+.d6-d {
   height: 42px;
   width: 300px;
 }
@@ -426,4 +392,9 @@ color: black;
   font-family: FontAwesome;
   font-size: 16px;
   color: #F9F0DA;
+}
+
+#option-form
+{
+  display: flex;
 }

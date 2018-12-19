@@ -975,13 +975,95 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public Map<String,Object> getBoardListById(String uid, int page) {
 		// TODO Auto-generated method stub
-		return getBoardListById(uid, page, 10,"");
+		return getBoardListById(uid, page, 10);
 	}
 
 	@Override
-	public Map<String,Object> getBoardListById(String uid, int page, int cnt) {
+	public Map<String,Object> getBoardListById(String uid, int page, int cnt) 
+	{
 		// TODO Auto-generated method stub
-		return getBoardListById(uid, page, 10,"");
+		
+		Map<String,Object> bm = new HashMap<>();
+		List<BoardView> list = new ArrayList<>();
+		
+		String sql = "select * from (select rownum num, b.* from board_view b where writer_id=?) "+
+		"where num BETWEEN ? and ?";
+		String sql2= "select count(*) cnt from board_view b where writer_id=?";
+		
+		int start = 1+(page-1)*10; 
+        int end = page*10; 
+		
+        String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+        try 
+        {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"c##MAVIUS","maplegg");
+			con.setAutoCommit(false);
+	        PreparedStatement st = con.prepareStatement(sql);
+	        PreparedStatement st2 = con.prepareStatement(sql2);
+	        
+	        st.setString(1, uid);
+	        st.setInt(2, start);
+	        st.setInt(3, end);
+	        
+	        
+	        
+	        st2.setString(1, uid);
+	        
+	        
+	        ResultSet rs =st.executeQuery();
+	        
+			while(rs.next())
+			{
+			
+				BoardView bv= new BoardView
+						(
+								rs.getInt("no"),
+								rs.getString("title"),
+								rs.getString("content"),
+								rs.getDate("regdate"),
+								rs.getString("writer_id"),
+								rs.getString("catalog"),
+								rs.getString("category"),
+								rs.getInt("hit"),
+								rs.getInt("recommend"),
+								rs.getInt("reply_cnt")
+						);
+				
+				
+				list.add(bv);
+			
+			}
+			
+			bm.put("list", list);
+			
+			rs.close();
+			st.close();
+			
+			ResultSet rs2 =st2.executeQuery();
+			rs2.next();
+			int rowCnt = rs2.getInt("cnt");
+			
+			bm.put("rowCnt", rowCnt);
+			
+			rs.close();
+			st2.close();
+			
+			
+			con.close();
+			
+			
+		} 
+        catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return bm;
 	}
 
 	@Override
@@ -999,8 +1081,8 @@ public class JdbcBoardService implements BoardService{
 		// TODO Auto-generated method stub
 		
 		
-		Map<String,Object> bm = null;
-		List<BoardView> list = null;
+		Map<String,Object> bm = new HashMap<>();
+		List<BoardView> list = new ArrayList<>();
 		
 		String sql = "select * from (select rownum num, b.* from board_view b where writer_id=? and title like ?) "+
 		"where num BETWEEN ? and ?";
@@ -1041,12 +1123,12 @@ public class JdbcBoardService implements BoardService{
 								rs.getString("title"),
 								rs.getString("content"),
 								rs.getDate("regdate"),
-								rs.getString("writerId"),
+								rs.getString("writer_id"),
 								rs.getString("catalog"),
 								rs.getString("category"),
 								rs.getInt("hit"),
 								rs.getInt("recommend"),
-								rs.getInt("replyCnt")
+								rs.getInt("reply_cnt")
 						);
 				
 				
@@ -1059,7 +1141,7 @@ public class JdbcBoardService implements BoardService{
 			rs.close();
 			st.close();
 			
-			ResultSet rs2 =st.executeQuery();
+			ResultSet rs2 =st2.executeQuery();
 			rs2.next();
 			int rowCnt = rs2.getInt("cnt");
 			

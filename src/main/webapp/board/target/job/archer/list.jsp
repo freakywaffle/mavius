@@ -40,7 +40,7 @@
                         </button>
                     </span>
                     <input type="hidden" value="${param.category }" name="category">
-                    <input type="hidden" value="${param.page }" name="page"/>
+                    <input type="hidden" name="page"/>
                 </form>
 				<div class="main-page block-flex margin-top">
 					<div>
@@ -85,34 +85,7 @@
 								</div>
 							</c:forEach>
 						</section>
-						<section class="target-pager margin-top">
-							<h1 class="hidden">페이저</h1>
-							<p class="inline prev">
-								<i class="fas fa-caret-left"></i>
-							</p>
-							<ul class="inline-list">
-								<c:set var="page" value="1" />
-	
-								<c:if test="${not empty param.page}">
-									<c:set var="page" value="${param.page}" />
-								</c:if>
-								
-								<c:forEach var="i" begin="${pager.startPage }" end="${pager.endPage }">
-									
-									<c:set var="cls" value="${i==page?'font-bold underline':''}" />
-									
-									<li class="${cls}"><a class="page">${i}</a></li>
-								</c:forEach>				
-								<!-- <li class="font-bold underline"><a class="page">1</a></li>
-								<li><a class="page">2</a></li>
-								<li><a class="page">3</a></li>
-								<li><a class="page">4</a></li>
-								<li><a class="page">5</a></li> -->
-							</ul>
-							<p class="inline next">
-								<i class="fas fa-caret-right"></i>
-							</p>
-						</section>
+						<jsp:include page="/inc/pager.jsp" />
 					</div>
 				</div>
 			</section>
