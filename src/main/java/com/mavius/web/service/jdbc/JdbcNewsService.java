@@ -34,7 +34,7 @@ public class JdbcNewsService implements NewsService{
 		List<News> list = new ArrayList<>();
 		
 		//회원가입 순으로 회원번호 -> 그 역순으로 page
-		String sql = "select * from (select * from news where catalog = 'notice' order by rownum desc) where rownum between ? and ?";
+		String sql = "select * from (select rownum num, c.* from (select * from news where catalog = 'notice')c order by num desc) where num between ? and ?";
 
 	    try {
 	                
