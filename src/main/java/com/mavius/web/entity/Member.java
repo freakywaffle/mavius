@@ -14,8 +14,6 @@ public class Member {
 	private int report;
 	private int authority;
 	
-	
-	
 	public Member() {
 		super();
 	}
@@ -39,6 +37,19 @@ public class Member {
 		this.report = report;
 	}
 
+	public Member(String id, String pwd, String nickName, String eMail, String grade, int exp, Date regDate, int report,
+			int authority) {
+		super();
+		this.id = id;
+		this.pwd = pwd;
+		this.nickName = nickName;
+		this.eMail = eMail;
+		this.grade = grade;
+		this.exp = exp;
+		this.regDate = regDate;
+		this.report = report;
+		this.authority = authority;
+	}
 
 	public String getId() {
 		return id;

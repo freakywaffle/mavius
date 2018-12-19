@@ -13,9 +13,10 @@ public class PageUtil {
    private int totalRowCount;//전체글의갯수
    
    public PageUtil() {}
+   
    public PageUtil(int pageNum,int totalRowCount,int rowBlockCount,int pageBlockCount) {
       this.pageNum=pageNum;
-      this.totalRowCount=totalRowCount;
+      this.totalRowCount=totalRowCount;	
       this.rowBlockCount=rowBlockCount;
       this.pageBlockCount=pageBlockCount;
       
@@ -28,6 +29,7 @@ public class PageUtil {
          endPageNum=totalPageCount;
       }
    }
+   
    public int getPageNum() {
       return pageNum;
    }

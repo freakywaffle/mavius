@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mavius.web.controller.PageUtil;
 import com.mavius.web.entity.NewsView;
 import com.mavius.web.service.NewsService;
 import com.mavius.web.service.jdbc.JdbcNewsService;
