@@ -1,77 +1,70 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<!-- css¸µÅ© ÆÄÀÏ Ãß°¡¶û ÅÂ±×¸³ -->
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link href="../../../css/freeBoardEdit.css" type="text/css" rel="stylesheet" />
-<title>Ä¿¹Â´ÏÆ¼-ÀÚÀ¯°Ô½ÃÆÇ-¼öÁ¤</title>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="../../../css/communityBoardEdit.css" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="../../../js/communityEdit.js"></script>
+<script src="../../../ckeditor/ckeditor.js"></script>
 </head>
-<div id="hiririk">
-	<header>
-	<jsp:include page="/sidebar/header.jsp" />
-	</header>
-	<aside>
-    <jsp:include page="/sidebar/sidebar.jsp" />
-    </aside>
-
-
-<body id="body">
-<header>
-		<h1>Çì´õ</h1>
-	</header>
-	<main>
-		<h1>ÀÚÀ¯°Ô½ÃÆÇ</h1>
-		<section>
-		<h1>°Ô½Ã±Û ÀÔ·Â Æû</h1>
-			<form>
-				<fieldset>
-					<legend>
-						<label>°Ô½Ã±Û µî·Ï</label>
-					</legend>
-					<select>
-						<option>°Ô½ÃÆÇ¼±ÅÃ</option>
-						<option>°øÁö»çÇ×</option>
-						<option>ÀÌº¥Æ®</option>
-						<option>ÀÚÀ¯°Ô½ÃÆÇ</option>
-						<option>ÄÚµðÆò°¡°Ô½ÃÆÇ</option>
-						<option>Å×½ºÆ®¼­¹ö</option>
-						<option>¼­¹ö°Ô½ÃÆÇ</option>
-						<option>Á÷¾÷º° ÆÁ&°ø·«</option>
-						<option>À°¼ºÆÁ</option>
-					</select>
-					<select>
-						<option>¸»¸Ó¸®¼±ÅÃ</option>
-						<option>ÀÚ¶û</option>
-						<option>Á¤º¸</option>
-						<option>Àâ´ã</option>
-					</select>
-					<div>
-						<label>Á¦¸ñ:</label>
-						<input type="text" name="reg-title"/>
-						<!-- ÀÛ¼ºÀº api·Î -->
-						
-					</div>
-					<div>
-						<label>³»¿ë:</label>
-						<input type="text" name="reg-context"/>
-						<input type="file" name="btn-file" value="ÆÄÀÏÃ·ºÎ"/>
-					</div>
-					<div>
-						<input type="submit" name="btn-submit" value="µî·Ï"/>
-						<input type="submit" name="btn-exit" value="³ª°¡±â"/>
-					</div>
-				</fieldset>
-			</form>
-		</section>
-		
-	</main>	
-	<aside>
-		<h1>¾î»çÀÌµå</h1>
-	</aside>
+<body>
+	<div id="hiririk">
+		<jsp:include page="/sidebar/header.jsp" />
+		<jsp:include page="/sidebar/sidebar.jsp" />
+	    <div class="blank"></div>
+		<div class="head-border-line"></div>
+		<div class="wrapper">
+			<section class="board-header">
+				<h1 class="border-title text-center font-medium">ì»¤ë®¤ë‹ˆí‹°</h1>
+				<h3 class="text-center">ìžìœ ê²Œì‹œíŒ</h3>
+			</section>
+			<section class="main margin-bottom reset-padding">
+				<h3 class="text-center margin-top">ê¸€ì“°ê¸°</h3>
+				<div class="main-page block-flex margin-top">
+					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();"  enctype="multipart/form-data">
+						<div class="set-form-div">
+							<select class="job-category border-color-gray" name="category">
+								<option>ìž¡ë‹´</option>
+								<option>ì›ƒê¸´ìžë£Œ</option>
+								<option>ê¸°íƒ€</option>
+							</select>
+							<br/>
+							<input autocomplete="off" value="${e.title}" placeholder="  ê¸€ì œëª©" type="text" name="title" class="title border-color-gray"/>
+							<br/>
+							<div class="file-area">
+								<input type="file" class="hidden" name="file" multiple/>
+								<button type="button" class="btn btn-info">íŒŒì¼ì²¨ë¶€</button>
+								<input type="text" disabled class="file-names"/>
+							</div>
+							<div class="content border-color-gray" id="editor1" contenteditable="true" value="${e.content}"></div>
+							<input type="hidden"  name="content"  />
+						</div>
+						<button type="button" class="btn btn-secondary" onclick="location.href='list'">ì·¨ì†Œ</button>
+						<button type="submit" class="btn btn-primary" id="btn-submit">ë“±ë¡</button>
+					</form>
+					<!-- <div class="input-sup-form ">
+						<div class="set-form-div">
+							
+							
+							<div class="margin-top reg-btns">
+								<button type="button" class="btn btn-secondary" onclick="location.href='list'">ì·¨ì†Œ</button>
+								<button type="submit" class="btn btn-primary" id="btn-submit" form="reg-form">ë“±ë¡</button>
+							</div>
+						</div>
+					</div> -->
+				</div>
+			</section>				
+		</div>
+	</div>
+	
+	
+	
 </body>
-</div>
 </html>

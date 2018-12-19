@@ -41,7 +41,7 @@ public class FreeBoardRegController extends HttpServlet{
 //		List<Board> list = service.getBoardList("freeboard",1,1);//占쏙옙占싹곤옙占쏙옙占쏙옙 list占쏙옙 占쏙옙占쏙옙獵占� 占쏙옙占쏙옙
 		
 //		System.out.println(list);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("reg.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/community/free/reg.jsp");
 //		request.setAttribute("list", list);
 		dispatcher.forward(request, response);
 	}
@@ -60,6 +60,7 @@ public class FreeBoardRegController extends HttpServlet{
 		
 		String path = request.getServletContext().getRealPath("/community/freeboard/upload");
 		String id = "LEE";
+		System.out.println("id를 섹션으로 바꿔주세요!");
 		String title = request.getParameter("title");
 		//System.out.println(title);
 		String content = request.getParameter("content");

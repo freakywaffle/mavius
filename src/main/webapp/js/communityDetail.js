@@ -7,7 +7,22 @@ window.addEventListener("load", function(){
     var uid =document.querySelector('input[name="writerId"]');
     var recommendView = boardView.querySelector("#recommend-view");
     var recommendPlus = boardView.querySelector("#recommend-plus");
+    var editBtn = boardView.querySelector("#edit");
+    var no = document.querySelector('input[name="no"]');
+
     
+   
+    editBtn.onclick = function(e){
+        console.log("edit hello");
+        var request = new XMLHttpRequest();   
+        request.open("POST", "/board/free/edit", false);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.onload = function(){
+            console.log("Edit");
+        };
+        request.send("no="+no.value);
+    };
+
     recommendBtn.onclick=function(e){
         //console.log("hello");
         var request = new XMLHttpRequest();   

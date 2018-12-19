@@ -83,10 +83,10 @@
 					<p class="detail-post content">${detail.content}</p>
 				</div>
 				<div class="txt-align-right board-view-etc">
-					<a href="../freeboard/reg.jsp" class="fas fa-edit">글쓰기</a>
+					<a href="/board/free/reg" class="fas fa-edit">글쓰기</a>
 					<!-- a 태그로 바꿀시 발생 될 문제 주의하기 -->
-					<a href="../freeboard/edit.jsp" class="fas fa-wrench">수정하기</a> <span
-						id="delete" class="fas fa-trash-alt">삭제하기</span>
+					<a href="/board/free/edit" class="fas fa-wrench"><span id="edit">수정하기</span></a> 
+					<span id="delete" class="fas fa-trash-alt">삭제하기</span>
 					<button name="myBtn">신고하기</button>
 					<!-- <a href=""><span class="far fa-angry" >신고하기</span></a> -->
 					<span id="recommend" class="fas fa-heart">추천하기</span>
