@@ -16,7 +16,7 @@ import com.mavius.web.entity.BoardView;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
-@WebServlet("/board/community/freeboard/list")
+@WebServlet("/board/free/list")
 public class FreeBoardListController extends HttpServlet{
 
 	@Override
@@ -28,7 +28,9 @@ public class FreeBoardListController extends HttpServlet{
 //		if(page_ != null && !page_.equals(""))
 //			page = Integer.parseInt(page_);
 
-		
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		String title;
 		int no ;
 		String category;
@@ -42,7 +44,7 @@ public class FreeBoardListController extends HttpServlet{
 		Map<String,Object> map = service.getBoardList("free",1);
 		
 		//System.out.println(list);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/community/free/list.jsp");
 		request.setAttribute("list", map.get("list"));
 		dispatcher.forward(request, response);
 		
