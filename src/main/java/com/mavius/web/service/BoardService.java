@@ -1,6 +1,7 @@
 package com.mavius.web.service;
 
 import java.util.List;
+
 import java.util.Map;
 
 import javax.servlet.http.Part;
@@ -9,16 +10,17 @@ import com.mavius.web.entity.Board;
 import com.mavius.web.entity.BoardFile;
 import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Reply;
-import com.mavius.web.entity.Report;
+import com.mavius.web.entity.ReportReason;
 
 public interface BoardService {
 
-	Board getBoardListById(String uid, int page);
-	Board getBoardListById(String uid, int page, int cnt);
-	Board getBoardListById(String uid,  int page, String keyword);
-	Board getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
-	Board getBoardListById(String uid, int page, String keyword, String catalog);
-	Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
+	Map<String,Object> getBoardListById(String uid, int page);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt);
+	Map<String,Object> getBoardListById(String uid,  int page, String keyword);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword); //cnt 컬럼수
+	Map<String,Object> getBoardListById(String uid, int page, String keyword, String catalog);
+	Map<String,Object> getBoardListById(String uid, int page, int cnt, String keyword, String catalog);
+	
 
 	BoardView getBoard(int no);
 	Map<String, Object> getBoardList(int page);
@@ -41,7 +43,7 @@ public interface BoardService {
 	int reg(Board board, Part part, String path); //게시물 번호 리턴, 파일업로드 이렇게 하는게 맞는지 애매함
 	int edit(Board board);
 	int delete(int boardNo);
-	int claim(Report report);
+	int claim(ReportReason report);
 	int recommend(String uid, int boardNo);
 	int cancelRecommend(String uid, int boardNo);
 	int regScrap(String uid, int boardNo);
@@ -49,7 +51,13 @@ public interface BoardService {
 	int reg(Reply reply);
 	int delReply(int replyNo);
 	List<Reply> getReplyListByBoardNo(int boardNo);
+
+	List<ReportReason> getReportReason();
+	int regReport(int reportedNo, String contentEtc,String reason, String reporterId, String type);
+	
+
 	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
+
 	
 	
 	

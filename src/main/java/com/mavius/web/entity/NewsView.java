@@ -3,6 +3,7 @@ package com.mavius.web.entity;
 import java.util.Date;
 
 public class NewsView extends News {
+	
 	private String memberName;
 
 	public NewsView() {
@@ -31,7 +32,6 @@ public class NewsView extends News {
 	public void setMemberName(String memberName) {
 		this.memberName = memberName;
 	}
-	
-	
+
 	
 }

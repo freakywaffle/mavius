@@ -58,11 +58,7 @@
                             <!-- <div class="all-box"> -->
                                 <button class="select-all"><a>전체선택</a></button>
                             <!-- </div> -->
-                                <select>
-                                <option value="">전체기간</option>
-                                <option value="최근 1주">최근 1주</option>
-                                <option value="최근 1달">최근 1달</option>
-                            </select>
+                               
                             <select>
                                 <option value="">게시판 분류</option>
                                 <option value="게시판">전사게시판</option>
