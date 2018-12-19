@@ -766,16 +766,55 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public int recommend(String uid, int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int recommend(String uid, int boardNo,int sep) {
+		int error = -1;
+		System.out.println("recommend Jdbc service입니다.");
+		String sql ="UPDATE board SET recommend =+0 WHERE no =?";
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		
+		if(sep==0) {
+			sql="UPDATE board SET recommend =recommend+1 WHERE no =?";
+			error=sep;
+			System.out.println("에러코드: "+error+"0이면 추천되었습니다.");
+		}else if(sep==1){
+			sql="UPDATE board SET recommend =recommend-1 WHERE no =?";	
+			error=sep;
+			System.out.println("에러코드: "+error+"1이면 추천이 취소 되었습니다.");
+		}
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1,boardNo);
+			int affectedBoard = st.executeUpdate();
+			
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+			//인서트 구문이랑
+		//현재 레코멘드를 받아오는 수
+		//그러면 현재 추천수에서 1+ 넣는다.?
+		//버튼을 눌렀을때 클래스 이름을 바꿔준다?
+		//숨겨놨던 다른 아이콘으로 전환해서
+		//그럼 그 아이콘을 클릭하면 -1을 시켜주고
+		//아이콘을 눌렀을때 seperate 변수 값을 같이 넘겨주자 그다음에 if문을 구분해서 들어가는 부분을 넣자!!
+		
+		
+		return error;
 	}
 
-	@Override
-	public int cancelRecommend(String uid, int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int regScrap(String uid, int boardNo) {

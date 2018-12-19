@@ -25,7 +25,7 @@ import com.mavius.web.entity.Board;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
-@WebServlet("/board/community/freeboard/reg")
+@WebServlet("/board/free/reg")
 @MultipartConfig(
 	    fileSizeThreshold = 1024*1024,
 	    maxFileSize = 1024*1024*10, 

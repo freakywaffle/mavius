@@ -53,6 +53,8 @@
 				</fieldset>
 			</form>
 		</section>
+		<input name="no" value="${detail.no}" class="hidden"/>
+		<input name="writerId" value="${detail.writerId}" class="hidden"/>
 
 
 		<section id="freeboard-detail">
@@ -61,7 +63,7 @@
 				<h1 class="hidden">게시글 보는 영역</h1>
 				<div>
 					<ul>
-						<li class="fas fa-list-ol">&nbsp;${detail.no}</li>
+						<li class="no fas fa-list-ol">&nbsp;${detail.no}</li>
 						<!--DB에서 게시글 넘버 받아오면 리포트 넘버도 이걸로 받아오기   저장할 그릇 만들고 담아두기 아니면 값이 달라질 수도 있으니까.\-->
 						<li class="li-category">${detail.category}</li>
 						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${detail.title}&nbsp;<span
@@ -70,7 +72,11 @@
 						<li><a href="" class="fas fa-user-circle writerId">${detail.writerId}</a></li>
 						<!-- 작성자 누르면 작성자가 쓴 게시글 볼 수 있게 -->
 
-						<li class="fas fa-heart recommend">${detail.recommend}</li>
+						<li id="recommend-view"class="fas fa-heart">${detail.recommend}</li>
+						<li id="recommend-plus"class="fas fa-heart hidden-imp">${detail.recommend+1}</li>
+						
+
+						
 						<li class="fas fa-eye hit">${detail.hit}</li>
 						
 					</ul>
@@ -83,7 +89,9 @@
 						id="delete" class="fas fa-trash-alt">삭제하기</span>
 					<button name="myBtn">신고하기</button>
 					<!-- <a href=""><span class="far fa-angry" >신고하기</span></a> -->
-					<span id="recommend" class="fas fa-thumbs-up">추천하기</span> <span
+					<span id="recommend" class="fas fa-heart">추천하기</span>
+					<span id="cancel-rec"class="far fa-heart hidden-imp">추천취소</span>
+					<span
 						id="scrap" class="fas fa-bookmark">스크랩하기</span>
 					<!-- <input  type="button" name="btn-reg"> -->
 					<!-- <input  class="fas fa-wrench" type="button" name="btn-edit" value="수정하기" />

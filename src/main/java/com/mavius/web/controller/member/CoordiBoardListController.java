@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/community/coordi/list")
+@WebServlet("/board/coordi/list")
 public class CoordiBoardListController extends HttpServlet{
 	
 	@Override
