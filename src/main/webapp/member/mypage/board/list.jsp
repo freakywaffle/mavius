@@ -58,7 +58,7 @@
 						<h3>내가 쓴 게시글</h3>
 					</div>
 					<div class="searchtxt">
-						<form action="list" method="get" id="option-form">
+						<form action="boardlist" method="get" id="option-form">
 
 							<select>
 								<option value="">전체게시판</option>
@@ -67,6 +67,11 @@
 								<option value="pirate">해적게시판</option>
 								<option value="rogue">도적게시판</option>
 								<option value="warrior">전사게시판</option>
+								<option value="coordi">코디게시판</option>
+								<option value="free">자유게시판</option>
+								<option value="server">서버게시판</option>
+								<option value="boss">보스공략게시판</option>
+								<option value="job">직업공략게시판</option>
 							</select>
 
 							<div class="d6">
@@ -96,7 +101,7 @@
 								<ul>
 									<li class="subcat-md"><a>${board.regDate }</a></li>
 									<li class="subcat-sm"><a>${board.catalog}</a></li>
-									<li class="subcat-lg"><a href="detail?no=${board.no }">${board.title }</a></li>
+									<li class="subcat-lg"><a href="/board/${board.catalog }/detail?no=${board.no }">${board.title }</a></li>
 									<li class="subcat-sm"><a>${board.hit }</a></li>
 									<li class="subcat-sm"><a>${board.recommend }</a></li>
 								</ul>
@@ -105,7 +110,7 @@
 
 
 						</div>
-					<div class="pagerbox">
+					<%-- <div class="pagerbox">
 						<nav>
 							<ul class="pager-list">
 								<li class="pager-item"><a class="pager-link" href="#"> < </a> </li> 
@@ -129,7 +134,9 @@
 								<li class="pager-item"><a class="pager-link" href="#"> > </a></li>
 							</ul>
 						</nav>
-					</div>
+					</div> --%>
+					<jsp:include page="/inc/pager.jsp"></jsp:include>
+					
 				</div>
 
 			</section>
