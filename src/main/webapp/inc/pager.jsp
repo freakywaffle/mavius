@@ -3,7 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-<link href="/css/pager.css" rel="stylesheet">    
+<link href="/css/pager.css" rel="stylesheet"> 
+<script src="/js/targetboardlist.js"></script>   
 <section class="target-pager margin-top">
 	<h1 class="hidden">페이저</h1>
 	<p class="inline prev">

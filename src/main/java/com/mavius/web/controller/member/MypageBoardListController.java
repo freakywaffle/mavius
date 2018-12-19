@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
+import tool.Pager;
+
 @WebServlet("/mypage/boardlist")
 public class MypageBoardListController extends HttpServlet
 {
@@ -38,8 +40,8 @@ public class MypageBoardListController extends HttpServlet
 		if(page_ !=null && !page_.equals(""))
 			page = Integer.parseInt(request.getParameter("page"));
 		
-		int startPage = pagerCnt*(page/pagerCnt)+1;
-		int endPage = startPage+pagerCnt-1; 
+//		int startPage = pagerCnt*(page/pagerCnt)+1;
+//		int endPage = startPage+pagerCnt-1; 
 		
 		
 		if(keyword !=null && !keyword.equals("")) 
@@ -61,15 +63,17 @@ public class MypageBoardListController extends HttpServlet
 		System.out.println(bm.get("rowCnt"));
 		
 		int boardCnt = (int)bm.get("rowCnt");
-		int maxPage =(int)Math.ceil(boardCnt/pageCnt);
+//		int maxPage =(int)Math.ceil(boardCnt/pageCnt);
 		
-		if(endPage > maxPage) {
-			endPage = maxPage;
-		}
+//		if(endPage > maxPage) {
+//			endPage = maxPage;
+//		}
 		
+		Pager pager = new Pager(pageCnt, pagerCnt, page, boardCnt);
 		request.setAttribute("list", bm.get("list"));
-		request.setAttribute("startPage", startPage);
-		request.setAttribute("endPage", endPage);
+//		request.setAttribute("startPage", startPage);
+//		request.setAttribute("endPage", endPage);
+		request.setAttribute("pager", pager);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/mypage/board/list.jsp");
 		dispatcher.forward(request, response);
