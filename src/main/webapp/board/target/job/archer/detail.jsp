@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../../../css/targetboarddetail.css" rel="stylesheet">
+<link href="/css/targetboarddetail.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 </head>
 <body>
@@ -28,7 +28,7 @@
 					<div>
 						<h1 class="hidden">모아보기 리스트</h1>
 						<section class="detail-simbol">
-							<img alt="카테고리1" src="../../../../images/pinkbean2.jpg">
+							<img alt="카테고리1" src="/images/pinkbean2.jpg">
 						</section>
 					</div>
 					<div class="target-board-main">
@@ -55,7 +55,7 @@
 								첨부파일
 								<ul>
 									<c:forEach var="file" items="${fileList}">
-										<li><a href="../../../target/archer/${file.saveName }" download>${file.name}</a></li>
+										<li><a href="/target/archer/${file.saveName }" download>${file.name}</a></li>
 									</c:forEach>
 								</ul>
 							</div>

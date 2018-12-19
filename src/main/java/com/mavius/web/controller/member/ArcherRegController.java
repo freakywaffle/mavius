@@ -26,7 +26,7 @@ import com.mavius.web.entity.Board;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
-@WebServlet("/board/target/archer/reg")
+@WebServlet("/board/archer/reg")
 @MultipartConfig(
 	    fileSizeThreshold = 1024*1024,
 	    maxFileSize = 1024*1024*10, 
@@ -35,7 +35,7 @@ import com.mavius.web.service.jdbc.JdbcBoardService;
 public class ArcherRegController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../../../member/board/target/job/archer/reg.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/board/target/job/archer/reg.jsp");
 
 		dispatcher.forward(request, response);
 	}

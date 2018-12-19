@@ -6,10 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../../../css/targetboardlist.css" rel="stylesheet">
+<link href="/css/targetboardlist.css" rel="stylesheet">
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-<script src="../../../js/targetboardlist.js"></script>
+<script src="/js/targetboardlist.js"></script>
 </head>
 <body>
 	<div id="hiririk">
@@ -46,19 +46,19 @@
 					<div>
 						<h1 class="hidden">모아보기 리스트</h1>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=보우마스터'" alt="보우마스터" src="../../../../images/catalog1.png">
+							<img onclick="location.href='list?category=보우마스터'" alt="보우마스터" src="/images/catalog1.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=신궁'" alt="신궁" src="../../../../images/catalog2.png">
+							<img onclick="location.href='list?category=신궁'" alt="신궁" src="/images/catalog2.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=메르세데스'" alt="메르세데스" src="../../../../images/catalog3.png">
+							<img onclick="location.href='list?category=메르세데스'" alt="메르세데스" src="/images/catalog3.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=윈드브레이커'" alt="윈드브레이커" src="../../../../images/catalog4.png">
+							<img onclick="location.href='list?category=윈드브레이커'" alt="윈드브레이커" src="/images/catalog4.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=와일드헌터'" alt="와일드헌터" src="../../../../images/catalog5.png">
+							<img onclick="location.href='list?category=와일드헌터'" alt="와일드헌터" src="/images/catalog5.png">
 						</div>
 					</div>
 					<div class="target-board-main">
