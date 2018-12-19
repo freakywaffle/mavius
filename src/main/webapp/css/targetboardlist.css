@@ -305,6 +305,12 @@ h1,ul,p,li,section{
 	
 }
 
+.target-pager .pref>label{
+	text-indent: -999px!important;
+    overflow: hidden!important;
+	
+}	
+
 .target-pager li{
 	width: 15px;
     height: 15px;

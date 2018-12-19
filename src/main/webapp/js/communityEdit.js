@@ -1,7 +1,16 @@
 window.addEventListener("load", function(){
 	
 //	-----ckeditor 적용 작업-----------
-	
+    
+    var title = document.querySelector("")
+
+
+
+
+
+
+
+
 	var editor = CKEDITOR.instances.editor1;
 	
     if (editor) {

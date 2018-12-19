@@ -25,7 +25,7 @@ import com.mavius.web.entity.Board;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
-@WebServlet("/board/community/freeboard/reg")
+@WebServlet("/board/free/reg")
 @MultipartConfig(
 	    fileSizeThreshold = 1024*1024,
 	    maxFileSize = 1024*1024*10, 
@@ -41,7 +41,7 @@ public class FreeBoardRegController extends HttpServlet{
 //		List<Board> list = service.getBoardList("freeboard",1,1);//占쏙옙占싹곤옙占쏙옙占쏙옙 list占쏙옙 占쏙옙占쏙옙獵占� 占쏙옙占쏙옙
 		
 //		System.out.println(list);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("reg.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/community/free/reg.jsp");
 //		request.setAttribute("list", list);
 		dispatcher.forward(request, response);
 	}
@@ -60,13 +60,14 @@ public class FreeBoardRegController extends HttpServlet{
 		
 		String path = request.getServletContext().getRealPath("/community/freeboard/upload");
 		String id = "LEE";
-		String title = request.getParameter("title1");
-		System.out.println(title);
-		String content = request.getParameter("content1");
-		System.out.println(content);
-		String category = request.getParameter("category1");
-		System.out.println(category);
-		Board board = new Board(title, content, id, "archer", category);
+		System.out.println("id를 섹션으로 바꿔주세요!");
+		String title = request.getParameter("title");
+		//System.out.println(title);
+		String content = request.getParameter("content");
+		//System.out.println(content);
+		String category = request.getParameter("category");
+		//System.out.println(category);
+		Board board = new Board(title, content, id, "free", category);
 		Part part = request.getPart("file");
 		
 		int boardNo = service.reg(board, part, path); //게시물 번호 리턴

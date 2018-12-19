@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<link href="../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <!--"vendor/bootstrap/css/bootstrap.min.css"-->
 <!-- Custom styles for this template -->
 <link href="/member/mypage/css/mypageheader.css" rel="stylesheet">
-<script src="../mypage/css/jquery-3.3.1.slim.min.js"></script>
-<script src="../mypage/css/popper.min.js"></script>
-<script src="../../bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js"></script>
+<script src="/member/mypage/css/jquery-3.3.1.slim.min.js"></script>
+<script src="/member/mypage/css/popper.min.js"></script>
+<script src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js"></script>
 
 
 

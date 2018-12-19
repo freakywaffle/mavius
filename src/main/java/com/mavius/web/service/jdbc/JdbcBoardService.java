@@ -766,16 +766,55 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public int recommend(String uid, int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int recommend(String uid, int boardNo,int sep) {
+		int error = -1;
+		System.out.println("recommend Jdbc service입니다.");
+		String sql ="UPDATE board SET recommend =+0 WHERE no =?";
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		
+		if(sep==0) {
+			sql="UPDATE board SET recommend =recommend+1 WHERE no =?";
+			error=sep;
+			System.out.println("에러코드: "+error+"0이면 추천되었습니다.");
+		}else if(sep==1){
+			sql="UPDATE board SET recommend =recommend-1 WHERE no =?";	
+			error=sep;
+			System.out.println("에러코드: "+error+"1이면 추천이 취소 되었습니다.");
+		}
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1,boardNo);
+			int affectedBoard = st.executeUpdate();
+			
+			st.close();
+			con.close();
+			
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+			//인서트 구문이랑
+		//현재 레코멘드를 받아오는 수
+		//그러면 현재 추천수에서 1+ 넣는다.?
+		//버튼을 눌렀을때 클래스 이름을 바꿔준다?
+		//숨겨놨던 다른 아이콘으로 전환해서
+		//그럼 그 아이콘을 클릭하면 -1을 시켜주고
+		//아이콘을 눌렀을때 seperate 변수 값을 같이 넘겨주자 그다음에 if문을 구분해서 들어가는 부분을 넣자!!
+		
+		
+		return error;
 	}
 
-	@Override
-	public int cancelRecommend(String uid, int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int regScrap(String uid, int boardNo) {
@@ -936,13 +975,95 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public Map<String,Object> getBoardListById(String uid, int page) {
 		// TODO Auto-generated method stub
-		return getBoardListById(uid, page, 10,"");
+		return getBoardListById(uid, page, 10);
 	}
 
 	@Override
-	public Map<String,Object> getBoardListById(String uid, int page, int cnt) {
+	public Map<String,Object> getBoardListById(String uid, int page, int cnt) 
+	{
 		// TODO Auto-generated method stub
-		return getBoardListById(uid, page, 10,"");
+		
+		Map<String,Object> bm = new HashMap<>();
+		List<BoardView> list = new ArrayList<>();
+		
+		String sql = "select * from (select rownum num, b.* from board_view b where writer_id=?) "+
+		"where num BETWEEN ? and ?";
+		String sql2= "select count(*) cnt from board_view b where writer_id=?";
+		
+		int start = 1+(page-1)*10; 
+        int end = page*10; 
+		
+        String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+        try 
+        {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection con = DriverManager.getConnection(url,"c##MAVIUS","maplegg");
+			con.setAutoCommit(false);
+	        PreparedStatement st = con.prepareStatement(sql);
+	        PreparedStatement st2 = con.prepareStatement(sql2);
+	        
+	        st.setString(1, uid);
+	        st.setInt(2, start);
+	        st.setInt(3, end);
+	        
+	        
+	        
+	        st2.setString(1, uid);
+	        
+	        
+	        ResultSet rs =st.executeQuery();
+	        
+			while(rs.next())
+			{
+			
+				BoardView bv= new BoardView
+						(
+								rs.getInt("no"),
+								rs.getString("title"),
+								rs.getString("content"),
+								rs.getDate("regdate"),
+								rs.getString("writer_id"),
+								rs.getString("catalog"),
+								rs.getString("category"),
+								rs.getInt("hit"),
+								rs.getInt("recommend"),
+								rs.getInt("reply_cnt")
+						);
+				
+				
+				list.add(bv);
+			
+			}
+			
+			bm.put("list", list);
+			
+			rs.close();
+			st.close();
+			
+			ResultSet rs2 =st2.executeQuery();
+			rs2.next();
+			int rowCnt = rs2.getInt("cnt");
+			
+			bm.put("rowCnt", rowCnt);
+			
+			rs.close();
+			st2.close();
+			
+			
+			con.close();
+			
+			
+		} 
+        catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        return bm;
 	}
 
 	@Override
@@ -960,8 +1081,8 @@ public class JdbcBoardService implements BoardService{
 		// TODO Auto-generated method stub
 		
 		
-		Map<String,Object> bm = null;
-		List<BoardView> list = null;
+		Map<String,Object> bm = new HashMap<>();
+		List<BoardView> list = new ArrayList<>();
 		
 		String sql = "select * from (select rownum num, b.* from board_view b where writer_id=? and title like ?) "+
 		"where num BETWEEN ? and ?";
@@ -1002,12 +1123,12 @@ public class JdbcBoardService implements BoardService{
 								rs.getString("title"),
 								rs.getString("content"),
 								rs.getDate("regdate"),
-								rs.getString("writerId"),
+								rs.getString("writer_id"),
 								rs.getString("catalog"),
 								rs.getString("category"),
 								rs.getInt("hit"),
 								rs.getInt("recommend"),
-								rs.getInt("replyCnt")
+								rs.getInt("reply_cnt")
 						);
 				
 				
@@ -1020,7 +1141,7 @@ public class JdbcBoardService implements BoardService{
 			rs.close();
 			st.close();
 			
-			ResultSet rs2 =st.executeQuery();
+			ResultSet rs2 =st2.executeQuery();
 			rs2.next();
 			int rowCnt = rs2.getInt("cnt");
 			
@@ -1085,7 +1206,7 @@ public class JdbcBoardService implements BoardService{
 			switch(catalog) 
 			{
 			
-			case "archer":
+			case "/board/target/archer":
 				
 				sql="select * from (select rownum num, b.* from board_view b where writer_id=? and category='archer' and title like ?) "
 						+"where num BETWEEN ? and ?";

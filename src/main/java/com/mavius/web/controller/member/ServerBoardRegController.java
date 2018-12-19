@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/community/server/reg")
+@WebServlet("/board/server/reg")
 public class ServerBoardRegController extends HttpServlet{
 
 	@Override

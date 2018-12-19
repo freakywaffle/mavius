@@ -44,8 +44,8 @@ public interface BoardService {
 	int edit(Board board);
 	int delete(int boardNo);
 	int claim(ReportReason report);
-	int recommend(String uid, int boardNo);
-	int cancelRecommend(String uid, int boardNo);
+	int recommend(String uid, int boardNo, int sep);
+	
 	int regScrap(String uid, int boardNo);
 	int cancelScrap(String uid, int boardNo);
 	int reg(Reply reply);
@@ -57,6 +57,7 @@ public interface BoardService {
 	
 
 	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
+	
 
 	
 	
