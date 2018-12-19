@@ -8,7 +8,7 @@
 <title>커뮤니티-자유게시판</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 <link href="../../../css/List.css" type="text/css" rel="stylesheet" />
- 
+<script src="../../../js/communityList.js"></script>
 </head>
 <!-- 이거 다시만들어야됨 -->
 <!--게시글 보기, 수정, 삭제, 댓글, 기본적인 보드 컬럼명 가져오고 타이틀이랑 컨텐트  ,이미지 공간? -->
@@ -25,11 +25,11 @@
 	
 	<body id="body">
 	<section id="header">
-		<h1>코디게시판</h1>
+		<h1>자유게시판</h1>
 	</section>
 
 		<main class="list-main">
-			<h1 class="hidden">코디게시판</h1>
+			<h1 class="hidden">자유게시판</h1>
 			
 			<section id="search-form">
 				<h1  class="hidden">검색폼</h1>
@@ -58,12 +58,12 @@
 			
 			<section id="coordi-list">
 				<h1 class="hidden">게시글 리스트</h1>
-					<c:forEach var="b" items="${list}">
-				<div class="margin-bottom">
+				<c:forEach var="b" items="${list}">
+				<div class="margin-bottom view-list">
 					
 					<ul>
-						<li>[잡담]</li>
-						<li class="fas fa-list-ol">${b.no}</li>
+						<li class="li-category">${b.category}</li>
+						<li class="fas fa-list-ol id">${b.no}</li>
 						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
 					
 					</ul>

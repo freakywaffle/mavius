@@ -59,11 +59,6 @@
 							</div>
 							<div class="searchtxt">
 								<select>
-									<option value="">전체기간</option>
-									<option value="최근 1주">최근 1주</option>
-									<option value="최근 1달">최근 1달</option>
-								</select>
-								<select>
 									<option value="">게시판 분류</option>
 									<option value="게시판">전사게시판</option>
 									<option value="게시판">전사게시판</option>
@@ -71,8 +66,12 @@
 									<option value="게시판">전사게시판</option>
 									<option value="게시판">전사게시판</option>
 								</select>
-									<input  type="" name="searchtxt" />
-									<input type="submit" name="btn-edit" />
+									<div class="d6">
+                                <form>
+                                  <input type="text" placeholder="검색어 입력">
+                                  <button type="submit"></button>
+                                </form>
+                            </div>
 								</div>
 							<div class="submenu2">
 								<div class="category-div-cr cat-div">
