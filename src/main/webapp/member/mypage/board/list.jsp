@@ -68,7 +68,7 @@
 								<option value="rogue">도적게시판</option>
 								<option value="warrior">전사게시판</option>
 								<option value="coordi">코디게시판</option>
-								<option value="free">자유게시판</option>
+								<option value="free0">자유게시판</option>
 								<option value="server">서버게시판</option>
 								<option value="boss">보스공략게시판</option>
 								<option value="job">직업공략게시판</option>
