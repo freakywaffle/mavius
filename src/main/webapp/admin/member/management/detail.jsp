@@ -100,7 +100,8 @@
 													<hr />
 
 													<div class="form-group b">
-														<span class="status-title">게시글 수</span> <input
+														<span class="status-title">게시글 수</span> 
+														<input
 															class="form-control text-center form-ctr" id="title"
 															name="title" placeholder="${detail.postsCount}"
 															type="text" required disabled /> <span
@@ -114,7 +115,7 @@
 													<div class="form-group b">
 														<span class="status-title">가입일</span> <input
 															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.joinDate}" type="text"
+															name="title" placeholder="${detail.regDate}" type="text"
 															required disabled /> <span class="status-title">경험치</span>
 														<input class="form-control text-center form-ctr"
 															id="title" name="title" placeholder="${detail.exp}"
@@ -205,7 +206,7 @@
 													<div class="form-group b">
 														<span class="status-title">가입일</span> <input
 															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.joinDate}" type="text"
+															name="title" placeholder="${detail.regDate}" type="text"
 															required disabled /> <span class="status-title">경험치</span>
 														<input class="form-control text-center form-ctr"
 															id="title" name="title" placeholder="${detail.exp}"

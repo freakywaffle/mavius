@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../css/update-reg.css" rel="stylesheet"id="bootstrap-css">
+<link href="../../css/notice-reg.css" rel="stylesheet"id="bootstrap-css">
 <link href="../../css/aside-left.css" rel="stylesheet" 	id="bootstrap-css">
 <title>News - Update</title>
 </head>
@@ -52,13 +52,13 @@
 								<div class="tab-content">
 									<div class="tab-pane fade in active" id="tab1default">
 	
-										<form id="contact" method="post" class="form" role="form">
+										<form id="" method="post" class="form" role="form">
 											<div class="row">
 												<div class="form-group">
 													<div class="b">
 														<span>제목</span>
-														<input class="col-md-10 form-control" id="title" name="title"
-															placeholder="title" type="text" required autofocus /> 
+														<input class="col-md-10 form-control" name="title"
+															placeholder="제목" type="text" required autofocus /> 
 													</div>
 												</div>
 											</div>
@@ -67,7 +67,7 @@
 												<div class="form-group">
 													<div class="b">
 														<span>작성자</span>
-														<input class="col-xs-2 col-md-2 form-control" id="nickName" name="nickName"
+														<input class="col-xs-2 col-md-2 form-control" name="writerId"
 															placeholder="nickName" type="text" required autofocus disabled/> 
 													</div>
 												</div>
@@ -75,8 +75,8 @@
 											<hr/>
 											<div class="b">
 												<span class="bb">내용</span>
-												<textarea class="col-md-10 form-control" id="message" name="message"
-													placeholder="Message" rows="13"></textarea>											
+												<textarea class="col-md-10 form-control" name="content"
+													placeholder="Content" rows="13"></textarea>											
 											</div>
 											
 											<hr/>
@@ -84,7 +84,7 @@
 												<div class="form-group">
 													<div class="b">
 														<span>첨부파일</span>
-														<input class="col-xs-2 col-md-2 form-control" id="file" name="file"
+														<input class="col-xs-2 col-md-2 form-control" name="file"
 															value="파일선택" type="button" required autofocus /> 
 													</div>								
 												</div>
@@ -104,8 +104,7 @@
 											<br />
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
-													<button class="btn btn-primary pull-right btn-margin-left"
-														type="submit">Cancel</button>
+													<a href = "list"><button class="btn btn-primary pull-right btn-margin-left">Cancel</button></a>
 													<button class="btn btn-primary pull-right" type="submit">Submit</button>
 												</div>
 											</div>

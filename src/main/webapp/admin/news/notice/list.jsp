@@ -61,30 +61,34 @@
 						</thead>
 						<tbody>
 							<c:forEach var="notice" items="${list}">
-								<tr>
-									<td class="align-middle text-center">
-										<input type="checkbox" class="align-top" />
-									</td>
-									<td class="align-middle text-center">${notice.no}</td>
-									<td class="align-middle text-center">[${notice.catalog}]</td>
-									<td class="align-middle text-left"> <a href="detail.jsp">${notice.title} [4]</a></td>
-									<td class="align-middle text-center">${notice.writerId}</td>
-									<td class="align-middle text-center">${notice.regDate}</td>
-									<td class="align-middle text-center">${notice.hit}</td>
-									<td class="align-middle text-left">
-										<div>
-											<a class='btn btn-info btn-xs' href="detail.jsp">
-												<span class="glyphicon glyphicon-edit"></span>수정
-											</a> 
-											<a href="#" class="btn btn-danger btn-xs">
-												<span class="glyphicon glyphicon-remove"></span>삭제
-											</a>
-											<a href="#" class="btn btn-success btn-xs">
-												<span class="glyphicon glyphicon-eye-open"></span>숨김해제
-											</a>
-										</div>
-									</td>
-								</tr>
+								<form action="/delete" method="post" >
+									<tr>
+										<td class="align-middle text-center">
+											<input type="checkbox" class="align-top" />
+										</td>
+										<input type="text" name="no" class="hidden" value="${notice.no}"/>
+										<input type="text" name="catalog" class="hidden" value="${notice.catalog}"/>
+										<td class="align-middle text-center" >${notice.no}</td>
+										<td class="align-middle text-center">[${notice.catalog}]</td>
+										<td class="align-middle text-left"> <a href="detail?no=${notice.no}">${notice.title}</a></td>
+										<td class="align-middle text-center">${notice.writerId}</td>
+										<td class="align-middle text-center">${notice.regDate}</td>
+										<td class="align-middle text-center">${notice.hit}</td>
+										<td class="align-middle text-left">
+											<div>
+												<a href="detail?no=${notice.no}" class='btn btn-info btn-xs'>
+														<span class="glyphicon glyphicon-edit"></span>수정
+													
+												</a>
+												<a href="">
+													<button class='btn btn-danger btn-xs' type="submit">
+														<span class="glyphicon glyphicon-remove"></span>삭제
+													</button> 
+												</a>
+											</div>	
+										</td>
+									</tr>
+								</form>
 							</c:forEach>
 						</tbody>
 					</table>
@@ -111,12 +115,10 @@
 				</nav>
 
 				<div class="text-right" style="margin-right: 14px">
-					<a class='btn btn-info btn-xs' href="reg.jsp"><span
+					<a class='btn btn-info btn-xs' href="reg"><span
 						class="glyphicon glyphicon-edit"></span>글쓰기
 					</a>
-					 <a href="#" class="btn btn-danger btn-xs"><span
-						class="glyphicon glyphicon-remove"></span>선택삭제
-					</a>
+					
 				</div>
 			</section>
 		</section>

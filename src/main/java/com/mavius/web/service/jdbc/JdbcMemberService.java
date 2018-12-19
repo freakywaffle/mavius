@@ -27,7 +27,7 @@ public class JdbcMemberService implements MemberService{
 		List<MemberView> list = new ArrayList<>();
 			
 			//ȸ������ ������ ȸ����ȣ -> �� �������� page
-	    	String sql = "SELECT * FROM(SELECT ROWNUM NUM ,P.* FROM (SELECT * FROM MEMBERVIEW ORDER BY REGDATE)P) WHERE ROWNUM BETWEEN ? AND ? ORDER BY NUM DESC";
+	    	String sql = "select * from (select rownum num,n.* from(SELECT rownum no, m.* FROM (SELECT * FROM MEMBERVIEW order by regdate desc) m order by no desc)n) where no BETWEEN ? and ? order by num desc";
 
 	        try {
 	                    
@@ -74,7 +74,7 @@ public class JdbcMemberService implements MemberService{
 		// TODO Auto-generated method stub
 		MemberView detail = null;
 		//ȸ���� ������ȸ
-		String sql = "SELECT * FROM MEMVERVIEW where id = ?";
+		String sql = "SELECT * FROM MEMBERVIEW where id = ?";
         
 		try {
                     
@@ -88,7 +88,6 @@ public class JdbcMemberService implements MemberService{
            
            ResultSet rs =st.executeQuery();
            rs.next();
-           
            detail = new MemberView(
     		  rs.getString("NICKNAME"),
     		  rs.getString("ID"),

@@ -27,11 +27,9 @@ public class MemberDetailController extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 				
-		MemberService service = new JdbcMemberService();
+		MemberService service = new JdbcMemberService();	
 		
-		String id = request.getParameter("id");
-		
-		
+		String id = request.getParameter("id"); 	
 		 
 		MemberView detail = service.getViewList(id);
 

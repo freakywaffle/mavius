@@ -1,7 +1,6 @@
 package com.mavius.web.controller.admin;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,8 +13,8 @@ import com.mavius.web.entity.UpdateView;
 import com.mavius.web.service.NewsService;
 import com.mavius.web.service.jdbc.JdbcNewsService;
 
-@WebServlet("/admin/news/update/list")
-public class UpdateListController extends HttpServlet{
+@WebServlet("/admin/news/update/detail")
+public class UpdateDetailController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,17 +24,12 @@ public class UpdateListController extends HttpServlet{
 				
 		NewsService service = new JdbcNewsService();
 		
-		String page_ = request.getParameter("p");
-		int page = 1;
+		String no = request.getParameter("no");
 		
-		if(page_ != null && !page_.equals("")) {
-			page = Integer.parseInt(page_);
-			
-		}
-		List<UpdateView> list = service.getUpdateViewList(page);
+		UpdateView detail = service.getUpdateViewDetail(no);
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/news/update/list.jsp");
-		request.setAttribute("list", list);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/news/update/detail.jsp");
+		request.setAttribute("detail", detail);
 		dispatcher.forward(request, response);
 	}
 	

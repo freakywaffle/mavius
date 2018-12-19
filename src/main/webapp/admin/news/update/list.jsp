@@ -1,3 +1,4 @@
+<%@page import="com.mavius.web.entity.News"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -7,7 +8,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../css/update-list.css" rel="stylesheet" id="bootstrap-css">
+<link href="../../css/notice-list.css" rel="stylesheet" id="bootstrap-css">
 
 <link href="../../css/aside-left.css" rel="stylesheet" id="bootstrap-css">
 <title>News - Update</title>
@@ -55,87 +56,40 @@
 								<th class="align-middle text-center col-w-writerId">작성자</th>
 								<th class="align-middle text-center col-w-date">등록 일자</th>
 								<th class="align-middle text-center col-w-hit">조회수</th>
-								<th class="align-middle text-center col-w-hit">추천수</th>
 								<th class="align-middle text-center col-w-manage">관리</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">3</td>
-								<td class="align-middle text-center">[업데이트]</td>
-								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-								<td class="align-middle text-center">네모장군</td>
-								<td class="align-middle text-center">2018-12-13</td>
-								<td class="align-middle text-center">200</td>
-								<td class="align-middle text-center">10</td>
-								<td class="align-middle text-left">
-									<div>
-										<a class='btn btn-info btn-xs' href="detail.jsp">
-											<span class="glyphicon glyphicon-edit"></span>수정
-										</a> 
-										<a href="#" class="btn btn-danger btn-xs">
-											<span class="glyphicon glyphicon-remove"></span>삭제
-										</a>
-										<a href="#" class="btn btn-success btn-xs">
-											<span class="glyphicon glyphicon-eye-open"></span>숨김해제
-										</a>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">3</td>
-								<td class="align-middle text-center">[업데이트]</td>
-								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-								<td class="align-middle text-center">네모장군</td>
-								<td class="align-middle text-center">2018-12-13</td>
-								<td class="align-middle text-center">200</td>
-								<td class="align-middle text-center">10</td>
-								<td class="align-middle text-left">
-									<div>
-										<a class='btn btn-info btn-xs' href="detail.jsp">
-											<span class="glyphicon glyphicon-edit"></span>수정
-										</a> 
-										<a href="#" class="btn btn-danger btn-xs">
-											<span class="glyphicon glyphicon-remove"></span>삭제
-										</a>
-										<a href="#" class="btn btn-success btn-xs">
-											<span class="glyphicon glyphicon-eye-close"></span>숨김
-										</a>
-									</div>
-								</td>
-
-							</tr>
-							<tr>
-								<td class="align-middle text-center">
-									<input type="checkbox" class="align-top" />
-								</td>
-								<td class="align-middle text-center">3</td>
-								<td class="align-middle text-center">[업데이트]</td>
-								<td class="align-middle text-left"> <a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-								<td class="align-middle text-center">네모장군</td>
-								<td class="align-middle text-center">2018-12-13</td>
-								<td class="align-middle text-center">200</td>
-								<td class="align-middle text-center">10</td>
-								<td class="align-middle text-left">
-									<div>
-										<a class='btn btn-info btn-xs' href="detail.jsp">
-											<span class="glyphicon glyphicon-edit"></span>수정
-										</a> 
-										<a href="#" class="btn btn-danger btn-xs">
-											<span class="glyphicon glyphicon-remove"></span>삭제
-										</a>
-										<a href="#" class="btn btn-success btn-xs">
-											<span class="glyphicon glyphicon-eye-close"></span>숨김
-										</a>
-									</div>
-								</td>
-							</tr>
+							<c:forEach var="update" items="${list}">
+								<form action="/delete" method="post" >
+									<tr>
+										<td class="align-middle text-center">
+											<input type="checkbox" class="align-top" />
+										</td>
+										<input type="text" name="no" class="hidden" value="${update.no}"/>
+										<input type="text" name="catalog" class="hidden" value="${update.catalog}"/>
+										<td class="align-middle text-center" >${update.no}</td>
+										<td class="align-middle text-center">[${update.catalog}]</td>
+										<td class="align-middle text-left"> <a href="detail?no=${update.no}">${update.title}</a></td>
+										<td class="align-middle text-center">${update.writerId}</td>
+										<td class="align-middle text-center">${update.regDate}</td>
+										<td class="align-middle text-center">${update.hit}</td>
+										<td class="align-middle text-left">
+											<div>
+												<a href="detail?no=${update.no}" class='btn btn-info btn-xs'>
+														<span class="glyphicon glyphicon-edit"></span>수정
+													
+												</a>
+												<a href="">
+													<button class='btn btn-danger btn-xs' type="submit">
+														<span class="glyphicon glyphicon-remove"></span>삭제
+													</button> 
+												</a>
+											</div>	
+										</td>
+									</tr>
+								</form>
+							</c:forEach>
 						</tbody>
 					</table>
 				</section>
@@ -148,9 +102,9 @@
 					        <span class="sr-only">Previous</span>
 					      </a>
 					    </li>
-					    <li class="page-item"><a class="font-color focus" href="#">1</a></li>
-					    <li class="page-item"><a class="font-color focus" href="#">2</a></li>
-					    <li class="page-item"><a class="font-color focus" href="#">3</a></li>
+					    	<c:forEach var="i" begin="1" end="5" >
+							    <li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+					    	</c:forEach>
 					    <li class="page-item">
 					      <a class="font-color" href="#" aria-label="Next">
 					        <span aria-hidden="true">&raquo;</span>
@@ -161,12 +115,10 @@
 				</nav>
 
 				<div class="text-right" style="margin-right: 14px">
-					<a class='btn btn-info btn-xs' href="reg.jsp"><span
+					<a class='btn btn-info btn-xs' href="reg"><span
 						class="glyphicon glyphicon-edit"></span>글쓰기
 					</a>
-					 <a href="#" class="btn btn-danger btn-xs"><span
-						class="glyphicon glyphicon-remove"></span>선택삭제
-					</a>
+					
 				</div>
 			</section>
 		</section>

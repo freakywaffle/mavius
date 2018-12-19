@@ -22,9 +22,9 @@ public interface NewsService {
 	List<News> getNewsList(String name, String option, String keyword, int page, int cnt);//Ư���Խ��ǿ��� ���͸��� �˻�
 	
 	NewsView getNewsView(int no);
-	int reg(News News);
-	int edit(News News);
-	int delNews(int no);
+	int reg(News news);
+	String edit(News news);
+	String delNews(int no , String catalog);
 	List<NewsView> getViewList();
 	List<NewsView> getViewList(int page);
 	List<NewsView> getViewList(int page, String option);
@@ -33,8 +33,12 @@ public interface NewsService {
 	
 	List<NoticeView> getNoticeViewList();//공지사항
 	List<NoticeView> getNoticeViewList(int page);//공지사항
+	NoticeView getNoticeViewDetail(String no);//공지사항
 	List<EventView> getEventViewList();//공지사항
 	List<EventView> getEventViewList(int page);//공지사항
+	EventView getEventViewDetail(String no);//공지사항
 	List<UpdateView> getUpdateViewList();//공지사항
 	List<UpdateView> getUpdateViewList(int page);//공지사항
+	UpdateView getUpdateViewDetail(String no);//공지사항
+	
 }
