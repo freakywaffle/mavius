@@ -21,13 +21,13 @@ public class Pager {
 		this.page = page;
 		this.boardCnt = boardCnt;
 		startPage = pagerCnt*(page/pagerCnt)+1;
+		if(startPage>page)
+			startPage -= pagerCnt;
 		endPage = startPage+pagerCnt-1; 
-		int maxPage = (int)Math.ceil(boardCnt/this.pageCnt);
-		System.out.println(maxPage);
+		maxPage = (int)Math.ceil(boardCnt/this.pageCnt);
 		if(endPage > maxPage) {
 			endPage = maxPage;
 		}
-		
 	}
 
 

@@ -55,11 +55,8 @@ public class ArcherListController extends HttpServlet {
 			}		
 		}
 		int boardCnt = (int)map.get("rowCnt");	
-		System.out.println(boardCnt);
 		
 		Pager pager = new Pager(pageCnt, pagerCnt, page, boardCnt);
-		System.out.println(pager.getStartPage());
-		System.out.println(pager.getEndPage());
 		request.setAttribute("list", map.get("list"));
 		request.setAttribute("pager", pager);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
