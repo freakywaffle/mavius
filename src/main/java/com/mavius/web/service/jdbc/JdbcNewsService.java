@@ -9,9 +9,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.mavius.web.entity.EventView;
 import com.mavius.web.entity.MemberView;
 import com.mavius.web.entity.News;
 import com.mavius.web.entity.NewsView;
+import com.mavius.web.entity.NoticeView;
+import com.mavius.web.entity.UpdateView;
 import com.mavius.web.service.NewsService;
 
 public class JdbcNewsService implements NewsService{
@@ -25,61 +28,13 @@ public class JdbcNewsService implements NewsService{
 	@Override
 	public List<News> getNewsList() {
 		// TODO Auto-generated method stub
-		return getNewsList(1);
+		return null;
 	}
 
 	@Override
 	public List<News> getNewsList(int page) {
 		// TODO Auto-generated method stub
-		List<News> list = new ArrayList<>();
-		
-		//회원가입 순으로 회원번호 -> 그 역순으로 page
-		String sql = "select * from (select rownum num, c.* from (select * from news where catalog = 'notice')c order by num desc) where num between ? and ?";
-
-	    try {
-	                
-	       int start = 1+(page-1)*10;
-	       int end = page*10;         
-	       System.out.println(start);
-	       System.out.println(end);
-	       String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
-	       Class.forName("oracle.jdbc.driver.OracleDriver");
-	       Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
-	       PreparedStatement st = con.prepareStatement(sql);
-	       st.setInt(1, start);
-	       st.setInt(2, end); 
-	       
-	       ResultSet rs =st.executeQuery();
-	       
-	      
-	       while(rs.next()) {
-	          News n = new News(
-	    		  rs.getInt("NO"),
-	    		  rs.getString("TITLE"),
-	              rs.getString("CONTENT"),
-	              rs.getDate("REGDATE"),
-	              rs.getString("WRITER_ID"),
-	              rs.getString("CATALOG"),
-	              rs.getInt("HIT")
-	              
-	                );
-	          
-	          list.add(n);
-	          System.out.println("n"+n);
-	       }    
-	       System.out.println(""+list);
-	      
-	       rs.close();
-	       st.close();
-	       con.close();
-	       
-	    }  catch (Exception e) {
-	       // TODO Auto-generated catch block
-	       e.printStackTrace();
-	    }
-	    
-
-	return list;
+		return null;
 	}
 
 	@Override
@@ -270,6 +225,90 @@ public class JdbcNewsService implements NewsService{
 
 	@Override
 	public List<NewsView> getViewList(int page, String option, String keyword, String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+	
+	@Override
+	public List<NoticeView> getNoticeViewList() {
+		// TODO Auto-generated method stub
+		return getNoticeViewList(1);
+	}
+
+	@Override
+	public List<NoticeView> getNoticeViewList(int page) {
+		// TODO Auto-generated method stub
+		List<NoticeView> list = new ArrayList<>();
+			
+			//회원가입 순으로 회원번호 -> 그 역순으로 page
+			String sql = "select * from (select rownum num, c.* from (select * from news where catalog = 'notice' order by no desc) c) where num between ? and ?";
+	
+		    try {
+		                
+		       int start = 1+(page-1)*10;
+		       int end = page*10;         
+		       System.out.println(start);
+		       System.out.println(end);
+		       String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+		       Class.forName("oracle.jdbc.driver.OracleDriver");
+		       Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+		       PreparedStatement st = con.prepareStatement(sql);
+		       st.setInt(1, start);
+		       st.setInt(2, end); 
+		       
+		       ResultSet rs =st.executeQuery();
+		       
+		      
+		       while(rs.next()) {
+		    	   NoticeView n = new NoticeView(
+		    		  rs.getInt("NO"),
+		    		  rs.getString("TITLE"),
+		              rs.getString("WRITER_ID"),
+		              rs.getDate("REGDATE"),
+		              rs.getString("CATALOG"),
+		              rs.getInt("HIT")
+		                );
+		          list.add(n);
+		          System.out.println("n"+n);
+		       }    
+		       System.out.println(""+list);
+		      
+		       rs.close();
+		       st.close();
+		       con.close();
+		       
+		    }  catch (Exception e) {
+		       // TODO Auto-generated catch block
+		       e.printStackTrace();
+		    }
+		    
+	
+		return list;
+	}
+
+	@Override
+	public List<EventView> getEventViewList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EventView> getEventViewList(int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UpdateView> getUpdateViewList() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<UpdateView> getUpdateViewList(int page) {
 		// TODO Auto-generated method stub
 		return null;
 	}
