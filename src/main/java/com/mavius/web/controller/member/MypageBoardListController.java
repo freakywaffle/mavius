@@ -1,6 +1,7 @@
 package com.mavius.web.controller.member;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -23,7 +24,7 @@ public class MypageBoardListController extends HttpServlet
 		// TODO Auto-generated method stub
 		
 		BoardService service = new JdbcBoardService();
-		Map<String,Object> bm =null;
+		Map<String,Object> bm = new HashMap<String, Object>();
 		String uid = request.getParameter("uid");
 		String category = request.getParameter("category");
 		String keyword = request.getParameter("keyword");

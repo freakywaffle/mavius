@@ -2,6 +2,7 @@ package com.mavius.web.service.jdbc;
 
 import java.io.File;
 
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -933,9 +934,6 @@ public class JdbcBoardService implements BoardService{
 		return null;
 	}
 
-	
-	// 아랫쪽은 MyPage 메소드
-	
 	@Override
 	public Map<String,Object> getBoardListById(String uid, int page) {
 		// TODO Auto-generated method stub
@@ -1303,47 +1301,10 @@ public class JdbcBoardService implements BoardService{
 	}
 
 
-	@Override
-	public Board getBoardListById(String uid, int page) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Board getBoardListById(String uid, int page, int cnt) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Board getBoardListById(String uid, int page, String keyword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Board getBoardListById(String uid, int page, int cnt, String keyword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Board getBoardListById(String uid, int page, String keyword, String catalog) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public Board getBoardListById(String uid, int page, int cnt, String keyword, String catalog) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
+	// 아랫쪽은 MyPage 메소드
+	
+	
 
 
 
