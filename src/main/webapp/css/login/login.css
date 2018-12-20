@@ -99,6 +99,11 @@ body .container .content label:nth-of-type(3), body .container .content input:nt
   -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
   animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
 }
+body .container .content label:nth-of-type(4), body .container .content input:nth-of-type(4), body .container .content .more:nth-of-type(4) {
+  -moz-animation: slideIn 0.7s cubic-bezier(0.37, 0.82, 0.2, 1);
+  -webkit-animation: slideIn 0.7s cubic-bezier(0.37, 0.82, 0.2, 1);
+  animation: slideIn 0.7s cubic-bezier(0.37, 0.82, 0.2, 1);
+}
 /*리멤버 미*/
 body .container .content label {
   font-size: 12px;
@@ -125,29 +130,74 @@ body .container .content input.inpt {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
-body .container .content input.inpt::-webkit-input-placeholder {
+
+body .container .content input.join-inpt {
+  font-size: 14px;
+  display: block;
+  width: 100%;
+  height: 42px;
+  margin-bottom: 6px;
+  padding: 16px 13px;
+  color: #d9d9d9;
+  border: 1px solid #999999;
+  background: transparent;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  margin-right: 20px;
+}
+.idChk-group{
+	display: flex;
+	width: 270px; 
+	height: 42px; 
+	margin-bottom: 6px;
+}
+
+body .container .content input.inpt::-webkit-input-placeholder 
+,body .container .content input.join-inpt::-webkit-input-placeholder {
   font-size: 14px;
   color: #d9d9d9;
   font-family: 'Lato', sans-serif;
 }
-body .container .content input.inpt:-moz-placeholder {
+body .container .content input.inpt:-moz-placeholder
+,body .container .content input.join-inpt:-moz-placeholder {
   font-size: 14px;
   color: #d9d9d9;
   font-family: 'Lato', sans-serif;
 }
-body .container .content input.inpt::-moz-placeholder {
+body .container .content input.inpt::-moz-placeholder
+,body .container .content input.join-inpt::-moz-placeholder {
   font-size: 14px;
   color: #d9d9d9;
   font-family: 'Lato', sans-serif;
 }
-body .container .content input.inpt:-ms-input-placeholder {
+body .container .content input.inpt:-ms-input-placeholder
+, body .container .content input.join-inpt:-ms-input-placeholder {
   font-size: 14px;
   color: #d9d9d9;
   font-family: 'Lato', sans-serif;
 }
 /*인풋창(아디,비번) 포커스시 색상*/
-body .container .content input.inpt:focus {
+body .container .content input.inpt:focus 
+,body .container .content input.join-inpt:focus {
   border-color: #d9d9d9;
+}
+body .container .content input.idChk-submit {
+  font-size: 12px;
+  line-height: 42px;
+  display: block;
+  width: 100%;
+  height: 42px;
+  cursor: pointer;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d9d9d9;
+  border: 1px solid #263238;
+  background: transparent;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
 }
 body .container .content input.submit {
   font-size: 12px;
@@ -167,6 +217,14 @@ body .container .content input.submit {
   border-radius: 2px;
 }
 /*로긴,회원가입 버튼 h오버시*/
+body .container .content input.idChk-submit:hover {
+  background-color: #263238;
+  color: #ffffff;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
 body .container .content input.submit:hover {
   background-color: #263238;
   color: #ffffff;
@@ -234,6 +292,7 @@ body .container .content .submit-wrap a:hover {
 }
 body .container .content .signup-cont {
   display: none;
+  position: relative;
 }
 
 @keyframes slideIn {
