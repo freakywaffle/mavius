@@ -506,12 +506,19 @@ border-collapse: collapse; 	border-spacing: 0;
 	
 
 }
+	.view-list{
+		border: 1px outset #b9daf0;
+		max-height:410px
+	}
 	.coordi-list-img{
 		width:350px;
 		height:400px;
-
-
 	}
+	.coordi-list-p{
+		min-height:300px;
+	
+	}
+	
 	#coordi-list>div{
 		display:inline-block;
 		width:350px;
@@ -522,12 +529,14 @@ border-collapse: collapse; 	border-spacing: 0;
 	.li-category{
 		min-width:55px;
 	}
-
-
-	.coorid-list-p{
+	.view-list p:nth-child(2){
 		height:300px;
-		margin-bottom:10px;
 	}
+
+	/* .view-list p{
+		min-height:300px;
+		margin-bottom:10px;
+	} */
 
 
 	#coordi-list li{

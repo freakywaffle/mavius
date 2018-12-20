@@ -752,8 +752,42 @@ public class JdbcBoardService implements BoardService{
 
 	@Override
 	public int delete(int boardNo) {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		int affectedBoard =0;
+		String sql = "delete BOARD where no=?";
+		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+
+		
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				
+				Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+				con.setAutoCommit(false);
+				PreparedStatement st = con.prepareStatement(sql);
+				
+				st.setInt(1, boardNo);
+				affectedBoard = st.executeUpdate();
+			
+				
+					
+				 st.close();
+				 con.close();
+				
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+		
+		
+		
+		
+		
+		return affectedBoard;
 	}
 
 	@Override
@@ -898,13 +932,13 @@ public class JdbcBoardService implements BoardService{
 	
 	
 	@Override
-	public int regReport(int reportedNo, String contentEtc, String reason, String reporterId, String type) {
+	public int regReport(int reportedNo, String contentEtc, String reason, String reporterId, String type,String reportedId) {
 		
 	    int CurrentNo = 0;
 	    
 	    
-	    String sql = "insert into report(no,reported_no, content_etc,reason,reporter_id, type) "
-	    			+ "values (REPORT_SEQ.NEXTVAL, ?, ?, ? ,?, ?)";
+	    String sql = "insert into report(no,reported_no, content_etc,reason,reporter_id, type,reported_id) "
+	    			+ "values (REPORT_SEQ.NEXTVAL, ?, ?, ? ,?, ?,?)";
 		//String sqlNo = "select no from (SELECT * FROM report ORDER BY REGDATE DESC) WHERE ROWNUM =1";
 			          
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
@@ -926,6 +960,7 @@ public class JdbcBoardService implements BoardService{
 			System.out.println("reporterId");
 		    st.setString(5, type);
 			System.out.println("type");
+			st.setString(6, reportedId);
 		    int affected = st.executeUpdate();
 		   
 		   // PreparedStatement stNo = con.prepareStatement(sqlNo);    

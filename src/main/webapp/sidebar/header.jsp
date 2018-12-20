@@ -36,9 +36,9 @@
                             <a href="#Two">커뮤니티</a>
                             <div class="submenu submenu-sm">
                                 <ul>
-                                    <li><a href="/board/community/freeboard/list">자유게시판</a></li>
-                                    <li><a href="/board/community/coordi/list">코디게시판</a></li>
-                                    <li><a href="/board/community/server/list">서버게시판</a></li>
+                                    <li><a href="/board/free/list">자유게시판</a></li>
+                                    <li><a href="/board/coordi/list">코디게시판</a></li>
+                                    <li><a href="/board/server/list">서버게시판</a></li>
 
                                 </ul>
                             </div>
@@ -50,11 +50,11 @@
                             <a href="#">공략</a>
                             <div class="submenu submenu-lg">
                                 <ul>
-                                    <li><a href="/board/target/warrior/list">전사게시판</a></li>
-                                    <li><a href="/board/target/archer/list">궁수게시판</a></li>
-                                    <li><a href="/board/target/magician/list">법사게시판</a></li>
-                                    <li><a href="/board/target/rogue/list">도적게시판</a></li>
-                                    <li><a href="/board/target/pirate/list">해적게시판</a></li>
+                                    <li><a href="/board/warrior/list">전사게시판</a></li>
+                                    <li><a href="/board/archer/list">궁수게시판</a></li>
+                                    <li><a href="/board/magician/list">법사게시판</a></li>
+                                    <li><a href="/board/rogue/list">도적게시판</a></li>
+                                    <li><a href="/board/pirate/list">해적게시판</a></li>
                                     <li><a href="#">보스공략</a></li>
                                 </ul>
                             </div>

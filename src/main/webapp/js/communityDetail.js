@@ -1,17 +1,42 @@
 window.addEventListener("load", function(){
-
+	var body = document.querySelector("#body");
     var boardView = document.querySelector(".board-view");
     var recommendBtn = boardView.querySelector("#recommend");
     var cancel = boardView.querySelector("#cancel-rec");
-    var reportedNo = document.querySelector('input[name="no"]');
+    //var reportedNo = document.querySelector('input[name="no"]');
     var uid =document.querySelector('input[name="writerId"]');
     var recommendView = boardView.querySelector("#recommend-view");
     var recommendPlus = boardView.querySelector("#recommend-plus");
     var editBtn = boardView.querySelector("#edit");
     var no = document.querySelector('input[name="no"]');
-
+    
     
    
+    boardView.onclick = function(e){
+        console.log("되냐?");
+       
+    	if(e.target.classList.contains("post-delete")){
+        var chk= confirm("정말로 삭제하시겠습니까?");
+        if(chk==true){
+		 var request = new XMLHttpRequest();   
+	        request.open("POST", "/board/delete", false);
+	        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+	        request.onload = function(){
+	            console.log("delete");
+	            
+	            location.href="list";
+	        };
+	       
+            request.send("no="+no.value);
+        }
+    	};
+    		
+            
+
+
+    };
+
+
     editBtn.onclick = function(e){
         console.log("edit hello");
         var request = new XMLHttpRequest();   
@@ -35,7 +60,7 @@ window.addEventListener("load", function(){
         cancel.classList.remove("hidden-imp");
         recommendView.classList.add("hidden-imp");
         recommendPlus.classList.remove("hidden-imp");
-        request.send("uid="+uid.value+"&no="+reportedNo.value+"&sep="+0);//"id=newlec&pwd=111"
+        request.send("uid="+uid.value+"&no="+no.value+"&sep="+0);//"id=newlec&pwd=111"
         
     };
 
@@ -50,7 +75,7 @@ window.addEventListener("load", function(){
         cancel.classList.add("hidden-imp");
         recommendView.classList.remove("hidden-imp");
         recommendPlus.classList.add("hidden-imp")
-        request.send("uid="+uid.value+"&no="+reportedNo.value+"&sep="+1);
+        request.send("uid="+uid.value+"&no="+no.value+"&sep="+1);
     }
 });
 
@@ -58,24 +83,35 @@ window.addEventListener("load", function(){
       
      
 	 var modal = document.getElementById('myModal');
-	 
+	 var body = document.querySelector("#body")
      // Get the button that opens the modal
      var btn = document.querySelectorAll('button[name="myBtn"]');
-    
+     
      // Get the <span> element that closes the modal
      var close = modal.querySelector('input[name="report-close"]');                                          
      //alert(close);
      // When the user clicks on the button, open the modal 
      
-     for (var i =0; i<btn.length;i++)    
-     btn[i].onclick = function() {
+    body.onclick =function(e){
+
+        if(e.target.classList.contains("report-btn")){
+           
+
          modal.classList.remove("hidden-imp");
-    	 modal.style.display = "block";
-     };
+         modal.style.display = "block";
+        }
+    };
+
+
+    //  for (var i =0; i<btn.length;i++)    
+    //  btn[i].onclick = function(e) {
+    //      modal.classList.remove("hidden-imp");
+    // 	 modal.style.display = "block";
+    //  };
      
      // When the user clicks on <span> (x), close the modal
      close.onclick = function() {
-//    	 console.log("hello");
+    	 console.log("hello");
          modal.classList.add("hidden-imp");
          //console.log(modal.innerHTML);
         // console.log(hidden.innerHTML);
@@ -87,9 +123,9 @@ window.addEventListener("load", function(){
      var reportBtn = modal.querySelector('input[name="report-apply"]');
      var content = modal.querySelector('select[name="content"]')
      var contentEtc = modal.querySelector('textarea');
-     var reportedNo = document.querySelector('input[name="no"]');
+     var no = document.querySelector('input[name="no"]');
      var writerId = document.querySelector('input[name="writerId"]');
-     console.log(reportedNo.value);
+     console.log(no.value);
      reportBtn.onclick = function(e){
         var txtcontent = content.value;
         var txtcontentEtc = contentEtc.value;
@@ -115,8 +151,9 @@ window.addEventListener("load", function(){
             modal.classList.add("hidden-imp");
 		
 		
-		};
-        request.send("writerId="+writerId.value+"&no="+reportedNo.value+"&content="+txtcontent+"&contentEtc="+txtcontentEtc+"&type="+txttype);//"id=newlec&pwd=111"
+        };
+        console.log(writerId.value);
+        request.send("writerId="+writerId.value+"&no="+no.value+"&content="+txtcontent+"&contentEtc="+txtcontentEtc+"&type="+txttype);//"id=newlec&pwd=111"
      };
 
      

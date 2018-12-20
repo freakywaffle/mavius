@@ -53,7 +53,7 @@ public interface BoardService {
 	List<Reply> getReplyListByBoardNo(int boardNo);
 
 	List<ReportReason> getReportReason();
-	int regReport(int reportedNo, String contentEtc,String reason, String reporterId, String type);
+	int regReport(int reportedNo, String contentEtc,String reason, String reporterId, String type,String reportedId);
 	
 
 	List<BoardFile> getBoardFileListByBoardNo(int boardNo);

@@ -29,7 +29,7 @@ public class FreeBoardDetailController extends HttpServlet{
 		response.setContentType("text/html;charset=UTF-8");
 		
 		int no = Integer.parseInt(request.getParameter("no"));
-		//System.out.println(no);
+		System.out.println("detail"+no);
 		
 		BoardService service = new JdbcBoardService();
 		List<ReportReason> reason = new ArrayList();
