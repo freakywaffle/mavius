@@ -55,7 +55,7 @@
                         <a href="#">게시판 관리<span class="arrow"></span></a>
                     </li>  
                     <ul class="sub-menu collapse" id="service">
-                        <li><a href="/admin/board/community/freeboard/list.jsp">자유 게시판</a></li>
+                        <li><a href="/admin/board/community/freeboard/list">자유 게시판</a></li>
                         <li><a href="/admin/board/community/server/list.jsp">서버 게시판</a></li>
                         <li><a href="/admin/board/target/boss/list.jsp">보스 공략 게시판</a></li>
                         <li><a href="/admin/board/target/job/list.jsp">직업 게시판</a></li>

@@ -61,7 +61,7 @@
 						</thead>
 						<tbody>
 							<c:forEach var="update" items="${list}">
-								<form action="/delete" method="post" >
+								<form action="/admin/news/delete" method="post" >
 									<tr>
 										<td class="align-middle text-center">
 											<input type="checkbox" class="align-top" />

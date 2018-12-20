@@ -13,8 +13,8 @@ import com.mavius.web.entity.MemberView;
 import com.mavius.web.service.MemberService;
 import com.mavius.web.service.jdbc.JdbcMemberService;
 
-@WebServlet("/admin/board/community/freeboard/list")
-public class FreeBoardListController extends HttpServlet{
+@WebServlet("/admin/member/sendmessage/list")
+public class MemberSendMessageController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,16 +22,9 @@ public class FreeBoardListController extends HttpServlet{
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 				
-		String page_ = request.getParameter("p");
-		
-		int page = 1;
-		if(page_!=null && page_.equals(""))
-			page = Integer.parseInt(page_);
-		
-		System.out.println(page);
 		
 
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/board/community/freeboard/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/member/sendmessage/list.jsp");
 		
 		dispatcher.forward(request, response);
 	}

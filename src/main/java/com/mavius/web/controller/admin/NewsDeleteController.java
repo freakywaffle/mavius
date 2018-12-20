@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mavius.web.service.NewsService;
 import com.mavius.web.service.jdbc.JdbcNewsService;
 
-@WebServlet("/delete")
+@WebServlet("/admin/news/delete")
 public class NewsDeleteController extends HttpServlet
 {
 	@Override

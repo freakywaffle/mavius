@@ -20,6 +20,12 @@ public class Member {
       super();
    }
    
+   public Member(String id, String nickName) {
+	      super();
+	      this.id = id;
+	      this.nickName = nickName;
+	   }
+   
    public Member(String nickName, String id, String grade, Date regDate) {
       super();
       this.nickName = nickName;
@@ -28,7 +34,16 @@ public class Member {
       this.regDate = regDate;
    }
    
-   public Member(String nickName, String id, String grade, String email, Date regDate, int exp, int report) {
+   public Member(String id, String nickName, String email, String grade, int authority) {
+	      super();
+	      this.id = id;
+	      this.nickName = nickName;
+	      this.email= email;
+	      this.grade = grade;
+	      this.authority = authority;
+	   }
+   
+   public Member(String nickName, String id, String grade, String email, Date regDate, int exp, int report, int authority) {
       super();
       this.nickName = nickName;
       this.id = id;
@@ -37,6 +52,7 @@ public class Member {
       this.regDate = regDate;
       this.exp = exp;
       this.report = report;
+      this.authority = authority;
       
    }
 

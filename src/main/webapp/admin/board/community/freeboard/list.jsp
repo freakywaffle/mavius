@@ -146,9 +146,9 @@
 												        <span class="sr-only">Previous</span>
 												      </a>
 												    </li>
-												    <li class="page-item"><a class="font-color focus" href="#">1</a></li>
-												    <li class="page-item"><a class="font-color focus" href="#">2</a></li>
-												    <li class="page-item"><a class="font-color focus" href="#">3</a></li>
+												    <c:forEach var="i" begin="1" end="5">
+												    	<li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+												    </c:forEach>
 												    <li class="page-item">
 												      <a class="font-color" href="#" aria-label="Next">
 												        <span aria-hidden="true">&raquo;</span>
