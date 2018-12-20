@@ -25,29 +25,29 @@ pageEncoding="UTF-8"%>
                     <img  src="/images/login-logo-135.png" />
                 </div>
                 <li class="header-brand">
-                    <a href="#">
+                    <a  href="/index">
                         MAVIUS
                     </a>
                 </li>
                 <li>
                     <div class="pa">
-                        <a onclick="location.href='/mypage/confirm'" href="#One">정보수정</a>
+                        <a href="/mypage/confirm">정보수정</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa">
 
-                        <a onclick="location.href='/mypage/messagelist'" href="#Two">쪽지</a>
+                        <a href="/mypage/messagelist">쪽지</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a onclick="location.href='/mypage/boardlist'" href="#">내가쓴글</a>
+                        <a href="/mypage/boardlist">내가쓴글</a>
                     </div>
                 </li>
                 <li>
                     <div class="pa" >
-                        <a onclick="location.href='/mypage/qnalist'" href="#">QnA</a>
+                        <a href="/mypage/qnalist">QnA</a>
                     </div>
                 </li>
                 <li>
