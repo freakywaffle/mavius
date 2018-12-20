@@ -95,12 +95,26 @@
 															class="form-control text-center form-ctr" id="title"
 															name="title" placeholder="${detail.grade}" type="text"
 															required disabled />
+															<span class="status-title">권한</span> 
+															<c:if test="${detail.authority == 0}">
+															<input
+															class="form-control text-center form-ctr" id="title"
+															name="title" placeholder="회원" type="text"
+															required disabled />
+															</c:if>
+															<c:if test="${detail.authority == 1}">
+															<input
+															class="form-control text-center form-ctr" id="title"
+															name="title" placeholder="관리자" type="text"
+															required disabled />
+															</c:if>
 
 													</div>
 													<hr />
 
 													<div class="form-group b">
-														<span class="status-title">게시글 수</span> <input
+														<span class="status-title">게시글 수</span> 
+														<input
 															class="form-control text-center form-ctr" id="title"
 															name="title" placeholder="${detail.postsCount}"
 															type="text" required disabled /> <span
@@ -114,7 +128,7 @@
 													<div class="form-group b">
 														<span class="status-title">가입일</span> <input
 															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.joinDate}" type="text"
+															name="title" placeholder="${detail.regDate}" type="text"
 															required disabled /> <span class="status-title">경험치</span>
 														<input class="form-control text-center form-ctr"
 															id="title" name="title" placeholder="${detail.exp}"
@@ -149,42 +163,75 @@
 
 
 
-										<form id="contact" method="post" class="form" role="form">
+										<form action="/admin/member/edit" method="post" class="form" role="form">
 											<div class="row">
 												<section class="group-box">
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">아이디</span> <input
-															class="form-control text-center form-ctr" id="name"
-															name="name" placeholder="${detail.id}" type="text"
-															required autofocus disabled /> <span class="status-title">닉네임</span>
+															class="form-control text-center form-ctr"
+															 value="${detail.id}" type="text"
+															 autofocus disabled /> <span class="status-title">닉네임</span>
+														<input class="hidden" name="id" value="${detail.id}" />
 														<input class="form-control text-center form-ctr"
-															id="title" name="title" placeholder="${detail.nickName}"
-															type="text" required disabled />
+															name="nickname" value="${detail.nickName}"
+															type="text" />
 													</div>
 													<hr />
 
 													<div class="form-group align-middle text-center b">
 														<span class="status-title">이메일</span> <input
-															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.email}" type="text"
-															required disabled /> <span class="status-title">신고횟수</span>
+															class="form-control text-center form-ctr" 
+															name="email" value="${detail.email}" type="text"/> 
+															<span class="status-title">신고횟수</span>
 														<input class="form-control text-center form-ctr"
-															id="title" name="title" placeholder="${detail.report}"
-															type="text" required disabled />
+															name="report" value="${detail.report}"
+															type="text" disabled/>
 													</div>
 													<hr />
 
 													<div class="form-group b">
-														<span class="status-title">등급</span> <input
-															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.grade}" type="text"
-															required disabled /> 
+														<span class="status-title">등급</span>
+															<select class="form-control text-center form-ctr" name="grade" style="height: 34px;" >
+																<optgroup label="현재등급">
+																	<option value="${detail.grade}">${detail.grade}</option>
+																</optgroup>
+																<optgroup label="회원등급">
+																	<option value="초보자">초보자</option>
+																	<option value="1차">1차</option>
+																	<option value="2차">2차</option>
+																	<option value="3차">3차</option>
+																	<option value="4차">4차</option>
+																	<option value="5차">5차</option>
+																</optgroup>
+															</select> 
 															
 														<span class="status-title">권한</span>
-														<select class="form-control text-center form-ctr c"
+														<select class="form-control text-center form-ctr c" name="authority"
 															required autofocus>
-															<option class=" text-center">관리자</option>
-															<option class=" text-center">회원</option>
+															<optgroup label="현재권한">
+																<c:if test="${detail.authority == 0}">
+																	<option value="0">관리자</option>
+																</c:if>
+																<c:if test="${detail.authority == 1}">
+																	<option value="1">모든권한</option>
+																</c:if>															
+																<c:if test="${detail.authority == 2}">
+																	<option value="2">댓글불가</option>
+																</c:if>															
+																<c:if test="${detail.authority == 3}">
+																	<option value="3">글쓰기 불가</option>
+																</c:if>															
+																<c:if test="${detail.authority == 4}">
+																	<option value="4">모두불가</option>
+																</c:if>															
+															</optgroup>
+															<optgroup label="권한변경">
+																<option value="0">관리자</option>
+																<option value="1">모든권한</option>
+																<option value="2">댓글불가</option>
+																<option value="3">글쓰기불가</option>
+																<option value="4">모두불가</option>
+															</optgroup>
 														</select>
 
 													</div>
@@ -192,30 +239,30 @@
 
 													<div class="form-group b">
 														<span class="status-title">게시글 수</span> <input
-															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.postsCount}"
+															class="form-control text-center form-ctr"
+															name="postscount" placeholder="${detail.postsCount}"
 															type="text" required disabled /> <span
 															class="status-title">댓글 수</span> <input
-															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.commentCount}"
+															class="form-control text-center form-ctr"
+															name="commentcount" placeholder="${detail.commentCount}"
 															type="text" required disabled />
 													</div>
 													<hr />
 
 													<div class="form-group b">
 														<span class="status-title">가입일</span> <input
-															class="form-control text-center form-ctr" id="title"
-															name="title" placeholder="${detail.joinDate}" type="text"
+															class="form-control text-center form-ctr"
+															name="regdate" placeholder="${detail.regDate}" type="text"
 															required disabled /> <span class="status-title">경험치</span>
 														<input class="form-control text-center form-ctr"
-															id="title" name="title" placeholder="${detail.exp}"
+															name="exp" placeholder="${detail.exp}"
 															type="text" required disabled />
 													</div>
 													<hr />
 												
 											</section>
 											</div>
-										</form>	
+											
 
 
 
@@ -280,48 +327,25 @@
 
 											</div>
 
-
 											<div class="text-right padding-right"
 												style="margin-right: 14px">
-												<a href="#" class="btn btn-danger btn-xs"> <span
-													class="glyphicon glyphicon-remove"></span> 강제 탈퇴
-												</a> <a class='btn btn-info btn-xs' href="#"> <span
-													class="glyphicon glyphicon-edit"></span> 수정 완료
-												</a> <a href="#" class="btn btn-danger btn-xs"> <span
+												<!--form action="/admin/member/delete" method="post" class="form" role="form">
+													<button type="submit" class="btn btn-danger btn-xs"> 
+														<span class="glyphicon glyphicon-remove"></span> 강제 탈퇴
+													</button>
+												</form--> 
+												<!--form action="/admin/member/edit" method="post" class="form" role="form"-->
+													<button class='btn btn-info btn-xs' type="submit"> 
+														<span class="glyphicon glyphicon-edit"></span> 수정 완료
+													</button> 
+												<!--/form-->
+												<a href="list" class="btn btn-danger btn-xs"> <span
 													class="glyphicon glyphicon-remove"></span> 취소
 												</a>
 											</div>
+											</form>
+										
 									</div>
-
-									</form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

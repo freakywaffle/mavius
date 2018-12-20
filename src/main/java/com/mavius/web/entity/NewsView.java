@@ -14,7 +14,7 @@ public class NewsView extends News {
 		super();
 		this.memberName = memberName;
 	}
-
+	
 	public NewsView(int no, String title, String content, Date regDate, String writerId, String catalog, int hit) {
 		super(no, title, content, regDate, writerId, catalog, hit);
 		// TODO Auto-generated constructor stub

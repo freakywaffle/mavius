@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/target/rogue/list")
+@WebServlet("/board/rogue/list")
 public class RogueListController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/rogue/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/rogue/list.jsp");
 		
 		dispatcher.forward(request, response);
 	}

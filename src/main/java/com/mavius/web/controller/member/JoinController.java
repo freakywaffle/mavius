@@ -19,7 +19,9 @@ import javax.servlet.http.HttpServletResponse;
 import com.mavius.web.entity.Member;
 import com.mavius.web.entity.MemberView;
 import com.mavius.web.service.AuthService;
+import com.mavius.web.service.ConfirmService;
 import com.mavius.web.service.jdbc.JdbcAuthService;
+import com.mavius.web.service.jdbc.JdbcConfirmService;
 
 @WebServlet("/member/join")
 public class JoinController extends HttpServlet{
@@ -37,21 +39,24 @@ public class JoinController extends HttpServlet{
 		response.setCharacterEncoding("UTF-8");
 		//PrintWriter out = response.getWriter();
 
-		AuthService service = new JdbcAuthService();
+		ConfirmService service = new JdbcConfirmService();
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/join.jsp");
-		//request.setAttribute("member", member);
-		dispatcher.forward(request, response);
 		
 		String joinId = request.getParameter("uid");
+		String joinNick = request.getParameter("unick");
 		String joinPwd = request.getParameter("pwd");
-		String joinEmail = request.getParameter("email");
+		
+		
+		Member member = new Member(joinId, joinNick, joinPwd);
 		
 		System.out.println("사용할 id : " + joinId);
+		System.out.println("사용할 nick : " + joinNick);
 		System.out.println("사용할 pwd : " + joinPwd);
-		System.out.println("사용할 email : " + joinEmail);
+		
+		service.join(member);
+		System.out.println(member);
 		//out.write(buf);
-		String sql = "insert into MEMBER (ID, PWD, EMAIL) values ('" + joinId + "'," + "'" + joinPwd + "'," + "'" + joinEmail + "'" + ")";
+		/*String sql = "insert into MEMBER (ID, PWD, EMAIL) values ('" + joinId + "'," + "'" + joinPwd + "'," + "'" + joinNick + "'" + ")";
         
         try {
            
@@ -61,7 +66,7 @@ public class JoinController extends HttpServlet{
            Statement st = con.createStatement();
            ResultSet rs =st.executeQuery(sql);
            
-           Member member = null;
+          
            member = service.getMember(joinId);
            request.setAttribute("member", member);
            System.out.println("member : " + member);
@@ -74,8 +79,12 @@ public class JoinController extends HttpServlet{
         } catch (SQLException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
-        }
+        }*/
 		
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/member/join.jsp");
+		request.setAttribute("member", member);
+		dispatcher.forward(request, response);
+        
 	}
 	
 }

@@ -33,7 +33,6 @@ public class NoticeListController extends HttpServlet{
 			page = Integer.parseInt(page_);
 			
 		}
-		System.out.println(page);
 		List<NoticeView> list = service.getNoticeViewList(page);
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/news/notice/list.jsp");

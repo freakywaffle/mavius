@@ -35,6 +35,26 @@ public class News {
 		this.writerId = writerId;
 		this.hit = hit;
 	}
+	
+	public News(String title, String content, String writerId, String catalog) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.writerId = writerId;
+		this.catalog = catalog;
+		
+	}
+	
+	public News(int no, String title, String content, String writerId, String catalog) {
+		super();
+		this.no = no;
+		this.title = title;
+		this.content = content;
+		this.writerId = writerId;
+		this.catalog = catalog;
+	}
+	
+
 
 	public int getNo() {
 		return no;

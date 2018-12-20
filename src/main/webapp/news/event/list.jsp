@@ -65,14 +65,14 @@
         end: '2018-12-12T23:59:59',
         //constraint: 'availableForMeeting', // defined below
         url: "https://maplestory.nexon.com/News/Event/25",
-        color: 'pink'
+        color: '#4e664d'
         },
         {
             title: '카밀라의 크리스마스 베이커리',
             start: '2018-12-13',
             end: '2018-12-26T23:59:59',
             url: "",
-            color: 'green'
+            color: '#337ab7'
         },
         {
         title: '프로젝트 발표 예정일',
@@ -81,12 +81,14 @@
         {
             title: '어드벤처 사전예약',
             start: '2018-12-27',
-            end: '2019-01-09T23:59:59'
+            end: '2019-01-09T23:59:59',
+            color: '#231EB7'
         },
         {
             title: '어드벤처 박스',
             start: '2018-12-27',
-            end: '2019-01-09T23:59:59'
+            end: '2019-01-09T23:59:59',
+            color: '#231EB7'
         },
         {
             title: '어드벤처 슈가타임!',
@@ -99,7 +101,7 @@
         start: '2018-12-27',
         end: '2019-01-30T23:59:59',
         url: "",
-        color: 'beige'
+        color: '#626262'
         }
     ],
     
@@ -179,7 +181,7 @@
                     <c:forEach var="n" items="${list }">
                     <tr> 
                         <td class="text-center">${n.no }</td>
-                        <td>table-striped는 홀수마다 색을 주네</td>
+                        <td>${n.title }</td>
                         <%-- <td><a href="detail?no=${n.no }">${n.title }</a></td> --%>
                         <td class="text-center">${n.regDate }</td>
                         <td class="text-center">${n.hit }</td>

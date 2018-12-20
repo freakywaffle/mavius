@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="kr">
 	<head>
@@ -11,14 +12,27 @@
 <body>
 <section id="shabang">
     <div class="bluelight">
+    <c:if test="${empty sessionScope.uid }"> <%-- 로그인상태가 아니면 로그인으로 가는 화면을 띄워줍니다 --%>
         <a href="member/login">MAVIUS</a>
+    </c:if>
+    <c:if test="${not empty sessionScope.uid }"> <%-- 로그인상태라면  --%>
+       	<a href="/index">MAVIUS</a>
+    </c:if>
     </div>
     <div class="caption links">
         <nav class="link-effect-13">
             <a href="news/notice/list"><span>NEWS</span></a>
-            <a href="board/community/freeboard/list"><span>COMMUNITY</span></a>
-            <a href="board/target/warrior/list"><span>TARGET</span></a>
-            <a href="member/login"><span>LOGIN</span></a>
+            <a href="board/free/list"><span>COMMUNITY</span></a>
+            <a href="board/warrior/list"><span>TARGET</span></a>
+            <c:if test="${not empty sessionScope.uid }">
+            	<a href="#"><span>MYPAGE</span></a>
+            </c:if>
+            <c:if test="${empty sessionScope.uid }">
+            	<a href="member/login"><span>LOGIN</span></a>
+            </c:if>
+            <c:if test="${not empty sessionScope.uid }">
+            	<a href="member/logout"><span>LOGOUT</span></a>
+            </c:if>
         </nav>
     </div>
 </section>
