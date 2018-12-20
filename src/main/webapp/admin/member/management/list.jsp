@@ -65,27 +65,31 @@
 						<tbody>
 						
 							<c:forEach var="member" items="${list}">
-								<tr>
-									<td class="align-middle text-center">
-										<input type="checkbox" class="align-top" />
-									</td>
-									<td class="align-middle text-center">${member.num}</td>
-									<td class="align-middle text-left member-detail"><a href="detail?id=${member.id}">${member.nickName}&nbsp;&nbsp;(${member.id})</a></td>
-									<td class="align-middle text-center">${member.grade}</td>
-									<th class="align-middle text-center">${member.postsCount}</th>
-									<th class="align-middle text-center">${member.commentCount}</th>
-									<td class="align-middle text-center">${member.joinDate}</td>
-									<td class="align-middle text-center ">
-										<div>
-											<a class='btn btn-info btn-xs' href="detail.jsp">
-												<span class="glyphicon glyphicon-edit"></span>수정
-											</a> 
-											<a href="#" class="btn btn-danger btn-xs">
-												<span class="glyphicon glyphicon-remove"></span>탈퇴	
-											</a>
-										</div>
-									</td>
-								</tr>
+								<form action="/admin/member/delete" method="post">
+									<tr>
+										<td class="align-middle text-center">
+											<input type="checkbox" class="align-top" />
+										</td>
+										<input class="hidden" name="id" value="${member.id}" />
+										<input class="hidden" name="nickname" value="${member.nickName}" />
+										<td class="align-middle text-center">${member.num}</td>
+										<td class="align-middle text-left member-detail"><a href="detail?id=${member.id}">${member.nickName}&nbsp;&nbsp;(${member.id})</a></td>
+										<td class="align-middle text-center">${member.grade}</td>
+										<th class="align-middle text-center">${member.postsCount}</th>
+										<th class="align-middle text-center">${member.commentCount}</th>
+										<td class="align-middle text-center">${member.regDate}</td>
+										<td class="align-middle text-center ">
+											<div>
+												<a class='btn btn-info btn-xs' href="detail?id=${member.id}">
+													<span class="glyphicon glyphicon-edit"></span>수정
+												</a> 
+												<button class="btn btn-danger btn-xs" type="submit">
+													<span class="glyphicon glyphicon-remove"></span>탈퇴	
+												</button>
+											</div>
+										</td>
+									</tr>
+								</form>
 							</c:forEach>
 							
 						</tbody>

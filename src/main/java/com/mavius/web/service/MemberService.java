@@ -13,8 +13,6 @@ public interface MemberService {
 	
 	MemberView getViewList(String id);
 	
-	
-	
 	Member getMember(String id);
 	int edit(Member member);
 	int delete(Member member);

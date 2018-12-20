@@ -14,6 +14,11 @@ public class EventDetailController extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		int no = Integer.parseInt(request.getParameter("no"));
+		
+		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/news/event/detail.jsp");
 		dispatcher.forward(request, response);
 	}

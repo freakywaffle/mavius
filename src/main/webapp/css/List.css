@@ -487,8 +487,8 @@ border-collapse: collapse; 	border-spacing: 0;
 		/* margin-left:auto; */
 		margin-bottom:20px;
 	} 
-	.coorid-list-p{
-		height:300px;
+	.coordi-list-p{
+		min-height:300px;
 		margin-bottom:10px;
 		text-overflow: ellipsis;
   		white-space: nowrap;

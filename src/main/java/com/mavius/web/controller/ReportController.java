@@ -35,6 +35,7 @@ public class ReportController extends HttpServlet{
 		String contentEtc = request.getParameter("contentEtc");
 		//System.out.println("이유etc: "+contentEtc);
 		String type = request.getParameter("type");
+		String reportedId = request.getParameter("writerId");
 		//System.out.println("타입: "+type);
 		int reportedNo = Integer.parseInt(request.getParameter("no"));
 		
@@ -43,7 +44,7 @@ public class ReportController extends HttpServlet{
 		BoardService service = new JdbcBoardService();
 		List<ReportReason> list = new ArrayList();
 //		int reportNo = service.regReport(reportedNo, contentEtc,reason,reporterId,type);
-		service.regReport(reportedNo, contentEtc,reason,"khh1111",type);
+		service.regReport(reportedNo, contentEtc,reason,"khh1111",type,reportedId);
 		//System.out.println(2);
 				
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/board/community/freeboard/detail.jsp");
