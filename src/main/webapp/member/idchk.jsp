@@ -13,6 +13,7 @@
         <!-- <link href="../css/login/animate.css" rel="stylesheet"> -->
         <!-- <link href="../css/login/bootstrap.css" rel="stylesheet"> -->
         <!-- <script src="http://b1ix.net/public/js/boot1.min.js"></script> -->
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script src="/js/idchk.js"></script>
         
         <!-- <script type="text/javascript">
@@ -30,12 +31,50 @@
 	
 	        });
         </script> -->
+        <style type="text/css">
+        #wrap {
+            width: 490px;
+            text-align :center;
+            margin: 0 auto 0 auto;
+        }
+        
+        #chk{
+            text-align :center;
+        }
+        
+        #cancelBtn{
+            visibility:visible;
+        }
+        
+        #useBtn{
+             visibility:hidden;
+        }
+ 
+   </style>
+
     </head>
-<body>
+<body onload="pValue()">
 <section id="shabang">
-	<section id="idchk">
-		<!-- <input name="btn-reg" form="reg-form" type="submit" value="등록">
-		<form method="POST" id="reg-form"> -->
+	<div id="wrap">
+		<br>
+		<b>아이디 중복체크</b>
+		<hr size="1" width="460">
+		<br>
+		<div id="chk">
+	        <form id="checkForm">
+	            <input type="text" name="idinput" id="userId">
+	            <input type="button" value="중복확인" onclick="idCheck()">
+	        </form>
+	        <div id="msg"></div>
+	        <br>
+	        <input id="cancelBtn" type="button" value="취소" onclick="window.close()"><br>
+	        <input id="useBtn" type="button" value="사용하기" onclick="sendCheckValue()">
+    	</div>
+	</div>
+
+	<!-- <section id="idchk">
+		<input name="btn-reg" form="reg-form" type="submit" value="등록">
+		<form method="POST" id="reg-form">
 			<table>
 				<tr>
 					<td>
@@ -44,11 +83,11 @@
 					<td>
 						<input required="required" autocomplete="off" placeholder="6자이상의 문사" type="text" name="uid"/>
 						<input type="button" name="dupl-check" value="아디 중복체크" onclick="id_chk()"/>
-						<!-- <img  class="icon-ajax hidden" src="image/ajax-loader.gif" /> -->
+						<img  class="icon-ajax hidden" src="image/ajax-loader.gif" />
 					</td>
 				</tr>
 			</table>
-		<!-- </form> -->
-	</section>
+		</form>
+	</section> -->
 </body>
 </html>
