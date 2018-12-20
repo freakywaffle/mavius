@@ -149,7 +149,7 @@
 											<div class="b">
 												<span class="bb">내용</span>
 												<textarea class="col-md-10 form-control" name="content"
-													placeholder	="${detail.content}" rows="13"></textarea>											
+													placeholder	="" rows="13">${detail.content}</textarea>											
 											</div>
 											
 											<hr/>
