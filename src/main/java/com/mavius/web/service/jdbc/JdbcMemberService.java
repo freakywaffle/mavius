@@ -77,14 +77,13 @@ public class JdbcMemberService implements MemberService{
 		String sql = "SELECT * FROM MEMBERVIEW where id = ?";
         
 		try {
-                    
-           String id_= id;  
+  
            
            String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
            Class.forName("oracle.jdbc.driver.OracleDriver");
            Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
            PreparedStatement st = con.prepareStatement(sql);
-           st.setString(1, id_); 
+           st.setString(1, id); 
            
            ResultSet rs =st.executeQuery();
            rs.next();
@@ -96,6 +95,7 @@ public class JdbcMemberService implements MemberService{
               rs.getDate("REGDATE"),
               rs.getInt("EXP"),
               rs.getInt("REPORT"),
+              rs.getInt("AUTHORITY"),
               rs.getInt("POSTS_COUNT"),
               rs.getInt("COMMENT_COUNT")
               
@@ -123,13 +123,86 @@ public class JdbcMemberService implements MemberService{
 	@Override
 	public int edit(Member member) {
 		// TODO Auto-generated method stub
-		return 0;
+		String id = member.getId();
+		String nickName = member.getNickName();
+		String email = member.getemail();
+		String grade = member.getGrade();
+		int authority = member.getAuthority();
+		
+		
+		System.out.println("/////////////////////////////");
+		System.out.println(id);
+		System.out.println(nickName);
+		System.out.println(email);
+		System.out.println(grade);
+		System.out.println(authority);
+		String sql = "update member set NICKNAME = ?, EMAIL = ?, GRADE = ?, AUTHORITY = ? where ID = ?";
+        
+		try {
+
+           String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+           Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+           con.setAutoCommit(false);
+           PreparedStatement st = con.prepareStatement(sql);
+           st.setString(1, nickName); 
+           st.setString(2, email); 
+           st.setString(3, grade); 
+           st.setInt(4, authority); 
+           st.setString(5, id); 
+           
+           st.executeUpdate();
+           
+           con.commit();
+          
+           st.close();
+           con.close();
+           
+        }  catch (Exception e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+        }
+        
+	
+	return 0;
 	}
 
 	@Override
 	public int delete(Member member) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		String id = member.getId();
+		String nickName = member.getNickName();
+		
+		System.out.println(id);
+		System.out.println(nickName);
+		
+		String sql = "delete member where id = ? and nickname = ?";
+        
+		try {
+
+           String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+           Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+           con.setAutoCommit(false);
+           PreparedStatement st = con.prepareStatement(sql);
+           st.setString(1, id); 
+           st.setString(2, nickName); 
+           
+           st.executeUpdate();
+           
+           con.commit();
+          
+           st.close();
+           con.close();
+           
+        }  catch (Exception e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+        }
+        
+	
+	return 0;
 	}
 
 

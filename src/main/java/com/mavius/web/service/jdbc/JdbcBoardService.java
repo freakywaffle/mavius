@@ -27,6 +27,7 @@ import com.mavius.web.entity.Board;
 import com.mavius.web.entity.BoardFile;
 import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.Member;
+import com.mavius.web.entity.MemberView;
 import com.mavius.web.entity.Reply;
 import com.mavius.web.entity.ReportReason;
 import com.mavius.web.service.BoardService;
@@ -790,6 +791,8 @@ public class JdbcBoardService implements BoardService{
 		return affectedBoard;
 	}
 
+
+
 	@Override
 	public int claim(ReportReason report) {
 		
@@ -1454,6 +1457,92 @@ public class JdbcBoardService implements BoardService{
 		
 		return bm;
 	}
+
+	@Override
+	public List<BoardView> getBoardViewList(int page , String catalog) {
+		// TODO Auto-generated method stub
+		List<BoardView> list = new ArrayList<>();
+		
+    	String sql = "select * from (select rownum num,b.* from (select * from board_view where catalog = ? order by no desc)b) where num between ? and ?";
+
+        try {
+                    
+           int start = 1+(page-1)*10;
+           int end = page*10;         
+           
+           String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl"; 
+           Class.forName("oracle.jdbc.driver.OracleDriver");
+           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+           PreparedStatement st = con.prepareStatement(sql);
+           st.setString(1, catalog);
+           st.setInt(2, start);
+           st.setInt(3, end); 
+           
+           ResultSet rs =st.executeQuery();
+           
+           while(rs.next()) {
+        	   BoardView m = new BoardView(
+        		  rs.getInt("NUM"),
+        		  rs.getInt("NO"),
+        		  rs.getString("TITLE"),
+                  rs.getString("CONTENT"),
+                  rs.getDate("REGDATE"),
+                  rs.getString("WRITER_ID"),
+                  rs.getString("CATALOG"),
+                  rs.getString("CATEGORY"),
+                  rs.getInt("HIT"),
+                  rs.getInt("RECOMMEND"),
+                  rs.getInt("REPLY_CNT")
+                    );
+              
+              list.add(m);
+           }    
+           rs.close();
+           st.close();
+           con.close();
+           
+        }  catch (Exception e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+        }
+        
+	
+	return list;
+	}
+
+	@Override
+	public String delete(int boardNo, String catalog) {
+		// TODO Auto-generated method stub
+		String sql = "delete board where no = ?";		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			con.setAutoCommit(false);
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+
+			int affectedNews = st.executeUpdate();
+
+	         if(affectedNews > 0)
+	        	 con.commit();
+	         else
+	        	 con.rollback();
+
+	         st.close();
+	         con.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return catalog;
+	}
+
+
 
 
 	

@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class MemberView extends Member{
 		
-	private int num;        		//È¸¿ø ¹øÈ£(°¡ÀÔ¼ø¼­ joinDate)
-	private int postsCount;         //°Ô½Ã±Û °³¼ö
-	private int commentCount;		//´ñ±Û °³¼ö
+	private int num;        		//È¸ï¿½ï¿½ ï¿½ï¿½È£(ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ joinDate)
+	private int postsCount;         //ï¿½Ô½Ã±ï¿½ ï¿½ï¿½ï¿½ï¿½
+	private int commentCount;		//ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	
 	public MemberView() {
 		super();
@@ -17,8 +17,8 @@ public class MemberView extends Member{
 		this.postsCount = postsCount;
 		this.commentCount = commentCount;
 	}
-	public MemberView(String nickName, String id, String grade, String email, Date joinDate, int exp, int report, int postsCount, int commentCount) {
-		super(nickName, id, grade, email, joinDate, exp, report);
+	public MemberView(String nickName, String id, String grade, String email, Date joinDate, int exp, int report, int authority, int postsCount, int commentCount) {
+		super(nickName, id, grade, email, joinDate, exp, report, authority);
 		this.postsCount = postsCount;
 		this.commentCount = commentCount;
 	}

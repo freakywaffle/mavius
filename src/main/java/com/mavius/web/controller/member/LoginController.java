@@ -20,6 +20,9 @@ public class LoginController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+
+		/*String uid=request.getParameter("uid");
+		System.out.println(uid);*/
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/login.jsp");
 		dispatcher.forward(request, response);
 	}

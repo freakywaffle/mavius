@@ -5,7 +5,7 @@
 <html lang="kr">
 	<head>
         <meta charset="UTF-8">
-        <title>회원가입 완료!</title>
+        <title>${member.id } 회원가입 완료!</title>
         <!-- <link href="css/hover.css" rel="stylesheet"> -->
         <link href="../css/login/loginok.css" rel="stylesheet">
     </head>
@@ -15,13 +15,19 @@
     	<%-- <c:forEach var="m" items="${member }">
         	<a>${m.nickName } 방갑군!</a>
         </c:forEach> --%>
-        <a>${member.id } 가입축하!</a>
+        	<a>${member.nickName } 가입축하!</a>
     </div>
     <div class="caption links">
         <nav class="link-effect-13">
-            <a href="../index"><span>MAIN</span></a>
-            <a href="#"><span>EDIT</span></a>
-            <a href="#"><span>LOGOUT</span></a>
+       		<c:if test="${empty sessionScope.uid }">
+            	<a href="../index"><span>MAIN</span></a>
+            </c:if>
+            <%-- <c:if test="${empty sessionScope.uid }">
+            	<a href="#"><span>EDIT</span></a>
+            </c:if> --%>
+            <c:if test="${empty sessionScope.uid }">
+            	<a href="../member/login"><span>LOGIN</span></a>
+            </c:if>
         </nav>
     </div>
 </section>

@@ -5,17 +5,22 @@ body {
   }
   
   .bluelight {
-    display: table;
-    width: 200px;
-    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 100px;
+    width: 300px;
+    height: 300px;
     position: absolute;
+    text-align: center;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
   }
   .bluelight a {
+    
     display: table-cell;
-    font-size: 13px;
+    font-size: 30px;
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
