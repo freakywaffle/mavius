@@ -1,6 +1,7 @@
 package com.mavius.web.controller.admin;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.mavius.web.entity.BoardView;
 import com.mavius.web.entity.MemberView;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.MemberService;
@@ -25,18 +27,18 @@ public class FreeBoardListController extends HttpServlet{
 		response.setContentType("text/html; charset=UTF-8");
 				
 		String page_ = request.getParameter("p");
-		
+	
 		int page = 1;
-		if(page_!=null && page_.equals(""))
+		if(page_!=null && !page_.equals(""))
 			page = Integer.parseInt(page_);
 		
 		BoardService service = new JdbcBoardService();
 		
-		
+		List<BoardView> list =  service.getBoardViewList(page);
 		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/board/community/freeboard/list.jsp");
-		
+		request.setAttribute("list", list);
 		dispatcher.forward(request, response);
 	}
 	

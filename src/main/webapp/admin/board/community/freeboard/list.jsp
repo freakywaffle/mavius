@@ -45,11 +45,11 @@
 								<div class="panel-heading message-tab-heading">
 									<ul class="nav nav-tabs">
 										<li class="active"><a href="#tab1default" data-toggle="tab">전체</a></li>
-										<li><a href="#tab2default" data-toggle="tab">자유</a></li>
+										<!--<li><a href="#tab2default" data-toggle="tab">자유</a></li>
 										<li><a href="#tab3default" data-toggle="tab">잡담</a></li>
 										<li><a href="#tab4default" data-toggle="tab">우힣</a></li>
 										<li><a href="#tab5default" data-toggle="tab">우하하하</a></li>
-										<li><a href="#tab6default" data-toggle="tab">요호호호</a></li>
+										<li><a href="#tab6default" data-toggle="tab">요호호호</a></li>-->
 									</ul>
 								</div>
 								<div class="panel-body">
@@ -75,31 +75,89 @@
 														</tr>
 													</thead>
 													<tbody>
+														<c:forEach var="board" items="${list}">
+															
+															<tr>
+																<td class="align-middle text-center">
+																	<input type="checkbox" class="align-top" />
+																</td>
+																<td class="align-middle text-center">${board.no}</td>
+																<td class="align-middle text-center">[${board.category}]</td>
+																<td class="align-middle text-left"><a href="detail.jsp">s [${board.replyCnt}]</a></td>
+																<td class="align-middle text-center">${board.writerId}</td>
+																<td class="align-middle text-center">${board.regDate}</td>
+																<td class="align-middle text-center">${board.hit}</td>
+																<td class="align-middle text-center">${board.recommend}</td>
+																<td class="align-middle text-center">
+																	<div>
+																		<a href="#" class="btn btn-danger btn-xs"><span
+																			class="glyphicon glyphicon-remove"></span>삭제</a>
+																	</div>
+															</tr>
+														</c:forEach>
+													</tbody>
+												</table>
+											</section>
+											
+											<nav class="page-tab" aria-label="Page navigation example">
+											  	<ul class="pagination">
+												    <li class="page-item">
+												      <a class="font-color" href="#" aria-label="Previous">
+												        <span aria-hidden="true">&laquo;</span>
+												        <span class="sr-only">Previous</span>
+												      </a>
+												    </li>
+												    <c:forEach var="i" begin="1" end="5">
+												    	<li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+												    </c:forEach>
+												    <li class="page-item">
+												      <a class="font-color" href="#" aria-label="Next">
+												        <span aria-hidden="true">&raquo;</span>
+												        <span class="sr-only">Next</span>
+												      </a>
+												    </li>
+												</ul>
+											</nav>
+							
+											<div class="text-right" style="margin-right: 14px">
+												<a class='btn btn-info btn-xs' href="#"> <span
+													class="glyphicon glyphicon-edit"></span> SelectEdit
+												</a> <a href="#" class="btn btn-danger btn-xs"> <span
+													class="glyphicon glyphicon-remove"></span> SelectDel
+												</a>
+											</div>
+											
+										</div>
+<!--1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->	
+<!--2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->	
+								<!-- 
+								
+										<div class="tab-pane fade" id="tab2default">
+										
+											<section>
+												<table class="table table-striped">
+													<thead class="thead-dark">
 														<tr>
-															<td class="align-middle text-center">
-																<input type="checkbox" class="align-top" />
-															</td>
-															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[잡담]</td>
-															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
-															<td class="align-middle text-center">2018-12-13</td>
-															<td class="align-middle text-center">200</td>
-															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center">
-																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
-																	<a href="#" class="btn btn-danger btn-xs"><span
-																		class="glyphicon glyphicon-remove"></span>삭제</a>
-																</div>
+															<th class="align-middle text-center col-w-chk">
+																<input type="checkbox"class="align-top" />
+															</th>
+															<th class="align-middle text-center col-w-num">번호</th>
+															<th class="align-middle text-center col-w-ctg">카테고리</th>
+															<th class="align-middle text-center">제목</th>
+															<th class="align-middle text-center col-w-writerId">작성자</th>
+															<th class="align-middle text-center col-w-date">등록 일자</th>
+															<th class="align-middle text-center col-w-hit">조회수</th>
+															<th class="align-middle text-center col-w-hit">추천수</th>
+															<th class="align-middle text-center col-w-manage">관리</th>
 														</tr>
+													</thead>
+													<tbody>
 														<tr>
 															<td class="align-middle text-center">
 																<input type="checkbox" class="align-top" />
 															</td>
 															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[우히힣]</td>
+															<td class="align-middle text-center">[자유]</td>
 															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
 															<td class="align-middle text-center">승라일라이 [4]</td>
 															<td class="align-middle text-center">2018-12-13</td>
@@ -107,8 +165,6 @@
 															<td class="align-middle text-center">10</td>
 															<td class="align-middle text-center">
 																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
 																	<a href="#" class="btn btn-danger btn-xs"><span
 																		class="glyphicon glyphicon-remove"></span>삭제</a>
 																</div>
@@ -127,8 +183,24 @@
 															<td class="align-middle text-center">10</td>
 															<td class="align-middle text-center">
 																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
+																	<a href="#" class="btn btn-danger btn-xs"><span
+																		class="glyphicon glyphicon-remove"></span>삭제</a>
+																</div>
+															</td>
+														</tr>
+														<tr>
+															<td class="align-middle text-center">
+																<input type="checkbox" class="align-top" />
+															</td>
+															<td class="align-middle text-center">3</td>
+															<td class="align-middle text-center">[자유]</td>
+															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
+															<td class="align-middle text-center">승라일라이 [4]</td>
+															<td class="align-middle text-center">2018-12-13</td>
+															<td class="align-middle text-center">200</td>
+															<td class="align-middle text-center">10</td>
+															<td class="align-middle text-center">
+																<div>
 																	<a href="#" class="btn btn-danger btn-xs"><span
 																		class="glyphicon glyphicon-remove"></span>삭제</a>
 																</div>
@@ -165,126 +237,11 @@
 													class="glyphicon glyphicon-remove"></span> SelectDel
 												</a>
 											</div>
-											
-										</div>
-<!--1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->	
-<!--2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->	
-										<div class="tab-pane fade" id="tab2default">
-										
-											<section>
-												<table class="table table-striped">
-													<thead class="thead-dark">
-														<tr>
-															<th class="align-middle text-center col-w-chk">
-																<input type="checkbox"class="align-top" />
-															</th>
-															<th class="align-middle text-center col-w-num">번호</th>
-															<th class="align-middle text-center col-w-ctg">카테고리</th>
-															<th class="align-middle text-center">제목</th>
-															<th class="align-middle text-center col-w-writerId">작성자</th>
-															<th class="align-middle text-center col-w-date">등록 일자</th>
-															<th class="align-middle text-center col-w-hit">조회수</th>
-															<th class="align-middle text-center col-w-hit">추천수</th>
-															<th class="align-middle text-center col-w-manage">관리</th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td class="align-middle text-center">
-																<input type="checkbox" class="align-top" />
-															</td>
-															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
-															<td class="align-middle text-center">2018-12-13</td>
-															<td class="align-middle text-center">200</td>
-															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center">
-																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
-																	<a href="#" class="btn btn-danger btn-xs"><span
-																		class="glyphicon glyphicon-remove"></span>삭제</a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td class="align-middle text-center">
-																<input type="checkbox" class="align-top" />
-															</td>
-															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
-															<td class="align-middle text-center">2018-12-13</td>
-															<td class="align-middle text-center">200</td>
-															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center">
-																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
-																	<a href="#" class="btn btn-danger btn-xs"><span
-																		class="glyphicon glyphicon-remove"></span>삭제</a>
-																</div>
-															</td>
-														</tr>
-														<tr>
-															<td class="align-middle text-center">
-																<input type="checkbox" class="align-top" />
-															</td>
-															<td class="align-middle text-center">3</td>
-															<td class="align-middle text-center">[자유]</td>
-															<td class="align-middle text-left"><a href="detail.jsp">css 개씨발 줮같네?! [4]</a></td>
-															<td class="align-middle text-center">승라일라이 [4]</td>
-															<td class="align-middle text-center">2018-12-13</td>
-															<td class="align-middle text-center">200</td>
-															<td class="align-middle text-center">10</td>
-															<td class="align-middle text-center">
-																<div>
-																	<a class='btn btn-info btn-xs' href="#">
-																		<span class="glyphicon glyphicon-edit"></span>숨김</a>
-																	<a href="#" class="btn btn-danger btn-xs"><span
-																		class="glyphicon glyphicon-remove"></span>삭제</a>
-																</div>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											</section>
-											
-											<nav class="page-tab" aria-label="Page navigation example">
-											  	<ul class="pagination">
-												    <li class="page-item">
-												      <a class="font-color" href="#" aria-label="Previous">
-												        <span aria-hidden="true">&laquo;</span>
-												        <span class="sr-only">Previous</span>
-												      </a>
-												    </li>
-												    <li class="page-item"><a class="font-color focus" href="#">1</a></li>
-												    <li class="page-item"><a class="font-color focus" href="#">2</a></li>
-												    <li class="page-item"><a class="font-color focus" href="#">3</a></li>
-												    <li class="page-item">
-												      <a class="font-color" href="#" aria-label="Next">
-												        <span aria-hidden="true">&raquo;</span>
-												        <span class="sr-only">Next</span>
-												      </a>
-												    </li>
-												</ul>
-											</nav>
-							
-											<div class="text-right" style="margin-right: 14px">
-												<a class='btn btn-info btn-xs' href="#"> <span
-													class="glyphicon glyphicon-edit"></span> SelectEdit
-												</a> <a href="#" class="btn btn-danger btn-xs"> <span
-													class="glyphicon glyphicon-remove"></span> SelectDel
-												</a>
-											</div>
 										
 										</div>
 <!--2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->	
 <!--3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->	
-										<div class="tab-pane fade" id="tab3default">
+							<!-- 			<div class="tab-pane fade" id="tab3default"> 
 		
 											<section>
 												<table class="table table-striped">
@@ -399,7 +356,7 @@
 										</div>
 <!--3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->	
 <!--4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->	
-										<div class="tab-pane fade" id="tab4default">
+					<!--					<div class="tab-pane fade" id="tab4default">
 		
 											<section>
 												<table class="table table-striped">
@@ -514,7 +471,7 @@
 										</div>
 <!--4444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444-->	
 <!--5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555-->	
-										<div class="tab-pane fade" id="tab5default">
+								<!--		<div class="tab-pane fade" id="tab5default">
 		
 											<section>
 												<table class="table table-striped">
@@ -629,7 +586,7 @@
 										</div>
 <!--5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555-->	
 <!--6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666-->	
-										<div class="tab-pane fade" id="tab6default">
+							<!--			<div class="tab-pane fade" id="tab6default">
 		
 											<section>
 												<table class="table table-striped">
@@ -743,6 +700,8 @@
 											</div>
 											
 										</div>
+										
+										*/
 <!--6666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666-->	
 									</div>
 								</div>

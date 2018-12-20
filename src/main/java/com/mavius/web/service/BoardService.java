@@ -58,6 +58,8 @@ public interface BoardService {
 
 	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
 	
+	List<BoardView> getBoardViewList(int page);
+	
 
 	
 	
