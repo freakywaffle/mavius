@@ -575,13 +575,14 @@ public class JdbcBoardService implements BoardService{
 			
 			rs2 = st2.executeQuery();
 			
-			rs.next();
-			int rowCnt = rs.getInt("cnt");
+			rs2.next();
+			int rowCnt = rs2.getInt("cnt");
 			
 			map.put("rowCnt", rowCnt);
 			map.put("list", list);
 			
-			
+			rs2.close();
+			st2.close();
 			con.close();
 		}catch(SQLException e){
 			e.printStackTrace();
@@ -830,8 +831,39 @@ public class JdbcBoardService implements BoardService{
 
 	@Override
 	public int reg(Reply reply) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "insert into reply(no, content, writer_id, board_no) values (reply_seq.nextval, ?,?,?)";
+		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		int affected = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, reply.getContent());
+			st.setString(2, reply.getWriterId());
+			st.setInt(3, reply.getBoardNo());
+			
+			affected = st.executeUpdate();
+			
+			
+			
+			
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return affected;
 	}
 
 	@Override
@@ -841,10 +873,74 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public List<Reply> getReplyListByBoardNo(int boardNo) {
+	public Map<String, Object> getReplyListByBoardNo(int boardNo, int page, int cnt) {
+		
+		String sql = "select * from (select rownum num, r.* from (select * from reply order by regdate desc) r  where board_no = ?) where num between ? and ?";
+		String sql2 = "select count(*) cnt from reply where board_no = ?";
+		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		
 		
-		return null;
+		int start = 1+(page-1)*cnt; 
+        int end = page*cnt; 
+		
+		Map<String, Object> map = new HashMap<>();
+		List<Reply> list = new ArrayList<>();
+		
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+			st.setInt(2, start);
+			st.setInt(3, end);
+			
+			ResultSet rs = st.executeQuery();
+			while(rs.next()) {
+				Reply reply = new Reply(
+						rs.getInt("no"), 
+						rs.getString("content"), 
+						rs.getDate("regdate"), 
+						rs.getString("writer_id"), 
+						rs.getInt("board_no")
+					);
+				list.add(reply);
+						
+			}
+			
+			rs.close();
+			st.close();
+			
+			
+			map.put("list", list);
+			
+			PreparedStatement st2 = con.prepareStatement(sql2);
+			st2.setInt(1, boardNo);
+			ResultSet rs2= st2.executeQuery();
+			
+			rs2.next();
+			int rowCnt = rs2.getInt("cnt");
+			
+			
+			map.put("rowCnt", rowCnt);
+			
+			rs2.close();
+			st2.close();
+			con.close();
+	
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		
+		return map;
 	}
 
 	@Override
@@ -967,9 +1063,44 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	public List<BoardFile> getBoardFileListByBoardNo(int boardNo) {
+		
+		String sql = "select * from board_file where board_no = ?";
+			          
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		List<BoardFile> list = new ArrayList<>();
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+				BoardFile bf = new BoardFile(
+						rs.getInt("no"), 
+						rs.getString("name"), 
+						rs.getInt("board_no"), 
+						rs.getString("savename"));
+				list.add(bf);
+			}
 
 			
-		return null;
+			
+			rs.close();
+			st.close();
+			con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+			
+		return list;
 	}
 
 	@Override

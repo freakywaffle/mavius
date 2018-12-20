@@ -50,7 +50,7 @@ public interface BoardService {
 	int cancelScrap(String uid, int boardNo);
 	int reg(Reply reply);
 	int delReply(int replyNo);
-	List<Reply> getReplyListByBoardNo(int boardNo);
+	Map<String, Object> getReplyListByBoardNo(int boardNo, int page, int cnt);
 
 	List<ReportReason> getReportReason();
 	int regReport(int reportedNo, String contentEtc,String reason, String reporterId, String type);

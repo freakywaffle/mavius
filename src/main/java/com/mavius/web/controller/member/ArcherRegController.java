@@ -47,7 +47,8 @@ public class ArcherRegController extends HttpServlet{
 		
 		BoardService service = new JdbcBoardService(); 
 		
-		String path = request.getServletContext().getRealPath("/target/archer/upload");
+		String path = request.getServletContext().getRealPath("/upload/archer");
+//		String path = "C:/upload/archer";
 		String id = "khh1111";
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
