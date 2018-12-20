@@ -24,7 +24,7 @@
             <a href="/news/notice/list"><span>NEWS</span></a>
             <a href="/board/free/list"><span>COMMUNITY</span></a>
             <a href="/board/archer/list"><span>TARGET</span></a>
-            <a href="/member/mypage/confirm"><span>MYPAGE</span></a>
+            <a href="/mypage/confirm"><span>MYPAGE</span></a>
             <a href="/member/logout"><span>LOGOUT</span></a>
         </nav>
     </div>
