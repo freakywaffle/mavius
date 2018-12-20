@@ -50,4 +50,59 @@ public class JdbcConfirmService implements ConfirmService{
 		return affected;
 	}
 
+	@Override
+	public Member getMember(String uid) { //중복체크
+		// TODO Auto-generated method stub
+		
+		Member member = null;
+		
+		String sql = "select * from member where id=?";
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		try {
+	           Class.forName("oracle.jdbc.driver.OracleDriver");
+	           Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+	           PreparedStatement st = con.prepareStatement(sql);
+	           st.setString(1, uid);
+	           ResultSet rs = st.executeQuery();
+	           
+	           System.out.println("uid111 : "+uid);
+	           
+	           if(rs.next())
+	        	   member = new Member(
+	        			    rs.getString("id"),
+							rs.getString("pwd"),
+							rs.getString("nickName"),
+							rs.getString("email"),
+							rs.getString("grade"),
+							rs.getInt("exp"),
+							rs.getDate("regDate"),
+							rs.getInt("report"),
+							rs.getInt("authority")
+							);
+	           System.out.println("member111 : " + member);
+	           rs.close();
+	           st.close();
+	           con.close();
+	           
+	        } catch (ClassNotFoundException e) {
+	           // TODO Auto-generated catch block
+	           e.printStackTrace();
+	        } catch (SQLException e) {
+	           // TODO Auto-generated catch block
+	           e.printStackTrace();
+	        }
+		
+		return member;
+	}
+
+	@Override
+	public int memberChk(String uid) 
+	{
+		// TODO Auto-generated method stub
+		
+		
+		return 0;
+	}
+
 }

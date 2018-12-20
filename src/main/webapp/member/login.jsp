@@ -9,10 +9,10 @@
 	<title>MAVIUS - 로그인</title>
     <link href="../css/login/login.css" rel="stylesheet">
     <link href="../css/login/loginok.css" rel="stylesheet">
-    <!-- <script src="http://b1ix.net/public/js/boot1.min.js"></script> -->
-    <!-- <script src="../js/idchkpopup.js"></script> -->
+
+    <script src="../js/idchk-popup.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script>
+    <!-- <script>
 	    window.addEventListener("load", function(){
 	    	var idChk = document.querySelector("#idchk");
 	    	var idCheck = idChk.querySelector('input[name="idchk-btn"]');
@@ -75,17 +75,17 @@
 	    		
 	    	}
 	    });
-    /* function idChk() {
-    	swal({
+    	/* swal({
   		  title: "Holy Shit!",
   		  text: "중복되는 아이디에요!",
   		  icon: "error",
-  		}); */
-    	/* window.name = "parentForm";
-    	window.open("/member/idchk",
+  		});  */
+    function idChk() {
+    	 window.name = "parentForm";
+    	 window.open("/member/idchk",
              "chkForm", "width=500, height=300, " +
-             		"resizable = no, scrollbars = no");  */   
-    </script>
+             		"resizable = no, scrollbars = no");  
+    </script> -->
     
 </head>
 <body>
@@ -116,11 +116,12 @@
                     </form>
                 </div>
                 <div class="signup-cont cont" id="idchk">
-                    <form action="join" method="post" >
+                    <form action="join" method="post" name="userInfo" onsubmit="return checkValue()">
                     	<div class="idChk-group">
 	                        <label for="uid">Use ID</label>
-	                        <input name="uid" class="join-inpt" required="required" placeholder="Use ID" style="width: 180px;">
-	                        <input type="button" name="idchk-btn" value="중복확인" class="idChk-submit" style="width: 70px;">
+	                        <input id="id" name="uid" onkeydown="inputIdChk()" class="join-inpt" required="required" placeholder="Use ID" style="width: 180px;">
+	                        <input type="button" onclick="idchkPopup()" value="중복확인" class="idChk-submit" style="width: 70px;">
+	                        <input type="hidden" name="idDuplication" value="idUncheck">
                         </div>
                         <label for="unick">Use nickname</label>
                         <input name="unick" class="join-inpt" required="required" placeholder="Use nickname">
