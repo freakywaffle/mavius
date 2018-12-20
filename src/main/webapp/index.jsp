@@ -23,9 +23,9 @@
         <nav class="link-effect-13">
             <a href="news/notice/list"><span>NEWS</span></a>
             <a href="board/free/list"><span>COMMUNITY</span></a>
-            <a href="board/warrior/list"><span>TARGET</span></a>
+            <a href="board/archer/list"><span>TARGET</span></a>
             <c:if test="${not empty sessionScope.uid }">
-            	<a href="member/mypage/confirm"><span>MYPAGE</span></a>
+            	<a href="/member/mypage/confirm"><span>MYPAGE</span></a>
             </c:if>
             <c:if test="${empty sessionScope.uid }">
             	<a href="member/login"><span>LOGIN</span></a>

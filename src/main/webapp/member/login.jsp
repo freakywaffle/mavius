@@ -177,9 +177,9 @@ $('.container .bg').mousemove(function(e){
     <div class="caption links">
         <nav class="link-effect-13">
             <a href="/news/notice/list"><span>NEWS</span></a>
-            <a href="/board/community/freeboard/list"><span>COMMUNITY</span></a>
-            <a href="/board/target/warrior/list"><span>TARGET</span></a>
-            <a href="#"><span>MYPAGE</span></a>
+            <a href="/board/free/list"><span>COMMUNITY</span></a>
+            <a href="/board/archer/list"><span>TARGET</span></a>
+            <a href="/member/mypage/confirm"><span>MYPAGE</span></a>
             <a href="/member/logout"><span>LOGOUT</span></a>
         </nav>
     </div>
