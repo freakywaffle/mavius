@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
+    <!DOCTYPE html>
     <html lang="en" id="html">
     
-    <page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8">
-    
+<!--     <page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8">
+ -->    
         <head>
     
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,17 +25,21 @@
             <script type="text/javascript" src="/member/mypage/css/jquery-3.3.1.slim.min.js" ></script>
         <script type="text/javascript" src="/member/mypage/css/popper.min.js" ></script>
         <script type="text/javascript" src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" ></script>
-    
+        <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+
         </head>
+    <!--  detail -->
     
     
         <body id="body">
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+
+            <!--  제목 클릭시 나오는 디테일 Modal  -->
+                <div class="modal fade" id="detailmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog" role="document">
+                <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                            <h5 class="modal-title adminname" id="exampleModalLabel">관리자님께 물어보아요!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -41,159 +47,62 @@
                         <div class="modal-body">
                             <form>
                                 <div class="form-group">
-                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
+                                    <label for="recipient-name" class="col-form-label">제목:</label>
+                                    <input type="text" class="form-control" id="detailtitle"> <!-- 디테일 문의 제목 -->
                                 </div>
                                 <div class="form-group">
-                                    <label for="message-text" class="col-form-label">Message:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
+                                    <label for="message-text" class="col-form-label">문의 내용:</label>
+                                    <textarea class="form-control" id="detailcontent"></textarea> <!-- 디테일 문의 내용 -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">답변 내용:</label>
+                                    <textarea class="form-control" id="answercontent" disabled></textarea> <!-- 디테일 답변 내용 -->
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Send message</button>
+                            <!-- <button type="button" class="btn btn-primary">Send</button> -->
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <script>
-            $('#exampleModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget) // Button that triggered the modal
-                var recipient = button.data('whatever') // Extract info from data-* attributes
-                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-                var modal = $(this)
-                modal.find('.modal-title').text(recipient+' 질문 있어요!')
-                modal.find('.modal-body input').val(recipient)
-            })
-        </script>
-            <div id="hiririk">
-                <!-- <div id="dam">
-    
-                </div>
-                <div class="boxbox">
-                    <div id="sidebar">
-                        <div class="side-btn" onclick="toggleSidebarout()">
+
+            <!-- 문의하기 버튼을 눌렀을때 관리자에게 보내는 Modal -->
+
+            <div class="modal fade" id="sendmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title adminname" id="exampleModalLabel">관리자님께 물어보아요!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
-                        <ul class="sidebar-nav">
-                            <li>
-                                <a href="#">home</a>
-                            </li>
-                            <li>
-                                <a href="#">about</a>
-                            </li>
-                            <li>
-                                <a href="#">contact</a>
-                            </li>
-    
-                        </ul>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="recipient-name" class="col-form-label">제목:</label>
+                                    <input type="text" class="form-control" id="sendtitle"> <!-- 디테일 문의 제목 -->
+                                </div>
+                                <div class="form-group">
+                                    <label for="message-text" class="col-form-label">문의 내용:</label>
+                                    <textarea class="form-control" id="sendcontent"></textarea> <!-- 디테일 문의 내용 -->
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary send-btn">Send</button>
+                        </div>
                     </div>
-                    <header id="header">
-                        <div>
-    
-                            <div id="header-wrapper">
-                                <ul class="header-nav header-box">
-                                    <li class="header-brand">
-                                        <a href="#">
-                                            MAVIUS
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="pa" " >
-                                            <a href="#One">정보수정</a>
-                                            
-                                        </div>
-    
-    
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-                                            <a href="#One">내가 쓴글</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#">게시글</a></li>
-                                                    <li><a href="#">댓글</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-    
-    
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#Two">쪽지</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">보내기</a></li>
-                                                    <li><a href="#2">받은쪽지함</a></li>
-    
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">QnA</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">Reply</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="pa" >
-    
-                                            <a href="#">Scrap</a>
-                                            <div class="submenu">
-                                                <ul>
-                                                    <li><a href="#1">1</a></li>
-                                                    <li><a href="#2">2</a></li>
-                                                    <li><a href="#3">3</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
-    
-                                </ul>
-                            </div>
-    
-                        </div>
-                    </header>
-    
-    
-    
-    
-    
-                    <script>
-    
-                        function toggleSidebarout() {
-    
-                            document.getElementById("sidebar").classList.toggle('active');
-    
-                            var dd = getElementById("hiririk");
-                        }
-    
-                    </script> -->
+                </div>
+            </div>
+
+        
+            <div id="hiririk">
+                
                     <jsp:include page="/member/mypage/mypageheader.jsp"></jsp:include>
 
     
@@ -216,111 +125,154 @@
                             <div class="pwd-box">
                                 <div class="subtitle">
                                     <h3>QnA</h3>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                                    <button type="button" class="btn btn-primary send-start" data-toggle="modal" data-target="#exampleModal"
                                         data-whatever="관리자님">문의하기</button>
                                 </div>
+                                <div class="searchtxt">
+                                        <form action="qnalist" method="get" id="option-form">
+                
+                                            <select onchange="location = this.options[this.selectedIndex].value;" >
+                                                <option value="">정렬기준</option>
+                                                <option value="list">전체</option>
+                                                <option value="list?during=처리대기중">처리대기중</option>
+                                                <option value="list?during=처리완료">처리완료</option>
+                                            </select>
+                
+                                          
+                                            <input type="hidden" value="" name="page" />
+                                            <input type="hidden" value="${param.during }" name="during" />
+                                        </form>
+                                    </div>
     
                                 <div class="submenu2">
-                                    <div class="category-div-sm cat-div">
-                                        <h5>번호</h5>
-                                        <ul>
-                                            <li> <a>1</a></li>
-                                            <li> <a>2</a></li>
-                                            <li> <a>3</a></li>
-                                            <li> <a>4</a></li>
-                                            <li> <a>5</a></li>
-                                            <li> <a>6</a></li>
-                                            <li> <a>7</a></li>
-                                            <li> <a>8</a></li>
-                                            <li> <a>9</a></li>
-                                            <li> <a>10</a></li>
-                                        </ul>
+					
+                                        <div class="submenu-cat">
+                                            <ul>
+                                                <li class="subcat-md"><a>작성일</a></li>
+                                                <li class="subcat-sm"><a>작성자</a></li>
+                                                <li class="subcat-lg"><a>제  목</a></li>
+                                                <li class="subcat-sm"><a>처리상태</a></li>
+                                                <li class="subcat-sm"><a>처리완료날짜</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <c:forEach var="qna" items="${list}">
+                                            <div class="submenu-cat cscs">
+                                                <ul>
+                                                    <li class="subcat-md"><a>${qna.sendDate }</a></li>
+                                                    <li class="subcat-sm"><a>${qna.senderId}</a></li>
+                                                    <li class="subcat-lg "><a class="modalgo">${qna.title }</a></li>
+                                                    <li class="subcat-sm"><a>${qna.during }</a></li>
+                                                    <li class="subcat-sm"><a>${qna.answerContent }</a></li>
+                                                </ul>
+                                                <input type="hidden" value="${qna.content }" class="sendercontent"/>
+                                                <input type="hidden" value="${qna.answerContent }" class="answercontent"/>
+                                            </div>
+                                        </c:forEach>
+            
+                                        <script>
+
+                                            $('.modalgo').on('click',function()
+                                            {
+                                                var div = $(this).parent().parent().parent();
+
+                                                var sendercontent = div.children('.sendercontent');
+                                                var answerContent = div.children('.answercontent');
+												
+                                                console.log(div);
+                                                console.log(sendercontent.attr('value'));
+                                                console.log(answerContent.attr('value'));
+
+
+                                            });
+                                            
+
+                                            // window.addEventListener("load",function()
+                                            // {
+                                            	
+                                            //     var submenu2 = document.querySelector(".submenu2");
+
+                                            //     submenu2.onclick=function(e)
+                                            //     {
+                                            //         if(e.target.classList.contains("modalgo"))
+                                            //         {
+                                            //         	var content = $('.modalgo').closet('sendercontent');
+
+                                            //             console.log(content.value);
+
+
+                                            //             // var con = document.querySelector(".sendercontent");
+
+                                            //             // console.log(con);
+                                                    	
+                                            //         	// console.log(e.target.text());
+                                            //             // var content = e.target.dataset.serndertitle;
+
+
+                                            //         }
+                                            //     }; 
+
+                                                // 디테일 Modal을 띄우는 스크립트 코드이다.
+                                                // var modalgo = document.querySelectorAll(".modalgo");
+                                               
+                                               
+                                               
+                                               
+                                                // for (var i = 0; i < modalgo.length; i++) 
+                                                // {
+
+                                                    
+                                                //     modalgo[i].onclick=function(e)
+                                                //     {
+                                                //         // alert("ddd");
+                                                //          var modal = document.querySelector("#detailmodal");
+                                                         
+                                                //          var modaltitle = modal.querySelector("#detailtitle");
+                                                //          modaltitle.value="이건 뭔가요";
+                                                //         $("#detailmodal").modal("show");
+
+                                                //         // modal.find('.modal-title').text(recipient+' 질문 있어요!');
+                                                //         // modal.find('.modal-body input').val(recipient);
+                                                //     }
+                                                // }
+
+
+                                                //문의하기 버튼을 눌러서 나오는 Modal을 띄우는 스크립트 코드이다.
+
+                                            //     var btnMuny = document.querySelector(".send-start");
+                                                
+                                            //         btnMuny.onclick=function(e)
+                                            //         {
+                                            //             // alert("ddd");
+                                            //              var modal = document.querySelector("#sendmodal");
+                                                         
+                                            //              var modaltitle = modal.querySelector("#sendtitle");
+                                            //              modaltitle.value="이건 뭔가요";
+                                            //             $("#sendmodal").modal("show");
+
+                                            //             // modal.find('.modal-title').text(recipient+' 질문 있어요!');
+                                            //             // modal.find('.modal-body input').val(recipient);
+                                            //         }
+                                                
+                                            // });
+                                            
+                                        </script>
+                                        <script>
+                                            $('#exampleModal').on('show.bs.modal', function (event) {
+                                                var button = $(event.relatedTarget) // Button that triggered the modal
+                                                var recipient = button.data('whatever') // Extract info from data-* attributes
+                                                // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+                                                // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+                                                var modal = $(this)
+                                                modal.find('.modal-title').text(recipient+' 질문 있어요!')
+                                                modal.find('.modal-body input').val(recipient)
+                                            })
+                                        </script>
+            
                                     </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>작성 날짜</h5>
-                                        <ul>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                            <li> <a>2018.01.01</a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>작성자</h5>
-                                        <ul>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                            <li> <a>뉴렉</a></li>
-                                        </ul>
-                                    </div>
-    
-                                    <div class="category-div-lg cat-div">
-    
-                                        <h5>문의 제목</h5>
-                                        <ul>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                            <li> <a href="">지현이 뱃살은 몇살</a></li>
-                                        </ul>
-    
-                                    </div>
-                                    <div class="category-div-md cat-div">
-                                        <h5>문의 상태</h5>
-                                        <ul>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                            <li> <a>처리중</a></li>
-                                        </ul>
-                                    </div>
-    
-                                    <div class="category-div-md cat-div">
-                                        <h5>처리완료 날짜</h5>
-                                        <ul>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                            <li> <a>2019.05.06</a></li>
-                                        </ul>
-                                    </div>
-    
-    
-                                </div>
-    
+    <jsp:include page="/inc/pager.jsp"></jsp:include>
                             </div>
-    
+    </section>
     
                             
                     </main>

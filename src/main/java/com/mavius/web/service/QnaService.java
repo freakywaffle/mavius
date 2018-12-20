@@ -1,16 +1,19 @@
 package com.mavius.web.service;
 
-import java.util.List;
+import java.util.Map;
 
 import com.mavius.web.entity.Qna;
 
-public interface QnaService {
+public interface QnaService 
+{
 	int sendQna(Qna qna);
 	
-	List<Qna> getMyQnaList();
-	List<Qna> getMyQnaList(String during);
-	List<Qna> getAdminQnaList(String during);
-	List<Qna> getAdminQnaList(String uid, String during);
+	Map<String,Object> getMyQnaList(String uid, int page, int cnt);
+	Map<String,Object> getMyQnaList(String uid, String during,int page, int cnt);
+	
+	
+	Map<String,Object> getAdminQnaList(int page, int cnt);
+	Map<String,Object> getAdminQnaList(String during, int page, int cnt);
 	
 	int answerQna(Qna qna);
 }
