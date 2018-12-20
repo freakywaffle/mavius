@@ -26,8 +26,8 @@ public class JdbcMemberService implements MemberService{
 		// TODO Auto-generated method stub
 		List<MemberView> list = new ArrayList<>();
 			
-			//È¸¿ø°¡ÀÔ ¼øÀ¸·Î È¸¿ø¹øÈ£ -> ±× ¿ª¼øÀ¸·Î page
-	    	String sql = "SELECT * FROM(SELECT ROWNUM NUM ,P.* FROM (SELECT * FROM POSTSCOMMENT ORDER BY REGDATE)P) WHERE ROWNUM BETWEEN ? AND ? ORDER BY NUM DESC";
+			//È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½È£ -> ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ page
+	    	String sql = "select * from (select rownum num,n.* from(SELECT rownum no, m.* FROM (SELECT * FROM MEMBERVIEW order by regdate desc) m order by no desc)n) where no BETWEEN ? and ? order by num desc";
 
 	        try {
 	                    
@@ -73,8 +73,8 @@ public class JdbcMemberService implements MemberService{
 	public MemberView getViewList(String id) {
 		// TODO Auto-generated method stub
 		MemberView detail = null;
-		//È¸¿øº° Á¤º¸Á¶È¸
-		String sql = "SELECT * FROM MEMVERVIEW where id = ?";
+		//È¸ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸
+		String sql = "SELECT * FROM MEMBERVIEW where id = ?";
         
 		try {
                     
@@ -88,7 +88,6 @@ public class JdbcMemberService implements MemberService{
            
            ResultSet rs =st.executeQuery();
            rs.next();
-           
            detail = new MemberView(
     		  rs.getString("NICKNAME"),
     		  rs.getString("ID"),

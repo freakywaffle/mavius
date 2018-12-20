@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.mavius.web.service.BoardService;
 import com.mavius.web.service.jdbc.JdbcBoardService;
 
+import tool.Pager;
+
 @WebServlet("/mypage/boardlist")
 public class MypageBoardListController extends HttpServlet
 {
@@ -25,24 +27,55 @@ public class MypageBoardListController extends HttpServlet
 		
 		BoardService service = new JdbcBoardService();
 		Map<String,Object> bm = new HashMap<String, Object>();
-		String uid = request.getParameter("uid");
-		String category = request.getParameter("category");
+		
+		String uid = "khh1111";
 		String keyword = request.getParameter("keyword");
 		String catalog = request.getParameter("catalog");
 		String page_ = request.getParameter("page");
 		
 		int page=1;
+		int pageCnt=10;
+		int pagerCnt=5;
 		
 		if(page_ !=null && !page_.equals(""))
 			page = Integer.parseInt(request.getParameter("page"));
 		
-		if(catalog !=null && !catalog.equals(""))
-			bm = service.getBoardListById(uid, page, keyword, catalog);
+//		int startPage = pagerCnt*(page/pagerCnt)+1;
+//		int endPage = startPage+pagerCnt-1; 
 		
 		
+		if(keyword !=null && !keyword.equals("")) 
+		{
+			if(catalog !=null && !catalog.equals("")) 
+			{
+				bm = service.getBoardListById(uid, page, pageCnt, keyword, catalog);
+			}
+			else 
+			{
+				bm = service.getBoardListById(uid, page, pageCnt, keyword);
+			}
+		}
+		else 
+		{
+			bm = service.getBoardListById(uid, page, pageCnt);
+		}
+		
+		System.out.println(bm.get("rowCnt"));
+		
+		int boardCnt = (int)bm.get("rowCnt");
+//		int maxPage =(int)Math.ceil(boardCnt/pageCnt);
+		
+//		if(endPage > maxPage) {
+//			endPage = maxPage;
+//		}
+		
+		Pager pager = new Pager(pageCnt, pagerCnt, page, boardCnt);
+		request.setAttribute("list", bm.get("list"));
+//		request.setAttribute("startPage", startPage);
+//		request.setAttribute("endPage", endPage);
+		request.setAttribute("pager", pager);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/mypage/board/list.jsp");
-		request.setAttribute("bm", bm);
 		dispatcher.forward(request, response);
 		
 		

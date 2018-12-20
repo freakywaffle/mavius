@@ -1,9 +1,62 @@
+window.addEventListener("load", function(){
 
+    var boardView = document.querySelector(".board-view");
+    var recommendBtn = boardView.querySelector("#recommend");
+    var cancel = boardView.querySelector("#cancel-rec");
+    var reportedNo = document.querySelector('input[name="no"]');
+    var uid =document.querySelector('input[name="writerId"]');
+    var recommendView = boardView.querySelector("#recommend-view");
+    var recommendPlus = boardView.querySelector("#recommend-plus");
+    var editBtn = boardView.querySelector("#edit");
+    var no = document.querySelector('input[name="no"]');
 
+    
+   
+    editBtn.onclick = function(e){
+        console.log("edit hello");
+        var request = new XMLHttpRequest();   
+        request.open("POST", "/board/free/edit", false);
+        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        request.onload = function(){
+            console.log("Edit");
+        };
+        request.send("no="+no.value);
+    };
+
+    recommendBtn.onclick=function(e){
+        //console.log("hello");
+        var request = new XMLHttpRequest();   
+        request.open("POST", "/recommend", false);
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+		request.onload = function(){
+            alert("추천되었습니다.");
+        };
+        recommendBtn.classList.add("hidden-imp");
+        cancel.classList.remove("hidden-imp");
+        recommendView.classList.add("hidden-imp");
+        recommendPlus.classList.remove("hidden-imp");
+        request.send("uid="+uid.value+"&no="+reportedNo.value+"&sep="+0);//"id=newlec&pwd=111"
+        
+    };
+
+    cancel.onclick=function(e){
+        var request = new XMLHttpRequest();  
+        request.open("POST", "/recommend", false);
+		request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    	request.onload = function(){
+            alert("추천이 취소되었습니다.");
+        };
+    	recommendBtn.classList.remove("hidden-imp");
+        cancel.classList.add("hidden-imp");
+        recommendView.classList.remove("hidden-imp");
+        recommendPlus.classList.add("hidden-imp")
+        request.send("uid="+uid.value+"&no="+reportedNo.value+"&sep="+1);
+    }
+});
 
 window.addEventListener("load", function(){
       
-   
+     
 	 var modal = document.getElementById('myModal');
 	 
      // Get the button that opens the modal
@@ -34,6 +87,9 @@ window.addEventListener("load", function(){
      var reportBtn = modal.querySelector('input[name="report-apply"]');
      var content = modal.querySelector('select[name="content"]')
      var contentEtc = modal.querySelector('textarea');
+     var reportedNo = document.querySelector('input[name="no"]');
+     var writerId = document.querySelector('input[name="writerId"]');
+     console.log(reportedNo.value);
      reportBtn.onclick = function(e){
         var txtcontent = content.value;
         var txtcontentEtc = contentEtc.value;
@@ -60,7 +116,7 @@ window.addEventListener("load", function(){
 		
 		
 		};
-        request.send("content="+txtcontent+"&contentEtc="+txtcontentEtc+"&type="+txttype);//"id=newlec&pwd=111"
+        request.send("writerId="+writerId.value+"&no="+reportedNo.value+"&content="+txtcontent+"&contentEtc="+txtcontentEtc+"&type="+txttype);//"id=newlec&pwd=111"
      };
 
      

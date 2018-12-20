@@ -74,7 +74,7 @@
 									<td class="align-middle text-center">${member.grade}</td>
 									<th class="align-middle text-center">${member.postsCount}</th>
 									<th class="align-middle text-center">${member.commentCount}</th>
-									<td class="align-middle text-center">${member.joinDate}</td>
+									<td class="align-middle text-center">${member.regDate}</td>
 									<td class="align-middle text-center ">
 										<div>
 											<a class='btn btn-info btn-xs' href="detail.jsp">

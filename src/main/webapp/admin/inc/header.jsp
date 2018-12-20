@@ -46,8 +46,8 @@
                         <a href="#">회원 관리<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li class="active"><a href="/admin/member/management/list.jsp">회원 목록</a></li>
-                        <li><a href="/admin/member/sendmessage/list.jsp">회원 쪽지 발송</a></li>
+                        <li class="active"><a href="/admin/member/management/list">회원 목록</a></li>
+                        <li><a href="/admin/member/sendmessage/list">회원 쪽지 발송</a></li>
                     </ul>
     
     
@@ -67,9 +67,9 @@
                         <a href="#">뉴스<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="new">
-                        <li><a href="/admin/news/notice/list.jsp">공지사항</a></li>
-                        <li><a href="/admin/news/update/list.jsp">업데이트</a></li>
-                        <li><a href="/admin/news/event/list.jsp">이벤트</a></li>
+                        <li><a href="/admin/news/notice/list">공지사항</a></li>
+                        <li><a href="/admin/news/update/list">업데이트</a></li>
+                        <li><a href="/admin/news/event/list">이벤트</a></li>
                         <li><a href="">1:1 문의</a></li>
                         <li><a href="">게시글/댓글 신고</a></li>
                     </ul>

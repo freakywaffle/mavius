@@ -7,8 +7,8 @@
 <meta charset="UTF-8">
 <title>커뮤니티-자유게시판</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-<link href="../../../css/List.css" type="text/css" rel="stylesheet" />
-<script src="../../../js/communityList.js"></script>
+<link href="../../css/List.css" type="text/css" rel="stylesheet" />
+<script src="../../js/communityList.js"></script>
 </head>
 <!-- 이거 다시만들어야됨 -->
 <!--게시글 보기, 수정, 삭제, 댓글, 기본적인 보드 컬럼명 가져오고 타이틀이랑 컨텐트  ,이미지 공간? -->
@@ -62,17 +62,17 @@
 				<div class="margin-bottom view-list">
 					
 					<ul>
-						<li class="li-category">${b.category}</li>
-						<li class="fas fa-list-ol id">${b.no}</li>
-						<li class="li-title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
+						<li class="li-category category">${b.category}</li>
+						<li class="fas fa-list-ol no">${b.no}</li>
+						<li class="li-title title"><span class="fas fa-quote-left"></span>&nbsp;${b.title}&nbsp;<span class="fas fa-quote-right"></span></li>
 					
 					</ul>
-					<p class="coorid-list-p">${b.content}</p>
+					<p class="coorid-list-p content"><a href="detail?no=${b.no}">${b.content}</a></p>
 					<ul >
-						<li><a href="" class="fas fa-user-circle">${b.writerId}</a></li>
-						<li class="far fa-calendar-alt">&nbsp;${b.regDate}</li>
-						<li class="fas fa-eye">${b.hit}</li>
-						<li class="fas fa-heart">${b.recommend}</li>
+						<li><a href="" class="fas fa-user-circle writerId">${b.writerId}</a></li>
+						<li class="far fa-calendar-alt regDate">&nbsp;${b.regDate}</li>
+						<li class="fas fa-eye hit">${b.hit}</li>
+						<li class="fas fa-heart recommend">${b.recommend}</li>
 						
 					</ul>
 					
@@ -92,7 +92,7 @@
 			<section>
 				<h1 class="hidden">등록 영역</h1>
 				<div class="margin-left">
-					<a href="../freeboard/reg.jsp"><span class="fas fa-edit">글쓰기</span></a>
+					<a href="reg.jsp"><span class="fas fa-edit">글쓰기</span></a>
 				</div>
 				
 				<!-- <input type="button" name="btn-del" value="삭제" /> 관리자가 삭제 -->

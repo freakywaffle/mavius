@@ -17,7 +17,7 @@ import com.mavius.web.service.jdbc.JdbcBoardService;
 
 import tool.Pager;
 
-@WebServlet("/board/target/archer/list")
+@WebServlet("/board/archer/list")
 public class ArcherListController extends HttpServlet {
 	
 	@Override
@@ -32,7 +32,7 @@ public class ArcherListController extends HttpServlet {
 		String page_ = request.getParameter("page");
 		
 		
-		int pageCnt = 8;
+		int pageCnt = 10;
 		int pagerCnt = 5;
 		int page = 1;
 		if(page_ != null && !page_.equals(""))
@@ -55,14 +55,11 @@ public class ArcherListController extends HttpServlet {
 			}		
 		}
 		int boardCnt = (int)map.get("rowCnt");	
-		System.out.println(boardCnt);
 		
 		Pager pager = new Pager(pageCnt, pagerCnt, page, boardCnt);
-		System.out.println(pager.getStartPage());
-		System.out.println(pager.getEndPage());
 		request.setAttribute("list", map.get("list"));
 		request.setAttribute("pager", pager);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/archer/list.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/archer/list.jsp");
 
 		dispatcher.forward(request, response);
 	}

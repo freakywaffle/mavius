@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/target/warrior/reg")
+@WebServlet("/board/warrior/reg")
 public class WarriorRegController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../../../member/board/target/job/warrior/reg.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/board/target/job/warrior/reg.jsp");
 
 		dispatcher.forward(request, response);
 	}

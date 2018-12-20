@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="../../css/event-detail.css" rel="stylesheet"id="bootstrap-css">
+<link href="../../css/notice-detail.css" rel="stylesheet"id="bootstrap-css">
 <link href="../../css/aside-left.css" rel="stylesheet" 	id="bootstrap-css">
 <title>News - Event</title>
 </head>
@@ -58,12 +58,11 @@
 												<div class="form-group">
 													<div class="b">
 														<span>제목</span>
-														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[이벤트]</span>
+														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[${detail.catalog}]</span>
 														<input class="col-md-6 form-control" id="title" name="title"
-															placeholder="title" type="text" required autofocus disabled/>
-														<span>조회수   213</span>
-														<span>추천수   13</span>
-														<span>2018.11.19 20:18</span>
+															placeholder="${detail.title}" type="text" required autofocus disabled/>
+														<span>조회수   ${detail.hit}</span>
+														<span>${detail.regDate}</span>
 													</div>
 												</div>
 											</div>
@@ -73,7 +72,7 @@
 													<div class="b">
 														<span>작성자</span>
 														<input class="col-xs-2 col-md-2 form-control" id="nickName" name="nickName"
-															placeholder="nickName" type="text" required autofocus disabled/> 
+															placeholder="${detail.writerId}" type="text" required autofocus disabled/> 
 													</div>
 												</div>
 											</div>
@@ -81,9 +80,18 @@
 											<div class="b">
 												<span class="bb">내용</span>
 												<textarea class="col-md-10 form-control" id="message" name="message"
-													placeholder="Message" rows="13" disabled></textarea>											
+													placeholder="${detail.content}" rows="13"  disabled></textarea>											
 											</div>
 											
+											<hr/>
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+														<span>첨부파일</span>
+														<a href="">aaa.jpg</a>
+													</div>								
+												</div>
+											</div>
 											<hr/>
 											<div class="row">
 												<div class="form-group">
@@ -102,6 +110,8 @@
 														type="submit">목록</button>
 												</div>
 											</div>
+											
+											
 	
 										</form>
 									</div>
@@ -110,17 +120,17 @@
 <!--222222222222222222222222222222222222222222222222222222222222222222222-->
 									<div class="tab-pane fade" id="tab2default">
 									
-										<form id="contact" method="post" class="form" role="form">
+										<form action="/edit" id="contact" method="post" class="form" role="form">
 											<div class="row">
 												<div class="form-group">
 													<div class="b">
 														<span>제목</span>
-														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[이벤트]</span>
-														<input class="col-md-6 form-control" id="title" name="title"
-															placeholder="title" type="text" required autofocus/>
-														<span>조회수   213</span>
-														<span>추천수   13</span>
-														<span>2018.11.19 20:18</span>
+														<input class="hidden" name="catalog" value="${detail.catalog}" />
+														<span style="font-weight: bold; font-size: 15px; text-align: left;	">[${detail.catalog}]</span>
+														<input class="col-md-6 form-control" name="title"
+															value="${detail.title}" type="text" autofocus/>
+														<span>조회수  ${detail.hit}</span>
+														<span>${detail.regDate}</span>
 													</div>
 												</div>
 											</div>
@@ -129,26 +139,37 @@
 												<div class="form-group">
 													<div class="b">
 														<span>작성자</span>
-														<input class="col-xs-2 col-md-2 form-control" id="nickName" name="nickName"
-															placeholder="nickName" type="text" required autofocus/> 
+														<input class="col-xs-2 col-md-2 form-control" 
+															value="${detail.writerId}" type="text" autofocus disabled/>
+														<input class="hidden" name="writerId" value="${detail.writerId}" />
 													</div>
 												</div>
 											</div>
 											<hr/>
 											<div class="b">
 												<span class="bb">내용</span>
-												<textarea class="col-md-10 form-control" id="message" name="message"
-													placeholder="Message" rows="13"></textarea>											
+												<textarea class="col-md-10 form-control" name="content"
+													placeholder	="${detail.content}" rows="13"></textarea>											
 											</div>
 											
 											<hr/>
-										
+											<div class="row">
+												<div class="form-group">
+													<div class="b">
+														<span>첨부파일</span>
+														<input class="col-xs-2 col-md-2 form-control" id="file" name="file"
+															value="파일선택" type="button" required autofocus />
+														<a href="">aaa.jpg</a>
+													</div>								
+												</div>
+											</div>
+											<hr/>
 											<div class="row">
 												<div class="form-group">
 													<div class="b">
 															<span>이미지</span>
 															<input class="col-xs-2 col-md-2 form-control" id="img" name="img"
-															value="파일 선택" type="button" required autofocus /> 
+															placeholder="파일 선택" type="button" required autofocus /> 
 															<a href="">aaa.jpg</a>
 													</div>					
 												</div>
@@ -158,9 +179,10 @@
 											<br />
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
-													<button class="btn btn-primary pull-right btn-margin-left"
-														type="submit">취소</button>
+													<input class="hidden" name="no" value="${detail.no}" />
+													<a href="list" class="btn btn-primary pull-right btn-margin-left">취소</a>
 													<button class="btn btn-primary pull-right" type="submit">수정완료</button>
+													
 												</div>
 											</div>
 	

@@ -9,18 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board/target/magician/detail")
+@WebServlet("/board/magician/detail")
 public class MagicianDetailController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/magician/detail.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/magician/detail.jsp");
 		
 		dispatcher.forward(request, response);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("../job/magician/detail.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../target/job/magician/detail.jsp");
 		
 		dispatcher.forward(request, response);
 	}
