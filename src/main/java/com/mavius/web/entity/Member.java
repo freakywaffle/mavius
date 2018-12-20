@@ -14,13 +14,19 @@ public class Member {
    private int report;
    private int authority;
    
-   
-   
    public Member() {
       super();
    }
    
-   public Member(String nickName, String id, String grade, Date regDate) {
+   public Member(String id, String nickName, String pwd) 
+   {
+	super();
+	this.id = id;
+	this.nickName = nickName;
+	this.pwd = pwd;
+   }
+
+public Member(String nickName, String id, String grade, Date regDate) {
       super();
       this.nickName = nickName;
       this.id = id;

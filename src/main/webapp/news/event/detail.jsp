@@ -34,6 +34,7 @@
 			<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
 				<a class="nav-link disabled"><h2>공지사항</h2></a>
 			</nav>
+			<c:forEach var="n" items="${list }">
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
 				<a class="nav-link disabled">제목</a>
 			</nav>
@@ -70,6 +71,7 @@
 				  </li>
 				</ul>
 			</div>
+			</c:forEach>
 		</div>
 		
 		
