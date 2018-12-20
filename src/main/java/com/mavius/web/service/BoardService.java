@@ -43,6 +43,7 @@ public interface BoardService {
 	int reg(Board board, Part part, String path); //게시물 번호 리턴, 파일업로드 이렇게 하는게 맞는지 애매함
 	int edit(Board board);
 	int delete(int boardNo);
+	String delete(int boardNo, String catalog);
 	int claim(ReportReason report);
 	int recommend(String uid, int boardNo, int sep);
 	
@@ -58,7 +59,7 @@ public interface BoardService {
 
 	List<BoardFile> getBoardFileListByBoardNo(int boardNo);
 	
-	List<BoardView> getBoardViewList(int page);
+	List<BoardView> getBoardViewList(int page, String catalog);
 	
 
 	

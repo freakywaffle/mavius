@@ -76,24 +76,28 @@
 													</thead>
 													<tbody>
 														<c:forEach var="board" items="${list}">
-															
-															<tr>
-																<td class="align-middle text-center">
-																	<input type="checkbox" class="align-top" />
-																</td>
-																<td class="align-middle text-center">${board.no}</td>
-																<td class="align-middle text-center">[${board.category}]</td>
-																<td class="align-middle text-left"><a href="detail.jsp">s [${board.replyCnt}]</a></td>
-																<td class="align-middle text-center">${board.writerId}</td>
-																<td class="align-middle text-center">${board.regDate}</td>
-																<td class="align-middle text-center">${board.hit}</td>
-																<td class="align-middle text-center">${board.recommend}</td>
-																<td class="align-middle text-center">
-																	<div>
-																		<a href="#" class="btn btn-danger btn-xs"><span
-																			class="glyphicon glyphicon-remove"></span>삭제</a>
-																	</div>
-															</tr>
+															<form action="/admin/board/community/delete" method="post">
+																<tr>
+																	<td class="align-middle text-center">
+																		<input type="checkbox" class="align-top" />
+																	</td>
+																	<td class="align-middle text-center">${board.no}</td>
+																	<td class="align-middle text-center">[${board.category}]</td>
+																	<td class="align-middle text-left"><a href="detail?no=${board.no}">${board.title}  [${board.replyCnt}]</a></td>
+																	<td class="align-middle text-center">${board.writerId}</td>
+																	<td class="align-middle text-center">${board.regDate}</td>
+																	<td class="align-middle text-center">${board.hit}</td>
+																	<td class="align-middle text-center">${board.recommend}</td>
+																	<td class="align-middle text-center">
+																		<div>
+																			<button type="submit" class="btn btn-danger btn-xs" ><span
+																				class="glyphicon glyphicon-remove"></span>삭제</button>
+																		</div>
+																	</td>
+																	<input class="hidden" name="no" value="${board.no}" />
+																	<input class="hidden" name="catalog" value="${board.catalog}" />
+																</tr>																
+															</form>
 														</c:forEach>
 													</tbody>
 												</table>

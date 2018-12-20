@@ -757,6 +757,8 @@ public class JdbcBoardService implements BoardService{
 		return 0;
 	}
 
+
+
 	@Override
 	public int claim(ReportReason report) {
 		
@@ -1422,11 +1424,11 @@ public class JdbcBoardService implements BoardService{
 	}
 
 	@Override
-	public List<BoardView> getBoardViewList(int page) {
+	public List<BoardView> getBoardViewList(int page , String catalog) {
 		// TODO Auto-generated method stub
 		List<BoardView> list = new ArrayList<>();
 		
-    	String sql = "select * from (select rownum num,b.* from (select * from board_view where catalog = 'free' order by no desc)b) where num between ? and ?";
+    	String sql = "select * from (select rownum num,b.* from (select * from board_view where catalog = ? order by no desc)b) where num between ? and ?";
 
         try {
                     
@@ -1437,8 +1439,9 @@ public class JdbcBoardService implements BoardService{
            Class.forName("oracle.jdbc.driver.OracleDriver");
            Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
            PreparedStatement st = con.prepareStatement(sql);
-           st.setInt(1, start);
-           st.setInt(2, end); 
+           st.setString(1, catalog);
+           st.setInt(2, start);
+           st.setInt(3, end); 
            
            ResultSet rs =st.executeQuery();
            
@@ -1471,6 +1474,40 @@ public class JdbcBoardService implements BoardService{
 	
 	return list;
 	}
+
+	@Override
+	public String delete(int boardNo, String catalog) {
+		// TODO Auto-generated method stub
+		String sql = "delete board where no = ?";		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			con.setAutoCommit(false);
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+
+			int affectedNews = st.executeUpdate();
+
+	         if(affectedNews > 0)
+	        	 con.commit();
+	         else
+	        	 con.rollback();
+
+	         st.close();
+	         con.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	return catalog;
+	}
+
+
 
 
 	
