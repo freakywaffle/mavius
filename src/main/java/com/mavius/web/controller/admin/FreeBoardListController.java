@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.mavius.web.entity.MemberView;
+import com.mavius.web.service.BoardService;
 import com.mavius.web.service.MemberService;
+import com.mavius.web.service.jdbc.JdbcBoardService;
 import com.mavius.web.service.jdbc.JdbcMemberService;
 
 @WebServlet("/admin/board/community/freeboard/list")
@@ -28,7 +30,9 @@ public class FreeBoardListController extends HttpServlet{
 		if(page_!=null && page_.equals(""))
 			page = Integer.parseInt(page_);
 		
-		System.out.println(page);
+		BoardService service = new JdbcBoardService();
+		
+		
 		
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/admin/board/community/freeboard/list.jsp");
