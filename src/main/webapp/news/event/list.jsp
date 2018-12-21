@@ -17,7 +17,7 @@
     <script src="../../js/moment.min.js"></script>
     <script src="../../js/jquery.min.js"></script>
     <script src="../../js/fullcalendar.min.js"></script>
-    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 
     $(document).ready(function() {
@@ -45,38 +45,30 @@
     eventLimit: 4, // allow "more" link when too many events
     events: [
         {
-        title: '썬데이 메이플',
-        start: '2018-11-25',
-        url: "https://maplestory.nexon.com/News/Event/23"
-        },
-            {
-        title: '썬데이 메이플',
-        start: '2018-12-02',
-        url: "https://maplestory.nexon.com/News/Event/23"
+        	title: '썬데이 메이플',
+            start: '2018-12-23',
+            url: "https://maplestory.nexon.com/News/Event/29",
+            color: '#353677'
         },
         {
         title: '썬데이 메이플',
-        start: '2018-12-09',
-        url: "https://maplestory.nexon.com/News/Event/23"
+        start: '2018-12-30',
+        url: "https://maplestory.nexon.com/News/Event/29",
+        color: '#353677'
         },
         {
-        title: '택티컬 릴레이 이벤트',
-        start: '2018-11-29',
-        end: '2018-12-12T23:59:59',
+        title: '썬데이 메이플',
+        start: '2019-1-6',
+        url: "https://maplestory.nexon.com/News/Event/29",
+        color: '#353677'
+        },
+        {
+        title: '카밀라의 크리스마스 베이커리',
+        start: '2018-12-13',
+        end: '2018-12-26T23:59:59',
         //constraint: 'availableForMeeting', // defined below
-        url: "https://maplestory.nexon.com/News/Event/25",
+        url: "https://maplestory.nexon.com/News/Event/28",
         color: '#4e664d'
-        },
-        {
-            title: '카밀라의 크리스마스 베이커리',
-            start: '2018-12-13',
-            end: '2018-12-26T23:59:59',
-            url: "",
-            color: '#337ab7'
-        },
-        {
-        title: '프로젝트 발표 예정일',
-        start: '2018-12-17T14:00:00'
         },
         {
             title: '어드벤처 사전예약',
@@ -88,6 +80,8 @@
             title: '어드벤처 박스',
             start: '2018-12-27',
             end: '2019-01-09T23:59:59',
+            /* url: "detail?no=${n.no }", */
+            		url: "detail?no=58",
             color: '#231EB7'
         },
         {
@@ -100,18 +94,45 @@
         title: '<테라 버닝> 프로젝트!',
         start: '2018-12-27',
         end: '2019-01-30T23:59:59',
-        url: "",
         color: '#626262'
         }
     ],
     
-    eventClick:function(event){
-    	if(event.url){
-    		alert(event.title + "\n" + event.url, "wicked", "width=700,height=600");
-    		window.open(event.url);
-    		return false;
-    	}
-    }
+	    eventClick:function(event){
+	    	if(event.url){
+	    		/* alert(event.title + "\n" + event.url, "wicked", "width=700,height=600");
+	    		window.open(event.url); */
+	    		swal(event.title, "현명한 사람이라면 이벤트를 확인해볼걸?", "info", {
+	    			  buttons: {
+	    				    cancel: "확인안해",
+	    				    defeat: "현재창",
+	    				    catch: {
+	    				      text: "이벤트 확인하러 가기",
+	    				      value: "catch",
+	    				    },
+	    				  },
+	    				})
+	    				.then((value) => {
+	    				  switch (value) {
+	    				    case "defeat":
+								location.href=event.url;
+								break;
+	    				    case "catch":
+                              window.open(event.url);
+	    				      break;
+	    				 
+	    				    default:
+	    				      swal({
+                                  title: "WoW ! 이런 미련한 자를 보았나~",
+                                  text: "이벤트를 확인하지 않는다라!",
+                                  icon: "warning"
+                              })
+	    				  }
+	    				});
+	    		//window.open(event.url);
+	    		return false;
+	    	}
+	    }
     
     });
 
@@ -181,8 +202,7 @@
                     <c:forEach var="n" items="${list }">
                     <tr> 
                         <td class="text-center">${n.no }</td>
-                        <td>${n.title }</td>
-                        <%-- <td><a href="detail?no=${n.no }">${n.title }</a></td> --%>
+                        <td><a style="color: #000000; text-decoration: none;" href="detail?no=${n.no }">${n.title }</a></td>
                         <td class="text-center">${n.regDate }</td>
                         <td class="text-center">${n.hit }</td>
                     </tr>

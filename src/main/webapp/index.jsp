@@ -21,7 +21,7 @@
     </div>
     <div class="caption links">
         <nav class="link-effect-13">
-            <a href="news/notice/list"><span>NEWS</span></a>
+            <a href="news/event/list"><span>NEWS</span></a>
             <a href="board/free/list"><span>COMMUNITY</span></a>
             <a href="board/archer/list"><span>TARGET</span></a>
             <c:if test="${not empty sessionScope.uid }">
