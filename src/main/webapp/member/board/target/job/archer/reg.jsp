@@ -176,10 +176,8 @@
 						<label>아이콘</label>
 						<div class="border-color-gray">
 							<ul>
-								<li><img alt="카테고리1" src="/images/catalog1.png"></li>
-								<li><img alt="카테고리1" src="/images/catalog2.png"></li>
-								<li><img alt="카테고리1" src="/images/catalog3.png"></li>
-								<li><img alt="카테고리1" src="/images/catalog4.png"></li>
+								<li><img alt="스나이핑" src="/images/skill/sniping-icon.png"></li>
+								<li><img alt="피어싱" src="/images/skill/piearcing.png"></li>
 							</ul>
 						</div>
 					</div>			
