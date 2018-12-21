@@ -29,7 +29,7 @@
 	</section>
 
 		<main class="list-main">
-			<h1 class="hidden">자유게시판</h1>
+			<h1 class="hidden" >자유게시판</h1>
 			
 			<section id="search-form">
 				<h1  class="hidden">검색폼</h1>
@@ -68,7 +68,9 @@
 					
 					</ul>
 					<!-- <span><p></p></span> -->
-					<p class="coordi-list-p content">${b.content}</p> 
+					
+					<div class="coordi-list-p content">${b.content}</div>
+					<%-- <p class="coordi-list-p content">${b.content}</p> --%> 
 					<%-- <input class="content hidden" value="${b.content}"/> --%> 
 					
 					<%-- <a href="detail?no=${b.no}"> --%>
@@ -107,20 +109,7 @@
 		</div>
 		<div class="txt-align-center">
 			<section class="pager margin-top">
-				<h1 class="hidden">페이저</h1>
-				<div class="inline">
-					<a href=""><span>이전페이지</span></a>
-				</div>
-				<ul class="inline-flex">
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
-					<li>5</li>
-				</ul>
-				<div class="inline">
-					<a href=""><span>다음페이지</span></a>
-				</div>
+				<jsp:include page="/inc/pager.jsp"/>
 			</section>
 		</div>
 		</main>

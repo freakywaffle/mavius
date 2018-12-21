@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
 	        };
 	       request.send("no="+no.value);
         }
-
+       
     }
 
     // for (var i = 0; i < viewList.length; i++) {

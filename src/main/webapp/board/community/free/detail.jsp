@@ -80,7 +80,7 @@
 						<li class="fas fa-eye hit">${detail.hit}</li>
 						
 					</ul>
-					<p class="detail-post content">${detail.content}</p>
+					<div class="detail-post content">${detail.content}</div>
 				</div>
 				<div class="txt-align-right board-view-etc">
 					<a href="/board/free/reg" class="fas fa-edit">글쓰기</a>
