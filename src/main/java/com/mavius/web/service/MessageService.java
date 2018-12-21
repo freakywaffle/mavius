@@ -8,7 +8,9 @@ import com.mavius.web.entity.MessageView;
 public interface MessageService {
 	
 	int sendMsg(Message msg);
+	
 	List<Message> getMsgList(String uid);
+	
 	int delMsg(int no);
 	
 	List<MessageView> getMsgViewList(Message msg);

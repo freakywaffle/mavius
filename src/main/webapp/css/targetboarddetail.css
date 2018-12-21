@@ -165,7 +165,8 @@
 	padding-left: 325px;
 	width: 400px;
 	height: 15px;
-	
+	vertical-align: middle;
+	line-height: 15px;
 }
 
 .detail-reply-pager li{

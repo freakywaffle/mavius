@@ -20,6 +20,14 @@ public class Reply {
 		this.writerId = writerId;
 		this.boardNo = boardNo;
 	}
+	
+	
+
+	public Reply(String content, String writerId, int boardNo) {
+		this.content = content;
+		this.writerId = writerId;
+		this.boardNo = boardNo;
+	}
 
 	public int getNo() {
 		return no;

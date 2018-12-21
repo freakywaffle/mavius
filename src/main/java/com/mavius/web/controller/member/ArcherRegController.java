@@ -35,6 +35,9 @@ import com.mavius.web.service.jdbc.JdbcBoardService;
 public class ArcherRegController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		
+		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/member/board/target/job/archer/reg.jsp");
 
 		dispatcher.forward(request, response);
@@ -47,8 +50,11 @@ public class ArcherRegController extends HttpServlet{
 		
 		BoardService service = new JdbcBoardService(); 
 		
-		String path = request.getServletContext().getRealPath("/target/archer/upload");
-		String id = "khh1111";
+		String path = request.getServletContext().getRealPath("/upload/archer");
+//		String path = "C:/upload/archer";
+		
+		
+		String id = String.valueOf(request.getSession().getAttribute("uid"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 		String category = request.getParameter("category");

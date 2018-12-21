@@ -46,8 +46,10 @@
 							<div class="content border-color-gray" id="editor1" contenteditable="true"></div>
 							<input type="hidden" name="content" />
 						</div>
+						<div class="text-align-right">
 						<button type="button" class="btn btn-secondary" onclick="location.href='list'">취소</button>
 						<button type="submit" class="btn btn-primary" id="btn-submit">등록</button>
+						</div>
 					</form>
 					<!-- <div class="input-sup-form ">
 						<div class="set-form-div">

@@ -30,7 +30,7 @@
 				<div class="main-page block-flex margin-top">
 					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();"  enctype="multipart/form-data">
 						<div class="set-form-div">
-							<select class="job-category border-color-gray" name="category">
+							<select class="job-category border-color-gray" name="category" value="${e.category}">
 								<option>잡담</option>
 								<option>웃긴자료</option>
 								<option>기타</option>
@@ -43,8 +43,9 @@
 								<button type="button" class="btn btn-info">파일첨부</button>
 								<input type="text" disabled class="file-names"/>
 							</div>
-							<div class="content border-color-gray" id="editor1" contenteditable="true" value="${e.content}"></div>
-							<input type="hidden"  name="content"  />
+							<div class="content border-color-gray" id="editor1" contenteditable="true" ></div>
+							<input type="hidden" name="regData" value="${e.content}"/>
+							<input type="hidden"  name="content" value="${e.content}"/>
 						</div>
 						<button type="button" class="btn btn-secondary" onclick="location.href='list'">취소</button>
 						<button type="submit" class="btn btn-primary" id="btn-submit">등록</button>

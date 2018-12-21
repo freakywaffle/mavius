@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <link href="/css/targetboarddetail.css" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<script src="/js/targetboarddetail.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="hiririk">
@@ -55,7 +56,7 @@
 								첨부파일
 								<ul>
 									<c:forEach var="file" items="${fileList}">
-										<li><a href="/target/archer/${file.saveName }" download>${file.name}</a></li>
+										<li><a href="/board/archer/upload/${file.saveName }" download>${file.name}</a></li>
 									</c:forEach>
 								</ul>
 							</div>
@@ -70,7 +71,7 @@
 							</div>
 						</section>
 						<section class="target-replys">
-							<h1>COMMENTS&nbsp;<span>${board.replyCnt }</span></h1>
+							<h1>COMMENTS&nbsp;<span>${pager.boardCnt }</span></h1>
 							<c:forEach var="reply" items="${replyList}">
 								<div class="detail-reply">
 									<div class="reply-writer"><i class="fas fa-user"></i>&nbsp;${reply.writerId }</div>
@@ -82,19 +83,33 @@
 						</section>
 						<section class="detail-reply-pager">
 							<h1 class="hidden">페이저</h1>
-							<i class="fas fa-caret-left inline"></i>
+							<p class="inline prev">
+								<c:set var="hide" value="${pager.startPage-pager.pagerCnt  <= 0?'hidden':''}"></c:set>
+								<i class="fas fa-caret-left ${hide }"></i>
+								<input type="hidden" value="${pager.startPage-pager.pagerCnt }" name="prev"/>
+							</p>
 							<ul class="inline-list">
-								<li class="font-bold underline"><a href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-								<li><a href="#">4</a></li>
-								<li><a href="#">5</a></li>
+								<c:set var="page" value="1" />
+								
+								<c:forEach var="i" begin="${pager.startPage }" end="${pager.endPage }">
+									
+									<c:set var="cls" value="${i==page?'font-bold underline':''}" />
+									
+									<li class="${cls}"><a class="page">${i}</a></li>
+								</c:forEach>				
 							</ul>
-							<i class="fas fa-caret-right inline"></i>
+							<p class="inline next">
+								<c:set var="hide2" value="${pager.endPage==pager.maxPage?'hidden':''}"></c:set>
+								<i class="fas fa-caret-right ${hide2 }"></i>
+								<input type="hidden" value="${pager.endPage+1 }" name="next"/>
+							</p>
 						</section>
 						<section class="reply-reg-form">
-							<textarea></textarea>
-							<input class="btn-write" type="submit" />
+							<form action="/reply" method="post">
+								<input type="hidden" value="${param.no }" name="no">
+								<textarea name="reply-content"></textarea>
+								<input class="btn-write btn btn-outline-primary" type="button" name="submit" value="전송"/>
+							</form>
 						</section>
 					</div>
 					

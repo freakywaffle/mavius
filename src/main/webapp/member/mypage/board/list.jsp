@@ -21,12 +21,16 @@
 	<link href="/member/mypage/css/boardlist.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	 crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
 	 crossorigin="anonymous"></script>
 	<script src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	 crossorigin="anonymous"></script>
+	 crossorigin="anonymous"></script> -->
+
+	 <script type="text/javascript" src="/member/mypage/css/jquery-3.3.1.slim.min.js" ></script>
+	 <script type="text/javascript" src="/member/mypage/css/popper.min.js" ></script>
+	 <script type="text/javascript" src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" ></script>
 </head>
 
 
@@ -74,13 +78,14 @@
 								<option value="job">직업공략게시판</option>
 							</select>
 
-							<div class="d6">
+							<!-- <div class="d6">
 								<div class="d6-d">
-									<input type="text" name="keyword" placeholder="검색어 입력해주세요">
+									<input type="text" name="keyword" placeholder="검색어 입력해주세요" autocomplete="off">
 									<button type="submit"></button>
 								</div>
 
-							</div>
+							</div> -->
+							<jsp:include page="/inc/searchbar.jsp"></jsp:include>
 							<input type="hidden" value="" name="page" />
 							<input type="hidden" value="${param.catalog }" name="catalog" />
 						</form>
@@ -110,7 +115,7 @@
 
 
 						</div>
-					<%-- <div class="pagerbox">
+					<!-- <%-- <div class="pagerbox">
 						<nav>
 							<ul class="pager-list">
 								<li class="pager-item"><a class="pager-link" href="#"> < </a> </li> 
@@ -134,7 +139,7 @@
 								<li class="pager-item"><a class="pager-link" href="#"> > </a></li>
 							</ul>
 						</nav>
-					</div> --%>
+					</div> --%> -->
 					<jsp:include page="/inc/pager.jsp"></jsp:include>
 					
 				</div>

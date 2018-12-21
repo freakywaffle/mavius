@@ -80,14 +80,15 @@
 						<li class="fas fa-eye hit">${detail.hit}</li>
 						
 					</ul>
-					<p class="detail-post content">${detail.content}</p>
+					<div class="detail-post content">${detail.content}</div>
 				</div>
 				<div class="txt-align-right board-view-etc">
 					<a href="/board/free/reg" class="fas fa-edit">글쓰기</a>
 					<!-- a 태그로 바꿀시 발생 될 문제 주의하기 -->
-					<a href="/board/free/edit" class="fas fa-wrench"><span id="edit">수정하기</span></a> 
-					<span id="delete" class="fas fa-trash-alt">삭제하기</span>
-					<button name="myBtn">신고하기</button>
+					<a href="/board/free/edit?no=${detail.no }" class="fas fa-wrench"><span id="edit">수정하기</span></a> 
+					<!-- <button type="submit" name="" class="">삭제</button> -->
+					<span id="delete" class="fas fa-trash-alt post-delete">삭제하기</span>
+					<button class="report-btn" name="myBtn">신고하기</button>
 					<!-- <a href=""><span class="far fa-angry" >신고하기</span></a> -->
 					<span id="recommend" class="fas fa-heart">추천하기</span>
 					<span id="cancel-rec"class="far fa-heart hidden-imp">추천취소</span>
@@ -120,7 +121,7 @@
 						<div class="vertical-align-middle">
 							<p>와 너무 재밌어요!!!</p>
 
-							<button name="myBtn">신고하기</button>
+							<button class="report-btn" name="myBtn">신고하기</button>
 						</div>
 
 					</div>
