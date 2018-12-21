@@ -1507,6 +1507,12 @@ public class JdbcBoardService implements BoardService{
 	return catalog;
 	}
 
+	@Override
+	public List<BoardView> getBoardViewList(String catalog) {
+		// TODO Auto-generated method stub
+		return getBoardViewList(1,catalog);
+	}
+
 
 
 

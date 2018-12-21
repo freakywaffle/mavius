@@ -68,7 +68,7 @@
 								<form action="/admin/member/delete" method="post">
 									<tr>
 										<td class="align-middle text-center">
-											<input type="checkbox" class="align-top" />
+											<input type="checkbox" class="align-top" name="chk" checked="dd" />
 										</td>
 										<input class="hidden" name="id" value="${member.id}" />
 										<input class="hidden" name="nickname" value="${member.nickName}" />
