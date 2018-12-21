@@ -61,7 +61,7 @@ public interface BoardService {
 	
 	List<BoardView> getBoardViewList(int page, String catalog);
 	
-
+	int addHit(int boardNo);
 	
 	
 	

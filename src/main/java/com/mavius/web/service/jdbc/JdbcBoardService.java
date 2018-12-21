@@ -1673,6 +1673,37 @@ public class JdbcBoardService implements BoardService{
 	return catalog;
 	}
 
+	@Override
+	public int addHit(int boardNo) {
+		
+		String sql = "update board set hit = hit+1 where no = ?";		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		int affected = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+
+			affected = st.executeUpdate();
+
+			
+	        st.close();
+	        con.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return affected;
+	}
+
 
 
 
