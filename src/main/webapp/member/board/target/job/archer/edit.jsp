@@ -12,6 +12,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="/js/targetboardreg.js"></script>
+<script src="/js/targetboardedit.js"></script>
 <script src="/ckeditor/ckeditor.js"></script>
 </head>
 <body>
@@ -30,7 +31,7 @@
 			<section class="main margin-bottom reset-padding">
 				<h3 class="text-center margin-top">글쓰기</h3>
 				<div class="main-page block-flex margin-top">
-					<form class="input-form" id="reg-form" action="reg" method="post" onsubmit="return dataSubmit();" enctype="multipart/form-data">
+					<form class="input-form" id="reg-form" action="edit" method="post" onsubmit="return dataSubmit();" enctype="multipart/form-data">
 						<div class="set-form-div">
 							<select class="job-category border-color-gray" name="category">
 								<option>직업 카테고리</option>
@@ -41,7 +42,7 @@
 								<option>윈드브레이커</option>
 							</select>
 							<br/>
-							<input autocomplete="off" placeholder="  글제목" type="text" name="title" class="title border-color-gray"/>
+							<input autocomplete="off" placeholder="  글제목" type="text" name="title" class="title border-color-gray" value="${board.title }"/>
 							<br/>
 							<div class="file-area">
 								<input type="file" class="hidden" name="file"/>
@@ -49,7 +50,9 @@
 								<input type="text" disabled class="file-names"/>
 							</div>
 							<div class="content border-color-gray" id="editor1" contenteditable="true"></div>
-							<input type="hidden" name="content" />
+							<input type="hidden" name="no" value="${board.no }"/>
+							<input type="hidden" name="content"/>
+							<div id="hidden" class="hidden">${board.content }</div>
 						</div>
 					</form>
 					<div class="input-sup-form ">
