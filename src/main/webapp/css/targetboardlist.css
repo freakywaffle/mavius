@@ -1,7 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Nanum+Pen+Script|Noto+Sans+KR:100,300,400,500,700,900&subset=korean');
 
+@font-face
+ {
+
+  font-family:"GoodFont"; /*폰트 패밀리 이름 추가*/
+  
+  src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf"); /*폰트 파일 주소*/
+  
+}
+
 html{
 	width: 100%;
+	
 }
 
 #hiririk{
@@ -18,6 +28,7 @@ body{
 	display: flex;
 	white-space: nowrap;
 	overflow-x: auto;
+	font-family:"GoodFont"!important;
 }
 
 li{
@@ -122,18 +133,21 @@ h1,ul,p,li,section{
 
 .blank{
 	min-width: 100px;
-	width: 250px;
+	width: 230px;
 	height: 100%;
 }
 
 .wrapper{
     position: relative;
     flex-direction: row;
+    width: 100%;
+    
 }
 
 .wrapper a{
 	color: #000;
 	text-decoration: none!important;
+	
 }
 
 .wrapper a:hover{
@@ -143,7 +157,7 @@ h1,ul,p,li,section{
 
 .target-search-form{
 	margin-top: 30px;
-	margin-left: 250px;
+	margin-left: 330px;
 }
 
 .target-search-form .option:nth-child(2){
@@ -164,8 +178,8 @@ h1,ul,p,li,section{
 }
 
 .main{
-	padding-left: 75px;
-	margin-left: 150px!important;
+	padding-left: 100px;
+	margin-left: 180px!important;
 	margin-right: auto!important;
 	
 }
@@ -181,21 +195,29 @@ h1,ul,p,li,section{
 
 .board-header{
 	height: 185px;
-	padding-left: 75px;
-	margin-left: 150px!important;
-	margin-right: auto!important;
+	/* padding-left: 200px!important; */
+	/* padding-right: auto!important; */
 	min-width: 600px;
-	max-width: 1200px;
+	max-width: inherit;
 	text-align: center!important;
+	background: url("/images/헤네시스.png");
+}
+
+.board-header>div{
+	background-color: rgba( 255, 255, 255, 0.5 );
+	height: 100%;
 }
 
 .board-header h1{
 	display: inline-flex;
 	
+	
 }
+
 
 .board-header h3{
 	margin-bottom: 0px;
+	/* color: white; */
 }
 
 .btn-outline-secondary{
@@ -204,7 +226,7 @@ h1,ul,p,li,section{
 	right: 0px;
 	width: 100px;
 	height: 50px;
-	
+	margin-right: 320px;
 	padding-top: 12px!important;
 }
 
@@ -238,9 +260,13 @@ h1,ul,p,li,section{
 	margin-top: 60px;
 	font-size: 50px;
 	height: 70px;
+	
 }
+
+
 .boarder-title+h3{
 	font-size: 15px;
+	
 }
 
 .menu-bar{

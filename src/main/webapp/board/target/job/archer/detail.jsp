@@ -18,19 +18,33 @@
 		<div class="head-border-line"></div>
 		<div class="wrapper">
 		<section class="board-header">
-				<h1 class="border-title text-center font-medium">ARCHER</h1>
+			<div>
+				<h1 class="border-title text-center font-medium"><a href="list">ARCHER</a></h1>
 				<h3 class="text-center">공략게시판</h3>
 				<div class="menu-bar text-right">
 					<a class="btn btn-outline-secondary" href="list">목록으로</a>
 				</div>
-				</section>
+			</div>
+		</section>
 			<section class="main">
 				<div class="main-page block-flex margin-top">
 					<div>
 						<h1 class="hidden">모아보기 리스트</h1>
-						<section class="detail-simbol">
-							<img alt="카테고리1" src="/images/pinkbean2.jpg">
-						</section>
+						<div class="simbol action">
+							<img onclick="location.href='list?category=보우마스터'" alt="보우마스터" src="/images/bowmaster.png">
+						</div>
+						<div class="simbol action">
+							<img onclick="location.href='list?category=신궁'" alt="신궁" src="/images/god.png">
+						</div>
+						<div class="simbol action">
+							<img onclick="location.href='list?category=메르세데스'" alt="메르세데스" src="/images/mer.png">
+						</div>
+						<div class="simbol action">
+							<img onclick="location.href='list?category=윈드브레이커'" alt="윈드브레이커" src="/images/wind.png">
+						</div>
+						<div class="simbol action">
+							<img onclick="location.href='list?category=와일드헌터'" alt="와일드헌터" src="/images/wild.png">
+						</div>
 					</div>
 					<div class="target-board-main">
 						<div class="vertical-line"></div>
@@ -49,6 +63,8 @@
 										<li><i class="fas fa-book-reader"></i>&nbsp;${board.hit }</li>
 										<li><a href="#"><i class="far fa-thumbs-up"></i>&nbsp;${board.recommend }</a></li>
 										<li><a href="#">신고</a></li>
+										<li><a href="edit?no=${param.no }">수정</a></li>
+										<li><a href="#">삭제</a></li>
 									</ul>
 								</div>
 							</div>

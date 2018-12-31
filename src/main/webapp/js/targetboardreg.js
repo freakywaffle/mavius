@@ -143,8 +143,9 @@ window.addEventListener("load", function(){
 //	-----글 등록작업--------------------------------------------------------
 
 function dataSubmit(){
-	var regContent = document.querySelector(".set-form-div input[type='hidden']");
+	var regContent = document.querySelector(".set-form-div input[name='content']");
 	regContent.value = CKEDITOR.instances.editor1.getData();
+	console.log("!!"+regContent.value);
 	return true;
 };
 
