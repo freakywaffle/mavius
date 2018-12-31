@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="/sidebar/css/simple-sidebar.css" rel="stylesheet">
+<link href="/sidebar/css/header.css" rel="stylesheet">
 <link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <header>
         <div id="wrapper">
@@ -10,7 +10,7 @@
             <div id="header-wrapper">
                 <img class="header-bg" src="/images/hdbg01.png" />
                 <ul class="header-nav header-box">
-                    <div class="main-img">
+                    <div>
                         <img  src="/images/logo3.png" />
                     </div>
                     <li class="header-brand">
