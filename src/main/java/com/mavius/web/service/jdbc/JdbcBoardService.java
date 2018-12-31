@@ -748,8 +748,37 @@ public class JdbcBoardService implements BoardService{
 
 	@Override
 	public int edit(Board board) {
-		// TODO Auto-generated method stub
-		return 0;
+		String sql = "update board set title = ?, content = ? where no = ?";
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+
+		
+		int affectedBoard = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			
+			String title = board.getTitle();
+			String content = board.getContent();
+			int no = board.getNo();
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setString(1, title);
+			st.setString(2, content);
+			st.setInt(3, no);
+			
+			affectedBoard = st.executeUpdate();
+  
+	         st.close();
+	         con.close();
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return affectedBoard;
 	}
 
 	@Override

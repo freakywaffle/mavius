@@ -1,3 +1,13 @@
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 .inline{
     display: inline!important;
 }

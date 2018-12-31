@@ -40,6 +40,18 @@ article, aside, canvas, details, embed, figure, figcaption, footer, header, hgro
 menu, nav, output, ruby, section, summary, time, mark, audio, video, input,select{ 	
 margin: 0; 	padding: 0; 	border: 0; 	font-size: 100%; 	font: inherit; 	
 vertical-align: baseline; } /* HTML5 display-role reset for older browsers */ 
+
+
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, 
 nav, section { 	
 display: block; 
@@ -462,6 +474,9 @@ p{
 
 
 /* ---search-form---------------------------------------- */
+
+
+
 #search-form{
 	
 	text-align: center;
@@ -471,6 +486,11 @@ p{
 	
 
 }
+
+	#field-search{
+	    border: 1px solid;
+	}
+	
     #search-form form,
     select,input{
         display:inline-block;
@@ -480,8 +500,8 @@ p{
         margin:0px;
         padding:0px;
     } 
-    #search-form select{
-      
+    .first-select{
+      margin-left:1px;
     }
     #search-form input{
       

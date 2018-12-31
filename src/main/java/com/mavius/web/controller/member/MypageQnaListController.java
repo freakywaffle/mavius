@@ -16,7 +16,7 @@ import com.mavius.web.service.jdbc.JdbcQnaService;
 
 import tool.Pager;
 
-@WebServlet("/mypage/qna/list")
+@WebServlet("/mypage/qnalist")
 public class MypageQnaListController extends HttpServlet
 {
 	@Override
