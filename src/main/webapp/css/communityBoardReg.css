@@ -127,7 +127,10 @@
 	height: 50px;
 }
 
-
+.text-align-right{
+	text-align: right;
+    margin: 30px;
+    margin-right: 40px;}
 
 
 

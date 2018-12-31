@@ -47,8 +47,7 @@
 						<div class="panel with-nav-tabs panel-default message-tab">
 							<div class="panel-heading message-tab-heading">
 								<ul class="nav nav-tabs">
-									<li class="active"><a href="#tab1default" data-toggle="tab">쪽지
-											보내기</a></li>
+									<li class="active"><a href="#tab1default" data-toggle="tab">쪽지 보내기</a></li>
 									<li><a href="#tab2default" data-toggle="tab">쪽지 보관함</a></li>
 									<li><a href="#tab3default" data-toggle="tab">게시글 관리</a></li>
 								</ul>
@@ -57,17 +56,17 @@
 								<div class="tab-content">
 									<div class="tab-pane fade in active" id="tab1default">
 	
-										<form id="contact" method="post" class="form" role="form">
+										<form action="" method="post" class="form" role="form">
 											<div class="row">
 												<div class="col-xs-6 col-md-6 form-group">
 													<span>받는이</span>
 													<div class="b">
-														<input class="form-control" id="name" name="name"
-															placeholder="Name" type="text" required autofocus /> <select
-															class="form-control c" required autofocus>
-															<option>전체</option>
-															<option>관리자</option>
-															<option>전체 회원</option>
+														<input class="form-control" name="receiverId" value="id" type="text" autofocus /> 
+														<select class="form-control c" name="select" autofocus>
+															<option>그룹선택</option>
+															<option value="0">전체</option>
+															<option value="1">관리자</option>
+															<option value="2">회원</option>
 														</select>
 													</div>
 												</div>

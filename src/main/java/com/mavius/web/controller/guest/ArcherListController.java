@@ -31,7 +31,6 @@ public class ArcherListController extends HttpServlet {
 		String option = request.getParameter("option");
 		String page_ = request.getParameter("page");
 		
-		
 		int pageCnt = 10;
 		int pagerCnt = 5;
 		int page = 1;

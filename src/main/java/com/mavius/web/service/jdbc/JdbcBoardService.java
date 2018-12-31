@@ -806,7 +806,7 @@ public class JdbcBoardService implements BoardService{
 	@Override
 	public int recommend(String uid, int boardNo,int sep) {
 		int error = -1;
-		System.out.println("recommend Jdbc service입니다.");
+		System.out.println("recommend Jdbc service�엯�땲�떎.");
 		String sql ="UPDATE board SET recommend =+0 WHERE no =?";
 		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
 		
@@ -814,11 +814,11 @@ public class JdbcBoardService implements BoardService{
 		if(sep==0) {
 			sql="UPDATE board SET recommend =recommend+1 WHERE no =?";
 			error=sep;
-			System.out.println("에러코드: "+error+"0이면 추천되었습니다.");
+			System.out.println("�뿉�윭肄붾뱶: "+error+"0�씠硫� 異붿쿇�릺�뿀�뒿�땲�떎.");
 		}else if(sep==1){
 			sql="UPDATE board SET recommend =recommend-1 WHERE no =?";	
 			error=sep;
-			System.out.println("에러코드: "+error+"1이면 추천이 취소 되었습니다.");
+			System.out.println("�뿉�윭肄붾뱶: "+error+"1�씠硫� 異붿쿇�씠 痍⑥냼 �릺�뿀�뒿�땲�떎.");
 		}
 
 		try {
@@ -840,13 +840,13 @@ public class JdbcBoardService implements BoardService{
 			e.printStackTrace();
 		}
 		
-			//인서트 구문이랑
-		//현재 레코멘드를 받아오는 수
-		//그러면 현재 추천수에서 1+ 넣는다.?
-		//버튼을 눌렀을때 클래스 이름을 바꿔준다?
-		//숨겨놨던 다른 아이콘으로 전환해서
-		//그럼 그 아이콘을 클릭하면 -1을 시켜주고
-		//아이콘을 눌렀을때 seperate 변수 값을 같이 넘겨주자 그다음에 if문을 구분해서 들어가는 부분을 넣자!!
+			//�씤�꽌�듃 援щЦ�씠�옉
+		//�쁽�옱 �젅肄붾찘�뱶瑜� 諛쏆븘�삤�뒗 �닔
+		//洹몃윭硫� �쁽�옱 異붿쿇�닔�뿉�꽌 1+ �꽔�뒗�떎.?
+		//踰꾪듉�쓣 �닃���쓣�븣 �겢�옒�뒪 �씠由꾩쓣 諛붽퓭以��떎?
+		//�닲寃⑤넧�뜕 �떎瑜� �븘�씠肄섏쑝濡� �쟾�솚�빐�꽌
+		//洹몃읆 洹� �븘�씠肄섏쓣 �겢由��븯硫� -1�쓣 �떆耳쒖＜怨�
+		//�븘�씠肄섏쓣 �닃���쓣�븣 seperate 蹂��닔 媛믪쓣 媛숈씠 �꽆寃⑥＜�옄 洹몃떎�쓬�뿉 if臾몄쓣 援щ텇�빐�꽌 �뱾�뼱媛��뒗 遺�遺꾩쓣 �꽔�옄!!
 		
 		
 		return error;
@@ -1339,7 +1339,7 @@ public class JdbcBoardService implements BoardService{
 	public Map<String,Object> getBoardListById(String uid, int page, String keyword, String catalog)
 	{
 		// TODO Auto-generated method stub
-		return getBoardListById(uid, page, 10,"","전체");
+		return getBoardListById(uid, page, 10,"","�쟾泥�");
 	}
 
 	@Override
@@ -1673,11 +1673,47 @@ public class JdbcBoardService implements BoardService{
 	return catalog;
 	}
 
+	@Override
+	public List<BoardView> getBoardViewList(String catalog) {
+		// TODO Auto-generated method stub
+		return getBoardViewList(1,catalog);
+	}
+	
+		public int addHit(int boardNo) {
+		
+		String sql = "update board set hit = hit+1 where no = ?";		
+		String url = "jdbc:oracle:thin:@211.238.142.251:1521:orcl";
+		
+		int affected = 0;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection(url,"c##mavius","maplegg");
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			st.setInt(1, boardNo);
+
+			affected = st.executeUpdate();
+
+			
+	        st.close();
+	        con.close();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		return affected;
+	}
+
 
 
 
 	
-	// 아랫쪽은 MyPage 메소드
+	// �븘�옯履쎌� MyPage 硫붿냼�뱶
 	
 	
 

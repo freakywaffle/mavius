@@ -34,10 +34,7 @@ window.addEventListener("load", function(){
     
         
         CKEDITOR.replace('editor1', {height: '600'});
-        CKEDITOR.editorConfig = function( config ) {
-            config.enterMode = CKEDITOR.ENTER_BR
-
-        };
+      
     
     //    ------modal 띄우기 ----------------
       

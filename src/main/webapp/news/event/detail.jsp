@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>이벤트 디테일</title>
+<title>MAVIUS - ${detail.title }</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<link rel="stylesheet" href="../../css/news/newslist.css">
 	<!-- <link rel="stylesheet" href="../../admin/css/notice-detail.css"id="bootstrap-css">
@@ -32,22 +32,22 @@
 		<!-- 디테일  -->
 		<div>
 			<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-				<a class="nav-link disabled"><h2>공지사항</h2></a>
+				<a class="nav-link disabled"><h2>이벤트</h2></a>
 			</nav>
-			<c:forEach var="n" items="${list }">
+			<%-- <c:forEach var="n" items="${list }"> --%>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="nav-link disabled">제목</a>
+				<a class="nav-link disabled">${detail.title }</a>
 			</nav>
 			
 			<div class="news-detail-hit">
 				<ul class="nav justify-content-end">
 				  <li class="nav-item">
 				  	<!-- 조회수 -->
-				    <a class="nav-link disabled"><i class="fas fa-eye"></i>555</a>
+				    <a class="nav-link disabled"><i class="fas fa-eye"></i> ${detail.hit }</a>
 				  </li>
 				  <li class="nav-item">
 				 	<!-- 작성일 -->
-				    <a class="nav-link disabled"><i class="fas fa-clock"></i>2018-11-11</a>
+				    <a class="nav-link disabled"><i class="fas fa-clock"></i> ${detail.regDate }</a>
 				  </li>
 				</ul>
 			</div>
@@ -56,22 +56,22 @@
 				<!-- <input class="col-xs-2 col-md-2 form-control" id="nickName" name="nickName"
 					placeholder="" type="text" required autofocus disabled/> -->
 				<textarea class="col-md-2 form-control ta" id="message" name="message"
-				placeholder="Message" rows="1" disabled>작성자</textarea>	
+				placeholder="작성자" rows="1" disabled>${detail.writerId}</textarea>	
 			</div>
 			
 			<div class="news-detail-content" style="border-bottom: 1px solid black;">
 				<textarea class="col-md-12 form-control ta" id="message" name="message"
-					placeholder="Message" rows="15" disabled>내용</textarea>											
+					placeholder="내용" rows="15" disabled>${detail.content}</textarea>											
 			</div>
 			
 			<div class="news-detail-backlist">
 				<ul class="nav justify-content-end">
 				  <li class="nav-item">
-				    <a class="btn btn-dark btn-lg" href="#">목록</a>
+				    <a class="btn btn-dark btn-lg" href="/news/event/list">목록</a>
 				  </li>
 				</ul>
 			</div>
-			</c:forEach>
+			<!-- </c:forEach> -->
 		</div>
 		
 		

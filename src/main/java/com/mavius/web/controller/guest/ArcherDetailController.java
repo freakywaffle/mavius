@@ -38,6 +38,8 @@ public class ArcherDetailController extends HttpServlet{
 		
 		BoardService service = new JdbcBoardService();
 		
+		service.addHit(no);
+		
 		BoardView board = service.getBoard(no);
 		List<BoardFile> fileList = service.getBoardFileListByBoardNo(no);
 		
