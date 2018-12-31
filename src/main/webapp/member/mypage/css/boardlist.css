@@ -8,7 +8,7 @@
 
   font-family:"GoodFont"; /*폰트 패밀리 이름 추가*/
   
-  src:url("../../../bootstrap/fonts/SDChildfundkoreaTTF.ttf"); /*폰트 파일 주소*/
+  src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf"); /*폰트 파일 주소*/
   
 }
   
@@ -20,12 +20,12 @@ font-family:"GoodFont" !important;
 
 }
    
-
+/* 
 #header
 {
     display: flex;
 }
- 
+  */
 @keyframes hiririk {
   from
   {
@@ -68,7 +68,7 @@ body {
   margin : 0;
 }
 
-
+/* 
 #header-wrapper {
   z-index: 1000;
   position: fixed;
@@ -77,14 +77,14 @@ body {
   height: 100%;
   margin-left: 0px;
   overflow-y: auto;
-  /* background: #000; */
+  background: #000;
 }
 
 #header-wrapper {
   width: 230px;
   overflow: hidden;
 }
-
+ */
 #page-content-wrapper {
   width: 100%;
   position: absolute;
@@ -100,7 +100,7 @@ html, body, main
 }
 
 
-
+/* 
 .header-nav {
   position: absolute;
   top: 0;
@@ -145,7 +145,7 @@ html, body, main
   color: #fff;
   background: none;
 }
-
+ */
 .board-title
 {
 box-sizing: border-box;

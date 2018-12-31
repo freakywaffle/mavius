@@ -474,6 +474,9 @@ p{
 
 
 /* ---search-form---------------------------------------- */
+
+
+
 #search-form{
 	
 	text-align: center;
@@ -483,6 +486,11 @@ p{
 	
 
 }
+
+	#field-search{
+	    border: 1px solid;
+	}
+	
     #search-form form,
     select,input{
         display:inline-block;
@@ -492,8 +500,8 @@ p{
         margin:0px;
         padding:0px;
     } 
-    #search-form select{
-      
+    .first-select{
+      margin-left:1px;
     }
     #search-form input{
       

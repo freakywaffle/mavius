@@ -15,14 +15,14 @@
             <title>Simple Sidebar - Start Bootstrap Template</title>
     
             <!-- Bootstrap core CSS -->
-            <link href="../../../sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <link href="/sidebar/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
             <!--"vendor/bootstrap/css/bootstrap.min.css"-->
             <!-- Custom styles for this template -->
             <link href="/member/mypage/css/index.css" rel="stylesheet">
             <!-- <script type="text/javascript" src="myscripts.js"></script> -->
-            <script type="text/javascript" src="../css/jquery-3.3.1.slim.min.js" ></script>
-        <script type="text/javascript" src="../../mypage/css/popper.min.js" ></script>
-        <script type="text/javascript" src="../../../bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" ></script>
+            <script type="text/javascript" src="/member/mypage/css/jquery-3.3.1.slim.min.js" ></script>
+        <script type="text/javascript" src="/member/mypage/css/popper.min.js" ></script>
+        <script type="text/javascript" src="/bootstrap-4.1.3/bootstrap-4.1.3/dist/js/bootstrap.min.js" ></script>
     
         </head>
     
@@ -39,8 +39,6 @@
                     <main id="main">
     
     
-    
-                        <!--마이페이지 로그인 시-->
     
                         <div class="box board-title">
                             <h1>MYPAGE</h1>
@@ -76,7 +74,6 @@
                                                                     </div>
                                                                 </form>
                                                             </div>
-                                                            
                                                         </div>
                                                 </article>
                                                 <div class="half bg"></div>

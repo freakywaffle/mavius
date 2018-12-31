@@ -34,24 +34,28 @@
 			<section id="search-form">
 				<h1  class="hidden">검색폼</h1>
 				<form>
-					<fieldset>
+					<fieldset id="field-search">
 						<legend class="hidden">게시글검색폼</legend>
 	
 						<!-- 디폴트 값으로 현재 게시판 명 -->
-						<select>
+						<select class="first-select">
 							<option>전체기간</option>
 								<option>최근 1주</option>
 								<option>최근 한달</option>
 								<option>직접 입력</option>
 							</select> 
-							<select>
-								<option>제목</option>
-								<option>제목+내용</option>
-								<option>작성자</option>
+							<select name="option">
+								<option value="title">제목</option>
+								<option value="content">제목+내용</option>
+								<option value="wirterId">작성자</option>
 								
 							</select> 
-							<input type="text" name="txt-sch" />
-							<input type="submit" name="btn-sch" value="검색"/>
+							<input type="text"name="keyword" placeholder="검색어를 입력하쎄용"/>
+							  <span class="input-group-btn">
+		                        <button class="btn btn-secondary" type="submit">
+		                            <i class="fas fa-search"></i>
+		                        </button>
+                  			  </span>
 					</fieldset>
 				</form>
 			</section>

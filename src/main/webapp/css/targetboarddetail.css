@@ -26,6 +26,7 @@
 	position:relative;
 	display: flex;
 	height: 100px;
+	width:740px;
 	margin-left: 60px;
 	border-bottom: 2px dashed #eaeaea;
 	border-right: 2px dashed #eaeaea;
@@ -35,7 +36,7 @@
 .detail-header div{
 	margin-left: 30px;
 	margin-top: 0px;
-	width: 540px;
+	width: inherit;
 	height: 60px;
 }
 
