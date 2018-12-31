@@ -30,10 +30,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
-				<h1 class="main-list align">회원 관리</h1>
+				<div>
+				<h1 class="main-list align" >Member</h1>
 				<section>
-					<h1 class="sub-list align">회원 목록</h1>
+					<h1 class="sub-list align">List</h1>
 				</section>
+				</div>
 			</section>
 
 		</section>
@@ -105,9 +107,21 @@
 					        <span class="sr-only">Previous</span>
 					      </a>
 					    </li>
+					    	
 					    	<c:forEach var="i" begin="1" end="5" >
+	
+					   
+					    		<c:if test="${i==param.p}">
+							    <li class="page-item"><a class="font-color focus" href="?p=${i}"><strong>${i}</strong></a></li>
+					    		</c:if>
+					    		<c:if test="${i!=param.p}">
 							    <li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+					    		</c:if>
+				
+					    	
+					    		
 					    	</c:forEach>
+					    	
 					    
 					    <li class="page-item">
 					      <a class="font-color" href="#" aria-label="Next">
@@ -120,7 +134,7 @@
 
 				<div class="text-right" style="margin-right: 14px">
 					<a href="#" class="btn btn-danger btn-xs"> <span
-						class="glyphicon glyphicon-remove"></span> SelectDel
+						class="glyphicon glyphicon-remove"></span>선택탙퇴
 					</a>
 				</div>
 			</section>
