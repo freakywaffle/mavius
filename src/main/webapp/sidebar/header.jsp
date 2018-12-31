@@ -8,10 +8,10 @@
             
             <!-- Header -->
             <div id="header-wrapper">
-                <img class="header-bg" src="/images/park-header.jpg" />
+                <img class="header-bg" src="/images/hdbg01.png" />
                 <ul class="header-nav header-box">
                     <div class="main-img">
-                        <img  src="/images/login-logo-135.png" />
+                        <img  src="/images/logo3.png" />
                     </div>
                     <li class="header-brand">
                         <a href="/index">
