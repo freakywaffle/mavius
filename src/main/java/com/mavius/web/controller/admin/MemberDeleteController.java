@@ -29,14 +29,10 @@ public class MemberDeleteController extends HttpServlet{
 		String nickName = request.getParameter("nickname");
 		String chk = request.getParameter("chk");
 		
-		if(chk==null)
-		System.out.println("h");
-		else if (chk.equals("on"))
-			System.out.println("^^");
 		//System.out.println(nickName);
-	//	Member mem = new Member(id,nickName);
+		Member mem = new Member(id,nickName);
 		
-//		int del = service.delete(mem);
+		int del = service.delete(mem);
 		
 		response.sendRedirect("/admin/member/management/list");
 		

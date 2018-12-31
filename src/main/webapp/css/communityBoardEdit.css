@@ -1,5 +1,15 @@
 @import url("/css/targetboarddetail.css");
 
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 .modal-lg{
 	max-width: 1200px!important;
 }

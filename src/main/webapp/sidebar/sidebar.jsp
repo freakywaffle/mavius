@@ -13,10 +13,10 @@
         </div>
         <ul class="sidebar-nav2">
             <li>
-                <a href="#">mypage</a>
+                <a href="/mypage/confirm">mypage</a>
             </li>
             <li>
-                <a href="#">about</a>
+                <a href="/admin/member/management/list">admin</a>
             </li>
             <li>
                 <a href="#">contact</a>

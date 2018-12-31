@@ -1,5 +1,15 @@
 @import url("/css/targetboardlist.css");
 
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 
 .main .vertical-line{
 	top:0px;

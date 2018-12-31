@@ -4,6 +4,15 @@ body {
     color: #daf6ff;
   }
   
+  @font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+  
   .bluelight {
     display: table;
     width: 200px;

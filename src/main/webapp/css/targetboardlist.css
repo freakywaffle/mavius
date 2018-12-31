@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Gamja+Flower|Nanum+Pen+Script|Noto+Sans+KR:100,300,400,500,700,900&subset=korean');
 
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 html{
 	width: 100%;
 }
@@ -220,7 +230,7 @@ h1,ul,p,li,section{
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);
-  transition: all 0.3s ease-in-out;   /* �ε巯�� ����� �����߰�*/
+  transition: all 0.3s ease-in-out;   /* 占싸드러占쏙옙 占쏙옙占쏙옙占� 占쏙옙占쏙옙占쌩곤옙*/
 	
 }
 
