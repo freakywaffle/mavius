@@ -25,10 +25,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
-				<h1 class="main-list align">게시판관리</h1>
+			<div>
+				<h1 class="main-list align">Board</h1>
 				<section>
-					<h1 class="sub-list align">자유게시판</h1>
+					<h1 class="sub-list align">Free</h1>
 				</section>
+			</div>
 			</section>
 
 		</section>

@@ -80,8 +80,8 @@
             title: '어드벤처 박스',
             start: '2018-12-27',
             end: '2019-01-09T23:59:59',
-            /* url: "detail?no=${n.no }", */
-            		url: "detail?no=58",
+/*             url: "detail?no=${n.no }", */
+            		url: "detail?no=58", 
             color: '#231EB7'
         },
         {

@@ -28,10 +28,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
+			<div>
 				<h1 class="main-list align">News</h1>
 				<section>
 					<h1 class="sub-list align">Notice</h1>
 				</section>
+			</div>
 			</section>
 
 		</section>
@@ -74,7 +76,7 @@
 										<td class="align-middle text-center">${notice.writerId}</td>
 										<td class="align-middle text-center">${notice.regDate}</td>
 										<td class="align-middle text-center">${notice.hit}</td>
-										<td class="align-middle text-left">
+										<td class="align-middle text-center">
 											<div>
 												<a href="detail?no=${notice.no}" class='btn btn-info btn-xs'>
 														<span class="glyphicon glyphicon-edit"></span>수정

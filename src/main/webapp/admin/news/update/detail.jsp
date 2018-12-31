@@ -25,10 +25,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
+			<div>
 				<h1 class="main-list align">News</h1>
 				<section>
 					<h1 class="sub-list align">Update</h1>
 				</section>
+			</div>
 			</section>
 
 		</section>

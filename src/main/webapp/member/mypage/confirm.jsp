@@ -63,18 +63,17 @@
                                                         <div class="content">
                                                             <div class="signin-cont cont">
                                                                 <form action="#" method="post" enctype="multipart/form-data">
-                                                                    <input type="" name="uid" id="uid" value="${session.uid}" class="inpt" required="required" placeholder="Your ID">
-                                                                    
+                                                                    <c:if test="${not empty sessionScope.uid }">
+                                                                        <input type="" name="uid" id="uid" value="${sessionScope.uid}" class="inpt" required="required" placeholder="Your ID" autocomplete="off">
+                                                                    </c:if>
                                                                     <input type="password" name="password" id="password" class="inpt" required="required" placeholder="Your password">
                                                                     <label for="password">Your password</label>
-                                                                    
                                                                     <div class="submit-wrap">
                                                                         <input type="submit" value="Sign in" class="submit">
                                                                         <a href="#" class="more">Forgot your password?</a>
                                                                     </div>
                                                                 </form>
                                                             </div>
-                                                           
                                                         </div>
                                                 </article>
                                                 <div class="half bg"></div>

@@ -18,6 +18,11 @@ main{
 	height: 185px;
 	line-height: 185px;
 	border-bottom: 5px dashed #333333;
+		
+	background-image: url("../img/background1.png"); 
+	background-repeat: no-repeat; 
+	background-size: cover;
+	font-style: italic;
 }
 
 .main-list{

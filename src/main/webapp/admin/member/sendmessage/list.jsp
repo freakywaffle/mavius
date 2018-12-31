@@ -25,10 +25,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
-				<h1 class="main-list align">회원 관리</h1>
+			<div>
+				<h1 class="main-list align">Member</h1>
 				<section>
-					<h1 class="sub-list align">회원 쪽지 발송</h1>
+					<h1 class="sub-list align">Message</h1>
 				</section>
+			</div>
 			</section>
 
 		</section>
@@ -61,7 +63,7 @@
 												<div class="col-xs-6 col-md-6 form-group">
 													<span>받는이</span>
 													<div class="b">
-														<input class="form-control" name="receiverId" value="id" type="text" autofocus /> 
+														<input class="form-control" name="receiverId" placeholder="id" type="text" autofocus /> 
 														<select class="form-control c" name="select" autofocus>
 															<option>그룹선택</option>
 															<option value="0">전체</option>
@@ -84,8 +86,8 @@
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
 													<button class="btn btn-primary pull-right btn-margin-left"
-														type="submit">Cancel</button>
-													<button class="btn btn-primary pull-right" type="submit">Submit</button>
+														type="submit">취소</button>
+													<button class="btn btn-primary pull-right" type="submit">보내기</button>
 												</div>
 											</div>
 	
@@ -127,8 +129,8 @@
 								<td class="align-middle text-center">18-12-07</td>
 									<td class="text-center"><a class='btn btn-info btn-xs'
 									href="#"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
+										수정</a> <a href="#" class="btn btn-danger btn-xs"><span
+										class="glyphicon glyphicon-remove"></span>삭제</a></td>
 
 							</tr>
 							<tr>
@@ -139,8 +141,8 @@
 								<td class="align-middle text-center">18-12-07</td>
 								<td class="text-center"><a class='btn btn-info btn-xs'
 									href="#"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
+										수정</a> <a href="#" class="btn btn-danger btn-xs"><span
+										class="glyphicon glyphicon-remove"></span>삭제</a></td>
 
 
 							</tr>
@@ -152,8 +154,8 @@
 								<td class="align-middle text-center">18-12-07</td>
 								<td class="text-center"><a class='btn btn-info btn-xs'
 									href="#"><span class="glyphicon glyphicon-edit"></span>
-										Edit</a> <a href="#" class="btn btn-danger btn-xs"><span
-										class="glyphicon glyphicon-remove"></span> Del</a></td>
+										수정</a> <a href="#" class="btn btn-danger btn-xs"><span
+										class="glyphicon glyphicon-remove"></span>삭제</a></td>
 								<!--td class ="text-center">
 													<button type="button" class="btn btn-success">수정</button>
 													<button type="button" class="btn btn-warning">관리</button>
@@ -219,8 +221,8 @@
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
 													<button class="btn btn-primary pull-right btn-margin-left"
-														type="submit">Cancel</button>
-													<button class="btn btn-primary pull-right" type="submit">Submit</button>
+														type="submit">취소	</button>
+													<button class="btn btn-primary pull-right" type="submit">보내기</button>
 												</div>
 											</div>
 	

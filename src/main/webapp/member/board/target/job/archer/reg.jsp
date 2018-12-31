@@ -22,8 +22,10 @@
 		<div class="head-border-line"></div>
 		<div class="wrapper">
 			<section class="board-header">
-				<h1 class="border-title text-center font-medium">ARCHER</h1>
-				<h3 class="text-center">공략게시판</h3>
+				<div>
+					<h1 class="border-title text-center font-medium">ARCHER</h1>
+					<h3 class="text-center">공략게시판</h3>
+				</div>
 			</section>
 			<section class="main margin-bottom reset-padding">
 				<h3 class="text-center margin-top">글쓰기</h3>
@@ -176,8 +178,10 @@
 						<label>아이콘</label>
 						<div class="border-color-gray">
 							<ul>
-								<li><img alt="스나이핑" src="/images/skill/sniping-icon.png"></li>
-								<li><img alt="피어싱" src="/images/skill/piearcing.png"></li>
+								<li><img alt="어드밴스드쿼버" src="/images/skill/어드밴스드 쿼버.gif"></li>
+								<li><img alt="언카블" src="/images/skill/언카블.gif"></li>
+								<li><img alt="운즈샷" src="/images/skill/운즈샷.gif"></li>
+								<li><img alt="폭풍의시" src="/images/skill/폭풍의시.gif"></li>
 							</ul>
 						</div>
 					</div>			

@@ -12,80 +12,7 @@
 
     <script src="../js/idchk-popup.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <!-- <script>
-	    window.addEventListener("load", function(){
-	    	var idChk = document.querySelector("#idchk");
-	    	var idCheck = idChk.querySelector('input[name="idchk-btn"]');
-	    	var txtUid = idChk.querySelector('input[name="uid"]');
-	    	var btnReg = idChk.querySelector('input[name="btn-reg"]');
-	    	
-	    	var checkedId = false;
-	    	
-	    	txtUid.oninput = function(){
-	    		if(txtUid.value != "")
-	    			txtUid.setCustomValidity("");
-	    	};
-	    	
-	    	btnReg.onclick = function(){
-	    		console.log("chckedid : " + checkedId);
-	    		
-	    		var uid = txtUid.value;
-
-	    		if(!txtUid.checkValidity())//if(uid == "")
-	    			txtUid.setCustomValidity("아이디 입력!");
-	    		else if(!checkedId)
-	    			txtUid.setCustomValidity("아이디 중복확인!");
-	    		else
-	    			txtUid.setCustomValidity("");
-	    	};
-	    	
-	    	idCheck.onclick = function(){
-	    		
-	    		var uid = txtUid.value;
-	    		
-	    		if(uid == ""){
-	    			swal({ 
-	    				title: "이런!", 
-	    				text: "아이디를 입력해야죠!", 
-	    				icon: "warning" 
-	    				//confirmButtonText: "확인" 
-	    				});
-	    			return;
-	    		}
-
-	    		var request = new XMLHttpRequest();
-	    		request.onload = function(){
-	    			
-	    			console.log("readyState : " + request.readyState);
-	    			console.log("responseText : " + request.responseText);
-	    			//alert(request.responseText);
-	    			//true, false
-	    			//if(JSON.parse(request.responseText)) //alert(request.responseText);
-	    				checkedId = !JSON.parse(request.responseText);
-	    		}
-	    		request.open("POST", "/member/idchk", true);
-	    		//request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-	    		request.send("id="+uid); //"id=newlec&pwd=111"
-	    		
-	    		/* swal({
-		      		  title: "Good job!",
-		      		  text: "중복되지 않는 아이디에요!",
-		      		  icon: "success",
-		      		}); */
-	    		
-	    	}
-	    });
-    	/* swal({
-  		  title: "Holy Shit!",
-  		  text: "중복되는 아이디에요!",
-  		  icon: "error",
-  		});  */
-    function idChk() {
-    	 window.name = "parentForm";
-    	 window.open("/member/idchk",
-             "chkForm", "width=500, height=300, " +
-             		"resizable = no, scrollbars = no");  
-    </script> -->
+    
     
 </head>
 <body>
@@ -101,7 +28,7 @@
                 <div class="signin-cont cont">
                     <form action="login" method="post" >
                         <label for="uid">Your ID</label>
-                        <input name="uid" class="inpt" required="required" placeholder="Your ID">
+                        <input name="uid" class="inpt" required="required" placeholder="Your ID" autocomplete="off">
                         <label for="pwd">Your password</label>
                         <input type="password" name="pwd" class="inpt" required="required" placeholder="Your password">
 	                        <c:if test="${param.er==1 }">

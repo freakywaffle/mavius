@@ -16,7 +16,7 @@
                 <a href="/mypage/confirm">mypage</a>
             </li>
             <li>
-                <a href="#">admin</a>
+                <a href="/admin/member/management/list">admin</a>
             </li>
             <li>
                 <a href="#">contact</a>

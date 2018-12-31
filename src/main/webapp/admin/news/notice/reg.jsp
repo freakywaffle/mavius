@@ -25,10 +25,12 @@
 			<h1 class="hidden">바디 헤더</h1>
 
 			<section class="main-header">
+			<div>
 				<h1 class="main-list align">News</h1>
 				<section>
 					<h1 class="sub-list align">Notice</h1>
 				</section>
+			</div>
 			</section>
 
 		</section>
@@ -58,7 +60,7 @@
 													<div class="b">
 														<span>제목</span>
 														<input class="col-md-10 form-control" name="title"
-															placeholder="제목" type="text" required autofocus /> 
+															placeholder="제목" type="text" autofocus /> 
 													</div>
 												</div>
 											</div>
@@ -68,7 +70,7 @@
 													<div class="b">
 														<span>작성자</span>
 														<input class="col-xs-2 col-md-2 form-control" name="writerId"
-															placeholder="nickName" type="text" required autofocus disabled/> 
+															placeholder="nickName" type="text" autofocus disabled/> 
 													</div>
 												</div>
 											</div>
@@ -85,7 +87,7 @@
 													<div class="b">
 														<span>첨부파일</span>
 														<input class="col-xs-2 col-md-2 form-control" name="file"
-															value="파일선택" type="button" required autofocus /> 
+															value="파일선택" type="button" autofocus /> 
 													</div>								
 												</div>
 											</div>
@@ -95,7 +97,7 @@
 													<div class="b">
 															<span>이미지</span>
 															<input class="col-xs-2 col-md-2 form-control" id="img" name="img"
-															placeholder="파일 선택" type="button" required autofocus /> 
+															placeholder="파일 선택" type="button" autofocus /> 
 													</div>					
 												</div>
 											</div>
@@ -104,8 +106,8 @@
 											<br />
 											<div class="row">
 												<div class="col-xs-12 col-md-12 form-group">
-													<a href = "list"><button class="btn btn-primary pull-right btn-margin-left">Cancel</button></a>
-													<button class="btn btn-primary pull-right" type="submit">Submit</button>
+													<a href = "list"><button class="btn btn-primary pull-right btn-margin-left">취소</button></a>
+													<button class="btn btn-primary pull-right" type="submit">완료</button>
 												</div>
 											</div>
 	

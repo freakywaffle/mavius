@@ -28,10 +28,12 @@
 			<section>
 				<h1 class="hidden">바디 헤더</h1>
 				<section class="main-header">
-					<h1 class="main-list align">게시판 관리</h1>
+				<div>
+					<h1 class="main-list align">Board</h1>
 					<section>
-						<h1 class="sub-list align">자유게시판</h1>
+						<h1 class="sub-list align">Free</h1>
 					</section>
+				</div>
 				</section>
 			</section>
 	
@@ -111,9 +113,15 @@
 												        <span class="sr-only">Previous</span>
 												      </a>
 												    </li>
-												    <c:forEach var="i" begin="1" end="5">
-												    	<li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
-												    </c:forEach>
+												    <c:forEach var="i" begin="1" end="5" >
+								    		<c:if test="${i==param.p}">
+											    <li class="page-item"><a class="font-color focus" href="?p=${i}"><strong>${i}</strong></a></li>
+									    		</c:if>
+									    		<c:if test="${i!=param.p}">
+											    <li class="page-item"><a class="font-color focus" href="?p=${i}">${i}</a></li>
+									    		</c:if>
+									    		
+									    	</c:forEach>
 												    <li class="page-item">
 												      <a class="font-color" href="#" aria-label="Next">
 												        <span aria-hidden="true">&raquo;</span>
@@ -124,10 +132,8 @@
 											</nav>
 							
 											<div class="text-right" style="margin-right: 14px">
-												<a class='btn btn-info btn-xs' href="#"> <span
-													class="glyphicon glyphicon-edit"></span> SelectEdit
-												</a> <a href="#" class="btn btn-danger btn-xs"> <span
-													class="glyphicon glyphicon-remove"></span> SelectDel
+												<a href="#" class="btn btn-danger btn-xs"> <span
+													class="glyphicon glyphicon-remove"></span>선택삭제
 												</a>
 											</div>
 											

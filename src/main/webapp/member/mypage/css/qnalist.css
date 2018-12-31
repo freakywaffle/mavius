@@ -6,9 +6,9 @@
  @font-face
  {
 
-    font-family:"GoodFont"; /*폰트 패밀리 이름 추가*/
+    font-family:"GoodFont"; 
     
-    src:url("../../../bootstrap/fonts/SDChildfundkoreaTTF.ttf"); /*폰트 파일 주소*/
+    src:url("../../../bootstrap/fonts/SDChildfundkoreaTTF.ttf");
     
     }
     

@@ -43,16 +43,16 @@
                     
     
                     <li  data-toggle="collapse" data-target="#products" class="collapsed">
-                        <a href="#">회원 관리<span class="arrow"></span></a>
+                        <a href="#"><span>&nbsp;&nbsp;</span><i class="fa fa-user fa-lg"></i> 회원 관리<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="products">
-                        <li class="active"><a href="/admin/member/management/list">회원 목록</a></li>
+                        <li><a href="/admin/member/management/list">회원 목록</a></li>
                         <li><a href="/admin/member/sendmessage/list">회원 쪽지 발송</a></li>
                     </ul>
     
     
                     <li data-toggle="collapse" data-target="#service" class="collapsed">
-                        <a href="#">게시판 관리<span class="arrow"></span></a>
+                        <a href="#"><span>&nbsp;&nbsp;</span><i class="fa fa-file-text fa-lg"></i> 게시판 관리<span class="arrow"></span></a>
                     </li>  
                     <ul class="sub-menu collapse" id="service">
                         <li><a href="/admin/board/community/freeboard/list">자유 게시판</a></li>
@@ -64,7 +64,7 @@
     
     
                     <li data-toggle="collapse" data-target="#new" class="collapsed">
-                        <a href="#">뉴스<span class="arrow"></span></a>
+                        <a href="#"><span>&nbsp;&nbsp;</span><i class="fa fa-newspaper-o fa-lg"></i> 뉴스<span class="arrow"></span></a>
                     </li>
                     <ul class="sub-menu collapse" id="new">
                         <li><a href="/admin/news/notice/list">공지사항</a></li>
@@ -75,7 +75,7 @@
                     </ul>
     
                     <li data-toggle="collapse" data-target="#newa" class="collapsed">
-                        <a href="#">통계<span class="arrow"></span></a>
+                        <a href="#"><span>&nbsp;&nbsp;</span><i class="fa fa-line-chart fa-lg"></i> 통계<span class="arrow"></span></a>
                     </li>
                     
                     <ul class="sub-menu collapse" id="newa">
@@ -84,15 +84,9 @@
                         <li><a href="">인기 게시판</a></li>
                         <li><a href="">인기 게시글</a></li>
                     </ul>
-                    
-                    <li>
-                        <a href="#">
-                        <i class="fa fa-user fa-lg"></i> Profile
-                        </a>
-                    </li>
     
 					<li data-toggle="collapse" data-target="#newaa" class="collapsed">
-                        <a href="#"><span class="glyphicon glyphicon-search"></span>검색<span class="arrow"></span></a>
+                        <a href="#"><span>&nbsp;&nbsp;</span><i class="fa fa-search fa-lg"></i> 검색<span class="arrow"></span></a>
                     </li>
                     
                     <ul class="sub-menu collapse" id="newaa" style="min-width: 300px;">

@@ -1,3 +1,13 @@
+@font-face
+ {
+
+    font-family:"GoodFont"; 
+    
+    src:url("/bootstrap/fonts/SDChildfundkoreaTTF.ttf");
+    
+    }
+
+
 .main-body-div {
 	margin-left: 0px;
 	width: 100%;

@@ -20,10 +20,12 @@
 		<div class="head-border-line"></div>
 		<div class="wrapper">
 			<section class="board-header">
+			<div>
 				<h1 class="border-title text-center font-medium"><a href="list">ARCHER</a></h1>
 				<h3 class="text-center">공략게시판</h3>
 				<div class="menu-bar text-right">
 					<a class="btn btn-outline-secondary" href="reg">글쓰기</a>
+				</div>
 				</div>
 			</section>
 			<section class="main">	
@@ -46,19 +48,19 @@
 					<div>
 						<h1 class="hidden">모아보기 리스트</h1>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=보우마스터'" alt="보우마스터" src="/images/catalog1.png">
+							<img onclick="location.href='list?category=보우마스터'" alt="보우마스터" src="/images/bowmaster.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=신궁'" alt="신궁" src="/images/catalog2.png">
+							<img onclick="location.href='list?category=신궁'" alt="신궁" src="/images/god.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=메르세데스'" alt="메르세데스" src="/images/catalog3.png">
+							<img onclick="location.href='list?category=메르세데스'" alt="메르세데스" src="/images/mer.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=윈드브레이커'" alt="윈드브레이커" src="/images/catalog4.png">
+							<img onclick="location.href='list?category=윈드브레이커'" alt="윈드브레이커" src="/images/wind.png">
 						</div>
 						<div class="simbol action">
-							<img onclick="location.href='list?category=와일드헌터'" alt="와일드헌터" src="/images/catalog5.png">
+							<img onclick="location.href='list?category=와일드헌터'" alt="와일드헌터" src="/images/wild.png">
 						</div>
 					</div>
 					<div class="target-board-main">
