@@ -34,7 +34,7 @@
 <body>	
 
 <header class="nav-side-menu"   style="float: left; position: fixed;">
-            <div class="brand">mavius</div>
+            <div class="brand"><a href="../../../index" style="text-decoration: none; color: #ffffff;">mavius</a></div>
             <!--i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i-->
             
             <div class="menu-list">
